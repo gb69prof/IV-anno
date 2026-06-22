@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>L'universo come una macchina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --gold:#d9b46a;
+    --gold-soft:#e7cd97;
+    --ink:#eae3d2;
+    --ink-dim:#9c947f;
+    --bg:#05060e;
+    --foscolo:#79b8c9;
+    --leopardi:#aab4dc;
+    --verga:#d6a155;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;width:100%;overflow:hidden;background:var(--bg);color:var(--ink);
+    font-family:'Spectral',Georgia,serif;-webkit-font-smoothing:antialiased;}
+  #scene{position:fixed;inset:0;display:block;touch-action:none;cursor:grab;}
+  #scene:active{cursor:grabbing;}
+
+  /* ---------- INTRO ---------- */
+  #intro{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:32px;background:radial-gradient(ellipse at 50% 38%,#0c1024 0%,#05060e 60%,#020308 100%);
+    transition:opacity 1.2s ease;}
+  #intro .eyebrow{font-family:'Spectral';font-weight:400;letter-spacing:.42em;text-transform:uppercase;
+    font-size:13px;color:var(--gold);opacity:.85;margin-bottom:26px;}
+  #intro h1{font-family:'Cormorant Garamond';font-weight:500;line-height:1.02;
+    font-size:clamp(44px,8vw,104px);color:var(--ink);text-shadow:0 0 50px rgba(217,180,106,.18);}
+  #intro h1 em{font-style:italic;color:var(--gold-soft);}
+  #intro p{max-width:620px;margin:30px auto 0;font-size:clamp(15px,2vw,19px);line-height:1.7;color:var(--ink-dim);font-weight:300;}
+  #enter{margin-top:48px;font-family:'Spectral';font-size:15px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--bg);background:linear-gradient(180deg,var(--gold-soft),var(--gold));border:none;border-radius:2px;
+    padding:16px 40px;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;box-shadow:0 0 0 rgba(217,180,106,0);}
+  #enter:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(217,180,106,.28);}
+  #intro .credit{position:absolute;bottom:26px;font-size:12px;letter-spacing:.12em;color:#4a4a55;}
+  .gone{opacity:0 !important;pointer-events:none !important;}
+
+  /* ---------- HUD ---------- */
+  #hud{position:fixed;inset:0;z-index:20;pointer-events:none;}
+  #topbar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;
+    padding:22px 30px;}
+  #title-mini{font-family:'Cormorant Garamond';font-size:21px;font-weight:500;letter-spacing:.01em;color:var(--ink);opacity:.9;}
+  #title-mini b{color:var(--gold-soft);font-weight:500;font-style:italic;}
+  #back{pointer-events:auto;display:none;align-items:center;gap:9px;font-family:'Spectral';font-size:13px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:rgba(15,18,32,.6);
+    border:1px solid rgba(217,180,106,.32);border-radius:2px;padding:10px 18px;cursor:pointer;backdrop-filter:blur(8px);
+    transition:border-color .25s,color .25s;}
+  #back:hover{border-color:var(--gold);color:var(--gold-soft);}
+  #back svg{width:14px;height:14px;}
+  #back span{white-space:nowrap;}
+  #vrbtn{pointer-events:auto;display:none;align-items:center;gap:8px;font-family:'Spectral';font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--bg);background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+    border:1px solid rgba(217,180,106,.35);border-radius:2px;padding:10px 16px;cursor:pointer;
+    box-shadow:0 10px 30px rgba(217,180,106,.18);transition:transform .25s ease,opacity .25s ease;}
+  #vrbtn:hover{transform:translateY(-1px);}
+  #vrbtn[disabled]{cursor:not-allowed;opacity:.48;box-shadow:none;background:rgba(15,18,32,.7);color:var(--ink-dim);}
+
+  #hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);text-align:center;
+    font-size:14px;letter-spacing:.04em;color:var(--ink-dim);font-weight:300;transition:opacity .6s ease;
+    background:rgba(8,10,20,.35);padding:9px 20px;border-radius:30px;backdrop-filter:blur(4px);}
+  #hint b{color:var(--gold-soft);font-weight:400;}
+
+  /* author header (when focused) */
+  #ahead{position:absolute;top:74px;left:30px;max-width:380px;opacity:0;transform:translateY(-8px);
+    transition:opacity .6s ease,transform .6s ease;pointer-events:none;}
+  #ahead.show{opacity:1;transform:none;}
+  #ahead .dates{font-family:'Spectral';font-size:12px;letter-spacing:.26em;text-transform:uppercase;margin-bottom:6px;}
+  #ahead h2{font-family:'Cormorant Garamond';font-weight:500;font-size:46px;line-height:1;margin-bottom:14px;}
+  #ahead .ess{font-size:16px;line-height:1.55;color:var(--ink);font-weight:300;font-style:italic;
+    border-left:2px solid;padding-left:14px;margin-bottom:18px;}
+  #ahead .quote{font-family:'Cormorant Garamond';font-style:italic;font-size:21px;line-height:1.35;color:var(--gold-soft);}
+  #ahead .src{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-top:8px;}
+
+  #mapinfo{position:absolute;left:30px;bottom:82px;max-width:430px;opacity:0;transform:translateY(8px);
+    transition:opacity .45s ease,transform .45s ease;pointer-events:none;}
+  #mapinfo.show{opacity:1;transform:none;}
+  #mapinfo .mribbon{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);
+    margin-bottom:8px;}
+  #mapinfo h3{font-family:'Cormorant Garamond';font-size:34px;font-weight:500;line-height:1.02;color:var(--ink);
+    text-shadow:0 0 28px rgba(0,0,0,.7);}
+  #mapinfo .msub{margin-top:8px;font-size:14px;line-height:1.5;color:var(--ink-dim);font-style:italic;}
+
+  /* ---------- PANEL ---------- */
+  #panel{position:fixed;top:0;right:0;height:100%;width:min(520px,92vw);z-index:30;
+    background:linear-gradient(180deg,rgba(10,12,24,.94),rgba(7,8,18,.96));
+    backdrop-filter:blur(14px);border-left:1px solid rgba(217,180,106,.28);
+    transform:translateX(102%);transition:transform .7s cubic-bezier(.22,1,.36,1);
+    display:flex;flex-direction:column;padding:48px 42px;overflow-y:auto;}
+  #panel.show{transform:none;}
+  #panel .ribbon{font-family:'Spectral';font-size:12px;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+  #panel .ribbon .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);}
+  #panel h3{font-family:'Cormorant Garamond';font-weight:500;font-size:40px;line-height:1.04;margin-bottom:8px;color:var(--ink);}
+  #panel .sub{font-family:'Spectral';font-style:italic;font-size:16px;color:var(--ink-dim);margin-bottom:28px;}
+  #panel .body{font-size:16.5px;line-height:1.75;color:#d8d2c2;font-weight:300;}
+  #panel .body p{margin-bottom:16px;}
+  #panel .body .lead{font-family:'Cormorant Garamond';font-size:23px;line-height:1.35;color:var(--gold-soft);
+    font-style:italic;margin:4px 0 22px;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 20px;}
+  .tag{border:1px solid rgba(217,180,106,.22);color:#e3d7bd;background:rgba(217,180,106,.06);
+    border-radius:999px;padding:5px 10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+  .deep-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 24px;}
+  .deep-item{border-top:1px solid rgba(217,180,106,.24);padding-top:12px;min-height:92px;}
+  .deep-item b{display:block;color:var(--gold-soft);font-family:'Cormorant Garamond';font-size:22px;font-weight:500;
+    line-height:1.08;margin-bottom:6px;}
+  .deep-item span{display:block;color:#c7c0ae;font-size:14.5px;line-height:1.55;}
+  .path{margin:24px 0 24px;border-left:1px solid rgba(217,180,106,.28);}
+  .path-step{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:0 0 18px 0;}
+  .path-step:last-child{padding-bottom:0;}
+  .path-num{font-family:'Cormorant Garamond';font-size:26px;color:var(--gold-soft);text-align:center;line-height:1;}
+  .path-copy b{display:block;color:#efe7d6;font-family:'Cormorant Garamond';font-size:21px;font-weight:500;line-height:1.1;
+    margin-bottom:5px;}
+  .path-copy span{display:block;color:#c7c0ae;font-size:14.8px;line-height:1.58;}
+  .study{margin:20px 0 24px;padding:18px 0 4px;border-top:1px solid rgba(217,180,106,.2);
+    border-bottom:1px solid rgba(217,180,106,.12);}
+  .study .stitle{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .study ul{list-style:none;display:grid;gap:8px;}
+  .study li{position:relative;padding-left:18px;color:#d8d2c2;font-size:14.8px;line-height:1.55;}
+  .study li:before{content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  #panel .cite{margin-top:30px;padding-top:24px;border-top:1px solid rgba(217,180,106,.2);}
+  #panel .cite .q{font-family:'Cormorant Garamond';font-style:italic;font-size:24px;line-height:1.35;color:var(--gold-soft);}
+  #panel .cite .s{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);margin-top:12px;}
+  #pclose{position:absolute;top:20px;right:22px;width:38px;height:38px;border-radius:50%;cursor:pointer;
+    background:rgba(255,255,255,.04);border:1px solid rgba(217,180,106,.25);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;font-size:18px;line-height:1;transition:all .2s;}
+  #pclose:hover{border-color:var(--gold);color:var(--gold-soft);transform:rotate(90deg);}
+
+  #loading{position:fixed;inset:0;z-index:45;display:flex;align-items:center;justify-content:center;
+    background:var(--bg);color:var(--ink-dim);font-size:14px;letter-spacing:.2em;text-transform:uppercase;}
+  @media (max-width:640px){
+    #ahead{display:none;}
+    #mapinfo{left:18px;right:18px;bottom:145px;max-width:none;}
+    #mapinfo h3{font-size:27px;}
+    #panel{padding:40px 28px;}
+    #topbar{padding:16px 18px;}
+    #back{font-size:11px;letter-spacing:.11em;padding:9px 12px;}
+    #vrbtn{font-size:10px;letter-spacing:.1em;padding:8px 10px;}
+    .deep-grid{grid-template-columns:1fr;}
+    .path-step{grid-template-columns:34px 1fr;}
+  }
+</style>
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <div id="hud">
+    <div id="topbar">
+      <div id="title-mini">L'universo come una <b>macchina</b></div>
+      <button id="vrbtn" type="button" aria-label="Entra in VR">Entra in VR</button>
+      <button id="back" aria-label="Torna al cosmo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        <span>Torna al cosmo</span>
+      </button>
+    </div>
+    <div id="ahead">
+      <div class="dates"></div>
+      <h2></h2>
+      <div class="ess"></div>
+      <div class="quote"></div>
+      <div class="src"></div>
+    </div>
+    <div id="mapinfo">
+      <div class="mribbon"></div>
+      <h3></h3>
+      <div class="msub"></div>
+    </div>
+    <div id="hint">Tocca un <b>poeta</b> per entrare nel suo microcosmo &nbsp;·&nbsp; tocca il <b>nucleo</b> per la matrice</div>
+  </div>
+
+  <aside id="panel">
+    <div id="pclose">✕</div>
+    <div class="ribbon"><span class="dot"></span><span class="rtxt"></span></div>
+    <h3></h3>
+    <div class="sub"></div>
+    <div class="body"></div>
+    <div class="cite" style="display:none"><div class="q"></div><div class="s"></div></div>
+  </aside>
+
+  <div id="intro">
+    <div class="eyebrow">Lezione · letteratura italiana</div>
+    <h1>L'universo come<br>una <em>macchina</em></h1>
+    <p>Una matrice cosmica — il meccanicismo — e tre poeti che la attraversano. Foscolo, Leopardi, Verga: ciascuno trasforma la grande legge nella propria immagine del mondo, e da lì nella propria arte. Esplora l'organismo dall'interno.</p>
+    <button id="enter">Entra nel cosmo</button>
+    <div class="credit">Trascina per orbitare · scorri per avvicinarti · tocca per esplorare</div>
+  </div>
+
+  <div id="loading">Costruisco la macchina…</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/webxr/XRControllerModelFactory.js"></script>
+<script>
+/* =========================================================================
+   CONTENT
+   ========================================================================= */
+const STAGES = ["Contesto","Frattura","Immagine del mondo","Poetica","Opere"];
+
+const CENTER = {
+  ribbon:"La matrice",
+  title:"Il Meccanicismo",
+  sub:"L'universo come una macchina",
+  lead:"La grande idea di partenza: il reale non obbedisce a un fine morale, ma a leggi necessarie.",
+  body:[
+    "Da Galileo e Cartesio a Newton e all'Illuminismo, l'universo viene pensato come un <b>meccanismo</b>: materia in movimento, rapporti di causa ed effetto, leggi impersonali. La natura non consola, non giudica, non promette salvezza.",
+    "Questa matrice attraversa tre mondi letterari diversi. In Foscolo diventa il <b>nulla</b> contro cui l'uomo inventa illusioni; in Leopardi diventa la <b>Natura-macchina</b> che produce e distrugge; in Verga diventa la <b>società-macchina</b>, dove i vinti vengono selezionati dalla lotta per la vita."
+  ],
+  keywords:["materia","legge","necessità","causa-effetto","assenza di provvidenza"],
+  deep:[
+    {term:"Materia", text:"La realtà è corpo, movimento, trasformazione. Non c'è un ordine spirituale che garantisca senso dall'alto."},
+    {term:"Legge", text:"Ogni fenomeno ha cause precise. Il mondo appare leggibile, ma anche freddo: funziona senza curarsi dell'uomo."},
+    {term:"Crisi", text:"Se la natura non ha fini morali, l'uomo deve trovare da sé valori, memoria, solidarietà o una forma artistica."},
+    {term:"Letteratura", text:"Gli autori trasformano la macchina in visione del mondo: non la copiano, la rendono esperienza umana."}
+  ],
+  cite:{q:"«La macchina del mondo.»", s:"La matrice comune"},
+  stages:[
+    {
+      label:"Scienza",
+      title:"La nascita della macchina",
+      sub:"Scienza moderna e materia",
+      lead:"La macchina nasce quando il mondo smette di essere letto prima di tutto come simbolo e diventa sistema di leggi.",
+      body:[
+        "La scienza moderna insegna a guardare la natura come un ordine misurabile. Il movimento degli astri, i corpi, le cause fisiche e gli effetti non dipendono da intenzioni morali: accadono secondo rapporti necessari.",
+        "Per la letteratura questa svolta è enorme. L'uomo non è più naturalmente al centro del cosmo; deve misurarsi con un universo che può essere razionale e insieme angosciante."
+      ],
+      deep:[
+        {term:"Galileo", text:"La natura diventa libro matematico: non consola, si misura."},
+        {term:"Cartesio", text:"Il corpo e la materia sono spiegati come estensione e movimento."},
+        {term:"Newton", text:"Le leggi fisiche mostrano un ordine universale, impersonale, necessario."},
+        {term:"Illuminismo", text:"La ragione libera dalla superstizione, ma espone al vuoto di un mondo senza garanzie."}
+      ],
+      saperi:["Il meccanicismo non è solo una teoria scientifica: diventa immagine del mondo.","La natura è spiegata attraverso materia, movimento, causa ed effetto.","La razionalità può liberare, ma anche togliere consolazioni."]
+    },
+    {
+      label:"Legge",
+      title:"Una natura senza fini",
+      sub:"Necessità, non provvidenza",
+      lead:"Nel meccanismo tutto funziona; il problema è che funziona anche quando distrugge.",
+      body:[
+        "La macchina non ha pietà perché non ha coscienza. Produce, consuma, trasforma. Questa assenza di finalità morale colpisce gli autori moderni: la morte non appare più come passaggio garantito, il dolore non trova una spiegazione provvidenziale.",
+        "Il punto non è dire che il mondo sia cattivo. È più radicale: il mondo è <b>indifferente</b>. Da qui nasce la domanda letteraria: come vivere, scrivere e scegliere in un universo che non risponde?"
+      ],
+      deep:[
+        {term:"Necessità", text:"Le cose accadono perché spinte da cause, non perché orientate al bene dell'uomo."},
+        {term:"Indifferenza", text:"La natura non punisce e non premia: semplicemente procede."},
+        {term:"Tempo", text:"Ogni forma viene consumata. Il tempo è ingranaggio che trasforma vita in perdita."},
+        {term:"Morte", text:"Se non c'è garanzia ultraterrena, la finitezza diventa il problema decisivo."}
+      ],
+      keywords:["legge naturale","indifferenza","morte","tempo"]
+    },
+    {
+      label:"Crisi",
+      title:"Il vuoto di senso",
+      sub:"Quando la ragione mostra il nulla",
+      lead:"La macchina spiega il mondo, ma non basta a renderlo abitabile.",
+      body:[
+        "La visione meccanicistica non elimina il bisogno umano di valore. Anzi, lo rende più urgente: se non c'è una salvezza già scritta, l'uomo deve creare forme di durata, lucidità o resistenza.",
+        "Da qui partono le risposte degli autori. Non cercano tutti la stessa via: Foscolo costruisce illusioni consapevoli, Leopardi guarda il vero fino alla solidarietà finale, Verga rifiuta il conforto e lascia parlare i fatti."
+      ],
+      path:[
+        {title:"Foscolo", text:"La ragione vede il nulla; la poesia costruisce memoria, bellezza, patria, affetti."},
+        {title:"Leopardi", text:"La Natura non è madre provvida; gli uomini devono stringersi in una social catena."},
+        {title:"Verga", text:"La società funziona come selezione: chi tenta di salire può essere travolto."}
+      ],
+      saperi:["Il meccanicismo diventa crisi del senso religioso tradizionale.","La letteratura non nega la crisi: la trasforma in forma, pensiero e narrazione.","La stessa matrice produce risposte diverse nei tre autori."]
+    },
+    {
+      label:"Autori",
+      title:"Tre trasformazioni",
+      sub:"Dalla matrice alle poetiche",
+      lead:"Ogni autore prende la stessa macchina e la traduce nel proprio microcosmo.",
+      body:[
+        "La forza del percorso sta nel confronto. Foscolo, Leopardi e Verga non sono capitoli separati: sono tre trasformazioni successive di una stessa domanda sul rapporto tra uomo, natura, storia e destino.",
+        "La macchina cosmica diventa prima <b>angoscia metafisica</b>, poi <b>Natura matrigna</b>, infine <b>meccanismo sociale</b>. Il disegno cambia scala, ma resta la stessa pressione: l'uomo è fragile dentro leggi più grandi di lui."
+      ],
+      deep:[
+        {term:"Foscolo", text:"Risponde al nulla con illusioni laiche: amore, patria, memoria, gloria, poesia."},
+        {term:"Leopardi", text:"Scopre la sproporzione tra desiderio infinito e piacere limitato."},
+        {term:"Verga", text:"Porta la necessità dentro la società: denaro, classe, ambiente, reputazione."},
+        {term:"Asse comune", text:"Tutti trasformano la legge impersonale in esperienza umana e forma artistica."}
+      ],
+      keywords:["illusione","natura matrigna","vinti","poesia"]
+    },
+    {
+      label:"Mappa",
+      title:"Come attraversare il cosmo",
+      sub:"Una rotta di studio",
+      lead:"Il percorso migliore segue sempre la stessa traiettoria: idea, ferita, mondo, forma, opere.",
+      body:[
+        "Per non perdere il filo, ogni autore viene aperto con cinque orbite. Il <b>contesto</b> mostra le idee di partenza; la <b>frattura</b> mostra ciò che si rompe; l'<b>immagine del mondo</b> organizza la visione; la <b>poetica</b> spiega la forma; le <b>opere</b> verificano tutto nei testi.",
+        "Così il progetto non è un archivio di appunti, ma una macchina didattica: ogni nodo illumina gli altri."
+      ],
+      path:[
+        {title:"1. Contesto", text:"Quale mondo storico e filosofico eredita l'autore?"},
+        {title:"2. Frattura", text:"Quale esperienza spezza le vecchie certezze?"},
+        {title:"3. Visione", text:"Quale immagine del mondo nasce da quella crisi?"},
+        {title:"4. Poetica", text:"Come quella visione diventa stile e tecnica?"},
+        {title:"5. Opere", text:"In quali testi la macchina si vede funzionare?"}
+      ],
+      cite:{q:"Idea, ferita, mondo, forma, testo.", s:"Formula di attraversamento"}
+    }
+  ]
+};
+
+const AUTHORS = [
+  {
+    id:"foscolo", name:"Ugo Foscolo", dates:"1778 — 1827",
+    color:0x79b8c9, pos:[-27, 9, 17],
+    portrait:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Andrea_Appiani_Ritratto_di_Ugo_Foscolo_Pinacoteca_di_Brera_1801-1802.jpg/960px-Andrea_Appiani_Ritratto_di_Ugo_Foscolo_Pinacoteca_di_Brera_1801-1802.jpg",
+    essence:"Contro il nulla della materia, l'eternità delle illusioni e della poesia.",
+    quote:"«E quando il Tempo con sue fredde ali / vi spazza fin le rovine…»",
+    src:"Dei Sepolcri",
+    stages:[
+      {
+        title:"Materia, rivoluzione, delusione",
+        lead:"Foscolo nasce su una linea di frattura: tra Illuminismo e Romanticismo, tra patria desiderata e storia traditrice.",
+        body:[
+          "Il suo mondo è quello della fine dell'Antico Regime, della Rivoluzione francese e dell'età napoleonica. Le parole libertà, patria e cittadinanza hanno una forza enorme, ma la storia le tradisce: Campoformio consegna Venezia all'Austria e trasforma la politica in ferita personale.",
+          "Sul piano filosofico Foscolo eredita il materialismo illuministico: tutto è materia in movimento, la morte non garantisce sopravvivenza spirituale. La ragione mostra il vuoto; il cuore pretende un senso."
+        ],
+        deep:[
+          {term:"Zante", text:"Origine greca e veneziana: già all'inizio Foscolo è uomo di confine."},
+          {term:"Rivoluzione", text:"Promette diritti e patria; accende l'entusiasmo civile del giovane autore."},
+          {term:"Campoformio", text:"1797: la libertà promessa viene sacrificata alla diplomazia."},
+          {term:"Meccanicismo", text:"La natura è materia e legge: non assicura un aldilà consolante."}
+        ],
+        saperi:["Foscolo vive la crisi storica tra Settecento e Ottocento.","La politica non è sfondo: diventa trauma letterario.","Il materialismo crea la domanda centrale: come dare senso a una vita finita?"]
+      },
+      {
+        title:"Le fratture che diventano simboli",
+        lead:"La biografia non resta cronaca: ogni ferita si trasforma in immagine poetica.",
+        body:[
+          "Zante diventa la patria perduta, Napoleone la speranza tradita, il fratello Giovanni il dolore familiare e il bisogno della tomba, l'esilio la condizione dell'uomo moderno.",
+          "In Foscolo la vita entra nella letteratura non come confessione privata, ma come sistema di simboli. Il ritorno impossibile, la madre lontana, il sepolcro negato e la patria ceduta sono forme diverse dello stesso strappo."
+        ],
+        deep:[
+          {term:"Zacinto", text:"Non potrà accogliere il corpo del figlio; riceverà soltanto il suo canto."},
+          {term:"Napoleone", text:"Non è solo un nemico: è la prova che la libertà concessa dallo straniero non basta."},
+          {term:"Giovanni", text:"La morte del fratello lega tomba, madre, colpa e lontananza."},
+          {term:"Esilio", text:"Da condizione geografica diventa identità spezzata, destino permanente."}
+        ],
+        path:[
+          {title:"Patria perduta", text:"A Zacinto trasforma l'origine in mito irraggiungibile."},
+          {title:"Patria tradita", text:"L'Ortis nasce dal trauma politico di Campoformio."},
+          {title:"Tomba e madre", text:"In morte del fratello Giovanni rende familiare il tema dei sepolcri."}
+        ],
+        cite:{q:"«Né più mai toccherò le sacre sponde…»", s:"A Zacinto"}
+      },
+      {
+        title:"La religione delle illusioni",
+        lead:"Foscolo non crede ingenuamente: costruisce valori sapendo che la ragione non li garantisce.",
+        body:[
+          "Il punto di partenza è il <b>nulla eterno</b>. Se dopo la morte non c'è sopravvivenza dell'anima, l'uomo rischia di essere solo materia che passa. Foscolo però non accetta il cinismo: inventa una religione laica delle illusioni.",
+          "Le illusioni non sono bugie. Sono valori umani consapevoli: amore, patria, memoria, gloria, bellezza, poesia. Non cambiano le leggi della materia, ma rendono la vita degna di essere attraversata."
+        ],
+        deep:[
+          {term:"Amore", text:"Salvezza momentanea dalla solitudine; nell'Ortis diventa anche illusione infranta."},
+          {term:"Patria", text:"Dà identità e dignità civile, ma può essere tradita dalla storia."},
+          {term:"Memoria", text:"Unisce vivi e morti; il sepolcro serve a chi resta."},
+          {term:"Poesia", text:"È la tomba più resistente: conserva quando la pietra scompare."}
+        ],
+        saperi:["Le illusioni sono necessarie, non ingenue.","Il sepolcro non salva il morto: educa e consola i vivi.","La poesia combatte l'oblio e costruisce durata simbolica."],
+        cite:{q:"«Sol chi non lascia eredità d'affetti…»", s:"Dei Sepolcri"}
+      },
+      {
+        title:"Armonia classica, inquietudine moderna",
+        lead:"La forma, in Foscolo, non decora il dolore: lo contiene.",
+        body:[
+          "Foscolo è neoclassico nella ricerca di misura, mito, bellezza ideale e perfezione formale. Ma è preromantico nei temi profondi: esilio, notte, morte, passione, io lacerato, nostalgia e bisogno di assoluto.",
+          "La sua originalità sta nella convivenza delle due spinte. L'ordine classico non cancella l'abisso; lo rende dicibile. La poesia diventa disciplina contro il caos."
+        ],
+        deep:[
+          {term:"Neoclassico", text:"Mito greco-romano, equilibrio del sonetto, lingua alta, bellezza come educazione."},
+          {term:"Preromantico", text:"Io ferito, malinconia, morte, paesaggi interiori, tensione assoluta."},
+          {term:"Forma", text:"La misura non spegne la ferita: le dà una figura."},
+          {term:"Sera", text:"La pace della notte addormenta per un momento lo spirto guerrier."}
+        ],
+        keywords:["neoclassicismo","preromanticismo","mito","io ferito"],
+        cite:{q:"«Vagar mi fai co' miei pensier su l'orme / che vanno al nulla eterno.»", s:"Alla sera"}
+      },
+      {
+        title:"Opere come prove delle illusioni",
+        lead:"Ogni opera mette alla prova una diversa possibilità di resistere al nulla.",
+        body:[
+          "L'Ortis mostra il crollo delle illusioni di patria e amore. I sonetti trasformano esilio, morte e origine perduta in forme perfette. Dei Sepolcri fonda la memoria civile dei morti. Le Grazie affidano alla bellezza il compito di ingentilire l'uomo.",
+          "Il percorso non va letto come elenco: è una progressione. La poesia diventa il luogo in cui la civiltà resiste alla dissoluzione della materia."
+        ],
+        path:[
+          {title:"Ultime lettere di Jacopo Ortis", text:"Romanzo epistolare: patria tradita, amore impossibile, suicidio, scrittura come ordine della rovina."},
+          {title:"Alla sera", text:"La morte appare come quiete; la poesia rende sopportabile il nulla."},
+          {title:"A Zacinto", text:"Il ritorno reale è negato, resta il ritorno poetico."},
+          {title:"Dei Sepolcri", text:"Tomba, memoria, gloria e poesia costruiscono una religione civile."},
+          {title:"Le Grazie", text:"La bellezza classica diventa forma di civilizzazione."}
+        ],
+        saperi:["Ortis: patria e amore come illusioni infrante.","Sonetti: forma classica e temi moderni.","Sepolcri: memoria affettiva e funzione civile della poesia.","Grazie: arte e bellezza come religione laica."],
+        cite:{q:"«A egregie cose il forte animo accendono / l'urne de' forti.»", s:"Dei Sepolcri"}
+      }
+    ]
+  },
+  {
+    id:"leopardi", name:"Giacomo Leopardi", dates:"1798 — 1837",
+    color:0xaab4dc, pos:[2, -15, 24],
+    portrait:"https://upload.wikimedia.org/wikipedia/commons/c/c6/Leopardi%2C_Giacomo_%281798-1837%29_-_ritr._A_Ferrazzi%2C_Recanati%2C_casa_Leopardi.jpg",
+    essence:"La Natura-macchina, indifferente; e la fratellanza degli uomini contro di lei.",
+    quote:"«…un perpetuo circuito di produzione e distruzione.»",
+    src:"Dialogo della Natura e di un Islandese",
+    stages:[
+      {
+        title:"Sensismo, antichi e moderni",
+        lead:"Leopardi parte da una modernità che sa di più, ma non per questo è più felice.",
+        body:[
+          "Tra Settecento e Ottocento entrano in crisi la fiducia assoluta nella ragione e l'idea che il progresso basti a rendere l'uomo felice. Il sensismo insegna che la conoscenza nasce dai sensi; il materialismo e il meccanicismo mostrano una natura regolata da leggi proprie.",
+          "Il confronto tra antichi e moderni è decisivo: gli antichi vivevano più vicini alla natura e all'immaginazione; i moderni sono più lucidi, ma anche più disincantati."
+        ],
+        deep:[
+          {term:"Sensismo", text:"La poesia nasce da percezioni concrete: visione, suono, memoria."},
+          {term:"Meccanicismo", text:"La natura non è costruita per l'uomo; obbedisce a leggi impersonali."},
+          {term:"Antichi", text:"Più ricchi di illusioni, immaginazione, rapporto immediato con la natura."},
+          {term:"Moderni", text:"Più razionali e consapevoli, ma anche più inquieti e meno capaci di felicità."}
+        ],
+        saperi:["La modernità aumenta conoscenza, non felicità.","Il desiderio umano è più grande di ogni piacere reale.","Il conflitto tra ragione e immaginazione fonda il percorso leopardiano."]
+      },
+      {
+        title:"Recanati e il limite",
+        lead:"La vita di Leopardi diventa pensiero quando l'isolamento personale rivela una condizione universale.",
+        body:[
+          "Recanati è insieme casa, biblioteca, rifugio e prigione. Lo studio giovanile dà a Leopardi una cultura straordinaria, ma lo allontana dalla vita concreta e consuma il corpo. Fragilità fisica, desiderio di fuga e bisogno di riconoscimento diventano esperienza diretta del limite.",
+          "La frattura non va letta come semplice biografia dolorosa. Leopardi parte da ferite personali per arrivare a una domanda più grande: perché l'uomo desidera una felicità infinita se la realtà gli offre solo piaceri limitati?"
+        ],
+        deep:[
+          {term:"Recanati", text:"Luogo della formazione e simbolo dell'isolamento."},
+          {term:"Studio", text:"Potenza intellettuale e separazione dalla vita: conoscenza pagata con il corpo."},
+          {term:"Desiderio", text:"Spinta verso una felicità piena, più ampia di ciò che esiste."},
+          {term:"Lucidità", text:"Capacità di guardare il vero senza rifugiarsi in consolazioni facili."}
+        ],
+        keywords:["isolamento","desiderio","limite","lucidità"]
+      },
+      {
+        title:"Dal pessimismo storico al cosmico",
+        lead:"Il dolore prima sembra colpa della storia; poi appare inscritto nella struttura stessa dell'esistenza.",
+        body:[
+          "Nel <b>pessimismo storico</b> la natura è ancora relativamente benigna: offre illusioni, immaginazione, rimedi al dolore. La civiltà moderna, con la sua ragione disincantata, strappa all'uomo quelle illusioni.",
+          "Nel <b>pessimismo cosmico</b> la prospettiva si allarga: il dolore non dipende solo dalla società, ma dalla legge stessa del vivente. La Natura diventa matrigna non perché odia l'uomo, ma perché è indifferente: genera e distrugge senza rispondere."
+        ],
+        deep:[
+          {term:"Desiderio infinito", text:"L'uomo cerca una felicità assoluta, piena, senza limite."},
+          {term:"Piacere limitato", text:"Ogni piacere reale è breve e incompleto: non basta mai."},
+          {term:"Natura matrigna", text:"Forza impersonale che produce e distrugge senza pietà morale."},
+          {term:"Social catena", text:"L'approdo etico: unirsi tra fragili contro la comune nemica."}
+        ],
+        path:[
+          {title:"Prima fase", text:"La storia e la civiltà moderna sono responsabili della perdita delle illusioni."},
+          {title:"Svolta", text:"Il dolore riguarda tutti i viventi, non solo l'uomo moderno."},
+          {title:"Approdo", text:"La verità non porta alla passività, ma a una solidarietà lucida."}
+        ],
+        cite:{q:"«…un perpetuo circuito di produzione e distruzione.»", s:"Dialogo della Natura e di un Islandese"}
+      },
+      {
+        title:"Vago, indefinito, anti-idillio",
+        lead:"La poesia leopardiana cambia con la sua immagine del mondo: prima consola, poi conosce.",
+        body:[
+          "Il vago e l'indefinito sono poetici perché attivano l'immaginazione. Una vista ostacolata, un suono lontano, un'immagine incompleta permettono alla mente di andare oltre il limite della realtà immediata.",
+          "Nella fase dell'idillio il paesaggio diventa viaggio interiore: immaginazione, memoria e rimembranza salvano per un momento. Nella maturità nasce l'anti-idillio: il paesaggio non consola più, ma rivela la verità dolorosa della condizione umana."
+        ],
+        deep:[
+          {term:"Vago", text:"Ciò che non è definito con precisione e apre spazio all'immaginazione."},
+          {term:"Visione", text:"La siepe, l'ostacolo, il limite: proprio ciò che non si vede fa immaginare."},
+          {term:"Suono", text:"Voci lontane e indistinte producono immagini interiori."},
+          {term:"Rimembranza", text:"Il passato, filtrato dalla distanza, diventa materia poetica."}
+        ],
+        saperi:["L'idillio non è descrizione della natura, ma meditazione interiore.","La poesia nasce da sensazioni concrete trasformate dall'immaginazione.","L'anti-idillio guarda il vero senza perdere dignità."]
+      },
+      {
+        title:"Dall'infinito alla Ginestra",
+        lead:"Gli scritti sono tappe di un pensiero che passa dall'immaginazione alla solidarietà.",
+        body:[
+          "L'Infinito mostra il potere dell'immaginazione: dal limite della siepe nasce uno spazio mentale smisurato. Bruto minore e L'ultimo canto di Saffo segnano la crisi degli ideali eroici e la ribellione individuale.",
+          "Il Dialogo della Natura e di un Islandese mette in scena il processo alla Natura: non esiste luogo in cui il vivente sia al sicuro. La Ginestra, infine, trasforma la verità in etica: gli uomini non vincono la Natura, ma possono smettere di mentire e unirsi."
+        ],
+        path:[
+          {title:"L'infinito", text:"La siepe limita lo sguardo e proprio per questo apre l'immaginazione."},
+          {title:"Bruto e Saffo", text:"La caduta delle illusioni produce ribellione solitaria."},
+          {title:"Operette morali", text:"La prosa filosofica mette sotto processo la Natura."},
+          {title:"La Ginestra", text:"Sul paesaggio del Vesuvio nasce una dignità fragile e solidale."}
+        ],
+        saperi:["L'Infinito appartiene alla stagione dell'idillio.","Il Dialogo segna il passaggio decisivo al pessimismo cosmico.","La Ginestra è il testamento poetico: verità e social catena."],
+        cite:{q:"«Nobil natura è quella / che a sollevar s'ardisce…»", s:"La Ginestra"}
+      }
+    ]
+  },
+  {
+    id:"verga", name:"Giovanni Verga", dates:"1840 — 1922",
+    color:0xd6a155, pos:[28, 7, 16],
+    portrait:"https://upload.wikimedia.org/wikipedia/commons/b/b2/Sebastianutti%2C_Guglielmo_%281825-1881%29_%26_Benque%2C_Franz_%281841-1921%29_-_Giovanni_Verga.jpg",
+    essence:"La società è la macchina: una legge dentro la legge, e ogni ingranaggio al suo posto.",
+    quote:"«La fiumana del progresso… i vinti che la corrente ha deposti sulla riva.»",
+    src:"Prefazione ai Malavoglia",
+    stages:[
+      {
+        title:"Dal Romanticismo al Positivismo",
+        lead:"Verga non nasce verista: consuma prima le illusioni romantiche del suo secolo.",
+        body:[
+          "Il giovane Verga parte da un immaginario acceso: patria, amore, onore, passione, avventura, destino personale. Il Romanticismo risorgimentale vede ancora l'individuo come capace di grandi gesti e la letteratura come voce che educa e infiamma.",
+          "Dopo l'Unità, però, la realtà sociale mostra povertà, disuguaglianze, competizione e delusione. Positivismo, darwinismo sociale e Naturalismo francese gli offrono un nuovo sguardo: osservare i fatti, l'ambiente, le cause materiali. Verga prende il metodo, non l'ottimismo."
+        ],
+        deep:[
+          {term:"Risorgimento", text:"Promette comunità nazionale e ideali alti, ma lascia fratture profonde."},
+          {term:"Positivismo", text:"La realtà va studiata come fatto, legge, meccanismo."},
+          {term:"Darwinismo sociale", text:"La società appare come lotta per la vita: i deboli vengono schiacciati."},
+          {term:"Naturalismo", text:"Osservare senza veli povertà, lavoro, denaro, ambiente, malattia."}
+        ],
+        saperi:["Verga arriva al Verismo dopo una lunga disillusione.","Accetta lo sguardo scientifico, ma respinge la fiducia nel progresso salvifico.","La ragione, in Verga, smaschera: non redime."]
+      },
+      {
+        title:"La modernità consuma l'illusione",
+        lead:"La frattura di Verga non è un trauma unico: è una lenta perdita di fiducia.",
+        body:[
+          "Firenze e soprattutto Milano diventano laboratori della disillusione. Nei salotti, nella società moderna e competitiva, Verga capisce che il romanzo sentimentale e mondano non basta più: l'eroe romantico comincia a sembrare falso.",
+          "Il ritorno alla Sicilia non è nostalgia comoda. È scoperta di una realtà più dura e necessaria: fame, lavoro, famiglia, reputazione, debito, paese. Con Nedda si vede il passaggio: Verga non ha ancora tutta la tecnica verista, ma ha trovato il centro nuovo, il <b>vinto</b>."
+        ],
+        deep:[
+          {term:"Milano", text:"Non solo città: esperienza mentale della modernità, del successo, della competizione."},
+          {term:"Carriera", text:"Il successo letterario mondano non basta più a dare una direzione."},
+          {term:"Sicilia", text:"Non paradiso perduto, ma mondo povero, arcaico, concreto."},
+          {term:"Nedda", text:"Opera di passaggio: lo sguardo si sposta verso la creatura schiacciata dalla necessità."}
+        ],
+        path:[
+          {title:"Si rompe l'eroe", text:"L'individuo romantico non domina più il destino."},
+          {title:"Si rompe la storia", text:"Il post-Risorgimento non risarcisce i deboli."},
+          {title:"Si rompe il salotto", text:"Il romanzo mondano non regge il peso della realtà."}
+        ]
+      },
+      {
+        title:"La società come macchina dei vinti",
+        lead:"Nel mondo verghiano non c'è provvidenza: ci sono ambiente, bisogno, denaro e reputazione.",
+        body:[
+          "L'uomo non è eroe libero, ma creatura condizionata da nascita, famiglia, classe sociale, povertà, lavoro, ignoranza, ambiente e leggi economiche. La società non è comunità armoniosa: è lotta continua.",
+          "Il progresso è la grande promessa moderna che diventa minaccia. Visto da lontano sembra avanzamento; da dentro produce esclusi. Chi tenta di cambiare posto entra nella corrente e può essere travolto."
+        ],
+        deep:[
+          {term:"Vinto", text:"Non solo il povero: chiunque venga schiacciato dalla lotta per la vita."},
+          {term:"Ambiente", text:"Determina mentalità, possibilità, linguaggio, desideri."},
+          {term:"Progresso", text:"Fiumana che muove la storia e lascia corpi sulla riva."},
+          {term:"Roba", text:"Il possesso promette sicurezza, ma può diventare schiavitù."}
+        ],
+        saperi:["La famiglia protegge, ma può anche imprigionare.","La natura e la società non consolano: funzionano.","Il dolore è condizione ordinaria, non eccezione narrativa."],
+        cite:{q:"«I vinti che la corrente ha deposti sulla riva…»", s:"Prefazione ai Malavoglia"}
+      },
+      {
+        title:"L'autore scompare",
+        lead:"La forma verista fa vedere il meccanismo senza salire in cattedra.",
+        body:[
+          "La poetica di Verga nasce dalla sua visione tragica. Se la realtà è dominata da leggi sociali impersonali, lo scrittore non deve consolare né giudicare dall'alto. Deve lasciare che il mondo rappresentato sembri parlare da sé.",
+          "Impersonalità, regressione del narratore, discorso indiretto libero, straniamento, ottica interna e lingua mimetica sono tecniche coerenti: la forma non abbellisce il pensiero, lo incarna."
+        ],
+        deep:[
+          {term:"Impersonalità", text:"L'autore scompare dalla superficie: non assenza di pensiero, ma regia nascosta."},
+          {term:"Regressione", text:"Il narratore assume il punto di vista del mondo rappresentato."},
+          {term:"Straniamento", text:"L'ingiustizia emerge perché viene mostrata come normale."},
+          {term:"Lingua", text:"Sintassi, proverbi e modi di dire fanno sentire una mentalità collettiva."}
+        ],
+        keywords:["impersonalità","regressione","ottica interna","straniamento","indiretto libero"]
+      },
+      {
+        title:"Il ciclo dei vinti",
+        lead:"Le opere mostrano la stessa legge a livelli sociali diversi.",
+        body:[
+          "Le opere pre-veriste documentano il punto di partenza romantico e mondano. Nedda prepara la svolta. Vita dei campi porta in scena esclusi, istinto, violenza, comunità. I Malavoglia mostrano una famiglia travolta dal progresso. Mastro-don Gesualdo dimostra che si può essere vinti anche vincendo.",
+          "Il progetto del Ciclo dei vinti doveva seguire la stessa legge lungo tutta la scala sociale: poveri, contadini, borghesi, nobili, uomini di lusso. Cambia il gradino, non la macchina."
+        ],
+        path:[
+          {title:"Nedda", text:"Svolta incompleta ma decisiva: la miseria entra al centro dello sguardo."},
+          {title:"Vita dei campi", text:"Rosso Malpelo e gli esclusi mostrano il mondo dei vinti dall'interno."},
+          {title:"I Malavoglia", text:"Famiglia, debito, barca, casa e paese: il progresso ha un prezzo umano."},
+          {title:"Novelle rusticane", text:"La società rurale perde ogni idillio: roba, politica, proprietà, disillusione."},
+          {title:"Mastro-don Gesualdo", text:"La roba non salva: l'ascesa sociale può diventare solitudine e sconfitta."}
+        ],
+        saperi:["I Malavoglia sono la tragedia della famiglia travolta dal progresso.","Mastro-don Gesualdo è il vinto che sembrava vincitore.","Il Verismo non consola: mostra la realtà senza abbellirla."],
+        cite:{q:"«La roba non lo salva. Lo divora.»", s:"Sintesi del percorso"}
+      }
+    ]
+  }
+];
+
+/* =========================================================================
+   ENGINE
+   ========================================================================= */
+let renderer, scene, camera, controls, clock;
+let starField, machine, coreMesh, coreLight, celestial, swirl;
+let playerRig, vrSupported = false, isVR = false;
+const xrControllers = [];
+const xrGrips = [];
+const xrMove = {x:0, y:0};
+const xrBounds = {radius:70};
+const xrTmp = {
+  origin:new THREE.Vector3(),
+  direction:new THREE.Vector3(),
+  matrix:new THREE.Matrix4(),
+  forward:new THREE.Vector3(),
+  right:new THREE.Vector3(),
+  move:new THREE.Vector3()
+};
+const spinners = [];            // {mesh,axis,speed}
+const orbiters = [];            // orrery planets {pivot,speed}
+const authorObjs = [];          // per author runtime objects
+const centerStageNodes = [];     // matrix-stage runtime objects
+const mapClickables = [];        // active concept-map raycast targets
+const conceptObjs = [];          // active concept-map runtime objects
+const clickables = [];          // raycast targets
+let raycaster, pointer;
+let state = "overview";         // overview | author | center
+let currentAuthor = null;
+let conceptMap = null;
+let activeMap = null;
+let hovered = null;
+const tmpV = new THREE.Vector3();
+const UP = new THREE.Vector3(0,1,0);
+const ORIGIN = new THREE.Vector3(0,0,0);
+let homePos, homeTarget;
+const camTween = {active:false};
+
+const $ = s => document.querySelector(s);
+
+/* ---- label sprite ---- */
+function makeLabel(text, hex, size){
+  const pad = 36, fs = 120;
+  const c = document.createElement('canvas');
+  const ctx = c.getContext('2d');
+  const font = '500 '+fs+"px 'Cormorant Garamond', Georgia, serif";
+  ctx.font = font;
+  const w = Math.ceil(ctx.measureText(text).width) + pad*2;
+  const h = fs + pad*2;
+  c.width = w; c.height = h;
+  ctx.font = font;
+  ctx.textBaseline = 'middle'; ctx.textAlign = 'center';
+  ctx.shadowColor = 'rgba(0,0,0,.85)'; ctx.shadowBlur = 22;
+  ctx.fillStyle = hex;
+  ctx.fillText(text, w/2, h/2);
+  const tex = new THREE.CanvasTexture(c);
+  tex.anisotropy = 4; tex.needsUpdate = true;
+  const mat = new THREE.SpriteMaterial({map:tex, transparent:true, depthTest:false, depthWrite:false});
+  const sp = new THREE.Sprite(mat);
+  const aspect = w/h;
+  const hgt = size || 3;
+  sp.scale.set(hgt*aspect, hgt, 1);
+  sp.renderOrder = 12;
+  return sp;
+}
+
+function wrapCanvasText(ctx, text, maxWidth, maxLines){
+  const words = String(text || '').replace(/<[^>]*>/g,'').split(/\s+/).filter(Boolean);
+  const lines = [];
+  let line = '';
+  words.forEach(w=>{
+    const test = line ? line + ' ' + w : w;
+    if(ctx.measureText(test).width > maxWidth && line){
+      lines.push(line);
+      line = w;
+    }else line = test;
+  });
+  if(line) lines.push(line);
+  if(maxLines && lines.length > maxLines){
+    const kept = lines.slice(0,maxLines);
+    kept[maxLines-1] = kept[maxLines-1].replace(/[,.!?;:]?$/,'') + '…';
+    return kept;
+  }
+  return lines;
+}
+
+function makeMapPlaque(title, note, hex, opts){
+  opts = opts || {};
+  const W = opts.width || 620;
+  const pad = opts.pad || 34;
+  const titleSize = opts.titleSize || 46;
+  const noteSize = opts.noteSize || 27;
+  const c = document.createElement('canvas');
+  const ctx = c.getContext('2d');
+  ctx.font = "500 "+titleSize+"px 'Cormorant Garamond', Georgia, serif";
+  const titleLines = wrapCanvasText(ctx, title, W-pad*2, opts.titleLines || 2);
+  ctx.font = "300 "+noteSize+"px 'Spectral', Georgia, serif";
+  const noteLines = note ? wrapCanvasText(ctx, note, W-pad*2, opts.noteLines || 3) : [];
+  const H = pad*2 + titleLines.length*(titleSize+6) + (noteLines.length ? 16 : 0) + noteLines.length*(noteSize+8);
+  c.width = W; c.height = H;
+  const col = new THREE.Color(hex);
+  const cr = (col.r*255|0), cg = (col.g*255|0), cb = (col.b*255|0);
+  ctx.clearRect(0,0,W,H);
+  const bg = ctx.createLinearGradient(0,0,W,H);
+  bg.addColorStop(0,'rgba(8,10,20,.82)');
+  bg.addColorStop(1,'rgba(4,5,12,.55)');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle = 'rgba('+cr+','+cg+','+cb+',.55)';
+  ctx.lineWidth = 3;
+  ctx.strokeRect(1.5,1.5,W-3,H-3);
+  ctx.fillStyle = 'rgba('+cr+','+cg+','+cb+',.18)';
+  ctx.fillRect(0,0,6,H);
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'top';
+  ctx.shadowColor = 'rgba(0,0,0,.85)';
+  ctx.shadowBlur = 12;
+  ctx.font = "500 "+titleSize+"px 'Cormorant Garamond', Georgia, serif";
+  ctx.fillStyle = '#f1e8d7';
+  let y = pad-2;
+  titleLines.forEach(line=>{ ctx.fillText(line, pad, y); y += titleSize+6; });
+  if(noteLines.length){
+    y += 12;
+    ctx.font = "300 "+noteSize+"px 'Spectral', Georgia, serif";
+    ctx.fillStyle = 'rgba(231,205,151,.92)';
+    noteLines.forEach(line=>{ ctx.fillText(line, pad, y); y += noteSize+8; });
+  }
+  const tex = new THREE.CanvasTexture(c);
+  tex.anisotropy = 4; tex.needsUpdate = true;
+  const mat = new THREE.SpriteMaterial({map:tex, transparent:true, depthTest:false, depthWrite:false});
+  const sp = new THREE.Sprite(mat);
+  const hgt = opts.size || 3.4;
+  sp.scale.set(hgt*(W/H), hgt, 1);
+  sp.renderOrder = 18;
+  return sp;
+}
+
+function makeGlow(hex, scale){
+  const c = document.createElement('canvas'); c.width=c.height=128;
+  const ctx=c.getContext('2d');
+  const g=ctx.createRadialGradient(64,64,0,64,64,64);
+  const col=new THREE.Color(hex);
+  g.addColorStop(0,'rgba('+(col.r*255|0)+','+(col.g*255|0)+','+(col.b*255|0)+',1)');
+  g.addColorStop(.35,'rgba('+(col.r*255|0)+','+(col.g*255|0)+','+(col.b*255|0)+',.45)');
+  g.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.fillStyle=g; ctx.fillRect(0,0,128,128);
+  const tex=new THREE.CanvasTexture(c);
+  const mat=new THREE.SpriteMaterial({map:tex,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending});
+  const sp=new THREE.Sprite(mat); sp.scale.set(scale,scale,1);
+  return sp;
+}
+
+/* ---- portrait medallion ---- */
+function makePortraitSprite(){
+  const mat = new THREE.SpriteMaterial({transparent:true, opacity:0, depthTest:true, depthWrite:false});
+  const sp = new THREE.Sprite(mat);
+  sp.scale.set(5.8,5.8,1);
+  sp.renderOrder = 11;
+  return sp;
+}
+function makePortraitTexture(img, hex){
+  const S = 512, c = document.createElement('canvas'); c.width = c.height = S;
+  const ctx = c.getContext('2d');
+  const col = new THREE.Color(hex);
+  const cr = (col.r*255|0), cg = (col.g*255|0), cb = (col.b*255|0);
+  const R = S/2 - 14;
+  ctx.clearRect(0,0,S,S);
+  ctx.save();
+  ctx.beginPath(); ctx.arc(S/2,S/2,R,0,Math.PI*2); ctx.closePath(); ctx.clip();
+  ctx.fillStyle = '#0a0c16'; ctx.fillRect(0,0,S,S);
+  // cover-fit, biased slightly upward to keep the face
+  const iw = img.width, ih = img.height, s = Math.max(S/iw, S/ih), w = iw*s, h = ih*s;
+  ctx.drawImage(img, (S-w)/2, (S-h)*0.30, w, h);
+  // duotone tint toward the author color
+  ctx.globalCompositeOperation = 'soft-light';
+  ctx.fillStyle = 'rgba('+cr+','+cg+','+cb+',0.5)';
+  ctx.fillRect(0,0,S,S);
+  // inner vignette
+  ctx.globalCompositeOperation = 'source-over';
+  const g = ctx.createRadialGradient(S/2,S/2,R*0.5,S/2,S/2,R);
+  g.addColorStop(0,'rgba(0,0,0,0)'); g.addColorStop(1,'rgba(4,6,14,0.6)');
+  ctx.fillStyle = g; ctx.fillRect(0,0,S,S);
+  ctx.restore();
+  // rim rings
+  ctx.lineWidth = 11; ctx.strokeStyle = 'rgba('+cr+','+cg+','+cb+',0.92)';
+  ctx.beginPath(); ctx.arc(S/2,S/2,R,0,Math.PI*2); ctx.stroke();
+  ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(255,255,255,0.22)';
+  ctx.beginPath(); ctx.arc(S/2,S/2,R-7,0,Math.PI*2); ctx.stroke();
+  const tex = new THREE.CanvasTexture(c);
+  tex.anisotropy = 4; tex.needsUpdate = true;
+  return tex;
+}
+function loadPortrait(url, hex, sprite, fallback){
+  if(!url) return;
+  const img = new Image(); img.crossOrigin = 'anonymous';
+  img.onload = ()=>{
+    sprite.material.map = makePortraitTexture(img, hex);
+    sprite.material.opacity = 1;
+    sprite.material.needsUpdate = true;
+  };
+  img.onerror = ()=>{ if(fallback) loadPortrait(fallback, hex, sprite, null); };
+  img.src = url;
+}
+
+/* ---- gear ---- */
+function makeGear(r, teeth, thickness, hex, holeR){
+  const shape = new THREE.Shape();
+  const td = r*0.22, outer = r, inner = r-td;
+  const steps = teeth*2;
+  for(let i=0;i<=steps;i++){
+    const a = i*Math.PI/teeth;
+    const rad = (i%2===0)?outer:inner;
+    const x = Math.cos(a)*rad, y = Math.sin(a)*rad;
+    if(i===0) shape.moveTo(x,y); else shape.lineTo(x,y);
+  }
+  const hole = new THREE.Path();
+  hole.absarc(0,0, holeR || r*0.3, 0, Math.PI*2, true);
+  shape.holes.push(hole);
+  const geo = new THREE.ExtrudeGeometry(shape,{
+    depth:thickness, bevelEnabled:true, bevelThickness:thickness*0.18,
+    bevelSize:r*0.025, bevelSegments:2, steps:1
+  });
+  geo.center();
+  const col = new THREE.Color(hex);
+  const mat = new THREE.MeshStandardMaterial({
+    color:col, metalness:0.92, roughness:0.34,
+    emissive:col.clone().multiplyScalar(0.05)
+  });
+  return new THREE.Mesh(geo, mat);
+}
+
+/* =========================================================================
+   BUILD
+   ========================================================================= */
+async function init(){
+  try{ await document.fonts.load("500 40px 'Cormorant Garamond'"); }catch(e){}
+
+  const canvas = $('#scene');
+  renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:false, preserveDrawingBuffer:false});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+  renderer.xr.enabled = true;
+
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x05060e);
+  scene.fog = new THREE.FogExp2(0x05060e, 0.0042);
+
+  camera = new THREE.PerspectiveCamera(56, innerWidth/innerHeight, 0.1, 600);
+  camera.position.set(0, 11, 60);
+  playerRig = new THREE.Group();
+  playerRig.name = "XR player rig";
+  scene.add(playerRig);
+  playerRig.add(camera);
+  homePos = camera.position.clone();
+  homeTarget = new THREE.Vector3(0,0,0);
+
+  controls = new THREE.OrbitControls(camera, canvas);
+  controls.enableDamping = true; controls.dampingFactor = 0.06;
+  controls.enablePan = false;
+  controls.minDistance = 9; controls.maxDistance = 180;
+  controls.rotateSpeed = 0.6; controls.zoomSpeed = 0.8;
+  controls.target.copy(homeTarget);
+
+  clock = new THREE.Clock();
+  raycaster = new THREE.Raycaster();
+  pointer = new THREE.Vector2();
+
+  buildLights();
+  buildStars();
+  buildMachine();
+  buildAuthors();
+  setupXR();
+
+  window.addEventListener('resize', onResize);
+  canvas.addEventListener('pointerdown', onPointerDown);
+  canvas.addEventListener('pointerup', onPointerUp);
+  canvas.addEventListener('pointermove', onPointerMove);
+
+  $('#loading').classList.add('gone');
+  renderer.setAnimationLoop(animate);
+}
+
+function buildLights(){
+  scene.add(new THREE.AmbientLight(0x3a3d55, 0.7));
+  coreLight = new THREE.PointLight(0xffd98a, 2.4, 160, 1.8);
+  coreLight.position.set(0,0,0);
+  scene.add(coreLight);
+  const d1 = new THREE.DirectionalLight(0x9fb4ff, 0.5); d1.position.set(40,30,20); scene.add(d1);
+  const d2 = new THREE.DirectionalLight(0xffba6e, 0.4); d2.position.set(-30,-20,-30); scene.add(d2);
+}
+
+function setupXR(){
+  setupVRButton();
+  const rayGeo = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0,0,0),
+    new THREE.Vector3(0,0,-1)
+  ]);
+  const rayMat = new THREE.LineBasicMaterial({color:0xe7cd97, transparent:true, opacity:0.85});
+  const modelFactory = THREE.XRControllerModelFactory ? new THREE.XRControllerModelFactory() : null;
+
+  for(let i=0;i<2;i++){
+    const controller = renderer.xr.getController(i);
+    controller.userData.index = i;
+    controller.userData.handedness = i===0 ? "left" : "right";
+    controller.userData.selecting = false;
+    const ray = new THREE.Line(rayGeo, rayMat.clone());
+    ray.name = "controller-ray";
+    ray.scale.z = 28;
+    controller.add(ray);
+    controller.addEventListener('connected', e=>{
+      controller.userData.gamepad = e.data.gamepad || null;
+      controller.userData.handedness = e.data.handedness || controller.userData.handedness;
+      ray.visible = true;
+    });
+    controller.addEventListener('disconnected', ()=>{
+      controller.userData.gamepad = null;
+      ray.visible = false;
+    });
+    controller.addEventListener('selectstart', ()=>{
+      controller.userData.selecting = true;
+      selectFromController(controller);
+    });
+    controller.addEventListener('selectend', ()=>{ controller.userData.selecting = false; });
+    playerRig.add(controller);
+    xrControllers.push(controller);
+
+    const grip = renderer.xr.getControllerGrip(i);
+    if(modelFactory) grip.add(modelFactory.createControllerModel(grip));
+    else{
+      const fallback = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.055,0.075,0.28,16),
+        new THREE.MeshStandardMaterial({color:0x24283a, metalness:0.25, roughness:0.5})
+      );
+      fallback.rotation.x = Math.PI/2;
+      grip.add(fallback);
+    }
+    playerRig.add(grip);
+    xrGrips.push(grip);
+  }
+}
+
+async function setupVRButton(){
+  const btn = $('#vrbtn');
+  if(!btn || !('xr' in navigator)){
+    if(btn){ btn.style.display='inline-flex'; btn.disabled=true; btn.textContent='VR non disponibile'; }
+    return;
+  }
+  try{
+    vrSupported = await navigator.xr.isSessionSupported('immersive-vr');
+  }catch(e){ vrSupported = false; }
+  btn.style.display = 'inline-flex';
+  if(!vrSupported){
+    btn.disabled = true;
+    btn.textContent = 'VR non disponibile';
+    return;
+  }
+  btn.disabled = false;
+  btn.textContent = 'Entra in VR';
+  btn.addEventListener('click', toggleVR);
+  renderer.xr.addEventListener('sessionstart', ()=>{
+    isVR = true;
+    controls.enabled = false;
+    btn.textContent = 'Esci da VR';
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
+    setHint('VR attiva · trigger per selezionare · thumbstick sinistro per muoverti lentamente', true);
+  });
+  renderer.xr.addEventListener('sessionend', ()=>{
+    isVR = false;
+    controls.enabled = true;
+    btn.textContent = 'Entra in VR';
+    xrMove.x = 0; xrMove.y = 0;
+    playerRig.position.set(0,0,0);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+    setHint(null, true);
+  });
+}
+
+async function toggleVR(){
+  if(renderer.xr.isPresenting){
+    const session = renderer.xr.getSession ? renderer.xr.getSession() : null;
+    if(session) await session.end();
+    return;
+  }
+  if(!navigator.xr || !vrSupported) return;
+  try{
+    if(renderer.xr.setReferenceSpaceType) renderer.xr.setReferenceSpaceType('local-floor');
+    if(renderer.xr.setFramebufferScaleFactor){
+      try{ renderer.xr.setFramebufferScaleFactor(0.9); }catch(e){}
+    }
+    const session = await navigator.xr.requestSession('immersive-vr', {
+      optionalFeatures:['local-floor','bounded-floor','hand-tracking']
+    });
+    await renderer.xr.setSession(session);
+  }catch(e){
+    const btn = $('#vrbtn');
+    btn.textContent = 'VR non avviata';
+    setTimeout(()=>{ if(vrSupported) btn.textContent = 'Entra in VR'; }, 1800);
+  }
+}
+
+function buildStars(){
+  const N = 3200, pos = new Float32Array(N*3), colArr = new Float32Array(N*3);
+  const cA = new THREE.Color(0xffffff), cB = new THREE.Color(0xffd9a0), cC = new THREE.Color(0x9db4ff);
+  for(let i=0;i<N;i++){
+    const r = 120 + Math.random()*340;
+    const th = Math.random()*Math.PI*2, ph = Math.acos(2*Math.random()-1);
+    pos[i*3]   = r*Math.sin(ph)*Math.cos(th);
+    pos[i*3+1] = r*Math.cos(ph)*0.7;
+    pos[i*3+2] = r*Math.sin(ph)*Math.sin(th);
+    const t = Math.random();
+    const c = t>0.86? cB : (t>0.72? cC : cA);
+    colArr[i*3]=c.r; colArr[i*3+1]=c.g; colArr[i*3+2]=c.b;
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  g.setAttribute('color', new THREE.BufferAttribute(colArr,3));
+  const m = new THREE.PointsMaterial({size:1.5, sizeAttenuation:true, vertexColors:true,
+    transparent:true, opacity:0.9, depthWrite:false});
+  starField = new THREE.Points(g,m);
+  scene.add(starField);
+}
+
+function buildMachine(){
+  machine = new THREE.Group();
+  scene.add(machine);
+
+  const GOLD = 0xc79a4e, BRASS = 0xb8893c, PALE = 0xd8b878;
+  const gearDefs = [
+    {r:6.2, t:24, th:1.1, c:GOLD,  pos:[0,0,0],   rot:[-Math.PI/2,0,0], ax:'y', sp:0.18},
+    {r:3.6, t:16, th:0.9, c:BRASS, pos:[8.4,0.6,1.5], rot:[0,0,0],     ax:'z', sp:-0.36},
+    {r:2.4, t:12, th:0.8, c:PALE,  pos:[-7.2,-0.6,3.5], rot:[0,0,0],   ax:'z', sp:0.5},
+    {r:4.1, t:18, th:1.0, c:GOLD,  pos:[1.5,3.2,-6.5], rot:[Math.PI/2.6,0.3,0], ax:'z', sp:0.26},
+    {r:2.9, t:14, th:0.8, c:BRASS, pos:[4.5,-4.2,-3.2], rot:[Math.PI/3,0,0.4], ax:'y', sp:-0.42},
+    {r:2.0, t:11, th:0.7, c:PALE,  pos:[-4.6,4.4,-1.8], rot:[0.4,0,Math.PI/3], ax:'x', sp:0.6}
+  ];
+  gearDefs.forEach(d=>{
+    const g = makeGear(d.r, d.t, d.th, d.c);
+    g.position.set(...d.pos); g.rotation.set(...d.rot);
+    machine.add(g);
+    const axis = new THREE.Vector3(d.ax==='x'?1:0, d.ax==='y'?1:0, d.ax==='z'?1:0);
+    spinners.push({mesh:g, axis, speed:d.sp});
+  });
+
+  // orrery ring
+  const ringGeo = new THREE.TorusGeometry(11.5, 0.12, 12, 120);
+  const ringMat = new THREE.MeshStandardMaterial({color:0xd9b46a, metalness:0.8, roughness:0.4,
+    emissive:0x4a3a16, transparent:true, opacity:0.7});
+  const ring = new THREE.Mesh(ringGeo, ringMat);
+  ring.rotation.x = Math.PI/2 - 0.18;
+  machine.add(ring);
+  // second tilted ring
+  const ring2 = new THREE.Mesh(new THREE.TorusGeometry(13.6,0.08,10,120),
+    new THREE.MeshStandardMaterial({color:0x9fb4ff,metalness:0.6,roughness:0.5,emissive:0x21294a,transparent:true,opacity:0.45}));
+  ring2.rotation.set(Math.PI/2-0.6, 0.4, 0);
+  machine.add(ring2);
+
+  // orrery planets
+  const planetCols = [0xffd98a, 0x9fb4ff, 0xffae6a];
+  planetCols.forEach((c,i)=>{
+    const pivot = new THREE.Group();
+    pivot.rotation.x = Math.PI/2 - 0.18;
+    const pl = new THREE.Mesh(new THREE.SphereGeometry(0.42+i*0.1,16,16),
+      new THREE.MeshStandardMaterial({color:c, emissive:new THREE.Color(c).multiplyScalar(0.4), metalness:0.3, roughness:0.5}));
+    pl.position.set(11.5,0,0);
+    pl.add(makeGlow(c,2.6));
+    pivot.add(pl);
+    pivot.rotation.z = i*2.1;
+    machine.add(pivot);
+    orbiters.push({pivot, speed:0.4 - i*0.12, base:pivot.rotation.z});
+  });
+
+  // celestial wireframe sphere — "a world unto itself"
+  celestial = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(17, 2),
+    new THREE.MeshBasicMaterial({color:0x3b4a78, wireframe:true, transparent:true, opacity:0.12})
+  );
+  machine.add(celestial);
+
+  // inner swirl particles
+  const SN=600, sp=new Float32Array(SN*3);
+  for(let i=0;i<SN;i++){
+    const r=2+Math.random()*9, a=Math.random()*Math.PI*2, yy=(Math.random()-0.5)*6;
+    sp[i*3]=Math.cos(a)*r; sp[i*3+1]=yy; sp[i*3+2]=Math.sin(a)*r;
+  }
+  const sg=new THREE.BufferGeometry(); sg.setAttribute('position',new THREE.BufferAttribute(sp,3));
+  swirl=new THREE.Points(sg,new THREE.PointsMaterial({color:0xffd98a,size:0.5,transparent:true,opacity:0.5,depthWrite:false,blending:THREE.AdditiveBlending}));
+  machine.add(swirl);
+
+  // glowing core (clickable)
+  coreMesh = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(1.9, 1),
+    new THREE.MeshStandardMaterial({color:0xffe6a8, emissive:0xffba5a, emissiveIntensity:1.4, metalness:0.4, roughness:0.25})
+  );
+  coreMesh.userData = {type:'center'};
+  coreMesh.add(makeGlow(0xffce7a, 11));
+  machine.add(coreMesh);
+  clickables.push(coreMesh);
+
+  CENTER.stages.forEach((st,i)=>{
+    const total = CENTER.stages.length;
+    const ang = -Math.PI/2 + i*(Math.PI*2/total);
+    const radius = 15.2;
+    const np = new THREE.Vector3(
+      Math.cos(ang)*radius,
+      Math.sin(ang*1.7)*2.2,
+      Math.sin(ang)*radius
+    );
+    const node = new THREE.Mesh(new THREE.IcosahedronGeometry(0.86,0),
+      new THREE.MeshStandardMaterial({color:0xd9b46a, emissive:0x8f6725,
+        emissiveIntensity:0.9, metalness:0.55, roughness:0.34, flatShading:true}));
+    node.position.copy(np);
+    node.scale.setScalar(0.001);
+    node.userData = {type:'centerStage', index:i, target:0};
+    node.add(makeGlow(0xd9b46a, 4.6));
+    scene.add(node);
+    clickables.push(node);
+
+    const radial = np.clone().normalize();
+    const label = makeLabel((i+1)+'  '+st.label, '#e7cd97', 1.0);
+    label.position.copy(np).add(radial.multiplyScalar(2.2)).add(new THREE.Vector3(0,1.2,0));
+    label.material.opacity = 0;
+    scene.add(label);
+
+    const cg = new THREE.BufferGeometry().setFromPoints([ORIGIN.clone(), np.clone()]);
+    const conn = new THREE.Line(cg, new THREE.LineBasicMaterial({color:0xd9b46a, transparent:true, opacity:0}));
+    scene.add(conn);
+    centerStageNodes.push({node, label, conn});
+  });
+}
+
+function buildAuthors(){
+  AUTHORS.forEach(a=>{
+    const pos = new THREE.Vector3(a.pos[0], a.pos[1], a.pos[2]);
+    const col = new THREE.Color(a.color);
+
+    const group = new THREE.Group();
+    group.position.copy(pos);
+    scene.add(group);
+
+    // core sphere
+    const sphere = new THREE.Mesh(
+      new THREE.SphereGeometry(3.0, 32, 32),
+      new THREE.MeshStandardMaterial({color:col, emissive:col.clone().multiplyScalar(0.5),
+        emissiveIntensity:0.55, metalness:0.2, roughness:0.5,
+        transparent:true, opacity:0.28, depthWrite:false})
+    );
+    group.add(sphere);
+    sphere.add(makeGlow(a.color, 11));
+
+    // portrait medallion suspended inside the orb (always faces the viewer)
+    const portrait = makePortraitSprite();
+    group.add(portrait);
+    loadPortrait(a.portrait, a.color, portrait, a.portraitAlt);
+
+    // wire shell
+    const shell = new THREE.Mesh(new THREE.IcosahedronGeometry(3.3,1),
+      new THREE.MeshBasicMaterial({color:col, wireframe:true, transparent:true, opacity:0.22}));
+    group.add(shell);
+
+    // little gear orbiting the microcosm (it transforms the force)
+    const gear = makeGear(1.3, 12, 0.5, a.color);
+    gear.position.set(4.2,0,0);
+    group.add(gear);
+    spinners.push({mesh:gear, axis:new THREE.Vector3(0,0,1), speed:0.8});
+
+    // ring of particles
+    const PN=140, pp=new Float32Array(PN*3);
+    for(let i=0;i<PN;i++){const ang=Math.random()*Math.PI*2, rr=3.6+Math.random()*1.4;
+      pp[i*3]=Math.cos(ang)*rr; pp[i*3+1]=(Math.random()-0.5)*1.2; pp[i*3+2]=Math.sin(ang)*rr;}
+    const pg=new THREE.BufferGeometry(); pg.setAttribute('position',new THREE.BufferAttribute(pp,3));
+    const ringPts=new THREE.Points(pg,new THREE.PointsMaterial({color:a.color,size:0.32,transparent:true,opacity:0.7,depthWrite:false,blending:THREE.AdditiveBlending}));
+    group.add(ringPts);
+
+    // hit sphere (generous)
+    const hit = new THREE.Mesh(new THREE.SphereGeometry(5.2,12,12),
+      new THREE.MeshBasicMaterial({visible:false}));
+    hit.userData = {type:'author', id:a.id};
+    group.add(hit);
+    clickables.push(hit);
+
+    // name label
+    const label = makeLabel(a.name.split(' ')[1], '#'+col.getHexString(), 3.9);
+    label.position.set(0, 6.2, 0);
+    group.add(label);
+
+    // connection center -> author
+    const lineGeo = new THREE.BufferGeometry().setFromPoints([ORIGIN.clone(), pos.clone()]);
+    const lineMat = new THREE.LineBasicMaterial({color:a.color, transparent:true, opacity:0.28});
+    const line = new THREE.Line(lineGeo, lineMat);
+    scene.add(line);
+    // traveling pulse
+    const pulse = makeGlow(a.color, 2.4);
+    scene.add(pulse);
+
+    // ---- stage nodes (hidden until focus) ----
+    const dir = pos.clone().sub(ORIGIN).normalize();
+    const tangent = new THREE.Vector3().crossVectors(UP, dir).normalize();
+    const stageNodes = [];
+    const stageColor = col;
+    const stageMid = (a.stages.length-1)/2;
+    a.stages.forEach((st,i)=>{
+      const np = pos.clone()
+        .add(UP.clone().multiplyScalar(7 + i*4.8))
+        .add(tangent.clone().multiplyScalar((i-stageMid)*3.0));
+      const node = new THREE.Mesh(new THREE.IcosahedronGeometry(1.15,0),
+        new THREE.MeshStandardMaterial({color:stageColor, emissive:stageColor.clone().multiplyScalar(0.5),
+          emissiveIntensity:0.9, metalness:0.4, roughness:0.4, flatShading:true}));
+      node.position.copy(np);
+      node.scale.setScalar(0.001);
+      node.userData = {type:'stage', id:a.id, index:i, target:0};
+      node.add(makeGlow(a.color, 5));
+      scene.add(node);
+      clickables.push(node);
+
+      const slabel = makeLabel((i+1)+'  '+STAGES[i], '#cdd5e6', 1.45);
+      slabel.position.copy(np).add(tangent.clone().multiplyScalar(2.0 + slabel.scale.x/2)).add(new THREE.Vector3(0,0.2,0));
+      slabel.material.opacity = 0;
+      scene.add(slabel);
+
+      // connector line between stages
+      let conn=null;
+      const from = i===0 ? pos.clone().add(UP.clone().multiplyScalar(3)) : stageNodes[i-1].node.position.clone();
+      const cg = new THREE.BufferGeometry().setFromPoints([from, np]);
+      conn = new THREE.Line(cg, new THREE.LineBasicMaterial({color:a.color, transparent:true, opacity:0}));
+      scene.add(conn);
+
+      stageNodes.push({node, label:slabel, conn});
+    });
+
+    authorObjs.push({def:a, group, sphere, shell, pos:pos.clone(), label,
+      line, pulse, pulseT:Math.random(), stageNodes, dir, color:col});
+  });
+}
+
+/* =========================================================================
+   CONCEPT MAPS
+   ========================================================================= */
+function buildConceptItems(stage){
+  const items = [];
+  (stage.keywords||[]).forEach(k=>items.push({
+    kind:"Parola chiave",
+    title:k,
+    text:"Concetto-segnale della mappa: riconoscilo e collegalo agli altri nodi.",
+    weight:0.72
+  }));
+  (stage.deep||[]).forEach(d=>items.push({
+    kind:"Nucleo",
+    title:d.term,
+    text:d.text,
+    weight:1.0
+  }));
+  (stage.path||[]).forEach((p,i)=>items.push({
+    kind:"Percorso",
+    title:(i+1)+". "+p.title,
+    text:p.text,
+    weight:0.92
+  }));
+  (stage.saperi||[]).forEach((s,i)=>items.push({
+    kind:"Da ricordare",
+    title:"Punto "+(i+1),
+    text:s,
+    weight:0.78
+  }));
+  if(!items.length && stage.body){
+    stage.body.forEach((p,i)=>items.push({
+      kind:"Idea",
+      title:"Idea "+(i+1),
+      text:p.replace(/<[^>]*>/g,''),
+      weight:0.86
+    }));
+  }
+  return items.slice(0,14);
+}
+
+function removeFromClickables(obj){
+  const i = clickables.indexOf(obj);
+  if(i>=0) clickables.splice(i,1);
+}
+
+function clearConceptMap(){
+  mapClickables.forEach(removeFromClickables);
+  mapClickables.length = 0;
+  conceptObjs.length = 0;
+  if(conceptMap){
+    scene.remove(conceptMap);
+    conceptMap = null;
+  }
+  activeMap = null;
+  hideMapInfo();
+}
+
+function showConceptMap(cfg){
+  clearConceptMap();
+  closePanel();
+  hideAuthorHeader();
+  centerStageNodes.forEach(sn=>{ sn.node.userData.target = 0; });
+  authorObjs.forEach(ao=> ao.stageNodes.forEach(sn=>{ sn.node.userData.target = 0; }));
+  activeMap = cfg;
+  const stage = cfg.stage;
+  const accent = cfg.accent || 0xd9b46a;
+  const col = new THREE.Color(accent);
+  const group = new THREE.Group();
+  group.position.copy(cfg.origin);
+  group.userData = {spin:cfg.spin || 0.018};
+  conceptMap = group;
+  scene.add(group);
+
+  const hubMat = new THREE.MeshStandardMaterial({
+    color:col, emissive:col.clone().multiplyScalar(0.55), emissiveIntensity:0.9,
+    metalness:0.42, roughness:0.38, flatShading:true
+  });
+  const hub = new THREE.Mesh(new THREE.DodecahedronGeometry(1.45,0), hubMat);
+  hub.userData = {type:"conceptHub", target:1};
+  hub.add(makeGlow(col.getHex(), 6.4));
+  group.add(hub);
+  clickables.push(hub); mapClickables.push(hub);
+
+  const hubLabel = makeMapPlaque(stage.title, stage.lead || cfg.subtitle || "Mappa concettuale", col.getHex(), {
+    width:640, size:2.65, titleSize:42, noteSize:23, titleLines:2, noteLines:2
+  });
+  hubLabel.position.set(-2.8, 2.85, 0);
+  group.add(hubLabel);
+
+  [7.4,10.8].forEach((r,i)=>{
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(r,0.045,8,120),
+      new THREE.MeshBasicMaterial({color:col, transparent:true, opacity:i?0.18:0.28, depthWrite:false}));
+    ring.rotation.x = Math.PI/2;
+    group.add(ring);
+  });
+
+  const items = buildConceptItems(stage);
+  const n = Math.max(items.length, 1);
+  items.forEach((item,i)=>{
+    const angle = -Math.PI/2 + i*(Math.PI*2/n);
+    const ring = item.kind==="Parola chiave" ? 7.4 : 10.8;
+    const layer = item.kind==="Da ricordare" ? -2.9 : (item.kind==="Percorso" ? 1.8 : 0);
+    const local = new THREE.Vector3(
+      Math.cos(angle)*ring,
+      layer + Math.sin(i*1.7)*1.25,
+      Math.sin(angle)*ring
+    );
+    const mat = new THREE.MeshStandardMaterial({
+      color:col, emissive:col.clone().multiplyScalar(item.kind==="Nucleo" ? 0.62 : 0.42),
+      emissiveIntensity:0.92, metalness:0.34, roughness:0.42, flatShading:true
+    });
+    const node = new THREE.Mesh(new THREE.IcosahedronGeometry(0.78*item.weight,0), mat);
+    node.position.copy(local);
+    node.scale.setScalar(0.001);
+    node.userData = {type:"concept", data:item, target:1};
+    node.add(makeGlow(col.getHex(), 3.7 + item.weight*1.6));
+    group.add(node);
+    clickables.push(node); mapClickables.push(node);
+
+    const line = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0), local.clone()]),
+      new THREE.LineBasicMaterial({color:col, transparent:true, opacity:0})
+    );
+    group.add(line);
+
+    const radial = local.clone().normalize();
+    const label = makeMapPlaque(item.title, item.text, col.getHex(), {
+      width:item.kind==="Parola chiave" ? 390 : 470,
+      size:item.kind==="Parola chiave" ? 1.12 : 1.55,
+      titleSize:item.kind==="Parola chiave" ? 31 : 34,
+      noteSize:19,
+      titleLines:2,
+      noteLines:item.kind==="Parola chiave" ? 1 : 2
+    });
+    label.position.copy(local).add(radial.multiplyScalar(1.8)).add(new THREE.Vector3(0,1.15,0));
+    label.material.opacity = 0;
+    group.add(label);
+
+    conceptObjs.push({
+      node, label, line,
+      base:local.clone(),
+      labelBase:label.position.clone(),
+      phase:i*0.7,
+      target:1
+    });
+  });
+
+  showMapInfo({
+    ribbon:cfg.ribbon,
+    title:stage.title,
+    sub:"Mappa concettuale 3D · tocca i nodi per aprire i dettagli",
+    accent:col.getHexString()
+  });
+  setBackText('Torna alle tappe');
+  setHint('Trascina per orbitare nella mappa · tocca un <b>nodo</b> per aprire il dettaglio', true);
+}
+
+function openConceptDetail(obj){
+  const data = obj.userData.data;
+  const wp = new THREE.Vector3();
+  obj.getWorldPosition(wp);
+  const dir = camera.position.clone().sub(wp).normalize();
+  const camP = wp.clone().add(dir.multiplyScalar(10)).add(new THREE.Vector3(0,2.2,0));
+  flyTo(camP, wp, 0.9);
+  openPanel({
+    ribbon:(activeMap ? activeMap.ribbon : "Mappa") + " · " + data.kind,
+    title:data.title,
+    sub:"Nodo della mappa concettuale",
+    lead:data.text,
+    keywords:[data.kind],
+    cite:activeMap && activeMap.stage ? activeMap.stage.cite : null,
+    accent:activeMap ? '#'+new THREE.Color(activeMap.accent||0xd9b46a).getHexString() : 'var(--gold)'
+  });
+}
+
+function openConceptHub(){
+  if(!activeMap) return;
+  const stage = activeMap.stage;
+  openPanel({
+    ribbon:activeMap.ribbon + " · schema",
+    title:stage.title,
+    sub:"Centro della mappa",
+    lead:stage.lead,
+    keywords:stage.keywords,
+    body:[
+      "Questa non è una scheda lineare: i concetti sono disposti come una costellazione. I nodi piccoli indicano parole chiave, i nodi esterni sviluppano nuclei, passaggi e punti da ricordare."
+    ],
+    cite:stage.cite,
+    accent:'#'+new THREE.Color(activeMap.accent||0xd9b46a).getHexString()
+  });
+}
+
+/* =========================================================================
+   INTERACTION
+   ========================================================================= */
+let downXY=null;
+function onPointerDown(e){ downXY={x:e.clientX,y:e.clientY}; }
+function onPointerUp(e){
+  if(!downXY) return;
+  const dx=e.clientX-downXY.x, dy=e.clientY-downXY.y;
+  downXY=null;
+  if(Math.hypot(dx,dy)>7) return; // was a drag
+  handleTap(e);
+}
+function onPointerMove(e){
+  pointer.x = (e.clientX/innerWidth)*2-1;
+  pointer.y = -(e.clientY/innerHeight)*2+1;
+}
+
+function setPointerFromEvent(e){
+  pointer.x = (e.clientX/innerWidth)*2-1;
+  pointer.y = -(e.clientY/innerHeight)*2+1;
+}
+
+function objectFromHits(hits){
+  if(!hits.length) return;
+  let o = hits[0].object;
+  while(o && !(o.userData && o.userData.type)) o = o.parent;
+  return o;
+}
+
+function activateObject(o){
+  if(!o) return;
+  const ud = o.userData;
+  if(ud.target!==undefined && ud.target<0.15) return;
+  if(ud.type==='center') focusCenter();
+  else if(ud.type==='concept') openConceptDetail(o);
+  else if(ud.type==='conceptHub') openConceptHub();
+  else if(ud.type==='centerStage'){
+    if(state==='center' && o.userData.target>0.5) openCenterStage(ud.index);
+  }
+  else if(ud.type==='author') focusAuthor(ud.id);
+  else if(ud.type==='stage'){
+    if(state==='author' && currentAuthor && currentAuthor.def.id===ud.id && o.userData.target>0.5) openStage(ud.id, ud.index);
+  }
+}
+
+function handleTap(e){
+  setPointerFromEvent(e);
+  raycaster.setFromCamera(pointer, camera);
+  activateObject(objectFromHits(raycaster.intersectObjects(clickables, true)));
+}
+
+function selectFromController(controller){
+  getControllerRay(controller);
+  raycaster.set(xrTmp.origin, xrTmp.direction);
+  const target = objectFromHits(raycaster.intersectObjects(clickables, true));
+  activateObject(target);
+  pulseController(controller);
+}
+
+function getControllerRay(controller){
+  xrTmp.matrix.identity().extractRotation(controller.matrixWorld);
+  xrTmp.origin.setFromMatrixPosition(controller.matrixWorld);
+  xrTmp.direction.set(0,0,-1).applyMatrix4(xrTmp.matrix).normalize();
+}
+
+function pulseController(controller){
+  const gp = controller.userData.gamepad;
+  const actuator = gp && gp.hapticActuators && gp.hapticActuators[0];
+  if(actuator && actuator.pulse) actuator.pulse(0.25, 40).catch(()=>{});
+}
+
+/* ---- camera tween ---- */
+function flyTo(toPos, toTarget, dur, after){
+  if(isVR){
+    controls.target.copy(toTarget);
+    if(after) after();
+    return;
+  }
+  camTween.fromPos = camera.position.clone();
+  camTween.fromTar = controls.target.clone();
+  camTween.toPos = toPos.clone();
+  camTween.toTar = toTarget.clone();
+  camTween.t = 0; camTween.dur = dur||1.4; camTween.active = true; camTween.after = after||null;
+}
+function easeInOut(t){ return t<0.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+
+function focusCenter(){
+  state='center'; currentAuthor=null;
+  resetStages();
+  centerStageNodes.forEach(sn=>{ sn.node.userData.target = 1; });
+  hideAuthorHeader();
+  const tgt = new THREE.Vector3(0,0,0);
+  const camP = new THREE.Vector3(0, 6, 30);
+  flyTo(camP, tgt, 1.6);
+  showBack(true); setBackText('Torna al cosmo'); closePanel();
+  showMapInfo({
+    ribbon:CENTER.ribbon,
+    title:CENTER.title,
+    sub:"Tocca una delle orbite della matrice per aprire la sua mappa concettuale 3D"
+  });
+  setHint('Tocca una <b>orbita</b> della matrice per aprire uno schema 3D', true);
+}
+
+function focusAuthor(id){
+  const ao = authorObjs.find(x=>x.def.id===id);
+  if(!ao) return;
+  state='author'; currentAuthor=ao;
+  resetStages();
+  // reveal this author's stages
+  ao.stageNodes.forEach((sn)=>{ sn.node.userData.target = 1; });
+  closePanel();
+  showBack(true); setBackText('Torna al cosmo'); setHint('Tocca una <b>tappa</b> per aprire la sua mappa concettuale 3D', true);
+
+  const pos = ao.pos;
+  const camP = pos.clone().add(ao.dir.clone().multiplyScalar(30)).add(new THREE.Vector3(0,16.5,0));
+  const tgt = pos.clone().add(new THREE.Vector3(0, 13.5, 0));
+  flyTo(camP, tgt, 1.7);
+  showAuthorHeader(ao.def);
+}
+
+function backToCosmos(){
+  state='overview'; currentAuthor=null;
+  resetStages(); closePanel(); hideAuthorHeader();
+  flyTo(homePos, homeTarget, 1.6);
+  showBack(false);
+  setBackText('Torna al cosmo');
+  setHint('Tocca un <b>poeta</b> per entrare nel suo microcosmo &nbsp;·&nbsp; tocca il <b>nucleo</b> per la matrice', true);
+}
+
+function goBack(){
+  if(activeMap){
+    const map = activeMap;
+    closePanel();
+    if(map.owner==="author" && map.authorId){
+      clearConceptMap();
+      focusAuthor(map.authorId);
+      setBackText('Torna al cosmo');
+      return;
+    }
+    if(map.owner==="center"){
+      clearConceptMap();
+      focusCenter();
+      setBackText('Torna al cosmo');
+      return;
+    }
+  }
+  backToCosmos();
+}
+
+function resetStages(){
+  clearConceptMap();
+  centerStageNodes.forEach(sn=>{ sn.node.userData.target = 0; });
+  authorObjs.forEach(ao=> ao.stageNodes.forEach(sn=> sn.node.userData.target = 0));
+}
+
+function openCenterStage(index){
+  if(!centerStageNodes.length) return;
+  if(state!=='center') focusCenter();
+  const st = CENTER.stages[index];
+  const sn = centerStageNodes[index];
+  let nodePos = new THREE.Vector3(0,0,0);
+  if(sn){
+    nodePos = sn.node.position.clone();
+    const dir = nodePos.clone().normalize();
+    const camP = nodePos.clone().add(dir.multiplyScalar(20)).add(new THREE.Vector3(0,7,0));
+    flyTo(camP, nodePos, 1.15);
+  }
+  showConceptMap({
+    ribbon: CENTER.ribbon + ' · ' + (st.label || 'Nodo'),
+    stage:st,
+    origin:nodePos,
+    accent:0xd9b46a,
+    spin:0.012,
+    owner:"center"
+  });
+}
+
+function openStage(id, index){
+  const ao = authorObjs.find(x=>x.def.id===id);
+  if(!ao) return;
+  if(state!=='author' || currentAuthor!==ao) focusAuthor(id);
+  const st = ao.def.stages[index];
+  const sn = ao.stageNodes[index];
+  let nodePos = ao.pos.clone();
+  if(sn){
+    nodePos = sn.node.position.clone();
+    const camP = nodePos.clone().add(ao.dir.clone().multiplyScalar(21)).add(new THREE.Vector3(0,7,0));
+    flyTo(camP, nodePos, 1.15);
+  }
+  showConceptMap({
+    ribbon: ao.def.name + ' · ' + STAGES[index],
+    stage:st,
+    origin:nodePos,
+    accent:ao.def.color,
+    spin:0.016,
+    owner:"author",
+    authorId:ao.def.id
+  });
+}
+
+/* =========================================================================
+   DOM HELPERS
+   ========================================================================= */
+function renderPanelBody(d){
+  let html = '';
+  if(d.lead) html += '<p class="lead">'+d.lead+'</p>';
+  if(d.keywords && d.keywords.length){
+    html += '<div class="tags">'+d.keywords.map(k=>'<span class="tag">'+k+'</span>').join('')+'</div>';
+  }
+  if(d.body && d.body.length){
+    html += d.body.map(x=>'<p>'+x+'</p>').join('');
+  }
+  if(d.deep && d.deep.length){
+    html += '<div class="deep-grid">'+d.deep.map(item=>
+      '<div class="deep-item"><b>'+item.term+'</b><span>'+item.text+'</span></div>'
+    ).join('')+'</div>';
+  }
+  if(d.path && d.path.length){
+    html += '<div class="path">'+d.path.map((item,i)=>
+      '<div class="path-step"><div class="path-num">'+String(i+1).padStart(2,'0')+'</div>'+
+      '<div class="path-copy"><b>'+item.title+'</b><span>'+item.text+'</span></div></div>'
+    ).join('')+'</div>';
+  }
+  if(d.saperi && d.saperi.length){
+    html += '<div class="study"><div class="stitle">Da ricordare</div><ul>'+
+      d.saperi.map(x=>'<li>'+x+'</li>').join('')+
+      '</ul></div>';
+  }
+  return html;
+}
+
+function openPanel(d){
+  const p=$('#panel');
+  p.querySelector('.rtxt').textContent = d.ribbon;
+  p.querySelector('h3').textContent = d.title;
+  p.querySelector('.sub').textContent = d.sub||'';
+  p.querySelector('.body').innerHTML = renderPanelBody(d);
+  const c=p.querySelector('.cite');
+  if(d.cite){ c.style.display='block'; c.querySelector('.q').textContent=d.cite.q; c.querySelector('.s').textContent=d.cite.s; }
+  else c.style.display='none';
+  const acc = d.accent || 'var(--gold)';
+  p.querySelector('.ribbon').style.color = acc;
+  p.querySelector('.dot').style.background = acc;
+  p.scrollTop = 0;
+  p.classList.add('show');
+}
+function closePanel(){ $('#panel').classList.remove('show'); }
+
+function showAuthorHeader(a){
+  const h=$('#ahead');
+  h.querySelector('.dates').textContent = a.dates;
+  h.querySelector('.dates').style.color = '#'+new THREE.Color(a.color).getHexString();
+  h.querySelector('h2').textContent = a.name;
+  const ess=h.querySelector('.ess'); ess.textContent=a.essence; ess.style.borderColor='#'+new THREE.Color(a.color).getHexString();
+  h.querySelector('.quote').textContent = a.quote;
+  h.querySelector('.src').textContent = a.src;
+  h.classList.add('show');
+}
+function hideAuthorHeader(){ $('#ahead').classList.remove('show'); }
+function showBack(v){ $('#back').style.display = v?'inline-flex':'none'; }
+function setBackText(text){
+  $('#back span').textContent = text;
+  $('#back').setAttribute('aria-label', text);
+}
+function showMapInfo(d){
+  const m = $('#mapinfo');
+  m.querySelector('.mribbon').textContent = d.ribbon || '';
+  m.querySelector('h3').textContent = d.title || '';
+  m.querySelector('.msub').textContent = d.sub || '';
+  if(d.accent) m.querySelector('.mribbon').style.color = '#'+d.accent;
+  else m.querySelector('.mribbon').style.color = 'var(--gold)';
+  m.classList.add('show');
+}
+function hideMapInfo(){ $('#mapinfo').classList.remove('show'); }
+function setHint(html, visible){
+  if(html) $('#hint').innerHTML = html;
+  $('#hint').style.opacity = visible ? '1' : '0';
+}
+function fadeHint(v){ setHint(null, v); }
+
+/* =========================================================================
+   LOOP
+   ========================================================================= */
+function animate(){
+  const dt = Math.min(clock.getDelta(), 0.05);
+  const t = clock.elapsedTime;
+  const motion = isVR ? 0.22 : 1;
+
+  // camera tween
+  if(camTween.active && !isVR){
+    camTween.t += dt/camTween.dur;
+    const k = easeInOut(Math.min(camTween.t,1));
+    camera.position.lerpVectors(camTween.fromPos, camTween.toPos, k);
+    controls.target.lerpVectors(camTween.fromTar, camTween.toTar, k);
+    if(camTween.t>=1){ camTween.active=false; if(camTween.after) camTween.after(); }
+  }
+  if(isVR) updateXRInput(dt);
+
+  // machine
+  if(machine && !isVR) machine.rotation.y += dt*0.04;
+  spinners.forEach(s=> s.mesh.rotateOnAxis(s.axis, s.speed*dt*motion));
+  orbiters.forEach(o=> o.pivot.rotation.z = o.base + t*o.speed*motion);
+  if(celestial){ celestial.rotation.y -= dt*0.03*motion; celestial.rotation.x += dt*0.012*motion; }
+  if(swirl) swirl.rotation.y += dt*0.12*motion;
+  if(coreMesh){
+    const pulse = 1 + Math.sin(t*1.6)*0.07;
+    coreMesh.scale.setScalar(pulse);
+    coreMesh.rotation.y += dt*0.3; coreMesh.rotation.x += dt*0.18;
+    coreMesh.material.emissiveIntensity = 1.2 + Math.sin(t*1.6)*0.4;
+    coreLight.intensity = 2.2 + Math.sin(t*1.6)*0.5;
+  }
+  if(starField && !isVR) starField.rotation.y += dt*0.006;
+
+  centerStageNodes.forEach(sn=>{
+    const cur = sn.node.scale.x;
+    const tgt = sn.node.userData.target;
+    const ns = cur + (tgt-cur)*Math.min(dt*4,1);
+    sn.node.scale.setScalar(Math.max(ns,0.001));
+    sn.node.rotation.y += dt*0.5; sn.node.rotation.x += dt*0.24;
+    const op = tgt*0.9;
+    sn.label.material.opacity += (op - sn.label.material.opacity)*Math.min(dt*4,1);
+    sn.conn.material.opacity += (tgt*0.34 - sn.conn.material.opacity)*Math.min(dt*4,1);
+  });
+
+  if(conceptMap && !isVR) conceptMap.rotation.y += dt*(conceptMap.userData.spin || 0.015);
+  conceptObjs.forEach(co=>{
+    const cur = co.node.scale.x;
+    const tgt = co.node.userData.target || 1;
+    const ns = cur + (tgt-cur)*Math.min(dt*5,1);
+    const bob = Math.sin(t*0.9 + co.phase)*0.22;
+    co.node.scale.setScalar(Math.max(ns,0.001));
+    co.node.position.copy(co.base).add(new THREE.Vector3(0,bob,0));
+    co.node.rotation.y += dt*0.65*motion;
+    co.node.rotation.x += dt*0.25*motion;
+    co.label.position.copy(co.labelBase).add(new THREE.Vector3(0,bob,0));
+    co.label.material.opacity += (tgt*0.95 - co.label.material.opacity)*Math.min(dt*4,1);
+    const attr = co.line.geometry.attributes.position;
+    attr.setXYZ(1, co.node.position.x, co.node.position.y, co.node.position.z);
+    attr.needsUpdate = true;
+    co.line.material.opacity += (tgt*0.42 - co.line.material.opacity)*Math.min(dt*4,1);
+  });
+
+  // authors
+  authorObjs.forEach((ao,i)=>{
+    ao.group.rotation.y += dt*0.18*motion;
+    ao.group.position.y = ao.pos.y + Math.sin(t*0.7 + i*2)*0.5;
+    ao.shell.rotation.x += dt*0.1*motion; ao.shell.rotation.z += dt*0.06*motion;
+    const labelTarget = state==='author' ? (currentAuthor===ao ? 0.12 : 0.28) : 1;
+    ao.label.material.opacity += (labelTarget - ao.label.material.opacity)*Math.min(dt*3,1);
+    // pulse along connection
+    ao.pulseT = (ao.pulseT + dt*0.18*motion) % 1;
+    ao.pulse.position.lerpVectors(ORIGIN, ao.group.position, ao.pulseT);
+    ao.pulse.material.opacity = Math.sin(ao.pulseT*Math.PI)*0.8;
+    // stage reveal
+    ao.stageNodes.forEach(sn=>{
+      const cur = sn.node.scale.x;
+      const tgt = sn.node.userData.target;
+      const ns = cur + (tgt-cur)*Math.min(dt*4,1);
+      sn.node.scale.setScalar(Math.max(ns,0.001));
+      sn.node.rotation.y += dt*0.6*motion; sn.node.rotation.x += dt*0.3*motion;
+      const op = tgt*0.9;
+      sn.label.material.opacity += (op - sn.label.material.opacity)*Math.min(dt*4,1);
+      sn.conn.material.opacity += (tgt*0.5 - sn.conn.material.opacity)*Math.min(dt*4,1);
+    });
+  });
+
+  // hover feedback
+  updateHover();
+
+  if(!isVR) controls.update();
+  renderer.render(scene, camera);
+}
+
+function updateHover(){
+  raycaster.setFromCamera(pointer, camera);
+  const hits = raycaster.intersectObjects(clickables, true);
+  let target=null;
+  if(hits.length){ let o=hits[0].object; while(o && !(o.userData&&o.userData.type)) o=o.parent; target=o; }
+  if(target && target.userData && target.userData.target!==undefined && target.userData.target<0.15) target=null;
+  if(target!==hovered){
+    hovered=target;
+    document.body.style.cursor = target ? 'pointer' : '';
+  }
+}
+
+function updateXRInput(dt){
+  xrMove.x = 0; xrMove.y = 0;
+  xrControllers.forEach(controller=>{
+    const gp = controller.userData.gamepad;
+    if(!gp || controller.userData.handedness !== "left") return;
+    const axes = gp.axes || [];
+    let best = {x:0,y:0,mag:0};
+    for(let i=0;i<axes.length-1;i+=2){
+      const x = axes[i] || 0, y = axes[i+1] || 0;
+      const mag = Math.abs(x)+Math.abs(y);
+      if(mag > best.mag) best = {x,y,mag};
+    }
+    const dead = 0.18;
+    xrMove.x = Math.abs(best.x)>dead ? best.x : 0;
+    xrMove.y = Math.abs(best.y)>dead ? best.y : 0;
+  });
+  if(!xrMove.x && !xrMove.y) return;
+
+  camera.getWorldDirection(xrTmp.forward);
+  xrTmp.forward.y = 0;
+  if(xrTmp.forward.lengthSq()<0.0001) xrTmp.forward.set(0,0,-1);
+  xrTmp.forward.normalize();
+  xrTmp.right.crossVectors(xrTmp.forward, UP).normalize();
+  xrTmp.move.copy(xrTmp.forward).multiplyScalar(-xrMove.y)
+    .add(xrTmp.right.multiplyScalar(xrMove.x));
+  if(xrTmp.move.lengthSq()>1) xrTmp.move.normalize();
+  playerRig.position.addScaledVector(xrTmp.move, dt*5.2);
+  playerRig.position.y = 0;
+  const flat = Math.hypot(playerRig.position.x, playerRig.position.z);
+  if(flat > xrBounds.radius){
+    const k = xrBounds.radius / flat;
+    playerRig.position.x *= k;
+    playerRig.position.z *= k;
+  }
+}
+
+function onResize(){
+  camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+}
+
+/* =========================================================================
+   WIRE UP
+   ========================================================================= */
+$('#enter').addEventListener('click', ()=>{
+  $('#intro').classList.add('gone');
+  if(!renderer) init();
+});
+$('#back').addEventListener('click', goBack);
+$('#pclose').addEventListener('click', closePanel);
+
+// preload engine quietly behind intro after fonts
+window.addEventListener('load', ()=>{ if(!renderer) init(); });
+</script>
+</body>
+</html>
