@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I Promessi Sposi - Atlante del testo</title>
+  <meta name="description" content="PWA didattica per esplorare il testo originale dei Promessi sposi per capitoli, personaggi, temi, luoghi, fasi narrative e percorsi guidati.">
+  <meta name="theme-color" content="#5f3328">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="app-header">
+  <div class="topbar">
+    <div class="brand">
+      <div class="monogram" aria-hidden="true">PS</div>
+      <div>
+        <h1>Atlante del testo</h1>
+        <p>I Promessi Sposi · Alessandro Manzoni</p>
+      </div>
+    </div>
+    <nav class="nav-actions" aria-label="Navigazione principale">
+      <button class="pill" data-scroll="#search">Ricerca</button>
+      <button class="pill" data-scroll="#capitoli">Capitoli</button>
+      <button class="pill" data-scroll="#personaggi">Personaggi</button>
+      <button class="pill" data-scroll="#temi">Temi</button>
+      <button class="pill" data-scroll="#luoghi">Luoghi</button>
+      <button class="pill" data-scroll="#percorsi">Percorsi</button>
+      <button class="pill" data-scroll="#passi-chiave">Passi chiave</button>
+      <button class="pill" data-scroll="#reader">Testo</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="kicker">Atlante didattico · testo e interpretazione separati</p>
+      <h2>I Promessi Sposi</h2>
+      <p class="subtitle">Una biblioteca navigabile: testo originale, schede, relazioni e itinerari di studio costruiti sui dati didattici del progetto.</p>
+      <div class="stats" aria-label="Statistiche del progetto">
+        <div class="stat"><strong id="statChapters">-</strong><span>capitoli</span></div>
+        <div class="stat"><strong id="statPars">-</strong><span>paragrafi</span></div>
+        <div class="stat"><strong id="statCards">-</strong><span>schede</span></div>
+        <div class="stat"><strong id="statPassages">-</strong><span>passi chiave</span></div>
+      </div>
+    </div>
+    <figure class="cover">
+      <img src="assets/copertina.jpg" alt="Copertina dei Promessi Sposi">
+      <figcaption id="pwaStatus">PWA pronta per la consultazione locale.</figcaption>
+    </figure>
+  </section>
+
+  <section id="search" class="panel search-panel" aria-labelledby="searchTitle">
+    <div class="panel-title">
+      <div>
+        <p class="kicker">Motore di ricerca</p>
+        <h2 id="searchTitle">Cerca nel testo originale</h2>
+      </div>
+      <div class="toolbar compact">
+        <button id="resetBtn" class="pill">Pulisci</button>
+        <button id="printBtn" class="pill">Stampa</button>
+        <button id="showAllBtn" class="pill">Mostra tutto</button>
+      </div>
+    </div>
+    <div class="search-grid">
+      <div class="field wide">
+        <label for="searchInput">Parola libera</label>
+        <input id="searchInput" type="search" placeholder="provvidenza, peste, bravi, perdono, Milano...">
+      </div>
+      <div class="field"><label for="filterChapter">Capitolo</label><select id="filterChapter"></select></div>
+      <div class="field"><label for="filterCharacter">Personaggio</label><select id="filterCharacter"></select></div>
+      <div class="field"><label for="filterTheme">Tema</label><select id="filterTheme"></select></div>
+      <div class="field"><label for="filterPlace">Luogo</label><select id="filterPlace"></select></div>
+      <div class="field"><label for="filterTimeline">Fase narrativa</label><select id="filterTimeline"></select></div>
+      <div class="field"><label for="filterPath">Percorso guidato</label><select id="filterPath"></select></div>
+    </div>
+    <div id="activeFilters" class="badges active-filters"></div>
+  </section>
+
+  <section class="results-layout" aria-label="Risultati e scorciatoie">
+    <div>
+      <div class="results-head">
+        <div>
+          <p class="kicker">Concordanza</p>
+          <h2>Risultati</h2>
+        </div>
+        <span id="resultCounter" class="counter"></span>
+      </div>
+      <div id="results" class="results-list"></div>
+    </div>
+    <aside class="side-panel">
+      <div class="panel slim">
+        <h3>Temi rapidi</h3>
+        <div id="quickThemes" class="quick-list"></div>
+      </div>
+      <div class="panel slim">
+        <h3>Personaggi rapidi</h3>
+        <div id="quickCharacters" class="quick-list"></div>
+      </div>
+      <div class="panel slim">
+        <h3>Relazioni</h3>
+        <div id="relationHints" class="relation-list"></div>
+      </div>
+    </aside>
+  </section>
+
+  <section id="detailPanel" class="panel detail-panel hidden" tabindex="-1" aria-live="polite">
+    <div class="detail-head">
+      <div>
+        <p id="detailKicker" class="kicker">Scheda</p>
+        <h2 id="detailTitle"></h2>
+      </div>
+      <button class="pill" data-action="close-detail">Chiudi</button>
+    </div>
+    <div id="detailContent" class="detail-content"></div>
+  </section>
+
+  <section id="reader" class="reader hidden" aria-labelledby="readerTitle">
+    <div class="reader-header">
+      <div>
+        <p class="kicker">Testo originale</p>
+        <h2 id="readerTitle"></h2>
+        <p id="readerSummary" class="summary"></p>
+        <div id="readerTags" class="badges"></div>
+      </div>
+      <div id="readerStats" class="badges"></div>
+    </div>
+    <div id="chapterGuideBox" class="chapter-guide"></div>
+    <div id="readerBody" class="reader-body"></div>
+  </section>
+
+  <section id="capitoli" class="section">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">Indice narrativo</p>
+        <h2>Capitoli</h2>
+      </div>
+    </div>
+    <div id="chaptersGrid" class="cards-grid chapters-grid"></div>
+  </section>
+
+  <section id="personaggi" class="section">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">Figure</p>
+        <h2>Personaggi</h2>
+      </div>
+    </div>
+    <div id="charactersGrid" class="cards-grid"></div>
+  </section>
+
+  <section id="temi" class="section">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">Nodi interpretativi</p>
+        <h2>Temi</h2>
+      </div>
+    </div>
+    <div id="themesGrid" class="cards-grid"></div>
+  </section>
+
+  <section id="luoghi" class="section">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">Geografia narrativa</p>
+        <h2>Luoghi</h2>
+      </div>
+    </div>
+    <div id="placesGrid" class="cards-grid"></div>
+  </section>
+
+  <section id="percorsi" class="section">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">Itinerari di studio</p>
+        <h2>Percorsi guidati</h2>
+      </div>
+    </div>
+    <div id="pathsGrid" class="path-grid"></div>
+  </section>
+
+  <section id="passi-chiave" class="section">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">Antologia ragionata</p>
+        <h2>Passi chiave ragionati</h2>
+      </div>
+    </div>
+    <div id="keyPassagesGrid" class="passages-grid"></div>
+  </section>
+
+  <section id="fasi" class="section">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">Sequenza</p>
+        <h2>Fasi narrative</h2>
+      </div>
+    </div>
+    <div id="timelineGrid" class="path-grid compact-grid"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  Atlante didattico costruito sul testo originale in file dati separati. Le schede interpretative possono essere ampliate senza modificare il testo.
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
