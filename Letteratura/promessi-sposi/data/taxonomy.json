@@ -1,0 +1,659 @@
+{
+  "characters": [
+    {
+      "id": "renzo",
+      "name": "Renzo Tramaglino",
+      "aliases": [
+        "Renzo",
+        "Lorenzo",
+        "Tramaglino"
+      ],
+      "description": "Promesso sposo di Lucia: impulsivo, generoso, attraversa tumulti, fuga e peste fino a una maturazione morale."
+    },
+    {
+      "id": "lucia",
+      "name": "Lucia Mondella",
+      "aliases": [
+        "Lucia",
+        "la giovane",
+        "la sposa"
+      ],
+      "description": "Promessa sposa di Renzo: figura di fede, pudore e resistenza morale; la sua fragilità muove conversioni e svolte narrative."
+    },
+    {
+      "id": "agnese",
+      "name": "Agnese",
+      "aliases": [
+        "Agnese"
+      ],
+      "description": "Madre di Lucia: concreta, affettuosa, capace di soluzioni pratiche ma non sempre lungimiranti."
+    },
+    {
+      "id": "don-abbondio",
+      "name": "don Abbondio",
+      "aliases": [
+        "don Abbondio",
+        "curato"
+      ],
+      "description": "Curato dominato dalla paura: rappresenta la viltà quotidiana e l’istinto di conservazione."
+    },
+    {
+      "id": "perpetua",
+      "name": "Perpetua",
+      "aliases": [
+        "Perpetua"
+      ],
+      "description": "Serva di don Abbondio: parla molto, vede spesso giusto, ma resta nel mondo piccolo della prudenza domestica."
+    },
+    {
+      "id": "don-rodrigo",
+      "name": "don Rodrigo",
+      "aliases": [
+        "don Rodrigo",
+        "Rodrigo"
+      ],
+      "description": "Il signorotto che impedisce il matrimonio: potere arrogante, desiderio capriccioso e violenza sociale."
+    },
+    {
+      "id": "bravi",
+      "name": "I bravi",
+      "aliases": [
+        "bravi",
+        "bravo"
+      ],
+      "description": "Esecutori della violenza privata: il potere si presenta come minaccia fisica e intimidazione."
+    },
+    {
+      "id": "fra-cristoforo",
+      "name": "padre Cristoforo",
+      "aliases": [
+        "padre Cristoforo",
+        "fra Cristoforo",
+        "Cristoforo",
+        "Lodovico"
+      ],
+      "description": "Frate cappuccino nato dalla conversione di Lodovico: coscienza morale attiva contro il sopruso."
+    },
+    {
+      "id": "azzeccagarbugli",
+      "name": "Azzeccagarbugli",
+      "aliases": [
+        "Azzeccagarbugli",
+        "dottore"
+      ],
+      "description": "Avvocato servile e pavido: mostra una legge piegata al più forte."
+    },
+    {
+      "id": "gertrude",
+      "name": "Gertrude / monaca di Monza",
+      "aliases": [
+        "Gertrude",
+        "monaca di Monza",
+        "signora",
+        "monaca"
+      ],
+      "description": "Figura tragica di volontà forzata: vittima e colpevole, segnata da famiglia, potere e inganno."
+    },
+    {
+      "id": "egidio",
+      "name": "Egidio",
+      "aliases": [
+        "Egidio"
+      ],
+      "description": "Complice oscuro di Gertrude e dell’Innominato: punto di contatto tra clausura e criminalità."
+    },
+    {
+      "id": "innominato",
+      "name": "l’Innominato",
+      "aliases": [
+        "Innominato",
+        "innominato",
+        "il signore",
+        "quel signore"
+      ],
+      "description": "Potente criminale in crisi: nel suo crollo interiore Manzoni costruisce una delle grandi conversioni del romanzo."
+    },
+    {
+      "id": "nibbio",
+      "name": "Il Nibbio",
+      "aliases": [
+        "Nibbio"
+      ],
+      "description": "Braccio dell’Innominato: porta nel mondo del male l’inquietudine provocata dall’innocenza di Lucia."
+    },
+    {
+      "id": "federigo",
+      "name": "cardinal Federigo Borromeo",
+      "aliases": [
+        "Federigo",
+        "Borromeo",
+        "cardinale",
+        "cardinal Federigo"
+      ],
+      "description": "Modello di autorità cristiana: unisce carità, responsabilità e lucidità morale."
+    },
+    {
+      "id": "conte-zio",
+      "name": "Il conte zio",
+      "aliases": [
+        "conte zio"
+      ],
+      "description": "Figura del potere aristocratico e diplomatico: agisce attraverso influenza, opportunismo e convenienza."
+    },
+    {
+      "id": "attilio",
+      "name": "conte Attilio",
+      "aliases": [
+        "Attilio",
+        "conte Attilio"
+      ],
+      "description": "Cugino di don Rodrigo: cinismo nobiliare e gioco irresponsabile del potere."
+    },
+    {
+      "id": "griso",
+      "name": "Il Griso",
+      "aliases": [
+        "Griso"
+      ],
+      "description": "Capo dei bravi di don Rodrigo: fedeltà criminale che si rovescia in tradimento durante la peste."
+    },
+    {
+      "id": "tonio",
+      "name": "Tonio",
+      "aliases": [
+        "Tonio"
+      ],
+      "description": "Contadino coinvolto nella notte degli imbrogli; rappresenta il mondo povero ma astuto del paese."
+    },
+    {
+      "id": "gervaso",
+      "name": "Gervaso",
+      "aliases": [
+        "Gervaso"
+      ],
+      "description": "Fratello di Tonio, coinvolto suo malgrado nel piano del matrimonio a sorpresa."
+    },
+    {
+      "id": "menico",
+      "name": "Menico",
+      "aliases": [
+        "Menico"
+      ],
+      "description": "Ragazzo incaricato da padre Cristoforo; testimone della minaccia e della fuga."
+    },
+    {
+      "id": "ferrer",
+      "name": "Antonio Ferrer",
+      "aliases": [
+        "Ferrer",
+        "Antonio Ferrer",
+        "gran cancelliere"
+      ],
+      "description": "Politico abile nei tumulti di Milano: parla al popolo, evita il peggio, ma incarna anche l’ambiguità del governo."
+    },
+    {
+      "id": "bortolo",
+      "name": "Bortolo",
+      "aliases": [
+        "Bortolo"
+      ],
+      "description": "Cugino di Renzo nel bergamasco: gli offre lavoro e rifugio oltre l’Adda."
+    },
+    {
+      "id": "donna-prassede",
+      "name": "donna Prassede",
+      "aliases": [
+        "donna Prassede",
+        "Prassede"
+      ],
+      "description": "Benefattrice invadente: vuole fare il bene degli altri imponendo la propria idea di bene."
+    },
+    {
+      "id": "don-ferrante",
+      "name": "don Ferrante",
+      "aliases": [
+        "don Ferrante",
+        "Ferrante"
+      ],
+      "description": "Erudito astratto e sterile: la cultura senza realtà diventa ridicola e impotente."
+    },
+    {
+      "id": "padre-felice",
+      "name": "padre Felice",
+      "aliases": [
+        "padre Felice",
+        "Felice"
+      ],
+      "description": "Cappuccino del lazzaretto: carità operosa nel cuore della peste."
+    },
+    {
+      "id": "monatti",
+      "name": "Monatti",
+      "aliases": [
+        "monatti",
+        "monatto"
+      ],
+      "description": "Operatori della peste: figure ambigue tra necessità pubblica, degradazione e spettacolo della morte."
+    }
+  ],
+  "places": [
+    {
+      "id": "lago-como",
+      "name": "Lago di Como / territorio di Lecco",
+      "aliases": [
+        "lago di Como",
+        "Lecco",
+        "ramo del lago di Como",
+        "Resegone"
+      ],
+      "description": "Spazio d’origine del romanzo: natura, paese, potere locale e mondo degli umili."
+    },
+    {
+      "id": "paese",
+      "name": "Paese di Renzo e Lucia",
+      "aliases": [
+        "paese",
+        "villaggio",
+        "casuccia",
+        "casa di Lucia"
+      ],
+      "description": "Microcosmo iniziale: qui il sopruso privato spezza la vita quotidiana."
+    },
+    {
+      "id": "pescarenico",
+      "name": "Pescarenico",
+      "aliases": [
+        "Pescarenico",
+        "convento di Pescarenico"
+      ],
+      "description": "Luogo di padre Cristoforo: spazio della carità e della resistenza morale."
+    },
+    {
+      "id": "palazzotto",
+      "name": "Palazzotto di don Rodrigo",
+      "aliases": [
+        "palazzotto",
+        "casa di don Rodrigo"
+      ],
+      "description": "Luogo del potere feudale, della violenza privata e dei banchetti dei prepotenti."
+    },
+    {
+      "id": "monza",
+      "name": "Monza",
+      "aliases": [
+        "Monza",
+        "monastero",
+        "convento di Monza"
+      ],
+      "description": "Spazio ambiguo: protezione apparente, clausura, costrizione e storia di Gertrude."
+    },
+    {
+      "id": "milano",
+      "name": "Milano",
+      "aliases": [
+        "Milano",
+        "porta orientale",
+        "forno delle grucce",
+        "osteria",
+        "vicario"
+      ],
+      "description": "Città della folla, della fame, della politica e della peste."
+    },
+    {
+      "id": "adda",
+      "name": "Adda",
+      "aliases": [
+        "Adda",
+        "fiume"
+      ],
+      "description": "Confine fisico e simbolico: Renzo passa dalla persecuzione a una possibilità di salvezza."
+    },
+    {
+      "id": "bergamo",
+      "name": "Bergamo / territorio bergamasco",
+      "aliases": [
+        "Bergamo",
+        "bergamasco",
+        "Bortolo"
+      ],
+      "description": "Luogo di rifugio e lavoro per Renzo, fuori dal dominio milanese."
+    },
+    {
+      "id": "castello-innominato",
+      "name": "Castello dell’Innominato",
+      "aliases": [
+        "castello",
+        "castello dell’Innominato",
+        "valle"
+      ],
+      "description": "Luogo alto e isolato: potere, terrore, crisi e conversione."
+    },
+    {
+      "id": "lazzaretto",
+      "name": "Lazzaretto di Milano",
+      "aliases": [
+        "lazzaretto",
+        "lazzeretto"
+      ],
+      "description": "Spazio ultimo della peste: morte, carità, perdono e ricongiungimento."
+    }
+  ],
+  "themes": [
+    {
+      "id": "provvidenza",
+      "name": "Provvidenza",
+      "aliases": [
+        "Provvidenza",
+        "Dio",
+        "cielo",
+        "fiducia",
+        "bene"
+      ],
+      "description": "Il disegno che non cancella il male ma può attraversarlo e convertirlo in occasione di bene."
+    },
+    {
+      "id": "provvida-sventura",
+      "name": "Provvida sventura",
+      "aliases": [
+        "sventura",
+        "guai",
+        "disgrazia",
+        "male subito",
+        "prova"
+      ],
+      "description": "La disgrazia che, senza diventare bene in sé, diventa occasione di maturazione, conversione o salvezza."
+    },
+    {
+      "id": "potere-sopruso",
+      "name": "Potere e sopruso",
+      "aliases": [
+        "potere",
+        "prepotente",
+        "sopruso",
+        "signore",
+        "bravi",
+        "minaccia",
+        "violenza"
+      ],
+      "description": "Il potere quando diventa arbitrio e schiaccia gli umili."
+    },
+    {
+      "id": "giustizia",
+      "name": "Giustizia umana e giustizia divina",
+      "aliases": [
+        "giustizia",
+        "legge",
+        "grida",
+        "avvocato",
+        "tribunale",
+        "delitto",
+        "colpa"
+      ],
+      "description": "La legge degli uomini spesso è debole o corrotta; la giustizia morale resta un orizzonte più alto."
+    },
+    {
+      "id": "paura",
+      "name": "Paura e viltà",
+      "aliases": [
+        "paura",
+        "timore",
+        "spavento",
+        "viltà",
+        "codardia",
+        "prudenza"
+      ],
+      "description": "Tema centrale in don Abbondio e in molte reazioni collettive: paura come difesa e come colpa."
+    },
+    {
+      "id": "fede",
+      "name": "Fede e carità",
+      "aliases": [
+        "fede",
+        "preghiera",
+        "carità",
+        "misericordia",
+        "perdono",
+        "frate",
+        "cardinale"
+      ],
+      "description": "La fede manzoniana non è fuga dal mondo ma azione morale dentro la storia."
+    },
+    {
+      "id": "conversione",
+      "name": "Conversione",
+      "aliases": [
+        "conversione",
+        "convertito",
+        "pentimento",
+        "coscienza",
+        "rimorso",
+        "penitenza"
+      ],
+      "description": "Cambiamento radicale dell’uomo davanti alla colpa, al dolore o alla grazia."
+    },
+    {
+      "id": "perdono",
+      "name": "Perdono",
+      "aliases": [
+        "perdono",
+        "perdonare",
+        "nemico",
+        "misericordia"
+      ],
+      "description": "Il perdono non cancella il male: lo spezza impedendo che continui a governare l’anima."
+    },
+    {
+      "id": "matrimonio",
+      "name": "Matrimonio ostacolato",
+      "aliases": [
+        "matrimonio",
+        "sposi",
+        "sposalizio",
+        "promessi",
+        "nozze"
+      ],
+      "description": "Motore narrativo del romanzo: un atto semplice e legittimo viene impedito dal sopruso."
+    },
+    {
+      "id": "popolo",
+      "name": "Popolo e folla",
+      "aliases": [
+        "popolo",
+        "folla",
+        "tumulto",
+        "gente",
+        "massa"
+      ],
+      "description": "La collettività può essere vittima, forza cieca, strumento politico o comunità sofferente."
+    },
+    {
+      "id": "carestia",
+      "name": "Carestia e fame",
+      "aliases": [
+        "carestia",
+        "fame",
+        "pane",
+        "forno",
+        "grano"
+      ],
+      "description": "La fame come fatto materiale e politico: rivela cattivo governo e fragilità sociale."
+    },
+    {
+      "id": "peste",
+      "name": "Peste",
+      "aliases": [
+        "peste",
+        "appestati",
+        "contagio",
+        "untori",
+        "lazzaretto",
+        "monatti"
+      ],
+      "description": "La catastrofe collettiva che porta alla luce paura, superstizione, carità e resa dei conti morale."
+    },
+    {
+      "id": "viaggio-fuga",
+      "name": "Viaggio e fuga",
+      "aliases": [
+        "fuga",
+        "fuggire",
+        "cammino",
+        "viaggio",
+        "strada",
+        "andare"
+      ],
+      "description": "Muoversi significa spesso perdere sicurezza, ma anche entrare in trasformazione."
+    },
+    {
+      "id": "narratore-ironia",
+      "name": "Narratore e ironia",
+      "aliases": [
+        "lettore",
+        "autore",
+        "storia",
+        "racconto",
+        "ironia"
+      ],
+      "description": "Il narratore guida, commenta, giudica e smonta le false grandezze con ironia morale."
+    },
+    {
+      "id": "umili",
+      "name": "Gli umili",
+      "aliases": [
+        "poveri",
+        "umili",
+        "gente meccaniche",
+        "contadini"
+      ],
+      "description": "Manzoni porta al centro della storia chi normalmente resta ai margini della grande storiografia."
+    }
+  ],
+  "timeline": [
+    {
+      "id": "introduzione",
+      "name": "Introduzione e patto narrativo",
+      "chapters": [
+        0
+      ],
+      "description": "Il narratore presenta il manoscritto e la propria riscrittura."
+    },
+    {
+      "id": "impedimento",
+      "name": "Impedimento del matrimonio",
+      "chapters": [
+        1,
+        2,
+        3
+      ],
+      "description": "La violenza privata blocca il progetto semplice di Renzo e Lucia."
+    },
+    {
+      "id": "cristoforo-rodrigo",
+      "name": "Padre Cristoforo contro don Rodrigo",
+      "chapters": [
+        4,
+        5,
+        6
+      ],
+      "description": "La coscienza morale affronta il potere del sopruso."
+    },
+    {
+      "id": "notte-fuga",
+      "name": "Notte degli imbrogli e fuga",
+      "chapters": [
+        7,
+        8
+      ],
+      "description": "Falliscono le soluzioni umane immediate; inizia la separazione."
+    },
+    {
+      "id": "monza",
+      "name": "Monza e Gertrude",
+      "chapters": [
+        9,
+        10
+      ],
+      "description": "Il rifugio diventa luogo ambiguo e moralmente pericoloso."
+    },
+    {
+      "id": "milano-tumulti",
+      "name": "Renzo a Milano e tumulti del pane",
+      "chapters": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "description": "Renzo entra nella storia collettiva della fame e della politica."
+    },
+    {
+      "id": "rapimento-conversione",
+      "name": "Rapimento di Lucia e conversione dell’Innominato",
+      "chapters": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "description": "Il male raggiunge il culmine e si rovescia nella conversione."
+    },
+    {
+      "id": "federigo-prassede",
+      "name": "Dopo la liberazione",
+      "chapters": [
+        25,
+        26,
+        27
+      ],
+      "description": "Ricomposizioni parziali, nuove prove e false forme di bene."
+    },
+    {
+      "id": "guerra-peste",
+      "name": "Guerra, carestia e peste",
+      "chapters": [
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "description": "La storia grande precipita sulla vita degli umili."
+    },
+    {
+      "id": "lazzaretto",
+      "name": "Peste, lazzaretto e perdono",
+      "chapters": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "description": "Nel massimo disordine avvengono perdono, incontro e scioglimento."
+    },
+    {
+      "id": "conclusione",
+      "name": "Scioglimento e sugo della storia",
+      "chapters": [
+        37,
+        38
+      ],
+      "description": "La vicenda si chiude con una morale non ingenua: i guai vengono, ma possono essere attraversati."
+    }
+  ],
+  "metadata": {
+    "title": "I Promessi Sposi — Atlante del testo",
+    "author": "Alessandro Manzoni",
+    "source": "EPUB Liber Liber caricato dall’utente",
+    "generated": "2026-06-24-step2",
+    "chaptersCount": 38,
+    "introIncluded": true,
+    "note": "Le associazioni con personaggi, luoghi e temi sono un primo indice didattico costruito con dizionari di parole-chiave e integrazioni manuali per capitolo. È pensato per essere raffinato nel lavoro didattico.",
+    "step2": "Schede didattiche, percorsi guidati, passi chiave e guide capitolo aggiunti in file separati."
+  }
+}

@@ -1,0 +1,1158 @@
+[
+  {
+    "chapter": 0,
+    "chapterRoman": "Introduzione",
+    "title": "Il patto narrativo",
+    "chapterTitle": "Introduzione",
+    "whatHappens": "Il narratore finge di aver trovato un manoscritto e dichiara di riscriverlo.",
+    "whyItMatters": "Il romanzo nasce come riflessione su storia, lingua e verità narrativa.",
+    "classroomUse": "Per introdurre romanzo storico, narratore e ironia.",
+    "mainCharacters": [],
+    "mainThemes": [
+      "narratore-ironia",
+      "fede",
+      "provvidenza",
+      "potere-sopruso"
+    ],
+    "mainPlaces": [
+      "paese"
+    ],
+    "questions": [
+      "Perché Manzoni finge di riscrivere un manoscritto?",
+      "Che rapporto c’è tra storia e invenzione?"
+    ]
+  },
+  {
+    "chapter": 1,
+    "chapterRoman": "I",
+    "title": "La minaccia iniziale",
+    "chapterTitle": "Capitolo I",
+    "whatHappens": "Don Abbondio incontra i bravi e riceve l’ordine di non celebrare il matrimonio.",
+    "whyItMatters": "È il primo urto tra vita degli umili e potere dei prepotenti.",
+    "classroomUse": "Per avviare potere, paura, legge inefficace.",
+    "mainCharacters": [
+      "don-abbondio",
+      "bravi",
+      "perpetua",
+      "don-rodrigo"
+    ],
+    "mainThemes": [
+      "potere-sopruso",
+      "provvidenza",
+      "giustizia",
+      "viaggio-fuga"
+    ],
+    "mainPlaces": [
+      "milano",
+      "lago-como",
+      "paese"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo I mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 2,
+    "chapterRoman": "II",
+    "title": "Il matrimonio rinviato",
+    "chapterTitle": "Capitolo II",
+    "whatHappens": "Don Abbondio mente a Renzo; Lucia rivela il sopruso.",
+    "whyItMatters": "La paura del curato produce inganno e sofferenza.",
+    "classroomUse": "Per studiare responsabilità e omissione.",
+    "mainCharacters": [
+      "renzo",
+      "don-abbondio",
+      "lucia",
+      "perpetua"
+    ],
+    "mainThemes": [
+      "provvidenza",
+      "giustizia",
+      "matrimonio",
+      "paura"
+    ],
+    "mainPlaces": [
+      "paese",
+      "palazzotto"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo II mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 3,
+    "chapterRoman": "III",
+    "title": "La giustizia fallita",
+    "chapterTitle": "Capitolo III",
+    "whatHappens": "Renzo va da Azzeccagarbugli; Lucia e Agnese cercano aiuto.",
+    "whyItMatters": "La legge si mostra servile verso il potente.",
+    "classroomUse": "Per distinguere diritto e giustizia.",
+    "mainCharacters": [
+      "lucia",
+      "renzo",
+      "azzeccagarbugli",
+      "agnese"
+    ],
+    "mainThemes": [
+      "provvidenza",
+      "giustizia",
+      "potere-sopruso",
+      "fede"
+    ],
+    "mainPlaces": [
+      "paese",
+      "lago-como",
+      "milano"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo III mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 4,
+    "chapterRoman": "IV",
+    "title": "La conversione di Lodovico",
+    "chapterTitle": "Capitolo IV",
+    "whatHappens": "Manzoni racconta il passato di padre Cristoforo.",
+    "whyItMatters": "La colpa può diventare responsabilità e servizio.",
+    "classroomUse": "Per introdurre conversione e perdono.",
+    "mainCharacters": [
+      "fra-cristoforo",
+      "bravi",
+      "lucia",
+      "innominato"
+    ],
+    "mainThemes": [
+      "fede",
+      "perdono",
+      "popolo",
+      "potere-sopruso"
+    ],
+    "mainPlaces": [
+      "pescarenico",
+      "lago-como",
+      "adda"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo IV mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 5,
+    "chapterRoman": "V",
+    "title": "Cristoforo davanti al caso",
+    "chapterTitle": "Capitolo V",
+    "whatHappens": "Il frate promette aiuto e va verso don Rodrigo.",
+    "whyItMatters": "La fede diventa azione concreta.",
+    "classroomUse": "Per leggere il cristianesimo manzoniano non come fuga ma intervento.",
+    "mainCharacters": [
+      "don-rodrigo",
+      "fra-cristoforo",
+      "attilio",
+      "renzo"
+    ],
+    "mainThemes": [
+      "provvidenza",
+      "fede",
+      "potere-sopruso",
+      "carestia"
+    ],
+    "mainPlaces": [
+      "milano",
+      "paese",
+      "palazzotto"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo V mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 6,
+    "chapterRoman": "VI",
+    "title": "Lo scontro con don Rodrigo",
+    "chapterTitle": "Capitolo VI",
+    "whatHappens": "Cristoforo affronta il potente e pronuncia il “Verrà un giorno”.",
+    "whyItMatters": "La coscienza morale sfida il potere arrogante.",
+    "classroomUse": "Per lavorare su profezia morale e giustizia divina.",
+    "mainCharacters": [
+      "don-rodrigo",
+      "fra-cristoforo",
+      "renzo",
+      "lucia"
+    ],
+    "mainThemes": [
+      "provvidenza",
+      "fede",
+      "giustizia",
+      "potere-sopruso"
+    ],
+    "mainPlaces": [
+      "palazzotto",
+      "milano",
+      "paese"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo VI mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 7,
+    "chapterRoman": "VII",
+    "title": "Il doppio piano",
+    "chapterTitle": "Capitolo VII",
+    "whatHappens": "Si prepara il matrimonio a sorpresa; don Rodrigo prepara il rapimento.",
+    "whyItMatters": "Bene ingenuo e male organizzato si muovono nello stesso tempo.",
+    "classroomUse": "Per costruire una mappa causa-effetto.",
+    "mainCharacters": [
+      "renzo",
+      "don-rodrigo",
+      "lucia",
+      "agnese"
+    ],
+    "mainThemes": [
+      "matrimonio",
+      "provvidenza",
+      "viaggio-fuga",
+      "giustizia"
+    ],
+    "mainPlaces": [
+      "paese",
+      "milano",
+      "palazzotto"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo VII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 8,
+    "chapterRoman": "VIII",
+    "title": "La notte degli imbrogli e l’Addio",
+    "chapterTitle": "Capitolo VIII",
+    "whatHappens": "Fallisce il matrimonio a sorpresa; Renzo, Lucia e Agnese fuggono.",
+    "whyItMatters": "La sventura rompe l’appartenenza domestica e apre il cammino.",
+    "classroomUse": "Per spiegare provvida sventura e lirismo dell’Addio ai monti.",
+    "mainCharacters": [
+      "gervaso",
+      "don-abbondio",
+      "agnese",
+      "perpetua"
+    ],
+    "mainThemes": [
+      "matrimonio",
+      "viaggio-fuga",
+      "provvidenza",
+      "popolo"
+    ],
+    "mainPlaces": [
+      "paese",
+      "milano",
+      "lago-como"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo VIII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 9,
+    "chapterRoman": "IX",
+    "title": "Monza e la Signora",
+    "chapterTitle": "Capitolo IX",
+    "whatHappens": "Lucia arriva al convento e incontra Gertrude.",
+    "whyItMatters": "La protezione è ambigua; dietro la clausura c’è una ferita.",
+    "classroomUse": "Per introdurre Gertrude e la libertà negata.",
+    "mainCharacters": [
+      "gertrude",
+      "lucia",
+      "fra-cristoforo",
+      "agnese"
+    ],
+    "mainThemes": [
+      "provvidenza",
+      "popolo",
+      "narratore-ironia",
+      "fede"
+    ],
+    "mainPlaces": [
+      "monza",
+      "paese",
+      "milano"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo IX mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 10,
+    "chapterRoman": "X",
+    "title": "La storia di Gertrude",
+    "chapterTitle": "Capitolo X",
+    "whatHappens": "Manzoni ricostruisce la monacazione forzata.",
+    "whyItMatters": "La violenza educativa produce una volontà deformata.",
+    "classroomUse": "Per discutere destino sociale, famiglia e responsabilità.",
+    "mainCharacters": [
+      "gertrude",
+      "lucia",
+      "don-rodrigo",
+      "renzo"
+    ],
+    "mainThemes": [
+      "giustizia",
+      "potere-sopruso",
+      "provvidenza",
+      "viaggio-fuga"
+    ],
+    "mainPlaces": [
+      "monza",
+      "milano",
+      "paese"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo X mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 11,
+    "chapterRoman": "XI",
+    "title": "Renzo a Milano",
+    "chapterTitle": "Capitolo XI",
+    "whatHappens": "Renzo arriva nella città agitata dalla carestia.",
+    "whyItMatters": "La storia privata entra nella storia collettiva.",
+    "classroomUse": "Per passare dal paese alla città.",
+    "mainCharacters": [
+      "don-rodrigo",
+      "griso",
+      "renzo",
+      "attilio"
+    ],
+    "mainThemes": [
+      "viaggio-fuga",
+      "fede",
+      "popolo",
+      "provvidenza"
+    ],
+    "mainPlaces": [
+      "milano",
+      "paese",
+      "monza"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XI mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 12,
+    "chapterRoman": "XII",
+    "title": "Il tumulto del pane",
+    "chapterTitle": "Capitolo XII",
+    "whatHappens": "La folla assalta il forno delle grucce.",
+    "whyItMatters": "Il bisogno reale può trasformarsi in violenza cieca.",
+    "classroomUse": "Per analizzare popolo e massa.",
+    "mainCharacters": [
+      "ferrer",
+      "renzo",
+      "bravi"
+    ],
+    "mainThemes": [
+      "carestia",
+      "popolo",
+      "giustizia",
+      "viaggio-fuga"
+    ],
+    "mainPlaces": [
+      "milano",
+      "paese"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 13,
+    "chapterRoman": "XIII",
+    "title": "Ferrer e la folla",
+    "chapterTitle": "Capitolo XIII",
+    "whatHappens": "Ferrer calma la massa e salva il vicario.",
+    "whyItMatters": "La politica appare come gestione teatrale del consenso.",
+    "classroomUse": "Per parlare di comunicazione politica.",
+    "mainCharacters": [
+      "ferrer",
+      "renzo",
+      "bravi",
+      "azzeccagarbugli"
+    ],
+    "mainThemes": [
+      "popolo",
+      "carestia",
+      "giustizia",
+      "provvidenza"
+    ],
+    "mainPlaces": [
+      "milano",
+      "castello-innominato"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XIII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 14,
+    "chapterRoman": "XIV",
+    "title": "Renzo all’osteria",
+    "chapterTitle": "Capitolo XIV",
+    "whatHappens": "Renzo parla troppo, si espone e viene schedato.",
+    "whyItMatters": "L’ingenuità diventa pericolo quando incontra il potere.",
+    "classroomUse": "Per studiare parola, identità e controllo.",
+    "mainCharacters": [
+      "renzo",
+      "bravi",
+      "ferrer",
+      "azzeccagarbugli"
+    ],
+    "mainThemes": [
+      "paura",
+      "provvidenza",
+      "giustizia",
+      "carestia"
+    ],
+    "mainPlaces": [
+      "milano",
+      "lago-como",
+      "paese"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XIV mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 15,
+    "chapterRoman": "XV",
+    "title": "L’arresto mancato",
+    "chapterTitle": "Capitolo XV",
+    "whatHappens": "Renzo sfugge all’arresto e fugge da Milano.",
+    "whyItMatters": "La città diventa trappola; l’errore ha conseguenze concrete.",
+    "classroomUse": "Per seguire la maturazione di Renzo.",
+    "mainCharacters": [
+      "renzo",
+      "bravi",
+      "ferrer"
+    ],
+    "mainThemes": [
+      "giustizia",
+      "provvidenza",
+      "popolo",
+      "viaggio-fuga"
+    ],
+    "mainPlaces": [
+      "milano",
+      "paese"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XV mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 16,
+    "chapterRoman": "XVI",
+    "title": "Verso Bergamo",
+    "chapterTitle": "Capitolo XVI",
+    "whatHappens": "Renzo cammina, chiede informazioni, impara prudenza.",
+    "whyItMatters": "La fuga diventa apprendistato.",
+    "classroomUse": "Per mostrare il passaggio dall’impulsività alla cautela.",
+    "mainCharacters": [
+      "renzo",
+      "innominato",
+      "federigo",
+      "bortolo"
+    ],
+    "mainThemes": [
+      "viaggio-fuga",
+      "provvidenza",
+      "popolo",
+      "carestia"
+    ],
+    "mainPlaces": [
+      "milano",
+      "paese",
+      "bergamo"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XVI mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 17,
+    "chapterRoman": "XVII",
+    "title": "L’Adda e la salvezza",
+    "chapterTitle": "Capitolo XVII",
+    "whatHappens": "Renzo raggiunge l’Adda e passa verso il territorio veneto.",
+    "whyItMatters": "Il fiume è soglia di salvezza e nuovo inizio.",
+    "classroomUse": "Per leggere luogo e simbolo.",
+    "mainCharacters": [
+      "renzo",
+      "bortolo",
+      "don-rodrigo",
+      "lucia"
+    ],
+    "mainThemes": [
+      "provvidenza",
+      "viaggio-fuga",
+      "carestia",
+      "popolo"
+    ],
+    "mainPlaces": [
+      "adda",
+      "paese",
+      "bergamo"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XVII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 18,
+    "chapterRoman": "XVIII",
+    "title": "Le trame riprendono",
+    "chapterTitle": "Capitolo XVIII",
+    "whatHappens": "Si cercano Renzo e Lucia; padre Cristoforo viene allontanato.",
+    "whyItMatters": "Il potere agisce anche attraverso pressioni indirette.",
+    "classroomUse": "Per mostrare le reti del potere.",
+    "mainCharacters": [
+      "don-rodrigo",
+      "fra-cristoforo",
+      "renzo",
+      "attilio"
+    ],
+    "mainThemes": [
+      "matrimonio",
+      "fede",
+      "potere-sopruso",
+      "viaggio-fuga"
+    ],
+    "mainPlaces": [
+      "milano",
+      "paese",
+      "monza"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XVIII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 19,
+    "chapterRoman": "XIX",
+    "title": "Conte zio e Innominato",
+    "chapterTitle": "Capitolo XIX",
+    "whatHappens": "Il conte zio ottiene l’allontanamento del frate; don Rodrigo cerca l’Innominato.",
+    "whyItMatters": "Il sopruso locale si collega a poteri più grandi.",
+    "classroomUse": "Per capire la gerarchia sociale del male.",
+    "mainCharacters": [
+      "fra-cristoforo",
+      "don-rodrigo",
+      "conte-zio",
+      "innominato"
+    ],
+    "mainThemes": [
+      "potere-sopruso",
+      "provvidenza",
+      "viaggio-fuga",
+      "giustizia"
+    ],
+    "mainPlaces": [
+      "paese",
+      "pescarenico",
+      "castello-innominato"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XIX mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 20,
+    "chapterRoman": "XX",
+    "title": "Il rapimento di Lucia",
+    "chapterTitle": "Capitolo XX",
+    "whatHappens": "Lucia viene rapita e portata al castello dell’Innominato.",
+    "whyItMatters": "La sventura più dura prepara una crisi imprevista.",
+    "classroomUse": "Per introdurre il nodo centrale della provvida sventura.",
+    "mainCharacters": [
+      "innominato",
+      "lucia",
+      "don-rodrigo",
+      "gertrude"
+    ],
+    "mainThemes": [
+      "provvida-sventura",
+      "viaggio-fuga",
+      "provvidenza",
+      "potere-sopruso"
+    ],
+    "mainPlaces": [
+      "castello-innominato",
+      "monza",
+      "paese"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XX mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 21,
+    "chapterRoman": "XXI",
+    "title": "La notte dell’Innominato",
+    "chapterTitle": "Capitolo XXI",
+    "whatHappens": "Lucia supplica; l’Innominato attraversa la crisi interiore.",
+    "whyItMatters": "La parola della vittima apre una frattura nel potente.",
+    "classroomUse": "Per studiare conversione psicologica.",
+    "mainCharacters": [
+      "innominato",
+      "lucia",
+      "nibbio",
+      "don-rodrigo"
+    ],
+    "mainThemes": [
+      "provvida-sventura",
+      "provvidenza",
+      "potere-sopruso",
+      "fede"
+    ],
+    "mainPlaces": [
+      "castello-innominato",
+      "paese",
+      "adda"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXI mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 22,
+    "chapterRoman": "XXII",
+    "title": "Federigo Borromeo",
+    "chapterTitle": "Capitolo XXII",
+    "whatHappens": "Arriva il cardinale e Manzoni ne presenta la figura.",
+    "whyItMatters": "È il modello di autorità come servizio.",
+    "classroomUse": "Per confrontare potere e autorità morale.",
+    "mainCharacters": [
+      "federigo",
+      "innominato",
+      "bravi",
+      "lucia"
+    ],
+    "mainThemes": [
+      "popolo",
+      "narratore-ironia",
+      "potere-sopruso",
+      "fede"
+    ],
+    "mainPlaces": [
+      "paese",
+      "castello-innominato",
+      "milano"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 23,
+    "chapterRoman": "XXIII",
+    "title": "L’incontro decisivo",
+    "chapterTitle": "Capitolo XXIII",
+    "whatHappens": "L’Innominato incontra Federigo e sceglie di liberare Lucia.",
+    "whyItMatters": "La conversione diventa atto concreto.",
+    "classroomUse": "Per distinguere commozione e cambiamento reale.",
+    "mainCharacters": [
+      "innominato",
+      "don-abbondio",
+      "federigo",
+      "lucia"
+    ],
+    "mainThemes": [
+      "provvidenza",
+      "fede",
+      "potere-sopruso",
+      "popolo"
+    ],
+    "mainPlaces": [
+      "castello-innominato",
+      "paese"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXIII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 24,
+    "chapterRoman": "XXIV",
+    "title": "Lucia liberata",
+    "chapterTitle": "Capitolo XXIV",
+    "whatHappens": "Lucia viene accolta e ritrova protezione; emerge il problema del voto.",
+    "whyItMatters": "La liberazione non cancella le conseguenze interiori della paura.",
+    "classroomUse": "Per parlare di fede, voto e libertà.",
+    "mainCharacters": [
+      "lucia",
+      "don-abbondio",
+      "innominato",
+      "federigo"
+    ],
+    "mainThemes": [
+      "provvida-sventura",
+      "fede",
+      "provvidenza",
+      "potere-sopruso"
+    ],
+    "mainPlaces": [
+      "paese",
+      "castello-innominato",
+      "milano"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXIV mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 25,
+    "chapterRoman": "XXV",
+    "title": "Federigo e don Abbondio",
+    "chapterTitle": "Capitolo XXV",
+    "whatHappens": "Il cardinale rimprovera don Abbondio.",
+    "whyItMatters": "La paura viene giudicata alla luce della responsabilità cristiana.",
+    "classroomUse": "Per discutere vigliaccheria e comprensione.",
+    "mainCharacters": [
+      "donna-prassede",
+      "federigo",
+      "lucia",
+      "don-abbondio"
+    ],
+    "mainThemes": [
+      "provvidenza",
+      "fede",
+      "popolo",
+      "potere-sopruso"
+    ],
+    "mainPlaces": [
+      "paese",
+      "lago-como",
+      "milano"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXV mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 26,
+    "chapterRoman": "XXVI",
+    "title": "Il trasferimento e l’attesa",
+    "chapterTitle": "Capitolo XXVI",
+    "whatHappens": "Lucia viene affidata a donna Prassede; Renzo resta lontano.",
+    "whyItMatters": "La trama si sospende e prepara una fase più storica.",
+    "classroomUse": "Per mostrare transizione narrativa.",
+    "mainCharacters": [
+      "federigo",
+      "lucia",
+      "agnese",
+      "innominato"
+    ],
+    "mainThemes": [
+      "provvidenza",
+      "potere-sopruso",
+      "fede",
+      "provvida-sventura"
+    ],
+    "mainPlaces": [
+      "paese",
+      "bergamo",
+      "milano"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXVI mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 27,
+    "chapterRoman": "XXVII",
+    "title": "Guerra, lettere, donna Prassede",
+    "chapterTitle": "Capitolo XXVII",
+    "whatHappens": "La guerra e i malintesi separano ancora i promessi.",
+    "whyItMatters": "La storia grande continua a pesare sulle vite piccole.",
+    "classroomUse": "Per lavorare sul rapporto storia/privato.",
+    "mainCharacters": [
+      "don-ferrante",
+      "donna-prassede",
+      "lucia",
+      "renzo"
+    ],
+    "mainThemes": [
+      "matrimonio",
+      "narratore-ironia",
+      "provvidenza",
+      "viaggio-fuga"
+    ],
+    "mainPlaces": [
+      "milano",
+      "paese",
+      "lago-como"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXVII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 28,
+    "chapterRoman": "XXVIII",
+    "title": "Carestia e lazzeretto",
+    "chapterTitle": "Capitolo XXVIII",
+    "whatHappens": "Milano è devastata dalla miseria; appare il lazzeretto.",
+    "whyItMatters": "La crisi sociale prepara la catastrofe sanitaria.",
+    "classroomUse": "Per introdurre peste e responsabilità pubblica.",
+    "mainCharacters": [
+      "federigo",
+      "ferrer",
+      "bravi",
+      "fra-cristoforo"
+    ],
+    "mainThemes": [
+      "carestia",
+      "popolo",
+      "viaggio-fuga",
+      "giustizia"
+    ],
+    "mainPlaces": [
+      "milano",
+      "paese",
+      "lazzaretto"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXVIII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 29,
+    "chapterRoman": "XXIX",
+    "title": "Il territorio minacciato",
+    "chapterTitle": "Capitolo XXIX",
+    "whatHappens": "L’arrivo dei lanzichenecchi produce fuga e paura.",
+    "whyItMatters": "La guerra porta la violenza della storia nel quotidiano.",
+    "classroomUse": "Per collegare romanzo storico e popolazione civile.",
+    "mainCharacters": [
+      "don-abbondio",
+      "perpetua",
+      "innominato",
+      "agnese"
+    ],
+    "mainThemes": [
+      "peste",
+      "viaggio-fuga",
+      "provvidenza",
+      "popolo"
+    ],
+    "mainPlaces": [
+      "castello-innominato",
+      "paese",
+      "bergamo"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXIX mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 30,
+    "chapterRoman": "XXX",
+    "title": "Nel castello dell’Innominato",
+    "chapterTitle": "Capitolo XXX",
+    "whatHappens": "La popolazione trova rifugio presso l’Innominato convertito.",
+    "whyItMatters": "Il luogo del terrore diventa luogo di protezione.",
+    "classroomUse": "Per mostrare gli effetti concreti della conversione.",
+    "mainCharacters": [
+      "don-abbondio",
+      "innominato",
+      "perpetua",
+      "agnese"
+    ],
+    "mainThemes": [
+      "fede",
+      "conversione",
+      "provvidenza",
+      "popolo"
+    ],
+    "mainPlaces": [
+      "castello-innominato",
+      "paese",
+      "lago-como"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXX mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 31,
+    "chapterRoman": "XXXI",
+    "title": "La peste negata",
+    "chapterTitle": "Capitolo XXXI",
+    "whatHappens": "Manzoni ricostruisce l’arrivo e la sottovalutazione della peste.",
+    "whyItMatters": "Il male cresce anche perché non si vuole riconoscerlo.",
+    "classroomUse": "Per discutere verità, istituzioni e responsabilità.",
+    "mainCharacters": [
+      "padre-felice",
+      "federigo",
+      "fra-cristoforo",
+      "ferrer"
+    ],
+    "mainThemes": [
+      "peste",
+      "giustizia",
+      "narratore-ironia",
+      "popolo"
+    ],
+    "mainPlaces": [
+      "milano",
+      "lazzaretto",
+      "lago-como"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXXI mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 32,
+    "chapterRoman": "XXXII",
+    "title": "Untori e follia collettiva",
+    "chapterTitle": "Capitolo XXXII",
+    "whatHappens": "La città cerca colpevoli immaginari e cade nella superstizione.",
+    "whyItMatters": "La paura collettiva diventa persecuzione.",
+    "classroomUse": "Per collegare storia, psicologia sociale e fake news senza banalizzare.",
+    "mainCharacters": [
+      "federigo",
+      "monatti",
+      "ferrer",
+      "bravi"
+    ],
+    "mainThemes": [
+      "peste",
+      "popolo",
+      "narratore-ironia",
+      "provvidenza"
+    ],
+    "mainPlaces": [
+      "milano",
+      "lazzaretto",
+      "paese"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXXII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 33,
+    "chapterRoman": "XXXIII",
+    "title": "Don Rodrigo malato e Renzo guarito",
+    "chapterTitle": "Capitolo XXXIII",
+    "whatHappens": "Don Rodrigo viene tradito dal Griso; Renzo parte verso Milano.",
+    "whyItMatters": "Il potere fisico crolla davanti alla malattia.",
+    "classroomUse": "Per collegare giustizia morale e fragilità umana.",
+    "mainCharacters": [
+      "renzo",
+      "don-rodrigo",
+      "griso",
+      "agnese"
+    ],
+    "mainThemes": [
+      "provvidenza",
+      "peste",
+      "viaggio-fuga",
+      "popolo"
+    ],
+    "mainPlaces": [
+      "bergamo",
+      "paese",
+      "milano"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXXIII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 34,
+    "chapterRoman": "XXXIV",
+    "title": "Renzo nella Milano della peste",
+    "chapterTitle": "Capitolo XXXIV",
+    "whatHappens": "Renzo attraversa Milano e vede la madre di Cecilia.",
+    "whyItMatters": "La catastrofe diventa esperienza visiva e morale.",
+    "classroomUse": "Per leggere il dolore innocente con pudore.",
+    "mainCharacters": [
+      "renzo",
+      "monatti",
+      "bravi",
+      "gertrude"
+    ],
+    "mainThemes": [
+      "viaggio-fuga",
+      "peste",
+      "provvidenza",
+      "popolo"
+    ],
+    "mainPlaces": [
+      "milano",
+      "lazzaretto",
+      "paese"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXXIV mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 35,
+    "chapterRoman": "XXXV",
+    "title": "Nel lazzeretto",
+    "chapterTitle": "Capitolo XXXV",
+    "whatHappens": "Renzo incontra padre Cristoforo e vede don Rodrigo morente.",
+    "whyItMatters": "Il perdono diventa prova concreta, non idea astratta.",
+    "classroomUse": "Per analizzare vendetta/perdono.",
+    "mainCharacters": [
+      "renzo",
+      "fra-cristoforo",
+      "lucia",
+      "padre-felice"
+    ],
+    "mainThemes": [
+      "fede",
+      "provvidenza",
+      "perdono",
+      "viaggio-fuga"
+    ],
+    "mainPlaces": [
+      "milano",
+      "lazzaretto",
+      "monza"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXXV mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 36,
+    "chapterRoman": "XXXVI",
+    "title": "Lucia ritrovata",
+    "chapterTitle": "Capitolo XXXVI",
+    "whatHappens": "Renzo ritrova Lucia; padre Cristoforo scioglie il voto.",
+    "whyItMatters": "Il cammino dei promessi può ricomporsi, ma attraverso una coscienza nuova.",
+    "classroomUse": "Per chiudere provvida sventura e fede.",
+    "mainCharacters": [
+      "renzo",
+      "lucia",
+      "fra-cristoforo",
+      "innominato"
+    ],
+    "mainThemes": [
+      "provvida-sventura",
+      "matrimonio",
+      "provvidenza",
+      "fede"
+    ],
+    "mainPlaces": [
+      "lazzaretto",
+      "paese",
+      "milano"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXXVI mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 37,
+    "chapterRoman": "XXXVII",
+    "title": "Ritorno e preparazione",
+    "chapterTitle": "Capitolo XXXVII",
+    "whatHappens": "Renzo torna verso il paese e prepara il matrimonio.",
+    "whyItMatters": "La conclusione non è automatica: bisogna ricostruire.",
+    "classroomUse": "Per mostrare il ritorno trasformato.",
+    "mainCharacters": [
+      "renzo",
+      "agnese",
+      "lucia",
+      "don-ferrante"
+    ],
+    "mainThemes": [
+      "matrimonio",
+      "peste",
+      "viaggio-fuga",
+      "narratore-ironia"
+    ],
+    "mainPlaces": [
+      "paese",
+      "lazzaretto",
+      "monza"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXXVII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  },
+  {
+    "chapter": 38,
+    "chapterRoman": "XXXVIII",
+    "title": "Il matrimonio e il sugo",
+    "chapterTitle": "Capitolo XXXVIII",
+    "whatHappens": "Renzo e Lucia si sposano e il narratore formula il senso finale.",
+    "whyItMatters": "Il romanzo non dice che i guai non vengono, ma che possono essere attraversati.",
+    "classroomUse": "Per sintetizzare Provvidenza, responsabilità e maturazione.",
+    "mainCharacters": [
+      "renzo",
+      "don-abbondio",
+      "lucia",
+      "agnese"
+    ],
+    "mainThemes": [
+      "narratore-ironia",
+      "provvidenza",
+      "popolo",
+      "provvida-sventura"
+    ],
+    "mainPlaces": [
+      "paese",
+      "milano",
+      "bergamo"
+    ],
+    "questions": [
+      "Quale passaggio del capitolo XXXVIII mostra meglio questo nodo?",
+      "Quale tema si collega più direttamente al percorso generale del romanzo?"
+    ]
+  }
+]

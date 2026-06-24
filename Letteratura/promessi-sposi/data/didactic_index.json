@@ -1,0 +1,1052 @@
+{
+  "metadata": {
+    "title": "I Promessi Sposi — Atlante ragionato, step 2",
+    "created": "2026-06-24",
+    "purpose": "Arricchimento didattico: schede interpretative, percorsi guidati, passi chiave e domande per la classe.",
+    "note": "Questa struttura non sostituisce il testo: lo guida. Le etichette sono modificabili e pensate per uso scolastico."
+  },
+  "characterCards": [
+    {
+      "id": "renzo",
+      "name": "Renzo Tramaglino",
+      "function": "Protagonista dell’esperienza: parte da un desiderio giusto ma ingenuo e impara a leggere il mondo.",
+      "arc": "Impulsività → errore → fuga → prova → perdono → maturazione.",
+      "centralConflict": "Vuole giustizia, ma deve imparare che la rabbia non basta a produrla.",
+      "keyThemes": [
+        "giustizia",
+        "popolo",
+        "viaggio-fuga",
+        "perdono",
+        "provvida-sventura"
+      ],
+      "keyChapters": [
+        2,
+        3,
+        11,
+        12,
+        14,
+        17,
+        33,
+        35,
+        38
+      ],
+      "classUse": "Ideale per spiegare la formazione morale: Renzo non diventa “perfetto”, diventa più consapevole.",
+      "warning": "Non ridurlo al ragazzo impulsivo: è anche generoso, affettivo e capace di cambiare."
+    },
+    {
+      "id": "lucia",
+      "name": "Lucia Mondella",
+      "function": "Centro morale del romanzo: fragile nella forza fisica, fortissima nella resistenza interiore.",
+      "arc": "Timore → fuga → prigionia → voto → liberazione → scelta finale.",
+      "centralConflict": "Deve restare fedele al bene senza trasformare la fede in fuga dalla vita.",
+      "keyThemes": [
+        "fede",
+        "provvidenza",
+        "provvida-sventura",
+        "matrimonio",
+        "paura"
+      ],
+      "keyChapters": [
+        2,
+        3,
+        8,
+        20,
+        21,
+        24,
+        36,
+        38
+      ],
+      "classUse": "Serve per mostrare che in Manzoni la forza non coincide con il dominio.",
+      "warning": "Non farne una santa immobile: Lucia agisce, sceglie, parla, resiste."
+    },
+    {
+      "id": "don-abbondio",
+      "name": "don Abbondio",
+      "function": "Figura della paura sociale: l’uomo debole che sceglie di non esporsi.",
+      "arc": "Minaccia → rinvio → menzogna → fuga morale → rimprovero → sopravvivenza senza vera conversione.",
+      "centralConflict": "Sa ciò che dovrebbe fare, ma difende prima se stesso.",
+      "keyThemes": [
+        "paura",
+        "fede",
+        "giustizia",
+        "potere-sopruso"
+      ],
+      "keyChapters": [
+        1,
+        2,
+        8,
+        23,
+        25,
+        38
+      ],
+      "classUse": "Perfetto per discutere la differenza tra prudenza, paura e responsabilità.",
+      "warning": "Non basta riderne: Manzoni lo rende comico, ma la sua viltà ha conseguenze tragiche."
+    },
+    {
+      "id": "fra-cristoforo",
+      "name": "padre Cristoforo",
+      "function": "Coscienza attiva del romanzo: la fede diventa intervento concreto contro il sopruso.",
+      "arc": "Colpa di Lodovico → conversione → servizio agli umili → scontro col potere → perdono finale.",
+      "centralConflict": "Porta dentro di sé l’uomo vecchio e l’uomo nuovo.",
+      "keyThemes": [
+        "conversione",
+        "perdono",
+        "fede",
+        "giustizia",
+        "provvidenza"
+      ],
+      "keyChapters": [
+        4,
+        5,
+        6,
+        7,
+        35,
+        36
+      ],
+      "classUse": "Mostra che la conversione manzoniana non è sentimentalismo, ma responsabilità permanente.",
+      "warning": "Non presentarlo come figura angelica piatta: la sua forza nasce da una colpa reale."
+    },
+    {
+      "id": "don-rodrigo",
+      "name": "don Rodrigo",
+      "function": "Il sopruso privato: potere senza grandezza, violenza mossa dal capriccio.",
+      "arc": "Capriccio → ostinazione → alleanza col male maggiore → malattia → morte.",
+      "centralConflict": "Crede di possedere gli altri perché nessuno lo ferma.",
+      "keyThemes": [
+        "potere-sopruso",
+        "giustizia",
+        "peste",
+        "perdono"
+      ],
+      "keyChapters": [
+        1,
+        5,
+        6,
+        7,
+        11,
+        19,
+        33,
+        35
+      ],
+      "classUse": "Utile per distinguere il male banale dal male tragico: don Rodrigo non è grandioso, è miserabile.",
+      "warning": "Non trasformarlo in “cattivo assoluto”: è più interessante come potere mediocre e irresponsabile."
+    },
+    {
+      "id": "gertrude",
+      "name": "Gertrude / monaca di Monza",
+      "function": "Figura della libertà negata: vittima del sistema familiare e poi corresponsabile del male.",
+      "arc": "Educazione forzata → ribellione sterile → cedimento → clausura → colpa.",
+      "centralConflict": "La volontà deformata dagli altri non riesce più a diventare scelta libera.",
+      "keyThemes": [
+        "potere-sopruso",
+        "paura",
+        "fede",
+        "giustizia"
+      ],
+      "keyChapters": [
+        9,
+        10,
+        18,
+        20
+      ],
+      "classUse": "È la figura migliore per discutere destino sociale, educazione e responsabilità personale.",
+      "warning": "Guai a semplificarla: non è solo vittima, non è solo colpevole."
+    },
+    {
+      "id": "innominato",
+      "name": "l’Innominato",
+      "function": "Il male che scopre il proprio vuoto e può ancora convertirsi.",
+      "arc": "Potere assoluto → crisi notturna → incontro con Lucia → incontro con Federigo → misericordia attiva.",
+      "centralConflict": "Ha vinto sugli uomini, ma non su se stesso.",
+      "keyThemes": [
+        "conversione",
+        "provvida-sventura",
+        "paura",
+        "fede",
+        "potere-sopruso"
+      ],
+      "keyChapters": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        29
+      ],
+      "classUse": "Nodo centrale della provvida sventura: il rapimento di Lucia resta male, ma apre la crisi del potente.",
+      "warning": "Non rendere la conversione troppo facile: Manzoni la prepara con angoscia, insonnia e nausea di sé."
+    },
+    {
+      "id": "federigo",
+      "name": "cardinal Federigo Borromeo",
+      "function": "Autorità spirituale come servizio: il contrario del potere arrogante.",
+      "arc": "Entra come figura già formata: non cambia lui, cambia chi lo incontra.",
+      "centralConflict": "Deve parlare al peccatore senza schiacciarlo e al debole senza assolverlo troppo facilmente.",
+      "keyThemes": [
+        "fede",
+        "conversione",
+        "perdono",
+        "umili"
+      ],
+      "keyChapters": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "classUse": "Serve per confrontare autorità, carità e responsabilità.",
+      "warning": "Figura idealizzata: va spiegata come modello etico manzoniano, non come realismo psicologico puro."
+    },
+    {
+      "id": "agnese",
+      "name": "Agnese",
+      "function": "Intelligenza pratica del mondo popolare.",
+      "arc": "Protezione materna → soluzioni concrete → separazione → ricongiungimento.",
+      "centralConflict": "Vuole salvare Lucia usando gli strumenti disponibili, anche quando sono ambigui.",
+      "keyThemes": [
+        "matrimonio",
+        "umili",
+        "viaggio-fuga"
+      ],
+      "keyChapters": [
+        2,
+        3,
+        6,
+        8,
+        24,
+        37,
+        38
+      ],
+      "classUse": "Mostra la sapienza popolare e i suoi limiti.",
+      "warning": "Non trattarla come semplice personaggio comico."
+    },
+    {
+      "id": "azzeccagarbugli",
+      "name": "Azzeccagarbugli",
+      "function": "La legge servile: cultura giuridica al servizio del potente.",
+      "arc": "Appare, fraintende, si ritrae appena capisce che c’entra don Rodrigo.",
+      "centralConflict": "Sa la legge, ma non cerca la giustizia.",
+      "keyThemes": [
+        "giustizia",
+        "potere-sopruso",
+        "umili"
+      ],
+      "keyChapters": [
+        3
+      ],
+      "classUse": "Figura perfetta per spiegare la differenza tra competenza e coscienza.",
+      "warning": "Non è solo caricatura: è una struttura sociale."
+    },
+    {
+      "id": "ferrer",
+      "name": "Antonio Ferrer",
+      "function": "Politico ambiguo: popolare nella folla, compromesso nel sistema.",
+      "arc": "Arriva nel tumulto, calma il popolo, salva il vicario, ma non risolve la crisi.",
+      "centralConflict": "Media tra giustizia apparente e gestione del consenso.",
+      "keyThemes": [
+        "popolo",
+        "giustizia",
+        "carestia"
+      ],
+      "keyChapters": [
+        13
+      ],
+      "classUse": "Utile per discutere comunicazione politica e teatralità del potere.",
+      "warning": "Non farne semplicemente un eroe popolare."
+    },
+    {
+      "id": "don-ferrante",
+      "name": "don Ferrante",
+      "function": "La cultura sterile che non capisce il reale.",
+      "arc": "Ragiona, classifica, nega la peste e muore di peste.",
+      "centralConflict": "Crede che la logica libresca basti a dominare la realtà.",
+      "keyThemes": [
+        "peste",
+        "narratore-ironia",
+        "fede"
+      ],
+      "keyChapters": [
+        27,
+        37
+      ],
+      "classUse": "Perfetto per mostrare l’ironia manzoniana contro il sapere senza esperienza.",
+      "warning": "Non confondere cultura e pedanteria: Manzoni colpisce la cultura vuota, non lo studio."
+    }
+  ],
+  "themeCards": [
+    {
+      "id": "provvida-sventura",
+      "name": "Provvida sventura",
+      "definition": "Una disgrazia che resta dolorosa, ma può diventare occasione di maturazione, conversione o salvezza.",
+      "howItWorks": "Il male non viene negato né giustificato: viene attraversato. La Provvidenza non elimina la sofferenza, ma può renderla utile per una vita migliore.",
+      "keyChapters": [
+        4,
+        8,
+        21,
+        24,
+        35,
+        36,
+        38
+      ],
+      "keyCharacters": [
+        "lucia",
+        "innominato",
+        "renzo",
+        "fra-cristoforo"
+      ],
+      "classQuestion": "Quali sventure producono davvero crescita? Quali invece mostrano solo il male?",
+      "avoid": "Non spiegare mai la provvida sventura come “il male è bene”. Sarebbe una caricatura."
+    },
+    {
+      "id": "provvidenza",
+      "name": "Provvidenza",
+      "definition": "Il disegno divino che accompagna la storia senza cancellare libertà, errori e colpe umane.",
+      "howItWorks": "Agisce dentro eventi confusi: fughe, incontri, fallimenti, malattie. Non sostituisce la responsabilità: la provoca.",
+      "keyChapters": [
+        3,
+        8,
+        21,
+        23,
+        24,
+        36,
+        38
+      ],
+      "keyCharacters": [
+        "lucia",
+        "fra-cristoforo",
+        "federigo",
+        "innominato"
+      ],
+      "classQuestion": "Dove la Provvidenza è esplicita e dove invece è solo suggerita?",
+      "avoid": "Non ridurla a “fortuna” o a lieto fine."
+    },
+    {
+      "id": "potere-sopruso",
+      "name": "Potere e sopruso",
+      "definition": "Il potere separato dalla giustizia: bravi, nobili, famiglie oppressive, istituzioni deboli.",
+      "howItWorks": "Il potere non è solo violenza fisica: è rete di intimidazione, prestigio, diritto piegato, silenzio degli altri.",
+      "keyChapters": [
+        1,
+        3,
+        5,
+        6,
+        9,
+        10,
+        19,
+        20
+      ],
+      "keyCharacters": [
+        "don-rodrigo",
+        "bravi",
+        "gertrude",
+        "innominato",
+        "conte-zio"
+      ],
+      "classQuestion": "Quali forme di potere si vedono nel romanzo?",
+      "avoid": "Non limitarti ai bravi: il sopruso più profondo spesso ha forme rispettabili."
+    },
+    {
+      "id": "giustizia",
+      "name": "Giustizia",
+      "definition": "Il bisogno di ordine morale e sociale contro una realtà in cui la legge spesso non protegge.",
+      "howItWorks": "Manzoni oppone giustizia vera, legge scritta e giustizia di Dio. Il romanzo mostra lo scarto tra le tre.",
+      "keyChapters": [
+        1,
+        3,
+        6,
+        12,
+        13,
+        31,
+        32,
+        35
+      ],
+      "keyCharacters": [
+        "renzo",
+        "azzeccagarbugli",
+        "fra-cristoforo",
+        "ferrer"
+      ],
+      "classQuestion": "Quando Renzo cerca giustizia, cosa trova?",
+      "avoid": "Non confondere giustizia con vendetta."
+    },
+    {
+      "id": "paura",
+      "name": "Paura",
+      "definition": "Emozione umana che può diventare colpa quando impedisce il bene dovuto.",
+      "howItWorks": "Don Abbondio è il caso centrale, ma la paura attraversa folla, istituzioni, malati, untori immaginari.",
+      "keyChapters": [
+        1,
+        2,
+        21,
+        25,
+        31,
+        32
+      ],
+      "keyCharacters": [
+        "don-abbondio",
+        "lucia",
+        "innominato",
+        "popolo"
+      ],
+      "classQuestion": "La paura scusa o aggrava la responsabilità?",
+      "avoid": "Non trattare la paura solo come comicità."
+    },
+    {
+      "id": "conversione",
+      "name": "Conversione",
+      "definition": "Cambiamento morale profondo, nato da una crisi e reso visibile da nuove azioni.",
+      "howItWorks": "Padre Cristoforo e Innominato sono due modelli diversi: colpa che diventa penitenza; potere che diventa misericordia.",
+      "keyChapters": [
+        4,
+        21,
+        22,
+        23,
+        24,
+        35
+      ],
+      "keyCharacters": [
+        "fra-cristoforo",
+        "innominato",
+        "federigo",
+        "lucia"
+      ],
+      "classQuestion": "Quale differenza c’è tra pentimento e conversione?",
+      "avoid": "Non presentarla come un colpo di bacchetta religiosa."
+    },
+    {
+      "id": "perdono",
+      "name": "Perdono",
+      "definition": "Superamento della vendetta attraverso una scelta morale difficile.",
+      "howItWorks": "Non cancella il male subito: chiede di non lasciargli l’ultima parola dentro la coscienza.",
+      "keyChapters": [
+        4,
+        6,
+        21,
+        35,
+        36
+      ],
+      "keyCharacters": [
+        "fra-cristoforo",
+        "renzo",
+        "lucia",
+        "innominato"
+      ],
+      "classQuestion": "Perdonare significa assolvere il colpevole?",
+      "avoid": "Non farne una formula dolce: in Manzoni il perdono costa."
+    },
+    {
+      "id": "popolo",
+      "name": "Popolo e folla",
+      "definition": "Gli umili come soggetto morale e la massa come forza ambigua.",
+      "howItWorks": "Il popolo soffre davvero, ma la folla può diventare irrazionale, manipolabile e violenta.",
+      "keyChapters": [
+        4,
+        11,
+        12,
+        13,
+        28,
+        32,
+        34
+      ],
+      "keyCharacters": [
+        "renzo",
+        "ferrer",
+        "monatti"
+      ],
+      "classQuestion": "Quando il popolo è vittima e quando diventa pericoloso?",
+      "avoid": "Non idealizzare la folla."
+    },
+    {
+      "id": "peste",
+      "name": "Peste",
+      "definition": "Catastrofe collettiva che rivela la fragilità dei corpi, delle istituzioni e delle coscienze.",
+      "howItWorks": "La peste porta morte, superstizione e caos, ma anche carità, perdono e ricongiungimento.",
+      "keyChapters": [
+        28,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "keyCharacters": [
+        "renzo",
+        "don-rodrigo",
+        "padre-felice",
+        "monatti",
+        "fra-cristoforo"
+      ],
+      "classQuestion": "La peste è solo sciagura o anche rivelazione?",
+      "avoid": "Non usarla come semplice sfondo storico."
+    },
+    {
+      "id": "narratore-ironia",
+      "name": "Narratore e ironia",
+      "definition": "La voce del narratore guida, giudica, ironizza e costruisce distanza critica.",
+      "howItWorks": "Manzoni finge modestia, interrompe, commenta, smonta retoriche e pedanterie. È una coscienza critica, non una telecamera neutra.",
+      "keyChapters": [
+        0,
+        1,
+        3,
+        10,
+        12,
+        27,
+        31,
+        38
+      ],
+      "keyCharacters": [
+        "don-abbondio",
+        "don-ferrante",
+        "azzeccagarbugli"
+      ],
+      "classQuestion": "Dove il narratore fa sorridere e dove invece colpisce duramente?",
+      "avoid": "Non saltare gli interventi del narratore: sono parte del senso."
+    }
+  ],
+  "placeCards": [
+    {
+      "id": "lago-como",
+      "name": "Territorio di Lecco e lago di Como",
+      "symbolicFunction": "Origine, appartenenza, mondo degli umili.",
+      "keyChapters": [
+        1,
+        2,
+        8
+      ],
+      "linkedThemes": [
+        "umili",
+        "viaggio-fuga",
+        "provvida-sventura"
+      ],
+      "classUse": "Partire dal paesaggio per mostrare il realismo storico-geografico."
+    },
+    {
+      "id": "paese",
+      "name": "Paese di Renzo e Lucia",
+      "symbolicFunction": "Spazio domestico violato dal potere.",
+      "keyChapters": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        37,
+        38
+      ],
+      "linkedThemes": [
+        "matrimonio",
+        "potere-sopruso",
+        "umili"
+      ],
+      "classUse": "Luogo iniziale e finale: il ritorno mostra che niente è identico a prima."
+    },
+    {
+      "id": "pescarenico",
+      "name": "Convento di Pescarenico",
+      "symbolicFunction": "Luogo di mediazione morale e aiuto agli umili.",
+      "keyChapters": [
+        4,
+        5,
+        7
+      ],
+      "linkedThemes": [
+        "fede",
+        "conversione",
+        "giustizia"
+      ],
+      "classUse": "Contrapporlo al palazzotto di don Rodrigo."
+    },
+    {
+      "id": "palazzotto",
+      "name": "Palazzotto di don Rodrigo",
+      "symbolicFunction": "Centro locale del sopruso privato.",
+      "keyChapters": [
+        5,
+        6,
+        7
+      ],
+      "linkedThemes": [
+        "potere-sopruso",
+        "giustizia"
+      ],
+      "classUse": "Leggere lo spazio come teatro del potere."
+    },
+    {
+      "id": "monza",
+      "name": "Monza e il convento",
+      "symbolicFunction": "Spazio della reclusione, della falsa protezione e della volontà forzata.",
+      "keyChapters": [
+        9,
+        10,
+        18,
+        20
+      ],
+      "linkedThemes": [
+        "paura",
+        "potere-sopruso",
+        "fede"
+      ],
+      "classUse": "Ideale per il tema educazione/libertà."
+    },
+    {
+      "id": "milano",
+      "name": "Milano",
+      "symbolicFunction": "Città della storia collettiva: fame, tumulto, politica, peste.",
+      "keyChapters": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        28,
+        31,
+        32,
+        34
+      ],
+      "linkedThemes": [
+        "popolo",
+        "carestia",
+        "peste",
+        "giustizia"
+      ],
+      "classUse": "Mostrare il passaggio dal romanzo privato alla storia pubblica."
+    },
+    {
+      "id": "adda",
+      "name": "Adda",
+      "symbolicFunction": "Confine di fuga e salvezza provvisoria.",
+      "keyChapters": [
+        8,
+        17
+      ],
+      "linkedThemes": [
+        "viaggio-fuga",
+        "provvidenza"
+      ],
+      "classUse": "Far leggere il fiume come soglia narrativa."
+    },
+    {
+      "id": "castello-innominato",
+      "name": "Castello dell’Innominato",
+      "symbolicFunction": "Altezza fisica del potere e abisso morale della crisi.",
+      "keyChapters": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "linkedThemes": [
+        "conversione",
+        "paura",
+        "provvida-sventura"
+      ],
+      "classUse": "Confrontare architettura esterna e interiorità."
+    },
+    {
+      "id": "lazzaretto",
+      "name": "Lazzeretto di Milano",
+      "symbolicFunction": "Luogo della catastrofe, della carità, del perdono e dello scioglimento.",
+      "keyChapters": [
+        28,
+        34,
+        35,
+        36
+      ],
+      "linkedThemes": [
+        "peste",
+        "perdono",
+        "provvida-sventura"
+      ],
+      "classUse": "Nodo conclusivo: nel massimo male avvengono incontri decisivi."
+    }
+  ],
+  "guidedPaths": [
+    {
+      "id": "percorso-provvida-sventura",
+      "title": "La provvida sventura",
+      "subtitle": "Dal dolore al senso, senza indorare il male.",
+      "chapters": [
+        4,
+        8,
+        20,
+        21,
+        23,
+        24,
+        35,
+        36,
+        38
+      ],
+      "themes": [
+        "provvida-sventura",
+        "provvidenza",
+        "conversione",
+        "perdono"
+      ],
+      "steps": [
+        {
+          "chapter": 4,
+          "title": "La colpa di Lodovico",
+          "point": "Una disgrazia morale diventa origine di una vita nuova."
+        },
+        {
+          "chapter": 8,
+          "title": "La fuga",
+          "point": "La casa perduta diventa inizio del cammino."
+        },
+        {
+          "chapter": 21,
+          "title": "Lucia e l’Innominato",
+          "point": "Il rapimento resta male, ma apre una crisi di coscienza."
+        },
+        {
+          "chapter": 35,
+          "title": "Renzo e don Rodrigo",
+          "point": "Il nemico morente costringe Renzo al perdono."
+        },
+        {
+          "chapter": 38,
+          "title": "Il sugo della storia",
+          "point": "I guai possono diventare utili per una vita migliore."
+        }
+      ],
+      "finalQuestion": "In quali casi la sventura produce maturazione? E in quali resta solo male subito?"
+    },
+    {
+      "id": "percorso-paura-responsabilita",
+      "title": "Paura e responsabilità",
+      "subtitle": "Don Abbondio e gli altri: quando sopravvivere non basta.",
+      "chapters": [
+        1,
+        2,
+        8,
+        21,
+        25,
+        32
+      ],
+      "themes": [
+        "paura",
+        "giustizia",
+        "fede"
+      ],
+      "steps": [
+        {
+          "chapter": 1,
+          "title": "La minaccia dei bravi",
+          "point": "La paura entra nella trama."
+        },
+        {
+          "chapter": 2,
+          "title": "La paura diventa rinvio",
+          "point": "Don Abbondio trasforma il timore in menzogna."
+        },
+        {
+          "chapter": 25,
+          "title": "Il rimprovero di Federigo",
+          "point": "La fede chiede coraggio responsabile."
+        },
+        {
+          "chapter": 32,
+          "title": "Paura collettiva",
+          "point": "La paura sociale cerca capri espiatori."
+        }
+      ],
+      "finalQuestion": "Quando la paura è comprensibile e quando diventa colpa?"
+    },
+    {
+      "id": "percorso-giustizia-potere",
+      "title": "Giustizia e potere",
+      "subtitle": "La legge scritta, la forza reale e la giustizia morale.",
+      "chapters": [
+        1,
+        3,
+        5,
+        6,
+        12,
+        13,
+        31,
+        32,
+        35
+      ],
+      "themes": [
+        "giustizia",
+        "potere-sopruso",
+        "popolo"
+      ],
+      "steps": [
+        {
+          "chapter": 1,
+          "title": "Le gride",
+          "point": "Le norme esistono, ma non bastano."
+        },
+        {
+          "chapter": 3,
+          "title": "Azzeccagarbugli",
+          "point": "Il diritto viene piegato dalla paura del potente."
+        },
+        {
+          "chapter": 12,
+          "title": "Il pane e il tumulto",
+          "point": "La fame genera domanda di giustizia, ma anche violenza."
+        },
+        {
+          "chapter": 35,
+          "title": "Il perdono",
+          "point": "La giustizia morale supera la vendetta."
+        }
+      ],
+      "finalQuestion": "Che differenza c’è tra legge, giustizia e vendetta?"
+    },
+    {
+      "id": "percorso-conversioni",
+      "title": "Le conversioni",
+      "subtitle": "Cambiare vita non significa cancellare il passato.",
+      "chapters": [
+        4,
+        6,
+        21,
+        22,
+        23,
+        24,
+        35,
+        36
+      ],
+      "themes": [
+        "conversione",
+        "perdono",
+        "fede"
+      ],
+      "steps": [
+        {
+          "chapter": 4,
+          "title": "Lodovico diventa Cristoforo",
+          "point": "La colpa viene trasformata in servizio."
+        },
+        {
+          "chapter": 21,
+          "title": "La notte dell’Innominato",
+          "point": "Il potere crolla dentro la coscienza."
+        },
+        {
+          "chapter": 23,
+          "title": "Federigo e l’Innominato",
+          "point": "La misericordia dà forma al pentimento."
+        },
+        {
+          "chapter": 36,
+          "title": "Cristoforo al lazzeretto",
+          "point": "La conversione resta fedele fino alla fine."
+        }
+      ],
+      "finalQuestion": "Quali segni dimostrano che una conversione è vera?"
+    },
+    {
+      "id": "percorso-folla-storia",
+      "title": "Popolo, folla e storia",
+      "subtitle": "Manzoni non idealizza gli umili quando diventano massa.",
+      "chapters": [
+        11,
+        12,
+        13,
+        14,
+        28,
+        31,
+        32,
+        34
+      ],
+      "themes": [
+        "popolo",
+        "carestia",
+        "peste",
+        "narratore-ironia"
+      ],
+      "steps": [
+        {
+          "chapter": 12,
+          "title": "Il forno",
+          "point": "La fame produce azione collettiva."
+        },
+        {
+          "chapter": 13,
+          "title": "Il vicario",
+          "point": "La folla può essere guidata o manipolata."
+        },
+        {
+          "chapter": 32,
+          "title": "Gli untori",
+          "point": "La paura trasforma il dolore in persecuzione."
+        },
+        {
+          "chapter": 34,
+          "title": "La madre di Cecilia",
+          "point": "Dentro la catastrofe collettiva emerge il dolore singolare."
+        }
+      ],
+      "finalQuestion": "Manzoni ha fiducia nel popolo? Risposta scomoda: sì e no."
+    },
+    {
+      "id": "percorso-liberta-negata",
+      "title": "Libertà negata: Lucia e Gertrude",
+      "subtitle": "Due donne davanti al potere, alla paura e alla scelta.",
+      "chapters": [
+        2,
+        3,
+        8,
+        9,
+        10,
+        20,
+        21,
+        36
+      ],
+      "themes": [
+        "fede",
+        "paura",
+        "potere-sopruso",
+        "matrimonio"
+      ],
+      "steps": [
+        {
+          "chapter": 2,
+          "title": "Lucia promessa sposa",
+          "point": "La libertà semplice viene violata."
+        },
+        {
+          "chapter": 9,
+          "title": "Gertrude appare",
+          "point": "Il corpo rivela la frattura interiore."
+        },
+        {
+          "chapter": 10,
+          "title": "La scelta forzata",
+          "point": "La violenza educativa deforma la volontà."
+        },
+        {
+          "chapter": 21,
+          "title": "Lucia prigioniera",
+          "point": "La vittima conserva una parola capace di cambiare il potente."
+        }
+      ],
+      "finalQuestion": "Lucia e Gertrude sono entrambe vittime? In che modo le loro risposte divergono?"
+    },
+    {
+      "id": "percorso-peste-rivelazione",
+      "title": "La peste come rivelazione",
+      "subtitle": "La catastrofe non crea il bene: lo separa dal male e lo rende visibile.",
+      "chapters": [
+        28,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "themes": [
+        "peste",
+        "provvida-sventura",
+        "perdono",
+        "popolo"
+      ],
+      "steps": [
+        {
+          "chapter": 31,
+          "title": "Negazione e ritardo",
+          "point": "La società non vuole vedere il male."
+        },
+        {
+          "chapter": 32,
+          "title": "Untori e superstizione",
+          "point": "La paura cerca colpevoli immaginari."
+        },
+        {
+          "chapter": 34,
+          "title": "Cecilia",
+          "point": "Il dolore innocente non viene spiegato: viene contemplato."
+        },
+        {
+          "chapter": 35,
+          "title": "Don Rodrigo",
+          "point": "La peste abbatte il potente e mette Renzo davanti al perdono."
+        }
+      ],
+      "finalQuestion": "Perché la peste è il grande laboratorio morale del romanzo?"
+    },
+    {
+      "id": "percorso-narratore",
+      "title": "Il narratore e l’ironia",
+      "subtitle": "La voce che racconta è anche una coscienza critica.",
+      "chapters": [
+        0,
+        1,
+        3,
+        10,
+        12,
+        27,
+        31,
+        38
+      ],
+      "themes": [
+        "narratore-ironia",
+        "giustizia",
+        "peste"
+      ],
+      "steps": [
+        {
+          "chapter": 0,
+          "title": "Il manoscritto",
+          "point": "Il narratore costruisce il patto di verità."
+        },
+        {
+          "chapter": 1,
+          "title": "Don Abbondio",
+          "point": "L’ironia svela una psicologia morale."
+        },
+        {
+          "chapter": 10,
+          "title": "Gertrude",
+          "point": "La narrazione rallenta per giudicare senza semplificare."
+        },
+        {
+          "chapter": 38,
+          "title": "Il sugo",
+          "point": "Il narratore esplicita la morale del racconto."
+        }
+      ],
+      "finalQuestion": "Quando Manzoni giudica apertamente e quando lascia giudicare al lettore?"
+    }
+  ],
+  "relationshipHints": [
+    {
+      "from": "don-abbondio",
+      "to": "paura",
+      "type": "incarna",
+      "note": "La paura diventa sistema di vita e colpa per omissione."
+    },
+    {
+      "from": "lucia",
+      "to": "provvidenza",
+      "type": "attraversa",
+      "note": "Lucia non controlla gli eventi, ma li attraversa con fede."
+    },
+    {
+      "from": "innominato",
+      "to": "conversione",
+      "type": "drammatizza",
+      "note": "La conversione nasce quando il potere non basta più a sostenere l’identità."
+    },
+    {
+      "from": "peste",
+      "to": "provvida-sventura",
+      "type": "problematizza",
+      "note": "La peste rende possibili incontri decisivi, ma resta dolore reale e non va addolcita."
+    },
+    {
+      "from": "renzo",
+      "to": "giustizia",
+      "type": "cerca",
+      "note": "Renzo cerca giustizia e impara a distinguere giustizia e vendetta."
+    }
+  ]
+}
