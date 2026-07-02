@@ -1,0 +1,21 @@
+{
+  "name": "Parini e la Dea Moda",
+  "short_name": "Parini Moda",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4ecd8",
+  "theme_color": "#1d252d",
+  "description": "PWA didattica su Parini, Alla Dea Moda e Il Giorno",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

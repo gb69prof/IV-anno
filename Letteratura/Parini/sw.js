@@ -1,0 +1,5 @@
+const CACHE='parini-moda-v1';
+const FILES=["./", "./index.html", "./style.css", "./app.js", "./manifest.webmanifest", "./assets/parini_fotorealistico.png", "./assets/parini_dipinto_originale.jpeg", "./assets/mappa_dea_moda_tesi_apparente.png", "./assets/mappa_dea_moda_tesi_vera.png", "./assets/schema_primo_stato_01.png", "./assets/schema_primo_stato_02.png", "./assets/schema_primo_stato_03.png", "./assets/schema_primo_stato_04.png", "./assets/schema_primo_stato_05.png", "./assets/schema_primo_stato_06.png", "./assets/schema_primo_stato_07.png", "./assets/schema_primo_stato_08.png", "./assets/schema_primo_stato_09.png", "./assets/schema_primo_stato_10.png", "./assets/icon-512.png", "./assets/icon-192.png"];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));
+self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));

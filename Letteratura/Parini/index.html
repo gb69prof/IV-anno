@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Parini e la Dea Moda</title>
+  <meta name="description" content="PWA didattica su Giuseppe Parini, Alla Dea Moda, Il Giorno e la critica illuminista alla nobiltà.">
+  <meta name="theme-color" content="#1d252d">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero" id="top">
+  <nav class="topbar">
+    <div class="brand"><span class="seal">P</span><span>Parini · Dea Moda</span></div>
+    <button id="menuBtn" aria-label="Apri menu">☰</button>
+  </nav>
+  <div class="hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">Letteratura · Storia · Cittadinanza</p>
+      <h1>Giuseppe Parini e la Dea Moda</h1>
+      <p class="subtitle">Una PWA per leggere <em>Alla Moda</em> non come brano antico, ma come dispositivo di smascheramento: chi orienta i desideri governa più di chi comanda.</p>
+      <div class="actions">
+        <a href="#testo" class="btn primary">Leggi il testo</a>
+        <a href="#mappe" class="btn">Apri le mappe</a>
+      </div>
+    </div>
+    <figure class="portrait-card">
+      <img src="assets/parini_fotorealistico.png" alt="Ritratto fotorealistico di Giuseppe Parini" loading="eager">
+      <figcaption>Parini restituito come volto: non icona da manuale, ma sguardo che interroga.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<aside class="side-nav" id="sideNav" aria-label="Navigazione sezioni">
+  <a href="#problema">1. Il problema</a>
+  <a href="#profilo">2. Parini riformatore</a>
+  <a href="#testo">3. Alla Moda</a>
+  <a href="#mappe">4. Due mappe</a>
+  <a href="#storia">5. Storia e nobiltà</a>
+  <a href="#giorno">6. Il Giorno</a>
+  <a href="#antifrasi">7. Antifrasi</a>
+  <a href="#modelli">8. Due modelli</a>
+  <a href="#cuccia">9. Vergin cuccia</a>
+  <a href="#cittadinanza">10. Cittadinanza</a>
+  <a href="#attivita">11. Attività</a>
+  <a href="#glossario">12. Glossario</a>
+</aside>
+
+<main>
+<section id="problema" class="panel opening">
+  <div>
+    <p class="eyebrow">La domanda di partenza</p>
+    <h2>La Moda non veste soltanto: governa</h2>
+    <p>Parini dedica il suo poemetto alla Moda. In apparenza le rende omaggio. In realtà la mette sul trono per mostrarne il potere: una società può essere guidata non solo da leggi e sovrani, ma da modelli desiderabili.</p>
+    <p>Questa è la chiave della lezione: <strong>l’autorevolezza può perdere contro ciò che persuade subito</strong>. La Moda, ieri come oggi, non ordina: fa desiderare. Non obbliga: orienta. Non dice “devi”, ma “se vuoi contare, devi apparire così”.</p>
+  </div>
+  <div class="quote-box"><span>tesi</span> Parini smaschera il potere dell’apparenza usando la forma dell’elogio ironico.</div>
+</section>
+
+<section id="profilo" class="panel">
+  <p class="eyebrow">Letteratura e società</p>
+  <h2>Parini: tre appartenenze, uno sguardo critico</h2>
+  <p>Parini nasce nel Terzo Stato, appartiene al Primo Stato come sacerdote e dipende economicamente dal Secondo Stato come precettore presso famiglie aristocratiche. Questa posizione gli permette di osservare la società da dentro e da fuori.</p>
+  <div class="triple">
+    <article><h3>Borghesia</h3><p>Valorizza lavoro, famiglia, utilità sociale. Parini ne assume l’etica dell’operosità, pur criticando l’attaccamento eccessivo alla ricchezza.</p></article>
+    <article><h3>Cristianesimo</h3><p>Recupera dignità della persona, morale familiare, responsabilità verso i deboli. Rifiuta oscurantismo e degenerazioni storiche.</p></article>
+    <article><h3>Illuminismo</h3><p>Accoglie ragione, uguaglianza, dignità individuale, ma non abbraccia l’antireligiosità estrema né l’edonismo superficiale.</p></article>
+  </div>
+  <figure class="wide-img"><img src="assets/schema_primo_stato_01.png" alt="Schema su Parini tra borghesia, clero e nobiltà" loading="lazy"><figcaption>Schema di rinforzo: Parini tra Terzo, Primo e Secondo Stato.</figcaption></figure>
+</section>
+
+<section id="testo" class="panel text-section">
+  <p class="eyebrow">Il testo</p>
+  <h2>Alla Dea Moda</h2>
+  <div class="reader-tools"><button data-font="minus">A−</button><button data-font="plus">A+</button><button id="toggleParafrasi">Mostra / nascondi parafrasi</button></div>
+  <div class="split">
+    <article class="source-text" id="sourceText"><p>Lungi da queste carte i cisposi occhi già da un secolo rintuzzati, lungi i fluidi nasi de’ malinconici vegliardi. Qui non si tratta di gravi ministerj nella patria esercitati, non di severe leggi, non di annojante domestica economia, misero appannaggio della canuta età.</p><p>A te, vezzosissima Dea, che con sì dolci redini oggi temperi e governi la nostra brillante gioventù, a te sola questo piccolo Libretto si dedica, e si consagra.</p><p>Chi è che te, qual sommo Nume, oggimai non riverisca, ed onori, poiché in sì breve tempo se’ giunta a debellar la ghiacciata Ragione, il pedante Buon Senso e l’Ordine seccagginoso, tuoi capitali nemici, ed hai sciolto dagli antichissimi lacci questo secolo avventurato?</p><p>Piacciati adunque di accogliere sotto alla tua protezione, ché forse non n’è indegno, questo piccolo Poemetto. Tu il reca su i pacifici altari, ove le gentili Dame e gli amabili Garzoni sagrificano a se medesimi le mattutine ore.</p><p>Per esserti più caro egli ha scosso il giogo della servile rima, e se ne va libero in Versi Sciolti, sapendo che tu di questi specialmente ora godi, e ti compiaci.</p><p>Esso non aspira all’immortalità, come altri libri, troppo lusingati da’ loro Autori, che tu, repentinamente sopravvenendo, hai seppelliti nell’oblio. Siccome egli è per te nato, e consagrato a te sola, così fie pago di vivere quel solo momento, che tu ti mostri sotto un medesimo aspetto, e pensi a cangiarti, e risorgere in più graziose forme.</p><p>Se a te piacerà di riguardare con placid’occhio questo Mattino, forse gli succederanno il Mezzogiorno, e la Sera; e il loro Autore si studierà di comporli, ed ornarli in modo, che non men di questo abbiano ad esserti cari.</p></article>
+    <article class="paraphrase" id="paraphrase"><p>Parini finge di allontanare dal suo libro i vecchi seriosi, gli uomini legati agli incarichi pubblici, alle leggi, all’economia domestica e al senso del dovere. Il suo poemetto, almeno in apparenza, non vuole rivolgersi a loro.</p><p>Si rivolge invece alla Moda, chiamata ironicamente “vezzosissima Dea”. La Moda governa la brillante gioventù con redini dolci: non costringe con la violenza, ma guida attraverso il piacere, il gusto, l’apparenza e il desiderio di appartenere.</p><p>Parini finge di celebrarla perché ha sconfitto la Ragione, il Buon Senso e l’Ordine. Ma proprio questa celebrazione è la sua accusa: se la Moda trionfa, allora una società intera ha messo da parte i valori che dovrebbero renderla adulta.</p><p>Il poemetto stesso finge di adeguarsi alla Moda: usa i versi sciolti perché sono graditi al gusto del momento, non pretende l’immortalità e si accontenta di vivere finché la Moda non cambierà aspetto. La letteratura viene così trascinata ironicamente nel mondo dell’effimero.</p></article>
+  </div>
+  <div class="key-cards"><div><h3>La tesi apparente</h3><p>La Moda è una divinità benefica: guida la gioventù, libera il secolo, decide il gusto, protegge il poemetto.</p></div><div><h3>La tesi vera</h3><p>Parini non celebra la Moda: la usa come maschera ironica per smascherare una società fondata sull’apparenza.</p></div><div><h3>La parola chiave</h3><p>Redini dolci: il potere più efficace non sembra costrizione, ma desiderio.</p></div><div><h3>La domanda di cittadinanza</h3><p>Chi decide oggi che cosa dobbiamo desiderare per sentirci riconosciuti?</p></div></div>
+</section>
+
+<section id="mappe" class="panel">
+  <p class="eyebrow">Lettura sovrapposta</p>
+  <h2>Due mappe identiche: ciò che sembra e ciò che è</h2>
+  <p>Le due mappe hanno la stessa struttura: prima si segue la tesi apparente, poi si ribalta ogni nodo e si arriva alla vera tesi di Parini.</p>
+  <div class="map-pair">
+    <figure><img class="zoomable" src="assets/mappa_dea_moda_tesi_apparente.png" alt="Mappa 1: tesi apparente di Alla Dea Moda" loading="lazy"><figcaption>Mappa 1: la finta celebrazione della Moda.</figcaption></figure>
+    <figure><img class="zoomable" src="assets/mappa_dea_moda_tesi_vera.png" alt="Mappa 2: vera tesi di Parini" loading="lazy"><figcaption>Mappa 2: il ribaltamento ironico.</figcaption></figure>
+  </div>
+</section>
+
+<section id="storia" class="panel">
+  <p class="eyebrow">Storia</p>
+  <h2>Dalla nobiltà guerriera alla nobiltà dell’apparenza</h2>
+  <div class="timeline">
+    <div><b>Medioevo</b><p>Il nobile è uomo d’armi: potere, difesa del territorio, servizio militare.</p></div>
+    <div><b>Età moderna</b><p>Armi da fuoco, eserciti stabili e monarchie assolute riducono la funzione militare dell’aristocrazia.</p></div>
+    <div><b>Versailles</b><p>Il prestigio si sposta dalla spada al rito di corte: etichetta, lusso, abiti, dipendenza dal sovrano.</p></div>
+    <div><b>Settecento</b><p>La nobiltà conserva privilegi, ma spesso perde utilità sociale. Parini la osserva come classe da riformare.</p></div>
+  </div>
+</section>
+
+<section id="giorno" class="panel">
+  <p class="eyebrow">L’opera</p>
+  <h2><em>Il Giorno</em>: lo specchio satirico della nobiltà</h2>
+  <div class="grid-two">
+    <div>
+      <ul class="clean-list">
+        <li><strong>Fine:</strong> riportare la nobiltà a una funzione morale, sociale ed economica.</li>
+        <li><strong>Struttura:</strong> Mattino, Mezzogiorno, Vespro, Notte.</li>
+        <li><strong>Forma:</strong> poema satirico in endecasillabi sciolti.</li>
+        <li><strong>Tecnica dominante:</strong> antifrasi.</li>
+        <li><strong>Critica sociale:</strong> ozio, cicisbeismo, culto dell’apparenza.</li>
+      </ul>
+    </div>
+    <figure><img class="zoomable" src="assets/schema_primo_stato_07.png" alt="Schema generale del Giorno" loading="lazy"><figcaption>Schema: struttura, forma e tre cardini del poema.</figcaption></figure>
+  </div>
+</section>
+
+<section id="antifrasi" class="panel">
+  <p class="eyebrow">Tecnica letteraria</p>
+  <h2>Antifrasi: l’elogio che distrugge</h2>
+  <p>L’antifrasi consiste nel dire una cosa intendendo il contrario. In Parini non è un gioco ornamentale: è una macchina critica. Il poeta finge di lodare ciò che vuole smascherare.</p>
+  <div class="example"><h3>Esempio</h3><p>La scelta tra caffè e cioccolata viene presentata come un evento importantissimo; il sarto che chiede di essere pagato diventa un disturbatore. Il comico nasce dallo squilibrio tra tono alto e realtà meschina.</p></div>
+  <figure class="wide-img"><img class="zoomable" src="assets/schema_primo_stato_08.png" alt="Schema sull’antifrasi e il confronto tra due modelli di vita" loading="lazy"><figcaption>Schema: antifrasi, cicisbeismo e confronto tra operosità e vita nobiliare.</figcaption></figure>
+</section>
+
+<section id="modelli" class="panel">
+  <p class="eyebrow">Confronto morale</p>
+  <h2>Due modelli di vita: buon villan e giovin signore</h2>
+  <div class="compare">
+    <article><h3>Il buon villan</h3><p>Segue i ritmi naturali, lavora, vive la famiglia, partecipa al mantenimento della vita. Parini lo idealizza come figura di operosità e ordine morale.</p></article>
+    <article><h3>Il giovin signore</h3><p>Capovolge giorno e notte, vive di spettacolo, gioco, toilette, visita mondana. Non serve la società: consuma tempo e privilegi.</p></article>
+  </div>
+  <div class="map-pair">
+    <figure><img class="zoomable" src="assets/schema_primo_stato_09.png" alt="Schema sul buon villan e i ritmi naturali" loading="lazy"><figcaption>Il Terzo Stato: ritmi naturali, lavoro, famiglia.</figcaption></figure>
+    <figure><img class="zoomable" src="assets/schema_primo_stato_10.png" alt="Schema sul giorno del giovin signore" loading="lazy"><figcaption>Il nobile: ritmi innaturali e vita senza funzione.</figcaption></figure>
+  </div>
+</section>
+
+<section id="cuccia" class="panel">
+  <p class="eyebrow">Il punto più duro</p>
+  <h2>La “Vergin Cuccia”: quando i valori si rovesciano</h2>
+  <p>Nell’episodio della cagnolina, Parini mostra il capovolgimento morale della nobiltà. Una bestiola amata dalla dama viene trattata come idolo; il servo che l’ha colpita dopo essere stato morso viene licenziato e condannato alla miseria con la famiglia.</p>
+  <div class="warning"><strong>Il nodo:</strong> la sensibilità aristocratica si commuove per l’animale, ma resta cieca davanti alla dignità umana. La pietà diventa moda; la giustizia scompare.</div>
+</section>
+
+<section id="cittadinanza" class="panel civic">
+  <p class="eyebrow">Cittadinanza</p>
+  <h2>Moda, persuasione, controllo: perché Parini parla ancora</h2>
+  <p>La Moda di Parini è un potere che non sembra potere. Oggi possiamo riconoscerla nei meccanismi che orientano identità, desiderio e appartenenza: social, trend, voto come passaporto, immagine pubblica, bisogno di essere visti.</p>
+  <div class="civic-grid">
+    <div><h3>Non comanda: orienta</h3><p>La Moda non impone con la forza. Rende desiderabile una forma di vita.</p></div>
+    <div><h3>Non educa: addestra</h3><p>Non chiede comprensione, ma adeguamento rapido ai codici del momento.</p></div>
+    <div><h3>Non libera: sostituisce</h3><p>Sembra togliere vincoli, ma mette al loro posto nuove dipendenze.</p></div>
+    <div><h3>Non smaschera: spettacolarizza</h3><p>Mostra reazioni e viscere, ma spesso non aiuta a capire i meccanismi.</p></div>
+  </div>
+</section>
+
+<section id="attivita" class="panel">
+  <p class="eyebrow">Laboratorio</p>
+  <h2>Attività per la classe</h2>
+  <div class="activities">
+    <details open><summary>1. Due letture dello stesso testo</summary><p>Dividi la classe in due gruppi: il primo difende la tesi apparente; il secondo ricostruisce la tesi vera. Poi sovrapponete le due mappe.</p></details>
+    <details><summary>2. Chi è oggi la Dea Moda?</summary><p>Ogni gruppo sceglie una “dea” contemporanea: voto, smartphone, trend, corpo, relazione, successo. Deve spiegare quali redini dolci usa.</p></details>
+    <details><summary>3. Antifrasi contemporanea</summary><p>Scrivi una dedica ironica a un potere del presente: “Alla Dea Notifica”, “Al Dio Voto”, “Alla Dea Apparenza”.</p></details>
+    <details><summary>4. Verifica non mnemonica</summary><p>Spiega perché Parini usa l’elogio invece dell’accusa diretta. Poi applica lo stesso meccanismo a un fenomeno contemporaneo.</p></details>
+  </div>
+  <div class="quiz">
+    <h3>Controllo rapido</h3>
+    <div id="quizBox"></div>
+  </div>
+</section>
+
+<section id="glossario" class="panel glossary">
+  <p class="eyebrow">Saperi irrinunciabili</p>
+  <h2>Glossario essenziale</h2>
+  <dl>
+    <dt>Illuminismo</dt><dd>Movimento culturale fondato su ragione, critica dell’autorità, progresso e riforma della società.</dd>
+    <dt>Primo Stato</dt><dd>Il clero nell’Ancien Régime.</dd>
+    <dt>Precettore</dt><dd>Insegnante privato presso famiglie nobili; ruolo che Parini svolse.</dd>
+    <dt>Antifrasi</dt><dd>Figura retorica in cui si afferma il contrario di ciò che si vuole far intendere.</dd>
+    <dt>Cicisbeismo</dt><dd>Usanza aristocratica per cui una dama sposata era accompagnata da un cavalier servente.</dd>
+    <dt>Endecasillabi sciolti</dt><dd>Versi di undici sillabe senza schema fisso di rime.</dd>
+    <dt>Giovin Signore</dt><dd>Il giovane aristocratico protagonista del poema, simbolo di ozio e inutilità sociale.</dd>
+    <dt>Satira</dt><dd>Critica ironica di vizi, costumi e comportamenti, con intento morale e civile.</dd>
+  </dl>
+</section>
+
+<section class="panel credits">
+  <h2>Fonti della PWA</h2>
+  <p>Materiali didattici di base: dispensa <em>Giuseppe Parini e la Dea Moda</em> e documento <em>Letteratura primo Stato</em>. Le immagini-schemi provengono dal documento allegato e dalle mappe generate per il percorso.</p>
+</section>
+</main>
+
+<div class="modal" id="modal" aria-hidden="true"><button id="closeModal">×</button><img alt="Immagine ingrandita"></div>
+
+<footer><a href="#top">Torna su</a><span> · PWA didattica per classe quarta</span></footer>
+<script src="app.js"></script>
+</body>
+</html>
