@@ -1,0 +1,24 @@
+{
+  "name": "Il Romanticismo - PWA didattica",
+  "short_name": "Romanticismo",
+  "description": "Percorso interattivo essenziale sul Romanticismo europeo e italiano, ponte verso Manzoni e Leopardi.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#061a2b",
+  "theme_color": "#061a2b",
+  "lang": "it",
+  "icons": [
+    {
+      "src": "assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

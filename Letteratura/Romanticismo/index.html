@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061a2b">
+  <title>Il Romanticismo — PWA didattica</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/images/icon-192.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+<header class="topbar" aria-label="Navigazione principale">
+  <a href="#home" class="brand" aria-label="Home Romanticismo"><span class="brand-mark">R</span><span>Il Romanticismo</span></a>
+  <nav class="nav">
+    <a href="#home">Home</a>
+    <a href="#lezioni">Lezioni</a>
+    <a href="#approfondimenti">Approfondimenti</a>
+    <a href="#mappe">Mappe</a>
+    <a href="#autori">Autori</a>
+    <a href="#quiz">Quiz</a>
+    <button id="installBtn" class="install-btn">Installa PWA</button>
+  </nav>
+</header>
+
+<main id="contenuto">
+  <section id="home" class="hero" aria-label="Copertina interattiva">
+    <div class="hero-shell">
+      <img class="hero-img" src="assets/images/il_romanticismo_un_viaggio_interattivo.png" alt="Copertina della PWA sul Romanticismo con sezioni, figure e temi chiave">
+      <button class="hotspot" style="left:3%;top:38%;width:14.5%;height:19%;" data-target="lezione-1" aria-label="Che cos’è"></button>
+      <button class="hotspot" style="left:18.5%;top:38%;width:14.5%;height:19%;" data-target="lezione-2" aria-label="Nascita europea"></button>
+      <button class="hotspot" style="left:34.1%;top:38%;width:14.5%;height:19%;" data-target="lezione-3" aria-label="Nuclei fondamentali"></button>
+      <button class="hotspot" style="left:49.7%;top:38%;width:14.5%;height:19%;" data-target="lezione-5" aria-label="Romanticismo italiano"></button>
+      <button class="hotspot" style="left:65.4%;top:38%;width:14.5%;height:19%;" data-target="lezione-6" aria-label="Autori maggiori"></button>
+      <button class="hotspot" style="left:81%;top:38%;width:14.5%;height:19%;" data-target="percorsi-autori" aria-label="Ponte agli autori"></button>
+      <button class="hotspot" style="left:4%;top:61.5%;width:13%;height:10%;" data-target="lezione-9" aria-label="Infinito"></button>
+      <button class="hotspot" style="left:19%;top:61.5%;width:13%;height:10%;" data-target="lezione-3" aria-label="Natura"></button>
+      <button class="hotspot" style="left:34%;top:61.5%;width:13%;height:10%;" data-target="lezione-5" aria-label="Popolo"></button>
+      <button class="hotspot" style="left:49%;top:61.5%;width:13%;height:10%;" data-target="lezione-7" aria-label="Storia e romanzo storico"></button>
+      <button class="hotspot" style="left:64%;top:61.5%;width:13%;height:10%;" data-target="lezione-7" aria-label="Romanzo storico"></button>
+      <button class="hotspot" style="left:79%;top:61.5%;width:13%;height:10%;" data-target="lezione-9" aria-label="Illusioni"></button>
+      <button class="hotspot" style="left:3%;top:73%;width:30%;height:13%;" data-target="mappe" aria-label="Mappe e schemi"></button>
+      <button class="hotspot" style="left:35%;top:73%;width:30%;height:13%;" data-target="timeline" aria-label="Timeline interattiva"></button>
+      <button class="hotspot" style="left:67%;top:73%;width:30%;height:13%;" data-target="quiz" aria-label="Quiz finale"></button>
+    </div>
+    <div class="hero-help">
+      <span>La copertina è attiva: premi sulle schede, sui temi o sui tre riquadri finali.</span>
+      <a class="small-btn" href="#lezioni">Inizia il percorso →</a>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Introduzione">
+    <div class="container paper intro-panel">
+      <div>
+        <span class="eyebrow">idea guida</span>
+        <h2>Una porta d’ingresso a Manzoni e Leopardi</h2>
+        <p class="lead">Il Romanticismo non è solo “sentimento contro ragione”. È la risposta inquieta alla crisi della modernità: l’uomo scopre l’interiorità, la storia, il popolo, la nazione e l’immaginazione come modi per dare senso a un mondo che non appare più ordinato e stabile.</p>
+        <p class="highlight">La PWA funziona come indice vivo: ogni scheda apre una breve lezione, una mappa e un collegamento agli autori dell’Ottocento romantico italiano.</p>
+        <div class="searchbox" role="search">
+          <input id="searchInput" type="search" placeholder="Cerca: infinito, Manzoni, popolo, romanzo storico..." aria-label="Cerca nel percorso">
+          <button id="searchBtn">Cerca</button>
+        </div>
+      </div>
+      <div class="stats" aria-label="Struttura del percorso">
+        <div class="stat"><strong>9</strong>lezioni brevi</div>
+        <div class="stat"><strong>12</strong>mappe e schemi</div>
+        <div class="stat"><strong>2</strong>ponti d’autore</div>
+        <div class="stat"><strong>1</strong>quiz finale</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lezioni" class="section">
+    <div class="container titleblock">
+      <span class="eyebrow">percorso</span>
+      <h2>Lezioni essenziali</h2>
+      <p>Brevi, ma non banali: ogni sezione chiarisce un nodo e lo collega a Manzoni e Leopardi.</p>
+    </div>
+    <div class="container lesson-grid">
+      <article id="lezione-1" class="lesson-card" data-num="1">
+        <img src="assets/images/mappa_del_romanticismo_un_viaggio_visivo.png" alt="Mappa 1: che cos'è il Romanticismo">
+        <h3>Che cos’è il Romanticismo</h3>
+        <p>Un grande movimento culturale europeo che trasforma uomo, storia, natura, arte e società.</p>
+        <div class="card-actions"><button class="small-btn" data-open>Apri scheda</button><button class="small-btn alt" data-map="assets/images/mappa_del_romanticismo_un_viaggio_visivo.png" data-title="Mappa 1 — Che cos’è il Romanticismo">Vedi mappa</button></div>
+        <div class="lesson-detail"><p>Il Romanticismo non cancella la ragione: rifiuta una ragione astratta, fredda e calcolante. Vuole una ragione più ampia, capace di includere sentimento, immaginazione, storia, simbolo e interiorità.</p><ul><li>È plurale: esistono molti Romanticismi nazionali.</li><li>Nasce da una crisi dell’Illuminismo, non da una sua eliminazione.</li><li>Fa della letteratura uno strumento di conoscenza e, in Italia, di educazione civile.</li></ul></div>
+      </article>
+      <article id="lezione-2" class="lesson-card" data-num="2">
+        <img src="assets/images/mappa_del_romanticismo_europeo.png" alt="Mappa 2: la nascita europea del Romanticismo">
+        <h3>La nascita europea</h3>
+        <p>Germania, Inghilterra, Francia e Italia non dicono la stessa cosa: il movimento è policentrico.</p>
+        <div class="card-actions"><button class="small-btn" data-open>Apri scheda</button><button class="small-btn alt" data-map="assets/images/mappa_del_romanticismo_europeo.png" data-title="Mappa 2 — La nascita europea">Vedi mappa</button></div>
+        <div class="lesson-detail"><p>In Germania prevale il laboratorio filosofico; in Inghilterra natura e interiorità; in Francia la battaglia teatrale contro il classicismo; in Italia la funzione civile della letteratura.</p><ul><li>1798: Lyrical Ballads.</li><li>1797-1802: Jena e primo Romanticismo tedesco.</li><li>1816: polemica classico-romantica italiana.</li><li>1827: Prefazione al Cromwell e I Promessi sposi.</li></ul></div>
+      </article>
+      <article id="lezione-3" class="lesson-card" data-num="3">
+        <img src="assets/images/mappa_del_romanticismo_nuclei_fondamentali.png" alt="Mappa 3: i nuclei fondamentali">
+        <h3>I nuclei fondamentali</h3>
+        <p>Sentimento, popolo, nazione, storia, natura e infinito: i concetti che preparano l’Ottocento.</p>
+        <div class="card-actions"><button class="small-btn" data-open>Apri scheda</button><button class="small-btn alt" data-map="assets/images/mappa_del_romanticismo_nuclei_fondamentali.png" data-title="Mappa 3 — I nuclei fondamentali">Vedi mappa</button></div>
+        <div class="lesson-detail"><p>Questi nuclei non sono etichette: sono modi diversi di rispondere alla crisi moderna. Manzoni li orienta verso storia, coscienza e responsabilità; Leopardi li porta verso limite, infinito e disincanto.</p><div class="callout"><strong>Formula:</strong> la realtà non è solo ciò che si misura; è anche ciò che si ricorda, si desidera, si teme, si immagina e si costruisce storicamente.</div></div>
+      </article>
+      <article id="lezione-4" class="lesson-card" data-num="4">
+        <img src="assets/images/mappa_delle_contraddizioni_romantiche.png" alt="Mappa 4: le contraddizioni romantiche">
+        <h3>Le contraddizioni romantiche</h3>
+        <p>Il Romanticismo vive di tensioni: ragione/sentimento, io/comunità, libertà/tradizione.</p>
+        <div class="card-actions"><button class="small-btn" data-open>Apri scheda</button><button class="small-btn alt" data-map="assets/images/mappa_delle_contraddizioni_romantiche.png" data-title="Mappa 4 — Le contraddizioni romantiche">Vedi mappa</button></div>
+        <div class="lesson-detail"><p>Il movimento è importante perché non è pacificato. Mostra le fratture dell’uomo moderno: bisogno di comprendere e coscienza che il mondo eccede il calcolo; libertà creativa e bisogno di appartenenza; infinito desiderato e limite reale.</p></div>
+      </article>
+      <article id="lezione-5" class="lesson-card" data-num="5">
+        <img src="assets/images/mappa_del_romanticismo_italiano.png" alt="Mappa 5: il Romanticismo italiano">
+        <h3>Il Romanticismo italiano</h3>
+        <p>Più civile che “maledetto”: una letteratura per un paese diviso e ancora da costruire.</p>
+        <div class="card-actions"><button class="small-btn" data-open>Apri scheda</button><button class="small-btn alt" data-map="assets/images/mappa_del_romanticismo_italiano.png" data-title="Mappa 5 — Il Romanticismo italiano">Vedi mappa</button></div>
+        <div class="lesson-detail"><p>La domanda italiana è concreta: quale letteratura serve a un paese senza unità politica e linguistica? La risposta romantica è una letteratura utile, viva, civile, capace di parlare ai vivi e di costruire coscienza nazionale.</p><ul><li>1816: polemica classico-romantica.</li><li>Berchet: poesia non per pochi.</li><li>Risorgimento: letteratura come costruzione simbolica della nazione.</li></ul></div>
+      </article>
+      <article id="lezione-6" class="lesson-card" data-num="6">
+        <img src="assets/images/mappa_dei_principali_autori_romantici.png" alt="Mappa 6: gli autori maggiori">
+        <h3>Gli autori maggiori</h3>
+        <p>Ogni autore prende qualcosa dal Romanticismo e lo trasforma: da Goethe a Leopardi.</p>
+        <div class="card-actions"><button class="small-btn" data-open>Apri scheda</button><button class="small-btn alt" data-map="assets/images/mappa_dei_principali_autori_romantici.png" data-title="Mappa 6 — Gli autori maggiori">Vedi mappa</button></div>
+        <div class="lesson-detail"><p>Goethe mostra l’io diviso; Schiller l’arte come educazione; Wordsworth natura e memoria; Byron il ribelle titanico; Hugo il dramma moderno; Scott il romanzo storico; Berchet il programma civile; Manzoni e Leopardi trasformano tutto in due direzioni opposte.</p></div>
+      </article>
+      <article id="lezione-7" class="lesson-card" data-num="7">
+        <img src="assets/images/mappa_storica_del_romanzo_europeo.png" alt="Mappa 7: il romanzo storico">
+        <h3>Il romanzo storico</h3>
+        <p>La storia diventa racconto: da Walter Scott a Manzoni, dal passato alla coscienza.</p>
+        <div class="card-actions"><button class="small-btn" data-open>Apri scheda</button><button class="small-btn alt" data-map="assets/images/mappa_storica_del_romanzo_europeo.png" data-title="Mappa 7 — Il romanzo storico">Vedi mappa</button></div>
+        <div class="lesson-detail"><p>Il romanzo storico racconta una vicenda inventata dentro un passato riconoscibile. Manzoni non copia Scott: lo corregge. Il passato non serve a evadere, ma a capire l’uomo dentro la storia.</p></div>
+      </article>
+      <article id="lezione-8" class="lesson-card" data-num="8">
+        <img src="assets/images/mappa_storica_su_manzoni_e_romanticismo.png" alt="Mappa 8: ponte verso Manzoni">
+        <h3>Ponte verso Manzoni</h3>
+        <p>Storia, popolo, vero, utile, interessante e lingua: Romanticismo della responsabilità.</p>
+        <div class="card-actions"><button class="small-btn" data-open>Apri scheda</button><button class="small-btn alt" data-map="assets/images/mappa_storica_su_manzoni_e_romanticismo.png" data-title="Mappa 8 — Ponte verso Manzoni">Vedi mappa</button></div>
+        <div class="lesson-detail"><p>Manzoni accoglie i nuclei romantici, ma li orienta dentro una visione cristiana e morale. La sua formula è: <em>utile per iscopo, vero per soggetto, interessante per mezzo</em>.</p></div>
+      </article>
+      <article id="lezione-9" class="lesson-card" data-num="9">
+        <img src="assets/images/mappa_versale_leopardi_un_viaggio_romantico.png" alt="Mappa 9: ponte verso Leopardi">
+        <h3>Ponte verso Leopardi</h3>
+        <p>Dentro e contro il Romanticismo: infinito, immaginazione, natura indifferente e limite.</p>
+        <div class="card-actions"><button class="small-btn" data-open>Apri scheda</button><button class="small-btn alt" data-map="assets/images/mappa_versale_leopardi_un_viaggio_romantico.png" data-title="Mappa 9 — Ponte verso Leopardi">Vedi mappa</button></div>
+        <div class="lesson-detail"><p>Leopardi usa strumenti romantici per negare ogni romanticismo ingenuo. Non dice: “l’infinito ci salva”. Dice: “l’uomo ha bisogno dell’infinito proprio perché è finito”.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="timeline" class="section">
+    <div class="container titleblock"><span class="eyebrow">tempo storico</span><h2>Timeline interattiva</h2></div>
+    <div class="container paper panel">
+      <div class="timeline">
+        <button class="time-node" data-year="1789"><strong>1789</strong>Rivoluzione</button>
+        <button class="time-node" data-year="1798"><strong>1798</strong>Lyrical Ballads</button>
+        <button class="time-node" data-year="1799"><strong>1799</strong>Jena</button>
+        <button class="time-node" data-year="1816"><strong>1816</strong>Dibattito italiano</button>
+        <button class="time-node" data-year="1823"><strong>1823</strong>Manzoni</button>
+        <button class="time-node" data-year="1827"><strong>1827</strong>Romanzo e teatro</button>
+        <button class="time-node" data-year="1840"><strong>1840</strong>Quarantana</button>
+      </div>
+      <p id="timeDesc" class="time-desc">Premi una data per leggerne il significato nel percorso.</p>
+    </div>
+  </section>
+
+  <section id="approfondimenti" class="section">
+    <div class="container titleblock"><span class="eyebrow">nodi critici</span><h2>Approfondimenti</h2></div>
+    <div class="container split">
+      <div class="paper panel">
+        <h3>Romanticismo europeo</h3>
+        <p>Non è un blocco unico. È una costellazione: in Germania il problema dell’io e dell’infinito, in Inghilterra la natura come esperienza interiore, in Francia la rottura delle regole classiche, in Italia la funzione civile e nazionale.</p>
+        <div class="table-wrap"><table><thead><tr><th>Area</th><th>Nodo</th><th>Funzione</th></tr></thead><tbody><tr><td>Germania</td><td>Io, natura, infinito</td><td>Laboratorio filosofico</td></tr><tr><td>Inghilterra</td><td>Natura, memoria, emozione</td><td>Riforma del linguaggio poetico</td></tr><tr><td>Francia</td><td>Sublime e grottesco</td><td>Battaglia culturale moderna</td></tr><tr><td>Italia</td><td>Popolo, nazione, storia</td><td>Letteratura civile</td></tr></tbody></table></div>
+      </div>
+      <div class="paper panel dark">
+        <h3>Linguaggio poetico e stilistico</h3>
+        <p>Il poeta romantico non descrive soltanto: evoca, fa sentire, apre all’infinito. La lingua cerca musicalità, simbolo, immagini, sospensione, legami invisibili tra mondo esterno e mondo interiore.</p>
+        <div class="tabs" data-tabs="lingua"><button class="tab" aria-selected="true" data-panel="lingua-1">Strumenti</button><button class="tab" aria-selected="false" data-panel="lingua-2">Temi</button><button class="tab" aria-selected="false" data-panel="lingua-3">Mappa</button></div>
+        <div id="lingua-1" class="tab-panel active" data-group="lingua"><p><strong>Metafora, analogia, sinestesia, enjambement, simbolo, ellissi.</strong> Non sono ornamenti: servono a dire ciò che il linguaggio logico non contiene.</p></div>
+        <div id="lingua-2" class="tab-panel" data-group="lingua"><p>Infinito, natura, notte, solitudine, viaggio, amore, morte, mistero, Dio/Assoluto.</p></div>
+        <div id="lingua-3" class="tab-panel" data-group="lingua"><button class="small-btn" data-map="assets/images/a_detailed_infographic_mind_map_poster_style_ima.png" data-title="Mappa riassuntiva sul linguaggio poetico">Apri mappa riassuntiva</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="percorsi-autori" class="section">
+    <div class="container titleblock"><span class="eyebrow">dalla corrente agli autori</span><h2>Ponte verso Manzoni e Leopardi</h2></div>
+    <div class="container paper panel">
+      <div class="tabs" data-tabs="ponte"><button class="tab" aria-selected="true" data-panel="ponte-manzoni">Manzoni</button><button class="tab" aria-selected="false" data-panel="ponte-leopardi">Leopardi</button><button class="tab" aria-selected="false" data-panel="ponte-romanzo">Romanzo storico</button></div>
+      <div id="ponte-manzoni" class="tab-panel active" data-group="ponte"><h3>Manzoni: responsabilità</h3><p>Accoglie storia, popolo, lingua viva e vero, ma li piega verso una visione cristiana e morale. Il suo Romanticismo è storico, civile, educativo.</p><button class="small-btn" data-map="assets/images/mappa_storica_su_manzoni_e_romanticismo.png" data-title="Ponte verso Manzoni">Vedi mappa Manzoni</button></div>
+      <div id="ponte-leopardi" class="tab-panel" data-group="ponte"><h3>Leopardi: lucidità tragica</h3><p>È vicino al Romanticismo per infinito, immaginazione e interiorità; se ne distacca perché non concede consolazioni facili. Il limite non scompare: diventa conoscenza.</p><button class="small-btn" data-map="assets/images/mappa_versale_leopardi_un_viaggio_romantico.png" data-title="Ponte verso Leopardi">Vedi mappa Leopardi</button></div>
+      <div id="ponte-romanzo" class="tab-panel" data-group="ponte"><h3>Il romanzo storico</h3><p>Da Scott a Manzoni: la storia diventa ambiente, forza e destino collettivo. Manzoni la usa per comprendere l’uomo, non per evadere nel passato.</p><button class="small-btn" data-map="assets/images/mappa_storica_del_romanzo_europeo.png" data-title="Il romanzo storico">Vedi mappa romanzo storico</button></div>
+    </div>
+  </section>
+
+  <section id="mappe" class="section">
+    <div class="container titleblock"><span class="eyebrow">quadri visivi</span><h2>Mappe e schemi</h2><p>Apri ogni immagine a schermo pieno. Le mappe sono pensate per stampa e ripasso.</p></div>
+    <div class="container map-gallery">
+      <article class="map-card"><img src="assets/images/mappa_del_romanticismo_un_viaggio_visivo.png" alt="Mappa 1"><div class="caption"><h3>1. Che cos’è</h3><button class="small-btn" data-map="assets/images/mappa_del_romanticismo_un_viaggio_visivo.png" data-title="Mappa 1 — Che cos’è">Apri</button></div></article>
+      <article class="map-card"><img src="assets/images/mappa_del_romanticismo_europeo.png" alt="Mappa 2"><div class="caption"><h3>2. Nascita europea</h3><button class="small-btn" data-map="assets/images/mappa_del_romanticismo_europeo.png" data-title="Mappa 2 — Nascita europea">Apri</button></div></article>
+      <article class="map-card"><img src="assets/images/mappa_del_romanticismo_nuclei_fondamentali.png" alt="Mappa 3"><div class="caption"><h3>3. Nuclei</h3><button class="small-btn" data-map="assets/images/mappa_del_romanticismo_nuclei_fondamentali.png" data-title="Mappa 3 — Nuclei fondamentali">Apri</button></div></article>
+      <article class="map-card"><img src="assets/images/mappa_delle_contraddizioni_romantiche.png" alt="Mappa 4"><div class="caption"><h3>4. Contraddizioni</h3><button class="small-btn" data-map="assets/images/mappa_delle_contraddizioni_romantiche.png" data-title="Mappa 4 — Contraddizioni romantiche">Apri</button></div></article>
+      <article class="map-card"><img src="assets/images/mappa_del_romanticismo_italiano.png" alt="Mappa 5"><div class="caption"><h3>5. Italia</h3><button class="small-btn" data-map="assets/images/mappa_del_romanticismo_italiano.png" data-title="Mappa 5 — Romanticismo italiano">Apri</button></div></article>
+      <article class="map-card"><img src="assets/images/mappa_dei_principali_autori_romantici.png" alt="Mappa 6"><div class="caption"><h3>6. Autori</h3><button class="small-btn" data-map="assets/images/mappa_dei_principali_autori_romantici.png" data-title="Mappa 6 — Autori maggiori">Apri</button></div></article>
+      <article class="map-card"><img src="assets/images/mappa_storica_del_romanzo_europeo.png" alt="Mappa 7"><div class="caption"><h3>7. Romanzo storico</h3><button class="small-btn" data-map="assets/images/mappa_storica_del_romanzo_europeo.png" data-title="Mappa 7 — Romanzo storico">Apri</button></div></article>
+      <article class="map-card"><img src="assets/images/mappa_storica_su_manzoni_e_romanticismo.png" alt="Mappa 8"><div class="caption"><h3>8. Manzoni</h3><button class="small-btn" data-map="assets/images/mappa_storica_su_manzoni_e_romanticismo.png" data-title="Mappa 8 — Ponte verso Manzoni">Apri</button></div></article>
+      <article class="map-card"><img src="assets/images/mappa_versale_leopardi_un_viaggio_romantico.png" alt="Mappa 9"><div class="caption"><h3>9. Leopardi</h3><button class="small-btn" data-map="assets/images/mappa_versale_leopardi_un_viaggio_romantico.png" data-title="Mappa 9 — Ponte verso Leopardi">Apri</button></div></article>
+      <article class="map-card"><img src="assets/images/a_detailed_infographic_mind_map_poster_style_ima.png" alt="Mappa riassuntiva"><div class="caption"><h3>Linguaggio poetico</h3><button class="small-btn" data-map="assets/images/a_detailed_infographic_mind_map_poster_style_ima.png" data-title="Mappa riassuntiva sul linguaggio poetico">Apri</button></div></article>
+      <article class="map-card"><img src="assets/images/a_polished_educational_infographic_poster_page_i.png" alt="Mappa linguaggio poetico"><div class="caption"><h3>Stile poetico</h3><button class="small-btn" data-map="assets/images/a_polished_educational_infographic_poster_page_i.png" data-title="Linguaggio poetico e stilistico">Apri</button></div></article>
+      <article class="map-card"><img src="assets/images/a_highly_detailed_infographic_mind_map_style_pos.png" alt="Mappa linguaggio"><div class="caption"><h3>Simboli e infinito</h3><button class="small-btn" data-map="assets/images/a_highly_detailed_infographic_mind_map_style_pos.png" data-title="Simboli, immaginazione e infinito">Apri</button></div></article>
+    </div>
+  </section>
+
+  <section id="autori" class="section">
+    <div class="container titleblock"><span class="eyebrow">figure chiave</span><h2>Autori-nodo</h2></div>
+    <div class="container autori-grid">
+      <article class="author"><h3>Goethe</h3><span class="tag">io diviso</span><span class="tag">Faust</span><p>Mostra l’uomo moderno come conflitto, desiderio e inquietudine: l’io non si ferma entro un limite definitivo.</p></article>
+      <article class="author"><h3>Schiller</h3><span class="tag">educazione estetica</span><span class="tag">libertà</span><p>Fa dell’arte una mediazione tra impulso e ragione: la bellezza può formare l’uomo.</p></article>
+      <article class="author"><h3>Wordsworth</h3><span class="tag">natura</span><span class="tag">memoria</span><p>La poesia nasce dall’emozione rielaborata nella tranquillità: non sfogo, ma forma del ricordo.</p></article>
+      <article class="author"><h3>Byron</h3><span class="tag">ribellione</span><span class="tag">eroe titanico</span><p>Rende potente il modello del genio solitario, affascinante e distruttivo.</p></article>
+      <article class="author"><h3>Victor Hugo</h3><span class="tag">sublime/grottesco</span><span class="tag">teatro</span><p>Il dramma romantico mescola registri diversi perché l’uomo moderno è contraddizione.</p></article>
+      <article class="author"><h3>Walter Scott</h3><span class="tag">romanzo storico</span><span class="tag">passato vivo</span><p>Offre il modello europeo del romanzo storico: il passato come scena viva della nazione.</p></article>
+      <article class="author"><h3>Berchet</h3><span class="tag">poesia dei vivi</span><span class="tag">pubblico</span><p>Traduce in Italia il Romanticismo in programma civile, moderno e antiaccademico.</p></article>
+      <article class="author"><h3>Manzoni</h3><span class="tag">vero</span><span class="tag">utile</span><span class="tag">popolo</span><p>Un Romanticismo morale, cristiano e storico: la letteratura deve educare e coinvolgere.</p></article>
+      <article class="author"><h3>Leopardi</h3><span class="tag">infinito</span><span class="tag">limite</span><span class="tag">disincanto</span><p>Attraversa il Romanticismo portandolo verso una conoscenza tragica della condizione umana.</p></article>
+    </div>
+  </section>
+
+  <section id="quiz" class="section">
+    <div class="container titleblock"><span class="eyebrow">verifica</span><h2>Quiz finale</h2><p>Una verifica rapida, utile per vedere se i collegamenti fondamentali sono chiari.</p></div>
+    <div class="container paper panel quiz">
+      <div id="quizRoot"></div>
+      <div id="quizResult" class="quiz-result" aria-live="polite"></div>
+      <button id="resetQuiz" class="small-btn alt">Ricomincia il quiz</button>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <span>© 2026 gbprof e Libera — PWA didattica</span>
+    <a class="small-btn" href="assets/docs/Dispensa_Romanticismo_gbprof_Libera.docx" download>Scarica la dispensa Word</a>
+  </div>
+</footer>
+
+<dialog id="mapModal" class="modal" aria-label="Visualizzatore mappe">
+  <div class="modal-inner">
+    <button id="closeModal" class="close-modal" aria-label="Chiudi">×</button>
+    <h3 id="modalTitle" style="color:#f4d28a;margin:0 3rem 1rem 0">Mappa</h3>
+    <img id="modalImg" src="" alt="">
+  </div>
+</dialog>
+<div id="toast" class="toast" aria-live="polite"></div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
