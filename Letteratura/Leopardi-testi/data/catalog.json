@@ -1,0 +1,125 @@
+{
+  "generated": "2026-07-06",
+  "works": [
+    {
+      "slug": "canti",
+      "title": "Canti",
+      "author": "Giacomo Leopardi",
+      "genre": "Poesia",
+      "source": "EPUB caricato: leopardi_canti.epub",
+      "description": "La raccolta poetica maggiore: canzoni, idilli, canti pisano-recanatesi e ultimi canti.",
+      "sectionCount": 41,
+      "wordCount": 24752
+    },
+    {
+      "slug": "operette-morali",
+      "title": "Operette morali",
+      "author": "Giacomo Leopardi",
+      "genre": "Prosa filosofica",
+      "source": "EPUB caricato: leopardi_operette_morali.epub (parzialmente recuperato: archivio EPUB con errori CRC)",
+      "description": "Dialoghi e prose morali: satira, filosofia, allegoria e critica della modernità. Nota tecnica: il file EPUB caricato contiene errori di archivio in alcune sezioni centrali; sono state recuperate automaticamente tutte le sezioni leggibili.",
+      "sectionCount": 34,
+      "wordCount": 51953
+    },
+    {
+      "slug": "zibaldone-pensieri-di-varia-filosofia-e-di-bella-letteratura",
+      "title": "Zibaldone / Pensieri di varia filosofia e di bella letteratura",
+      "author": "Giacomo Leopardi",
+      "genre": "Zibaldone / pensiero",
+      "source": "TXT caricato: pensieri.zip",
+      "description": "Il laboratorio filosofico, linguistico, poetico e antropologico di Leopardi.",
+      "sectionCount": 91,
+      "wordCount": 968295
+    },
+    {
+      "slug": "appressamento-della-morte",
+      "title": "Appressamento della morte",
+      "author": "Giacomo Leopardi",
+      "genre": "Poesia giovanile",
+      "source": "TXT caricato: appressa.zip",
+      "description": "Poema giovanile, diviso in canti.",
+      "sectionCount": 5,
+      "wordCount": 6553
+    },
+    {
+      "slug": "discorso-di-un-italiano-intorno-alla-poesia-romantica",
+      "title": "Discorso di un italiano intorno alla poesia romantica",
+      "author": "Giacomo Leopardi",
+      "genre": "Saggio critico",
+      "source": "PDF caricato: leopardi_discorso_di_un_italiano.pdf",
+      "description": "Intervento leopardiano sulla poesia romantica, nella forma del discorso polemico e teorico.",
+      "sectionCount": 2,
+      "wordCount": 29130
+    },
+    {
+      "slug": "discorso-sopra-la-batracomiomachia",
+      "title": "Discorso sopra la Batracomiomachia",
+      "author": "Giacomo Leopardi",
+      "genre": "Saggio",
+      "source": "TXT caricato: discorso.zip",
+      "description": "Prosa critica e filologica intorno alla Batracomiomachia.",
+      "sectionCount": 1,
+      "wordCount": 4817
+    },
+    {
+      "slug": "guerra-de-topi-e-delle-rane-1821-1822",
+      "title": "Guerra de' topi e delle rane (1821-1822)",
+      "author": "Giacomo Leopardi",
+      "genre": "Poesia / traduzione",
+      "source": "TXT caricato: guerra_d 2.zip",
+      "description": "Seconda redazione della Guerra dei topi e delle rane.",
+      "sectionCount": 3,
+      "wordCount": 3178
+    },
+    {
+      "slug": "guerra-dei-topi-e-delle-rane-1826",
+      "title": "Guerra dei topi e delle rane (1826)",
+      "author": "Giacomo Leopardi",
+      "genre": "Poesia / traduzione",
+      "source": "TXT caricato: guerra_d.zip",
+      "description": "Versione del 1826 della Batracomiomachia.",
+      "sectionCount": 3,
+      "wordCount": 3212
+    },
+    {
+      "slug": "la-guerra-dei-topi-e-delle-rane-1815",
+      "title": "La guerra dei topi e delle rane (1815)",
+      "author": "Giacomo Leopardi",
+      "genre": "Poesia / traduzione",
+      "source": "TXT caricato: la_guerr.zip",
+      "description": "Prima versione leopardiana della Batracomiomachia.",
+      "sectionCount": 4,
+      "wordCount": 3115
+    },
+    {
+      "slug": "linfinito",
+      "title": "L’infinito",
+      "author": "Giacomo Leopardi",
+      "genre": "Poesia / manoscritto",
+      "source": "TXT caricato: l_infini.zip",
+      "description": "Trascrizione del secondo manoscritto autografo e testo a stampa.",
+      "sectionCount": 1,
+      "wordCount": 243
+    },
+    {
+      "slug": "paralipomeni-della-batracomiomachia",
+      "title": "Paralipomeni della Batracomiomachia",
+      "author": "Giacomo Leopardi",
+      "genre": "Poema satirico",
+      "source": "TXT caricato: paralipo.zip",
+      "description": "Grande satira politica e allegorica dell’ultimo Leopardi.",
+      "sectionCount": 8,
+      "wordCount": 20409
+    },
+    {
+      "slug": "storia-di-unanima",
+      "title": "Storia di un’anima",
+      "author": "Giacomo Leopardi",
+      "genre": "Autobiografia / prosa",
+      "source": "EPUB caricato: leopardi_storia_di_un_anima.epub",
+      "description": "Testo autobiografico e narrativo attribuito alla maschera di Giulio Rivalta.",
+      "sectionCount": 90,
+      "wordCount": 44816
+    }
+  ]
+}

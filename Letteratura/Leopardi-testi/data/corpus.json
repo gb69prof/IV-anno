@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "name": "Canti",
+      "status": "testo integrale incluso",
+      "genre": "poesia"
+    },
+    {
+      "name": "Operette morali",
+      "status": "recupero parziale: alcune sezioni dell’EPUB caricato risultano corrotte/non leggibili",
+      "genre": "prosa filosofica"
+    },
+    {
+      "name": "Zibaldone / Pensieri di varia filosofia e di bella letteratura",
+      "status": "testo integrale incluso",
+      "genre": "pensiero"
+    },
+    {
+      "name": "Storia di un’anima",
+      "status": "testo integrale incluso",
+      "genre": "autobiografia/prosa"
+    },
+    {
+      "name": "Discorso di un italiano intorno alla poesia romantica",
+      "status": "testo integrale incluso",
+      "genre": "saggio critico"
+    },
+    {
+      "name": "Discorso sopra la Batracomiomachia",
+      "status": "testo integrale incluso",
+      "genre": "saggio"
+    },
+    {
+      "name": "Appressamento della morte",
+      "status": "testo integrale incluso",
+      "genre": "poesia giovanile"
+    },
+    {
+      "name": "La guerra dei topi e delle rane / Guerra de’ topi e delle rane",
+      "status": "tre redazioni integrali incluse: 1815, 1821-22, 1826",
+      "genre": "traduzione/poema"
+    },
+    {
+      "name": "Paralipomeni della Batracomiomachia",
+      "status": "testo integrale incluso",
+      "genre": "poema satirico"
+    },
+    {
+      "name": "Epistolario, prose giovanili, volgarizzamenti minori, Storia dell’astronomia, Saggio sopra gli errori popolari degli antichi",
+      "status": "catalogati nel paper; testo integrale non presente nei materiali caricati",
+      "genre": "corpus leopardiano ulteriore"
+    }
+  ]
+}
