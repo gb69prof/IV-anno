@@ -1,0 +1,33 @@
+{
+  "chapters": 11,
+  "orderOk": true,
+  "chapterIds": [
+    "intro",
+    "neoclassicismo-preromanticismo",
+    "risorgimento",
+    "romanticismo",
+    "foscolo",
+    "manzoni",
+    "leopardi",
+    "carducci",
+    "naturalismo-verismo",
+    "verga",
+    "sintesi-finale"
+  ],
+  "chapterTitles": [
+    "Introduzione generale all’Ottocento letterario",
+    "Neoclassicismo e Preromanticismo",
+    "Risorgimento in letteratura",
+    "Romanticismo",
+    "Ugo Foscolo",
+    "Alessandro Manzoni",
+    "Giacomo Leopardi",
+    "Giosuè Carducci",
+    "Naturalismo e Verismo",
+    "Giovanni Verga",
+    "Sintesi finale, mappe, glossario e ripasso"
+  ],
+  "glossaryTerms": 25,
+  "mapsAndImages": 89,
+  "forbiddenHits": []
+}

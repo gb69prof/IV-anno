@@ -1,0 +1,607 @@
+[
+  {
+    "id": "neoclassicismo",
+    "term": "Neoclassicismo",
+    "category": "Glossario",
+    "definition": "DA RICORDARE • Foscolo unisce Neoclassicismo e inquietudine moderna. • Le illusioni sono necessarie perché danno forma alla vita anche quando la ragione non offre consolazioni. • La memoria dei morti diventa fondamento civile: non è culto sterile del passato, ma energia per il presen...",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "neoclassicismo-preromanticismo",
+        "chapterTitle": "Neoclassicismo e Preromanticismo"
+      },
+      {
+        "chapterId": "foscolo",
+        "chapterTitle": "Ugo Foscolo"
+      },
+      {
+        "chapterId": "manzoni",
+        "chapterTitle": "Alessandro Manzoni"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "preromanticismo",
+    "term": "Preromanticismo",
+    "category": "Glossario",
+    "definition": "NEOCLASSICISMO E PREROMANTICISMO",
+    "chapters": [
+      {
+        "chapterId": "neoclassicismo-preromanticismo",
+        "chapterTitle": "Neoclassicismo e Preromanticismo"
+      },
+      {
+        "chapterId": "foscolo",
+        "chapterTitle": "Ugo Foscolo"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "romanticismo",
+    "term": "Romanticismo",
+    "category": "Glossario",
+    "definition": "3. Romanticismo: popolo, storia, nazione",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "neoclassicismo-preromanticismo",
+        "chapterTitle": "Neoclassicismo e Preromanticismo"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "foscolo",
+        "chapterTitle": "Ugo Foscolo"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "risorgimento",
+    "term": "Risorgimento",
+    "category": "Glossario",
+    "definition": "6. Risorgimento e Italia unita: dal sogno alla realtà",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "manzoni",
+        "chapterTitle": "Alessandro Manzoni"
+      },
+      {
+        "chapterId": "carducci",
+        "chapterTitle": "Giosuè Carducci"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "patria",
+    "term": "patria",
+    "category": "Glossario",
+    "definition": "Dalla patria sognata alla crisi dell’io moderno",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "neoclassicismo-preromanticismo",
+        "chapterTitle": "Neoclassicismo e Preromanticismo"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "foscolo",
+        "chapterTitle": "Ugo Foscolo"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "popolo",
+    "term": "popolo",
+    "category": "Glossario",
+    "definition": "3. Romanticismo: popolo, storia, nazione",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "neoclassicismo-preromanticismo",
+        "chapterTitle": "Neoclassicismo e Preromanticismo"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "foscolo",
+        "chapterTitle": "Ugo Foscolo"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "illusione",
+    "term": "illusione",
+    "category": "Glossario",
+    "definition": "...ampoformio del 1797. Napoleone, che per molti giovani italiani sembrava il liberatore, cede Venezia all’Austria. Per Foscolo non è soltanto un fatto diplomatico: è il crollo di un’illusione. La storia, che sembrava portare libertà, mostra il volto del calcolo politico e del tradimento.",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "foscolo",
+        "chapterTitle": "Ugo Foscolo"
+      },
+      {
+        "chapterId": "leopardi",
+        "chapterTitle": "Giacomo Leopardi"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "illusioni",
+    "term": "illusioni",
+    "category": "Glossario",
+    "definition": "...anda decisiva: che cosa può fare la letteratura quando il mondo cambia? Può consolare, educare, denunciare, fondare una memoria comune, dare forma al dolore, oppure smascherare le illusioni. Ogni grande autore dell’Ottocento risponderà in modo diverso.",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "neoclassicismo-preromanticismo",
+        "chapterTitle": "Neoclassicismo e Preromanticismo"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "foscolo",
+        "chapterTitle": "Ugo Foscolo"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "vero",
+    "term": "vero",
+    "category": "Glossario",
+    "definition": "4. Manzoni: il vero, la storia, gli umili",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "manzoni",
+        "chapterTitle": "Alessandro Manzoni"
+      },
+      {
+        "chapterId": "leopardi",
+        "chapterTitle": "Giacomo Leopardi"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "utile",
+    "term": "utile",
+    "category": "Glossario",
+    "definition": "LA FORMULA ITALIANA La letteratura deve essere utile, interessante e vera. Utile: deve contribuire alla crescita civile e morale. Interessante: deve parlare a un pubblico reale, non solo agli specialisti. Vera: deve fondarsi sulla storia, sui sentimenti autentici, sui problemi concreti.",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "neoclassicismo-preromanticismo",
+        "chapterTitle": "Neoclassicismo e Preromanticismo"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "foscolo",
+        "chapterTitle": "Ugo Foscolo"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "interessante",
+    "term": "interessante",
+    "category": "Glossario",
+    "definition": "LA FORMULA ITALIANA La letteratura deve essere utile, interessante e vera. Utile: deve contribuire alla crescita civile e morale. Interessante: deve parlare a un pubblico reale, non solo agli specialisti. Vera: deve fondarsi sulla storia, sui sentimenti autentici, sui problemi concreti.",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "manzoni",
+        "chapterTitle": "Alessandro Manzoni"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "romanzo-storico",
+    "term": "romanzo storico",
+    "category": "Glossario",
+    "definition": "...ssima perché sposta il centro della letteratura. Non basta più rispettare regole formali. Bisogna chiedersi quale rapporto abbia l’opera con la vita. Da qui nasce l’importanza del romanzo storico, del teatro civile, della lingua comprensibile, del pubblico borghese e nazionale.",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "manzoni",
+        "chapterTitle": "Alessandro Manzoni"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "provvidenza",
+    "term": "Provvidenza",
+    "category": "Glossario",
+    "definition": "...a di violenza, ingiustizia, errore, superbia. Ma non è una storia abbandonata al caso. L’uomo resta libero e responsabile, e proprio per questo può scegliere il male o il bene. La Provvidenza non elimina il dolore: apre la possibilità di un senso dentro una storia spesso incomprensibile.",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "foscolo",
+        "chapterTitle": "Ugo Foscolo"
+      },
+      {
+        "chapterId": "manzoni",
+        "chapterTitle": "Alessandro Manzoni"
+      },
+      {
+        "chapterId": "leopardi",
+        "chapterTitle": "Giacomo Leopardi"
+      },
+      {
+        "chapterId": "verga",
+        "chapterTitle": "Giovanni Verga"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "pessimismo",
+    "term": "pessimismo",
+    "category": "Glossario",
+    "definition": "DOMANDE PER FERMARE IL PENSIERO • Perché ridurre Leopardi al pessimismo è insufficiente? • In che modo il limite produce immaginazione nell’“Infinito”? • Che cosa significa “social catena” e perché non è una consolazione facile?",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "leopardi",
+        "chapterTitle": "Giacomo Leopardi"
+      },
+      {
+        "chapterId": "verga",
+        "chapterTitle": "Giovanni Verga"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "infinito",
+    "term": "infinito",
+    "category": "Glossario",
+    "definition": "5. Leopardi: desiderio infinito e limite",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "neoclassicismo-preromanticismo",
+        "chapterTitle": "Neoclassicismo e Preromanticismo"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "leopardi",
+        "chapterTitle": "Giacomo Leopardi"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "classicismo",
+    "term": "classicismo",
+    "category": "Glossario",
+    "definition": "In Italia il Neoclassicismo letterario assume forme diverse. Non esiste un solo modo di essere neoclassici. In Parini troviamo un classicismo illuministico e morale; in Monti una grande capacità retorica e celebrativa; in Foscolo una tensione più complessa, perché la forma classica convive con una ferita moderna.",
+    "chapters": [
+      {
+        "chapterId": "neoclassicismo-preromanticismo",
+        "chapterTitle": "Neoclassicismo e Preromanticismo"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "leopardi",
+        "chapterTitle": "Giacomo Leopardi"
+      },
+      {
+        "chapterId": "carducci",
+        "chapterTitle": "Giosuè Carducci"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "poesia-civile",
+    "term": "poesia civile",
+    "category": "Glossario",
+    "definition": "Accanto a questa inquietudine, Carducci cerca una poesia civile e classica, capace di dare all’Italia un tono alto, storico, laico, nazionale. Ma intanto avanza una nuova mentalità: il Positivismo, con la sua fiducia nella scienza, nei fatti, nel progresso. Sarà proprio questa mentalità a preparare il ...",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "risorgimento",
+        "chapterTitle": "Risorgimento in letteratura"
+      },
+      {
+        "chapterId": "romanticismo",
+        "chapterTitle": "Romanticismo"
+      },
+      {
+        "chapterId": "carducci",
+        "chapterTitle": "Giosuè Carducci"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "naturalismo",
+    "term": "Naturalismo",
+    "category": "Glossario",
+    "definition": "..., laico, nazionale. Ma intanto avanza una nuova mentalità: il Positivismo, con la sua fiducia nella scienza, nei fatti, nel progresso. Sarà proprio questa mentalità a preparare il Naturalismo e il Verismo.",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "naturalismo-verismo",
+        "chapterTitle": "Naturalismo e Verismo"
+      },
+      {
+        "chapterId": "verga",
+        "chapterTitle": "Giovanni Verga"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "verismo",
+    "term": "Verismo",
+    "category": "Glossario",
+    "definition": "7. Verga e il Verismo: la nazione vista dagli sconfitti",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "naturalismo-verismo",
+        "chapterTitle": "Naturalismo e Verismo"
+      },
+      {
+        "chapterId": "verga",
+        "chapterTitle": "Giovanni Verga"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "positivismo",
+    "term": "Positivismo",
+    "category": "Glossario",
+    "definition": "...to a questa inquietudine, Carducci cerca una poesia civile e classica, capace di dare all’Italia un tono alto, storico, laico, nazionale. Ma intanto avanza una nuova mentalità: il Positivismo, con la sua fiducia nella scienza, nei fatti, nel progresso. Sarà proprio questa mentalità a preparare il Naturalismo e il Verismo.",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "naturalismo-verismo",
+        "chapterTitle": "Naturalismo e Verismo"
+      },
+      {
+        "chapterId": "verga",
+        "chapterTitle": "Giovanni Verga"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "impersonalit",
+    "term": "impersonalità",
+    "category": "Glossario",
+    "definition": "La tecnica dell’impersonalità è decisiva. Verga non vuole presentarsi come giudice esterno che spiega tutto dall’alto. Vuole far emergere il mondo rappresentato attraverso la mentalità dei personaggi, il loro linguaggio, i loro proverbi, le loro paure, i loro valori. N...",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "naturalismo-verismo",
+        "chapterTitle": "Naturalismo e Verismo"
+      },
+      {
+        "chapterId": "verga",
+        "chapterTitle": "Giovanni Verga"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "regressione",
+    "term": "regressione",
+    "category": "Glossario",
+    "definition": "...ga l’evoluzione; i box fissano i concetti; le immagini aiutano a vedere relazioni e passaggi. Il punto decisivo è capire che la forma non è un vestito esterno: l’impersonalità, la regressione e la lingua corale sono già contenuto.",
+    "chapters": [
+      {
+        "chapterId": "naturalismo-verismo",
+        "chapterTitle": "Naturalismo e Verismo"
+      },
+      {
+        "chapterId": "verga",
+        "chapterTitle": "Giovanni Verga"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "ciclo-dei-vinti",
+    "term": "ciclo dei vinti",
+    "category": "Glossario",
+    "definition": "Percorso: Positivismo → Naturalismo francese → Italia postunitaria → Verismo → Verga → tecniche narrative → ciclo dei vinti → eredità moderna.",
+    "chapters": [
+      {
+        "chapterId": "naturalismo-verismo",
+        "chapterTitle": "Naturalismo e Verismo"
+      },
+      {
+        "chapterId": "verga",
+        "chapterTitle": "Giovanni Verga"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "ideale-dell-ostrica",
+    "term": "ideale dell’ostrica",
+    "category": "Glossario",
+    "definition": "L’ideale dell’ostrica riassume questa visione: chi appartiene a un ambiente povero e fragile sopravvive restando attaccato al proprio scoglio, cioè alla famiglia, al paese, alle tradizioni. Chi si stacca, attratto dal desiderio di migliorare, rischia di essere ...",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "verga",
+        "chapterTitle": "Giovanni Verga"
+      }
+    ],
+    "keywords": []
+  },
+  {
+    "id": "roba",
+    "term": "roba",
+    "category": "Glossario",
+    "definition": "In “Mastro-don Gesualdo” il protagonista riesce ad arricchirsi, ma non a salvarsi. Accumula roba, terre, potere economico; tuttavia resta socialmente isolato, affettivamente sconfitto, incapace di trasformare il possesso in felicità. Verga sposta così il problema: non sono vinti solo i poveri. Si può essere vinti anche vincendo econom...",
+    "chapters": [
+      {
+        "chapterId": "intro",
+        "chapterTitle": "Introduzione generale all’Ottocento letterario"
+      },
+      {
+        "chapterId": "naturalismo-verismo",
+        "chapterTitle": "Naturalismo e Verismo"
+      },
+      {
+        "chapterId": "verga",
+        "chapterTitle": "Giovanni Verga"
+      }
+    ],
+    "keywords": []
+  }
+]
