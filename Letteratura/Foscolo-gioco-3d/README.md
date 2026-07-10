@@ -1,75 +1,63 @@
-# Foscolo — Il laboratorio delle illusioni
+# Foscolo — Il tempio delle illusioni
 
-Prototipo giocabile 3D, in prima persona, sul rapporto fra **meccanicismo**, **fratture biografiche e storiche** e **religione delle illusioni**. Il giocatore interpreta Foscolo e costruisce nel manoscritto dell’*Ortis* alcune illusioni necessarie. Il finale non può essere “vinto”: Jacopo resta dentro una struttura tragica.
+Esperienza didattica 3D in prima persona dedicata al pensiero di Ugo Foscolo. Il giocatore attraversa spazi autonomi e comprende progressivamente il rapporto tra **meccanicismo**, **nulla eterno**, **fratture biografiche e storiche** e **religione delle illusioni**.
 
-## Avvio rapido
+## Avvio
 
-### macOS
-
-1. Decomprimi la cartella.
-2. Fai doppio clic su `start.command`.
-3. Si aprirà il browser su `http://localhost:8000`.
-
-Se macOS blocca il file, usa clic destro → **Apri** una prima volta.
+Il gioco usa Three.js e va aperto tramite un piccolo server locale.
 
 ### Windows
 
-1. Decomprimi la cartella.
-2. Fai doppio clic su `start.bat`.
-3. Si aprirà il browser su `http://localhost:8000`.
+Fai doppio clic su `start.bat`, quindi apri `http://localhost:8000` se il browser non si apre automaticamente.
+
+### macOS
+
+Fai doppio clic su `start.command`. Se macOS lo blocca al primo avvio, usa clic destro → **Apri**.
 
 ### Avvio manuale
-
-Dalla cartella del progetto:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Poi apri `http://localhost:8000`.
+Poi visita `http://localhost:8000`.
 
-## Utilizzo da iPad sulla stessa rete Wi‑Fi
+Al primo avvio è necessaria una connessione internet per caricare Three.js da CDN.
 
-Sul computer avvia:
+## Percorso attuale
 
-```bash
-python3 -m http.server 8000 --bind 0.0.0.0
-```
+1. **Tempio delle soglie** — interno di un tempio greco circolare; le coppie di colonne sono porte.
+2. **Materia** — ingranaggi eterni, caduta e sostituzione della materia, quiz sul meccanicismo.
+3. **Nulla eterno** — figure umane camminano, conversano e si dissolvono mentre la macchina continua; quiz sulle conseguenze esistenziali.
+4. **Fratture** — Zante, Campoformio, morte di Giovanni ed esilio inglese diventano installazioni esplorabili; quiz di sintesi.
+5. **Religione delle illusioni** — amore, patria, arte, bellezza, famiglia/affetti e memoria vengono accesi come forme consapevoli e necessarie; quiz finale.
+6. **Sala delle opere** — prima galleria dedicata a *Ultime lettere di Jacopo Ortis*, *Dei sepolcri*, *Le Grazie*, *In morte del fratello Giovanni* e *Alla sera*.
 
-Trova l’indirizzo locale del computer, per esempio `192.168.1.25`, e sull’iPad apri:
-
-```text
-http://192.168.1.25:8000
-```
-
-I comandi touch compaiono automaticamente. Da Safari puoi usare **Condividi → Aggiungi alla schermata Home**.
+Il percorso è sequenziale: una soglia si apre soltanto dopo il superamento del quiz precedente. Le risposte errate non producono una punizione arbitraria; invitano a osservare di nuovo lo spazio e a riprovare.
 
 ## Controlli
 
-- `W A S D`: movimento
+- `W A S D` oppure frecce direzionali: movimento
 - mouse: sguardo
 - `Maiusc`: corsa
 - `E`: interazione
 - `J`: taccuino
-- su tablet: joystick sinistro, trascinamento a destra, pulsanti `E` e `J`
+- tablet: joystick sinistro, trascinamento a destra, pulsanti `E` e `J`
 
-## Struttura narrativa
+## Funzioni
 
-1. **La macchina** — materia, necessità causale, nulla.
-2. **Le fratture** — Zacinto/esilio, morte di Giovanni, Campoformio.
-3. **Scrivere Jacopo** — scelta di tre illusioni fra patria, amore, memoria, arte e bellezza.
-4. **Finale inevitabile** — la realtà storica e personale chiude lo spazio del manoscritto.
+- sei ambienti 3D indipendenti e caricati senza modelli esterni;
+- animazioni procedurali di ingranaggi, cadute, dissolvenze, particelle e libri;
+- quattro fratture e sei illusioni da esplorare;
+- quiz obbligatori e sblocco progressivo;
+- taccuino didattico automatico;
+- salvataggio locale;
+- audio ambientale generato dal browser;
+- controlli desktop e touch;
+- PWA con cache dei file locali.
 
-## Nota tecnica e grafica
+## Uso didattico
 
-Questa è una **vertical slice**, non un gioco AAA. Ambienti, luci, materiali, particelle, avatar e oggetti sono generati proceduralmente. Il personaggio di Foscolo è un modello provvisorio ispirato al ritratto fornito: capelli ricci castano‑ramati, basette, camicia bianca aperta e abito blu scuro.
+Il gioco non presenta le illusioni come una consolazione facile. La realtà materiale, la morte e le fratture restano. Amore, patria, arte, bellezza, famiglia e memoria sono invece costruzioni poetiche e morali che consentono di vivere umanamente dentro quella realtà.
 
-Per raggiungere un vero realismo fotografico, la fase successiva richiede un personaggio creato in Character Creator, MetaHuman o Blender e animazioni dedicate. La struttura narrativa e le meccaniche sono già predisposte per quel salto di qualità.
-
-## Dipendenza esterna
-
-Al primo avvio serve una connessione internet per caricare Three.js da CDN. I file del gioco e il ritratto vengono poi gestiti dalla PWA; il motore 3D remoto può comunque richiedere la cache del browser.
-
-## Materiali
-
-I testi di partenza sono conservati in `docs/materiali/`. Il documento progettuale completo è in `docs/GAME_DESIGN.md`.
+La sala delle opere è volutamente un punto di arrivo provvisorio: le singole sezioni dedicate ai testi potranno essere sviluppate nella fase successiva.
