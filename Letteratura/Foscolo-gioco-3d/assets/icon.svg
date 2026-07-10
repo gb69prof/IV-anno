@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Icona Foscolo</title>
+  <rect width="512" height="512" fill="#191a1d"/>
+  <path d="M95 407h322v34H95z" fill="#b88a30"/>
+  <path d="M132 108h112v34h-72v96h62v34h-62v135h-40z" fill="#fffaf0"/>
+  <path d="M284 108c61 0 96 38 96 96 0 57-36 96-96 96h-33V108zm-1 157c35 0 56-23 56-61 0-39-21-62-56-62h-32v123z" fill="#b9583a"/>
+  <circle cx="352" cy="358" r="36" fill="none" stroke="#2d7d74" stroke-width="16"/>
+</svg>
