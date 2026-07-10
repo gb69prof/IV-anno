@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#0d121b" />
+  <meta name="description" content="Un gioco 3D didattico su Foscolo, il meccanicismo e la religione delle illusioni." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Foscolo — Il laboratorio delle illusioni</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <canvas id="game-canvas" aria-label="Gioco 3D"></canvas>
+
+    <div id="loading" class="screen screen--active">
+      <div class="loading-card glass">
+        <div class="sigil">Φ</div>
+        <h1>Il laboratorio delle illusioni</h1>
+        <p>Sto preparando il mondo meccanico…</p>
+        <div class="loader"><span></span></div>
+      </div>
+    </div>
+
+    <div id="start-screen" class="screen">
+      <div class="start-layout">
+        <div class="portrait-frame">
+          <img src="assets/foscolo-reference.webp" alt="Ritratto di Foscolo usato come riferimento visivo" />
+          <div class="portrait-caption">Ugo Foscolo · riferimento del personaggio</div>
+        </div>
+        <section class="start-copy glass">
+          <div class="eyebrow">Prototipo 3D · esperienza didattica</div>
+          <h1>Foscolo<br><span>Il laboratorio delle illusioni</span></h1>
+          <p class="lead">Il mondo è una macchina. La storia tradisce. La morte spegne. Eppure l’uomo deve costruire qualcosa per vivere.</p>
+          <div class="premise">
+            <strong>Non puoi vincere.</strong>
+            <span>Puoi però comprendere perché Foscolo inventa una religione laica fondata su patria, amore, memoria, arte e bellezza.</span>
+          </div>
+          <div class="control-grid">
+            <div><kbd>W A S D</kbd><span>muoviti</span></div>
+            <div><kbd>Mouse</kbd><span>guarda</span></div>
+            <div><kbd>E</kbd><span>interagisci</span></div>
+            <div><kbd>J</kbd><span>taccuino</span></div>
+          </div>
+          <button id="start-button" class="primary-button">Entra nella macchina</button>
+          <p class="small-note">Su iPad compaiono automaticamente comandi touch. Per l’audio è necessario avviare il gioco con il pulsante.</p>
+        </section>
+      </div>
+    </div>
+
+    <header id="hud" class="hud hidden" aria-live="polite">
+      <div class="hud-top">
+        <div class="chapter-block glass-mini">
+          <span id="chapter-number">I</span>
+          <div><small>CAPITOLO</small><strong id="chapter-title">La macchina</strong></div>
+        </div>
+        <div class="objective glass-mini">
+          <small>OBIETTIVO</small>
+          <strong id="objective-text">Scopri le leggi del mondo meccanico.</strong>
+        </div>
+        <button id="audio-button" class="icon-button glass-mini" aria-label="Attiva o disattiva audio">◉</button>
+      </div>
+      <div class="hud-bottom">
+        <div class="pressure-panel glass-mini">
+          <div class="meter-label"><span>Pressione della realtà</span><b id="pressure-value">0%</b></div>
+          <div class="meter meter--pressure"><i id="pressure-bar"></i></div>
+        </div>
+        <div id="illusion-strip" class="illusion-strip glass-mini">
+          <div data-key="patria"><span>Patria</span><i></i></div>
+          <div data-key="amore"><span>Amore</span><i></i></div>
+          <div data-key="memoria"><span>Memoria</span><i></i></div>
+          <div data-key="arte"><span>Arte</span><i></i></div>
+          <div data-key="bellezza"><span>Bellezza</span><i></i></div>
+        </div>
+      </div>
+    </header>
+
+    <div id="crosshair" class="crosshair hidden"><span></span></div>
+    <div id="interaction-prompt" class="interaction-prompt hidden"><kbd>E</kbd><span id="interaction-text">Interagisci</span></div>
+    <div id="toast" class="toast hidden"></div>
+
+    <aside id="journal" class="journal" aria-hidden="true">
+      <button id="journal-close" class="journal-close" aria-label="Chiudi taccuino">×</button>
+      <div class="journal-heading">
+        <span>Taccuino di viaggio</span>
+        <h2>Tra l’ingranaggio e il sogno</h2>
+      </div>
+      <div id="journal-content" class="journal-content"></div>
+    </aside>
+
+    <div id="dialogue" class="dialogue hidden" role="dialog" aria-modal="true">
+      <div class="dialogue-card glass">
+        <div id="dialogue-kicker" class="eyebrow">Frammento</div>
+        <h2 id="dialogue-title">Titolo</h2>
+        <div id="dialogue-body"></div>
+        <button id="dialogue-next" class="primary-button">Continua</button>
+      </div>
+    </div>
+
+    <div id="choice" class="choice hidden" role="dialog" aria-modal="true">
+      <div class="choice-card glass">
+        <div class="eyebrow">Scrivi Jacopo</div>
+        <h2>Quale illusione vuoi affidargli?</h2>
+        <p>Ogni scelta gli offre una forma di senso. Nessuna cancella la realtà storica.</p>
+        <div id="choice-buttons" class="choice-buttons"></div>
+        <button id="choice-cancel" class="text-button">Non ancora</button>
+      </div>
+    </div>
+
+    <div id="ending" class="screen ending-screen">
+      <div class="ending-card glass">
+        <div class="ending-mark">✦</div>
+        <div class="eyebrow">Esito inevitabile</div>
+        <h1>Non hai salvato Jacopo.</h1>
+        <p class="ending-lead">Hai però costruito ciò che gli ha permesso di vivere finché è stato possibile.</p>
+        <div id="ending-summary" class="ending-summary"></div>
+        <blockquote>La sconfitta narrativa non annulla il valore del tentativo. Foscolo trasforma il fallimento di Jacopo in memoria, poesia e coscienza.</blockquote>
+        <button id="restart-button" class="primary-button">Ricostruisci le illusioni</button>
+      </div>
+    </div>
+
+    <div id="mobile-controls" class="mobile-controls hidden" aria-hidden="true">
+      <div id="joystick" class="joystick"><div id="joystick-knob"></div></div>
+      <div id="look-zone" class="look-zone"></div>
+      <button id="mobile-action" class="mobile-action">E</button>
+      <button id="mobile-journal" class="mobile-journal">J</button>
+    </div>
+
+    <noscript>Per avviare il gioco è necessario JavaScript.</noscript>
+  </div>
+  <script>
+    setTimeout(() => {
+      const loader = document.getElementById('loading');
+      const start = document.getElementById('start-screen');
+      if (loader?.classList.contains('screen--active') && !start?.classList.contains('screen--active')) {
+        const p = loader.querySelector('p');
+        if (p) p.textContent = 'Il motore 3D tarda a caricarsi. Controlla la connessione internet e ricarica la pagina.';
+      }
+    }, 10000);
+  </script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
