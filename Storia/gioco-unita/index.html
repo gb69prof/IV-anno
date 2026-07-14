@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Italia 1861 — Il cantiere dell'Unità</title>
+  <meta name="description" content="Gioco storico 3D a blocchi sull'unificazione italiana, a cura di gbprof e Libera.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game"></div>
+
+  <section id="start-screen" class="screen">
+    <div class="start-card">
+      <p class="eyebrow">UN'ESPERIENZA STORICA A BLOCCHI</p>
+      <h1>ITALIA <span>1861</span></h1>
+      <h2>Il cantiere dell'Unità</h2>
+      <p class="lead">Attraversa sei cantieri del Risorgimento. Raccogli le forze che costruirono il Regno e scopri le crepe rimaste nelle fondamenta.</p>
+      <div class="feature-row">
+        <div><b>6</b><span>cantieri</span></div>
+        <div><b>5</b><span>blocchi storici</span></div>
+        <div><b>1</b><span>Stato da costruire</span></div>
+      </div>
+      <div class="start-actions">
+        <button id="new-game" class="primary">Nuova partita</button>
+        <button id="continue-game" class="secondary" hidden>Continua</button>
+      </div>
+      <p class="credits">Progetto didattico ispirato alle lezioni di gbprof · ideazione e sviluppo: gbprof e Libera</p>
+    </div>
+  </section>
+
+  <div id="hud" hidden>
+    <div class="topbar">
+      <div class="brand">ITALIA <i>1861</i></div>
+      <div class="score">PUNTI <b id="score">0</b></div>
+      <button id="audio-toggle" class="icon-btn" title="Audio">♪</button>
+      <button id="archive-toggle" class="icon-btn" title="Archivio storico (H)">H</button>
+    </div>
+    <div class="mission-card">
+      <span id="mission-kicker">CANTIERE 1/6</span>
+      <h3 id="mission-title">Torino, 1855</h3>
+      <p id="mission-objective">Raggiungi Cavour e premi E.</p>
+      <div class="progress"><i id="mission-progress"></i></div>
+    </div>
+    <div id="discovery" class="discovery"></div>
+    <div id="interaction-prompt" class="interaction-prompt"></div>
+    <div id="crosshair"><i></i><b></b></div>
+    <div id="hotbar" class="hotbar"></div>
+    <div class="controls-hint"><b>WASD</b> muovi · <b>SHIFT</b> corri · <b>SPAZIO</b> salta · <b>E</b> interagisci · <b>1–6</b> seleziona · <b>H</b> archivio</div>
+  </div>
+
+  <section id="modal" class="modal" hidden>
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" aria-label="Chiudi">×</button>
+      <div id="modal-content"></div>
+    </div>
+  </section>
+
+  <section id="pause" class="pause" hidden>
+    <div>
+      <h2>Partita in pausa</h2>
+      <p>Clicca per tornare nel cantiere.</p>
+      <button id="resume" class="primary">Riprendi</button>
+    </div>
+  </section>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="vendor/three.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
