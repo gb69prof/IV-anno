@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="72" fill="#172028"/>
+  <path fill="#236b4c" d="M0 0h171v512H0z"/>
+  <path fill="#f3eddd" d="M171 0h170v512H171z"/>
+  <path fill="#b52e38" d="M341 0h171v512H341z"/>
+  <rect x="56" y="80" width="400" height="352" rx="24" fill="#172028" stroke="#d3a432" stroke-width="12"/>
+  <text x="256" y="245" fill="#fff" text-anchor="middle" font-family="Georgia,serif" font-size="102" font-weight="700">1861</text>
+  <text x="256" y="326" fill="#d3a432" text-anchor="middle" font-family="Arial,sans-serif" font-size="39" font-weight="900">ITALIA</text>
+</svg>
