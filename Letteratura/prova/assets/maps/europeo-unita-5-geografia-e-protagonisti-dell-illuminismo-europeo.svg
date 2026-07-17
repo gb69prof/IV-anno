@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">Mappa concettuale: Geografia dei Lumi</title><desc id="desc">Geografia dei Lumi collegato a Francia: critica indiretta, Gran Bretagna: periodici, Scozia: scienza dell’uomo, area tedesca: tolleranza, Italia: riformismo civile</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#69817f"/></marker><filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-opacity=".13"/></filter></defs>
+<rect width="1200" height="720" rx="36" fill="#f7f3e8"/>
+<text x="60" y="66" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#243735">MAPPA CONCETTUALE</text>
+<line x1="600" y1="360" x2="600.0" y2="115.0" stroke="#69817f" stroke-width="4" marker-end="url(#arrow)"/>
+<line x1="600" y1="360" x2="999.4437368439644" y2="284.2908363781379" stroke="#69817f" stroke-width="4" marker-end="url(#arrow)"/>
+<line x1="600" y1="360" x2="846.8698059628387" y2="558.2091636218621" stroke="#69817f" stroke-width="4" marker-end="url(#arrow)"/>
+<line x1="600" y1="360" x2="353.13019403716135" y2="558.2091636218621" stroke="#69817f" stroke-width="4" marker-end="url(#arrow)"/>
+<line x1="600" y1="360" x2="200.55626315603547" y2="284.2908363781379" stroke="#69817f" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="460.0" y="310.0" width="280" height="100" rx="24" fill="#173f3b" filter="url(#shadow)"/>
+<text x="600" y="360" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="white">Geografia dei Lumi</text>
+<rect x="475.0" y="72.0" width="250" height="86" rx="22" fill="#ffffff" stroke="#d7c79e" stroke-width="3" filter="url(#shadow)"/>
+<text x="600.0" y="102.0" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="21" font-weight="600" fill="#243735">Francia: critica</text>
+<text x="600.0" y="129.0" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="21" font-weight="600" fill="#243735">indiretta</text>
+<rect x="874.4437368439644" y="241.2908363781379" width="250" height="86" rx="22" fill="#ffffff" stroke="#d7c79e" stroke-width="3" filter="url(#shadow)"/>
+<text x="999.4437368439644" y="271.2908363781379" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="21" font-weight="600" fill="#243735">Gran Bretagna:</text>
+<text x="999.4437368439644" y="298.2908363781379" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="21" font-weight="600" fill="#243735">periodici</text>
+<rect x="721.8698059628387" y="515.2091636218621" width="250" height="86" rx="22" fill="#ffffff" stroke="#d7c79e" stroke-width="3" filter="url(#shadow)"/>
+<text x="846.8698059628387" y="545.2091636218621" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="21" font-weight="600" fill="#243735">Scozia: scienza</text>
+<text x="846.8698059628387" y="572.2091636218621" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="21" font-weight="600" fill="#243735">dell’uomo</text>
+<rect x="228.13019403716135" y="515.2091636218621" width="250" height="86" rx="22" fill="#ffffff" stroke="#d7c79e" stroke-width="3" filter="url(#shadow)"/>
+<text x="353.13019403716135" y="545.2091636218621" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="21" font-weight="600" fill="#243735">area tedesca:</text>
+<text x="353.13019403716135" y="572.2091636218621" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="21" font-weight="600" fill="#243735">tolleranza</text>
+<rect x="75.55626315603547" y="241.2908363781379" width="250" height="86" rx="22" fill="#ffffff" stroke="#d7c79e" stroke-width="3" filter="url(#shadow)"/>
+<text x="200.55626315603547" y="271.2908363781379" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="21" font-weight="600" fill="#243735">Italia: riformismo</text>
+<text x="200.55626315603547" y="298.2908363781379" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="21" font-weight="600" fill="#243735">civile</text>
+<text x="1140" y="680" text-anchor="end" font-family="Arial, sans-serif" font-size="18" fill="#5e6c69">Corpus gbprof · a cura di gbprof e Libera</text></svg>
