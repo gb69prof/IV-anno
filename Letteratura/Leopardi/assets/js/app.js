@@ -693,6 +693,105 @@ function getRoot() {
   return document.body.dataset.root || "./";
 }
 
+const LEOPARDI_JOURNEY_RETURN_KEY = "leopardi.bridge.manualReturnUrl";
+const LEOPARDI_JOURNEY_LINKS = {
+  "filosofia-base": [
+    { scene: "house", label: "Esplora Casa Leopardi" }
+  ],
+  "fratture": [
+    { scene: "village", label: "Attraversa il borgo di Recanati" }
+  ],
+  "immagine-mondo": [
+    { scene: "nature", label: "Incontra la Natura indifferente" }
+  ],
+  "poetica": [
+    { scene: "hill", label: "Sali alla collina dell’Infinito" }
+  ],
+  "scritti": [
+    { scene: "naples", label: "Raggiungi l’ultima soglia del viaggio" }
+  ],
+  "infinito": [
+    { scene: "hill", label: "Esplora la collina dell’Infinito" }
+  ],
+  "bruto-saffo": [
+    { scene: "rebellion", label: "Incontra Bruto e Saffo" }
+  ],
+  "natura-islandese": [
+    { scene: "nature", label: "Entra nella Natura indifferente" }
+  ],
+  "ginestra": [
+    { scene: "ginestra", label: "Raggiungi il Vesuvio e la Ginestra" }
+  ],
+  "siepe-lava": [
+    { scene: "hill", label: "Parti dalla siepe" },
+    { scene: "ginestra", label: "Raggiungi la lava" }
+  ],
+  "macchina-anima": [
+    { scene: "nature", label: "Interroga la Natura indifferente" }
+  ],
+  "senso-natura": [
+    { scene: "house", label: "Ritrova le basi nella biblioteca" },
+    { scene: "nature", label: "Osserva l’esito nella Natura" }
+  ]
+};
+
+function getJourneyUrl(scene) {
+  const journeyUrl = new URL(`${getRoot()}../colle-vulcano/`, location.href);
+  if (scene) journeyUrl.searchParams.set("tappa", scene);
+  journeyUrl.searchParams.set("da", "manuale");
+  return journeyUrl.href;
+}
+
+function rememberManualPosition() {
+  const currentPosition = `${location.pathname}${location.search}${location.hash}`;
+  localStorage.setItem(LEOPARDI_JOURNEY_RETURN_KEY, currentPosition);
+}
+
+function createJourneyLink(label, scene, className) {
+  const link = document.createElement("a");
+  link.className = className;
+  link.href = getJourneyUrl(scene);
+  link.innerHTML = `<span aria-hidden="true">✦</span>${escapeHtml(label)}`;
+  link.addEventListener("click", rememberManualPosition);
+  return link;
+}
+
+function setupJourneyBridges() {
+  const topNavigation = document.querySelector(".top-nav");
+  const globalLink = createJourneyLink(
+    "Viaggio esplorabile",
+    "",
+    topNavigation ? "journey-nav-link" : "journey-home-link"
+  );
+
+  if (topNavigation) {
+    topNavigation.append(globalLink);
+  } else {
+    globalLink.setAttribute("aria-label", "Apri il viaggio esplorabile su Leopardi");
+    document.body.append(globalLink);
+  }
+
+  const lessonId = document.body.dataset.lesson;
+  const contextualLinks = LEOPARDI_JOURNEY_LINKS[lessonId] || [];
+  const sidebar = document.querySelector(".lesson-sidebar");
+  if (!contextualLinks.length || !sidebar) return;
+
+  const bridge = document.createElement("nav");
+  bridge.className = "journey-context-card";
+  bridge.setAttribute("aria-label", "Collegamenti al viaggio interattivo");
+  bridge.innerHTML = `
+    <p>Dal manuale al viaggio</p>
+    <h2>Attraversa questo nodo</h2>
+    <div class="journey-context-actions"></div>
+  `;
+
+  const actions = bridge.querySelector(".journey-context-actions");
+  contextualLinks.forEach(({ scene, label }) => {
+    actions.append(createJourneyLink(label, scene, "journey-context-link"));
+  });
+  sidebar.prepend(bridge);
+}
+
 function setupServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   window.addEventListener("load", () => {
@@ -980,3 +1079,4 @@ setupActiveNavigation();
 setupMapModal();
 setupLessonStudyTools();
 setupNotesTool();
+setupJourneyBridges();

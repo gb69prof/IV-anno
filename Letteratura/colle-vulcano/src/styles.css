@@ -36,6 +36,11 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+a:focus-visible {
+  outline: 3px solid #fff2bf;
+  outline-offset: 3px;
+}
+
 .app-shell {
   position: relative;
   width: 100vw;
@@ -52,10 +57,12 @@ button:focus-visible {
   right: 0;
   height: 78px;
   display: grid;
-  grid-template-columns: minmax(310px, 1fr) minmax(260px, 360px) minmax(160px, 1fr);
+  grid-template-columns: minmax(310px, 1fr) minmax(260px, 360px) minmax(250px, 1fr);
   align-items: center;
   gap: 30px;
-  padding: 0 28px;
+  padding:
+    0 max(28px, env(safe-area-inset-right))
+    0 max(28px, env(safe-area-inset-left));
   color: #f7edd8;
   background: rgba(8, 25, 23, 0.96);
   border-bottom: 1px solid rgba(216, 163, 79, 0.22);
@@ -129,7 +136,6 @@ button:focus-visible {
 }
 
 .route-button {
-  justify-self: end;
   border: 0;
   color: #f4e6ca;
   background: transparent;
@@ -145,6 +151,34 @@ button:focus-visible {
   color: var(--gold);
 }
 
+.topbar-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manual-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 13px;
+  border: 1px solid rgba(216, 163, 79, 0.52);
+  color: #f4e6ca;
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.manual-button span {
+  color: var(--gold);
+  font-size: 15px;
+}
+
 .map-viewport {
   position: absolute;
   inset: 78px 0 0;
@@ -152,6 +186,7 @@ button:focus-visible {
   cursor: grab;
   scrollbar-width: none;
   touch-action: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .map-viewport:active {
@@ -468,7 +503,7 @@ button:focus-visible {
   color: #30281c;
   background:
     linear-gradient(rgba(248, 235, 200, 0.94), rgba(240, 220, 174, 0.96)),
-    url("../images/leopardi-map.png");
+    var(--welcome-map, none);
   box-shadow: var(--shadow);
 }
 
@@ -621,6 +656,46 @@ button:focus-visible {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 11px;
   letter-spacing: 0.12em;
+}
+
+.scene-header-meta {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.scene-header > .scene-header-meta {
+  text-align: right;
+}
+
+.scene-header-meta > span {
+  color: #e6bc6f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.scene-header-meta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 11px;
+  border: 1px solid rgba(231, 191, 112, 0.5);
+  color: #f6e6c6;
+  background: rgba(8, 20, 18, 0.62);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scene-header-meta a span {
+  color: var(--gold);
+  font-size: 14px;
 }
 
 .back-button {
@@ -2410,7 +2485,9 @@ button:focus-visible {
     height: 68px;
     grid-template-columns: 1fr auto;
     gap: 14px;
-    padding: 0 15px;
+    padding:
+      0 max(15px, env(safe-area-inset-right))
+      0 max(15px, env(safe-area-inset-left));
   }
 
   .brand p,
@@ -2428,6 +2505,16 @@ button:focus-visible {
   }
 
   .route-button {
+    font-size: 10px;
+  }
+
+  .topbar-actions {
+    gap: 3px;
+  }
+
+  .manual-button {
+    min-height: 38px;
+    padding: 0 9px;
     font-size: 10px;
   }
 
@@ -2507,6 +2594,18 @@ button:focus-visible {
 
   .scene-header > span {
     font-size: 9px;
+  }
+
+  .scene-header > .scene-header-meta {
+    padding-left: 0;
+  }
+
+  .scene-header-meta > span {
+    display: none;
+  }
+
+  .scene-header-meta a {
+    min-height: 40px;
   }
 
   .scene-question {
@@ -2646,9 +2745,27 @@ button:focus-visible {
 }
 
 @media (max-width: 560px) {
-  .route-button {
+  .route-button,
+  .manual-button {
     width: 42px;
     overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .route-button span {
+    margin-right: 12px;
+  }
+
+  .manual-button {
+    gap: 14px;
+    padding-left: 12px;
+  }
+
+  .scene-header-meta a {
+    width: 42px;
+    overflow: hidden;
+    gap: 14px;
+    padding-left: 12px;
     white-space: nowrap;
   }
 
