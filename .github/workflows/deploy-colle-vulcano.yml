@@ -4,24 +4,26 @@ on:
   push:
     branches: [main]
     paths:
-      - "Letteratura/colle-vulcano/**"
+      - "Letteratura/colle-vulcano/src/**"
+      - "Letteratura/colle-vulcano/public/**"
+      - "Letteratura/colle-vulcano/index.source.html"
+      - "Letteratura/colle-vulcano/package.json"
+      - "Letteratura/colle-vulcano/package-lock.json"
+      - "Letteratura/colle-vulcano/tsconfig.json"
+      - "Letteratura/colle-vulcano/vite.config.ts"
       - ".github/workflows/deploy-colle-vulcano.yml"
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: "leopardi-pages-build"
+  cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Scarica il repository
@@ -38,18 +40,33 @@ jobs:
         working-directory: Letteratura/colle-vulcano
         run: npm ci
 
-      - name: Crea il sito
+      - name: Crea il sito statico
         working-directory: Letteratura/colle-vulcano
         run: npm run build
 
-      - name: Configura GitHub Pages
-        uses: actions/configure-pages@v5
+      - name: Copia la build nella cartella pubblicata
+        shell: bash
+        run: |
+          APP_DIR="Letteratura/colle-vulcano"
+          rm -rf "$APP_DIR/assets" "$APP_DIR/images"
+          mkdir -p "$APP_DIR/assets" "$APP_DIR/images"
+          cp "$APP_DIR/dist/index.source.html" "$APP_DIR/index.html"
+          cp -R "$APP_DIR/dist/assets/." "$APP_DIR/assets/"
+          cp -R "$APP_DIR/dist/images/." "$APP_DIR/images/"
+          cp "$APP_DIR/dist/favicon.svg" "$APP_DIR/favicon.svg"
+          cp "$APP_DIR/dist/manifest.webmanifest" "$APP_DIR/manifest.webmanifest"
+          cp "$APP_DIR/dist/sw.js" "$APP_DIR/sw.js"
 
-      - name: Carica il sito
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: Letteratura/colle-vulcano/dist
-
-      - name: Pubblica il sito
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Salva la build su main
+        shell: bash
+        run: |
+          APP_DIR="Letteratura/colle-vulcano"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A --             "$APP_DIR/index.html"             "$APP_DIR/assets"             "$APP_DIR/images"             "$APP_DIR/favicon.svg"             "$APP_DIR/manifest.webmanifest"             "$APP_DIR/sw.js"
+          if git diff --cached --quiet; then
+            echo "Build già aggiornata."
+          else
+            git commit -m "Publish Leopardi static site"
+            git push
+          fi
