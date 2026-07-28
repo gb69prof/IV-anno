@@ -1,0 +1,55 @@
+name: Pubblica Dalla collina al vulcano
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Letteratura/colle-vulcano/**"
+      - ".github/workflows/deploy-colle-vulcano.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il repository
+        uses: actions/checkout@v4
+
+      - name: Prepara Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: Letteratura/colle-vulcano/package-lock.json
+
+      - name: Installa dipendenze
+        working-directory: Letteratura/colle-vulcano
+        run: npm ci
+
+      - name: Crea il sito
+        working-directory: Letteratura/colle-vulcano
+        run: npm run build
+
+      - name: Configura GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Carica il sito
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: Letteratura/colle-vulcano/dist
+
+      - name: Pubblica il sito
+        id: deployment
+        uses: actions/deploy-pages@v4
