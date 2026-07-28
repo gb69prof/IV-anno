@@ -267,6 +267,72 @@ const ZANTE_BRIDGE_DATA = {
   }
 };
 
+const BIBLIOTECA_BRIDGE_DATA = {
+  introduzione: {
+    title: "Apri i testi della frattura politica",
+    description: "Leggi la voce di Jacopo dopo il sacrificio della patria e confrontala con il primo mito napoleonico.",
+    links: [
+      ["ortis", "11-ottobre-1797", "Ortis: 11 ottobre"],
+      ["bonaparte", "guida-al-confronto", "Bonaparte liberatore"]
+    ]
+  },
+  fratture: {
+    title: "Dalla biografia alla voce poetica",
+    description: "Raggiungi i versi in cui origine perduta, fratello e patria tradita diventano forma.",
+    links: [
+      ["a-zacinto", "testo-integrale", "A Zacinto"],
+      ["fratello-giovanni", "testo-integrale", "In morte del fratello"],
+      ["ortis", "11-ottobre-1797", "Ortis: patria sacrificata"]
+    ]
+  },
+  "immagine-del-mondo": {
+    title: "Leggi la religione delle illusioni",
+    description: "Metti in relazione nulla, affetti, sepolcri e bellezza civilizzatrice.",
+    links: [
+      ["alla-sera", "vv9-10", "Alla sera: nulla eterno"],
+      ["sepolcri", "vv1-50", "Sepolcri: eredità d’affetti"],
+      ["grazie", "inno-i-vv107-149", "Grazie: umanità ferina"]
+    ]
+  },
+  poetica: {
+    title: "La forma nei testi",
+    description: "Confronta la misura del sonetto, il mito di Zacinto e la poesia che crea delle Grazie.",
+    links: [
+      ["alla-sera", "vv13-14", "Alla sera: spirto guerrier"],
+      ["a-zacinto", "testo-integrale", "A Zacinto"],
+      ["grazie", "inno-i-vv1-25", "Grazie: il verso che crea"]
+    ]
+  },
+  opere: {
+    title: "Entra nella Biblioteca",
+    description: "Dalla panoramica passa alle schede testuali, alle fonti e alle varianti.",
+    links: [
+      ["ortis", "11-ottobre-1797", "Ortis"],
+      ["alla-sera", "testo-integrale", "Sonetti"],
+      ["sepolcri", "vv1-50", "Dei Sepolcri"],
+      ["grazie", "inno-i-vv1-25", "Le Grazie"]
+    ]
+  },
+  "ortis-parini": {
+    title: "Apri l’Ortis verificato",
+    description: "Le lettere di Firenze e Milano restano distinte e dialogano con il passo di Santa Croce nei Sepolcri.",
+    links: [
+      ["ortis", "milano-4-dicembre", "Milano: incontro con Parini"],
+      ["ortis", "firenze-27-agosto", "Firenze: Santa Croce"],
+      ["sepolcri", "vv151-185", "Sepolcri: urne dei forti"]
+    ]
+  },
+  "alla-sera": {
+    title: "Leggi il sonetto nel testo",
+    description: "Apri l’integrale o raggiungi direttamente i due nuclei filosofici della lezione.",
+    links: [
+      ["alla-sera", "testo-integrale", "Testo integrale"],
+      ["alla-sera", "vv9-10", "Nulla eterno"],
+      ["alla-sera", "vv13-14", "Spirto guerrier"]
+    ]
+  }
+};
+
 const LESSON_DEEP_ANCHORS = {
   introduzione: [["meccanicismo", 2]],
   fratture: [
@@ -371,6 +437,32 @@ function setupZanteBridges() {
       </section>
     `
   );
+
+  const biblioteca = BIBLIOTECA_BRIDGE_DATA[lessonId];
+  if (biblioteca) {
+    const bibliotecaBase = `${getRoot()}../Foscolo-testi/`;
+    const bibliotecaLinks = biblioteca.links
+      .map(
+        ([work, passage, label]) => `
+          <a href="${bibliotecaBase}#testo/${encodeURIComponent(work)}/${encodeURIComponent(passage)}">
+            <span>${escapeHtml(label)}</span>
+            <i aria-hidden="true">→</i>
+          </a>`
+      )
+      .join("");
+
+    sidebar.insertAdjacentHTML(
+      "afterbegin",
+      `
+        <section class="biblioteca-bridge-card" aria-label="Apri i testi originali nella Biblioteca di Ugo Foscolo">
+          <p class="bridge-eyebrow">Testi originali</p>
+          <h2>${escapeHtml(biblioteca.title)}</h2>
+          <p>${escapeHtml(biblioteca.description)}</p>
+          <div class="biblioteca-bridge-links">${bibliotecaLinks}</div>
+        </section>
+      `
+    );
+  }
 
   const hash = decodeURIComponent(window.location.hash.slice(1));
   if (hash) {

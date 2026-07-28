@@ -1,0 +1,14 @@
+{
+  "name": "biblioteca-foscolo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --base=./ && cp sw.js manifest.webmanifest dist/ && cp assets/icon-192.png assets/icon-512.png dist/assets/ && sed -i -E 's#href=\"\\./assets/manifest-[^\"]+\\.webmanifest\"#href=\"./manifest.webmanifest\"#' dist/index.html",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}
