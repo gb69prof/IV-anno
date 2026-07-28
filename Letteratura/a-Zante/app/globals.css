@@ -5251,3 +5251,101 @@ button {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Ponte contestuale con il manuale Foscolo */
+.manual-bridge-floating {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 38;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  min-width: min(20rem, calc(100vw - 2rem));
+  padding: 0.8rem 0.9rem 0.8rem 1rem;
+  color: #17201f;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 228, 0.98), rgba(218, 181, 105, 0.98));
+  border: 1px solid rgba(255, 239, 181, 0.9);
+  border-radius: 0.75rem;
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  backdrop-filter: blur(14px);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.manual-bridge-floating:hover,
+.manual-bridge-floating:focus-visible {
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.44),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.manual-bridge-floating span {
+  grid-column: 1;
+  color: #68511e;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.manual-bridge-floating strong {
+  grid-column: 1;
+  margin-top: 0.12rem;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 1.06rem;
+  line-height: 1.05;
+}
+
+.manual-bridge-floating i {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+  margin-left: 1rem;
+  font-size: 1.35rem;
+  font-style: normal;
+}
+
+.conclusion-manual-link {
+  display: grid;
+  gap: 0.16rem;
+  margin-top: 0.75rem;
+  padding: 0.82rem 1rem;
+  color: #f4e7c1;
+  border: 1px solid rgba(219, 184, 109, 0.68);
+  border-radius: 0.55rem;
+  background: rgba(12, 31, 30, 0.72);
+  text-align: center;
+  text-decoration: none;
+}
+
+.conclusion-manual-link span {
+  font-weight: 800;
+}
+
+.conclusion-manual-link small {
+  color: rgba(244, 231, 193, 0.78);
+}
+
+@media (max-width: 760px) {
+  .manual-bridge-floating {
+    right: max(0.6rem, env(safe-area-inset-right));
+    bottom: max(0.6rem, env(safe-area-inset-bottom));
+    min-width: 0;
+    max-width: calc(100vw - 1.2rem);
+    padding: 0.65rem 0.75rem 0.65rem 0.82rem;
+  }
+
+  .manual-bridge-floating span {
+    font-size: 0.58rem;
+  }
+
+  .manual-bridge-floating strong {
+    font-size: 0.93rem;
+  }
+}

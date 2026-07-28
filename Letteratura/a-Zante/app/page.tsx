@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type Mode = "guided" | "free" | null;
 type View =
@@ -214,6 +214,57 @@ const stops: Stop[] = [
     y: 18,
   },
 ];
+
+const manualTargets: Record<
+  View,
+  { href: string; eyebrow: string; title: string }
+> = {
+  map: {
+    href: "../Foscolo/index.html",
+    eyebrow: "L’altra porta",
+    title: "Apri il manuale di studio",
+  },
+  approdo: {
+    href: "../Foscolo/lezioni/introduzione.html#meccanicismo",
+    eyebrow: "Dal simbolo al concetto",
+    title: "Studia il meccanicismo",
+  },
+  fratture: {
+    href: "../Foscolo/lezioni/fratture.html#biografia-ferita",
+    eyebrow: "Dalla fortezza alla biografia",
+    title: "Studia le fratture",
+  },
+  illusioni: {
+    href: "../Foscolo/lezioni/immagine-del-mondo.html#religione-illusioni",
+    eyebrow: "Dalla casa alla teoria",
+    title: "Studia le illusioni",
+  },
+  ortis: {
+    href: "../Foscolo/lezioni/ortis-parini.html#prima-di-leggere",
+    eyebrow: "Dalla radura al testo",
+    title: "Studia Ortis e Parini",
+  },
+  sepolcri: {
+    href: "../Foscolo/lezioni/opere.html#dei-sepolcri",
+    eyebrow: "Dalla memoria al carme",
+    title: "Studia Dei Sepolcri",
+  },
+  grazie: {
+    href: "../Foscolo/lezioni/opere.html#le-grazie",
+    eyebrow: "Dal giardino all’opera",
+    title: "Studia Le Grazie",
+  },
+  sera: {
+    href: "../Foscolo/lezioni/alla-sera.html#testo-alla-sera",
+    eyebrow: "Dalla scogliera ai versi",
+    title: "Leggi Alla sera",
+  },
+  zacinto: {
+    href: "../Foscolo/lezioni/opere.html#a-zacinto",
+    eyebrow: "Dalla nave al sonetto",
+    title: "Studia A Zacinto",
+  },
+};
 
 const mechanismNotes: MechanismNote[] = [
   {
@@ -838,6 +889,33 @@ function DraggablePanel({
       </div>
       <div className="draggable-panel-content">{children}</div>
     </aside>
+  );
+}
+
+function ManualBridge({ view }: { view: View }) {
+  const target = manualTargets[view];
+
+  return (
+    <a className="manual-bridge-floating" href={target.href}>
+      <span>{target.eyebrow}</span>
+      <strong>{target.title}</strong>
+      <i aria-hidden="true">↗</i>
+    </a>
+  );
+}
+
+function PageFrame({
+  bridgeView,
+  children,
+}: {
+  bridgeView: View;
+  children: React.ReactNode;
+}) {
+  return (
+    <>
+      {children}
+      <ManualBridge view={bridgeView} />
+    </>
   );
 }
 
@@ -2255,6 +2333,13 @@ function NaveZacinto({
                 <span>Ritorna all’isola</span>
                 <small>Ora puoi scegliere liberamente il tuo percorso</small>
               </button>
+              <a
+                className="conclusion-manual-link"
+                href={manualTargets.zacinto.href}
+              >
+                <span>Consolida il viaggio</span>
+                <small>Ritrova A Zacinto e le opere nel manuale</small>
+              </a>
             </div>
           </div>
         )}
@@ -2280,6 +2365,39 @@ export default function Home() {
     [visited],
   );
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const requested = params.get("tappa") ?? window.location.hash.slice(1);
+    const stop = stops.find((item) => item.id === requested);
+    if (!stop) return;
+
+    setMode("free");
+    setActive(stop);
+    setView(stop.id as View);
+  }, []);
+
+  function updateDeepLink(nextView: View) {
+    const url = new URL(window.location.href);
+    if (nextView === "map") {
+      url.searchParams.delete("tappa");
+      url.hash = "";
+    } else {
+      url.searchParams.set("tappa", nextView);
+      url.hash = "";
+    }
+    window.history.replaceState({}, "", url);
+  }
+
+  function navigateTo(nextView: View) {
+    setView(nextView);
+    updateDeepLink(nextView);
+  }
+
+  function returnToMap() {
+    setView("map");
+    updateDeepLink("map");
+  }
+
   function chooseMode(nextMode: Exclude<Mode, null>) {
     setMode(nextMode);
     setActive(nextMode === "guided" ? stops[0] : null);
@@ -2294,35 +2412,35 @@ export default function Home() {
   function enterStop() {
     if (!active) return;
     if (active.id === "approdo") {
-      setView("approdo");
+      navigateTo("approdo");
       return;
     }
     if (active.id === "fratture") {
-      setView("fratture");
+      navigateTo("fratture");
       return;
     }
     if (active.id === "illusioni") {
-      setView("illusioni");
+      navigateTo("illusioni");
       return;
     }
     if (active.id === "ortis") {
-      setView("ortis");
+      navigateTo("ortis");
       return;
     }
     if (active.id === "sepolcri") {
-      setView("sepolcri");
+      navigateTo("sepolcri");
       return;
     }
     if (active.id === "grazie") {
-      setView("grazie");
+      navigateTo("grazie");
       return;
     }
     if (active.id === "sera") {
-      setView("sera");
+      navigateTo("sera");
       return;
     }
     if (active.id === "zacinto") {
-      setView("zacinto");
+      navigateTo("zacinto");
       return;
     }
 
@@ -2341,7 +2459,7 @@ export default function Home() {
     } else {
       setActive(null);
     }
-    setView("map");
+    returnToMap();
   }
 
   function completeFratture() {
@@ -2352,7 +2470,7 @@ export default function Home() {
     } else {
       setActive(null);
     }
-    setView("map");
+    returnToMap();
   }
 
   function completeIllusioni() {
@@ -2363,7 +2481,7 @@ export default function Home() {
     } else {
       setActive(null);
     }
-    setView("map");
+    returnToMap();
   }
 
   function completeOrtis() {
@@ -2374,7 +2492,7 @@ export default function Home() {
     } else {
       setActive(null);
     }
-    setView("map");
+    returnToMap();
   }
 
   function completeSepolcri() {
@@ -2385,7 +2503,7 @@ export default function Home() {
     } else {
       setActive(null);
     }
-    setView("map");
+    returnToMap();
   }
 
   function completeGrazie() {
@@ -2396,7 +2514,7 @@ export default function Home() {
     } else {
       setActive(null);
     }
-    setView("map");
+    returnToMap();
   }
 
   function completeSera() {
@@ -2407,7 +2525,7 @@ export default function Home() {
     } else {
       setActive(null);
     }
-    setView("map");
+    returnToMap();
   }
 
   function completeZacinto() {
@@ -2416,7 +2534,7 @@ export default function Home() {
       setGuidedIndex(stops.length);
     }
     setActive(null);
-    setView("map");
+    returnToMap();
   }
 
   function updateZoom(amount: number) {
@@ -2454,78 +2572,71 @@ export default function Home() {
 
   if (view === "approdo") {
     return (
-      <Approdo
-        onBack={() => setView("map")}
-        onComplete={completeApprodo}
-      />
+      <PageFrame bridgeView="approdo">
+        <Approdo onBack={returnToMap} onComplete={completeApprodo} />
+      </PageFrame>
     );
   }
 
   if (view === "fratture") {
     return (
-      <Fortezza
-        onBack={() => setView("map")}
-        onComplete={completeFratture}
-      />
+      <PageFrame bridgeView="fratture">
+        <Fortezza onBack={returnToMap} onComplete={completeFratture} />
+      </PageFrame>
     );
   }
 
   if (view === "illusioni") {
     return (
-      <CasaIllusioni
-        onBack={() => setView("map")}
-        onComplete={completeIllusioni}
-      />
+      <PageFrame bridgeView="illusioni">
+        <CasaIllusioni onBack={returnToMap} onComplete={completeIllusioni} />
+      </PageFrame>
     );
   }
 
   if (view === "ortis") {
     return (
-      <RaduraJacopo
-        onBack={() => setView("map")}
-        onComplete={completeOrtis}
-      />
+      <PageFrame bridgeView="ortis">
+        <RaduraJacopo onBack={returnToMap} onComplete={completeOrtis} />
+      </PageFrame>
     );
   }
 
   if (view === "sepolcri") {
     return (
-      <MemoriaSepoltura
-        onBack={() => setView("map")}
-        onComplete={completeSepolcri}
-      />
+      <PageFrame bridgeView="sepolcri">
+        <MemoriaSepoltura onBack={returnToMap} onComplete={completeSepolcri} />
+      </PageFrame>
     );
   }
 
   if (view === "grazie") {
     return (
-      <GiardinoGrazie
-        onBack={() => setView("map")}
-        onComplete={completeGrazie}
-      />
+      <PageFrame bridgeView="grazie">
+        <GiardinoGrazie onBack={returnToMap} onComplete={completeGrazie} />
+      </PageFrame>
     );
   }
 
   if (view === "sera") {
     return (
-      <ScoglieraSera
-        onBack={() => setView("map")}
-        onComplete={completeSera}
-      />
+      <PageFrame bridgeView="sera">
+        <ScoglieraSera onBack={returnToMap} onComplete={completeSera} />
+      </PageFrame>
     );
   }
 
   if (view === "zacinto") {
     return (
-      <NaveZacinto
-        onBack={() => setView("map")}
-        onComplete={completeZacinto}
-      />
+      <PageFrame bridgeView="zacinto">
+        <NaveZacinto onBack={returnToMap} onComplete={completeZacinto} />
+      </PageFrame>
     );
   }
 
   return (
-    <main className="app-shell">
+    <PageFrame bridgeView={(active?.id as View | undefined) ?? "map"}>
+      <main className="app-shell">
       <header className="topbar">
         <div className="brand">
           <span className="brand-mark">Ζ</span>
@@ -2676,6 +2787,7 @@ export default function Home() {
           </button>
         )}
       </section>
-    </main>
+      </main>
+    </PageFrame>
   );
 }

@@ -200,6 +200,109 @@ const LESSON_STUDY_DATA = {
   }
 };
 
+const ZANTE_BRIDGE_DATA = {
+  introduzione: {
+    stop: "approdo",
+    eyebrow: "Filosofia di base",
+    title: "Entra nell’Approdo",
+    description: "Trasforma il meccanicismo in una macchina da esplorare.",
+    links: [["approdo", "Natura meccanicista"]]
+  },
+  fratture: {
+    stop: "fratture",
+    eyebrow: "Biografia e simbolo",
+    title: "Apri la Fortezza",
+    description: "Attraversa le sette finestre in cui la vita di Foscolo diventa letteratura.",
+    links: [
+      ["fratture", "Fortezza delle fratture"],
+      ["zacinto", "Nave dell’esilio"]
+    ]
+  },
+  "immagine-del-mondo": {
+    stop: "illusioni",
+    eyebrow: "Immagine del mondo",
+    title: "Entra nella Casa",
+    description: "Osserva patria, affetti, memoria, bellezza e poesia come costruzioni umane.",
+    links: [
+      ["approdo", "Natura meccanicista"],
+      ["illusioni", "Casa delle illusioni"]
+    ]
+  },
+  poetica: {
+    stop: "grazie",
+    eyebrow: "Forma e inquietudine",
+    title: "Attraversa la poetica",
+    description: "Metti a confronto l’armonia delle Grazie e l’inquietudine di Alla sera.",
+    links: [
+      ["grazie", "Giardino delle Grazie"],
+      ["sera", "Scogliera di Alla sera"]
+    ]
+  },
+  opere: {
+    stop: "ortis",
+    eyebrow: "Le opere diventano luoghi",
+    title: "Scegli un ambiente",
+    description: "Passa dalla scheda di studio all’esperienza simbolica dell’opera.",
+    links: [
+      ["ortis", "Radura di Jacopo"],
+      ["sepolcri", "Memoria e sepoltura"],
+      ["grazie", "Giardino delle Grazie"],
+      ["sera", "Scogliera di Alla sera"],
+      ["zacinto", "Nave di A Zacinto"]
+    ]
+  },
+  "ortis-parini": {
+    stop: "ortis",
+    eyebrow: "Dentro il romanzo",
+    title: "Entra nella Radura di Jacopo",
+    description: "Esplora il crollo congiunto di patria, amore e azione.",
+    links: [["ortis", "Radura di Jacopo"]]
+  },
+  "alla-sera": {
+    stop: "sera",
+    eyebrow: "Dentro il sonetto",
+    title: "Raggiungi la Scogliera",
+    description: "Attraversa i quattro movimenti del testo tra tempo, nulla e quiete.",
+    links: [["sera", "Scogliera di Alla sera"]]
+  }
+};
+
+const LESSON_DEEP_ANCHORS = {
+  introduzione: [["meccanicismo", 2]],
+  fratture: [
+    ["biografia-ferita", 0],
+    ["zante-origine", 1],
+    ["napoleone", 2],
+    ["fratello-giovanni", 3],
+    ["esilio", 4]
+  ],
+  "immagine-del-mondo": [
+    ["nulla-eterno", 0],
+    ["religione-illusioni", 1],
+    ["illusioni-opere", 3]
+  ],
+  poetica: [
+    ["neoclassicismo", 1],
+    ["preromanticismo", 2]
+  ],
+  opere: [
+    ["opere-percorso", 0],
+    ["jacopo-ortis", 1],
+    ["sonetti", 2],
+    ["dei-sepolcri", 3],
+    ["le-grazie", 4]
+  ],
+  "ortis-parini": [
+    ["prima-di-leggere", 0],
+    ["testo-originale", 10]
+  ],
+  "alla-sera": [
+    ["testo-alla-sera", 0],
+    ["nulla-alla-sera", 3],
+    ["illusioni-alla-sera", 4]
+  ]
+};
+
 function getRoot() {
   return document.body.dataset.root || "./";
 }
@@ -225,6 +328,56 @@ function setupActiveNavigation() {
       link.setAttribute("aria-current", "page");
     }
   });
+}
+
+function setupZanteBridges() {
+  const lessonId = document.body.dataset.lesson;
+  const article = document.querySelector(".lesson-article");
+  const sidebar = document.querySelector(".lesson-sidebar");
+  const bridge = ZANTE_BRIDGE_DATA[lessonId];
+  if (!lessonId || !article || !sidebar || !bridge) return;
+
+  const headings = [...article.querySelectorAll("h2")];
+  (LESSON_DEEP_ANCHORS[lessonId] || []).forEach(([id, index]) => {
+    if (headings[index]) headings[index].id = id;
+  });
+
+  if (lessonId === "opere") {
+    const zacinto = [...article.querySelectorAll("p")].find(
+      (paragraph) => paragraph.textContent.trim() === "A Zacinto"
+    );
+    if (zacinto) zacinto.id = "a-zacinto";
+  }
+
+  const zanteBase = `${getRoot()}../a-Zante/`;
+  const links = bridge.links
+    .map(
+      ([stop, label]) => `
+        <a href="${zanteBase}?tappa=${encodeURIComponent(stop)}&amp;da=manuale">
+          <span>${escapeHtml(label)}</span>
+          <i aria-hidden="true">→</i>
+        </a>`
+    )
+    .join("");
+
+  sidebar.insertAdjacentHTML(
+    "afterbegin",
+    `
+      <section class="zante-bridge-card" aria-label="Passa a Zante interiore">
+        <p class="bridge-eyebrow">${escapeHtml(bridge.eyebrow)}</p>
+        <h2>${escapeHtml(bridge.title)}</h2>
+        <p>${escapeHtml(bridge.description)}</p>
+        <div class="zante-bridge-links">${links}</div>
+      </section>
+    `
+  );
+
+  const hash = decodeURIComponent(window.location.hash.slice(1));
+  if (hash) {
+    window.requestAnimationFrame(() => {
+      document.getElementById(hash)?.scrollIntoView({ block: "start" });
+    });
+  }
 }
 
 function setupMapModal() {
@@ -547,6 +700,7 @@ function setupNotesTool() {
 
 setupServiceWorker();
 setupActiveNavigation();
+setupZanteBridges();
 setupMapModal();
 setupLessonVideoSwap();
 setupLessonStudyTools();
