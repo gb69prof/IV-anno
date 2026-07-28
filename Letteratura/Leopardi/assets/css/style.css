@@ -97,6 +97,97 @@ img {
   border-color: var(--gold);
 }
 
+.top-nav .journey-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.35rem;
+  border: 1px solid rgba(224, 179, 109, 0.72);
+  border-radius: 999px;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--paper-2), #e9c98d);
+  font-size: 0.9rem;
+}
+
+.top-nav .journey-nav-link:hover,
+.top-nav .journey-nav-link:focus-visible {
+  color: var(--ink);
+  border-color: var(--paper-2);
+}
+
+.journey-home-link {
+  position: fixed;
+  z-index: 20;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--paper-2), #e9c98d);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+}
+
+.journey-context-card {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--gold);
+  border-radius: 0.45rem;
+  color: var(--paper-2);
+  background:
+    linear-gradient(145deg, rgba(7, 39, 60, 0.98), rgba(12, 58, 87, 0.96)),
+    radial-gradient(circle at top right, rgba(224, 179, 109, 0.18), transparent 42%);
+  box-shadow: var(--shadow);
+}
+
+.journey-context-card > p {
+  margin: 0;
+  color: var(--gold-soft);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.journey-context-card h2 {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.journey-context-actions {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.journey-context-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid rgba(224, 179, 109, 0.65);
+  border-radius: 0.35rem;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--paper-2), #e9c98d);
+  text-decoration: none;
+  line-height: 1.25;
+}
+
+.journey-context-link:hover,
+.journey-context-link:focus-visible,
+.journey-home-link:hover,
+.journey-home-link:focus-visible {
+  outline: 3px solid var(--paper-2);
+  outline-offset: 2px;
+}
+
 main {
   width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
@@ -949,6 +1040,12 @@ body[data-page="home"] main {
 
   .site-footer {
     justify-content: flex-start;
+  }
+
+  .journey-home-link {
+    left: max(0.75rem, env(safe-area-inset-left));
+    right: max(0.75rem, env(safe-area-inset-right));
+    justify-content: center;
   }
 }
 

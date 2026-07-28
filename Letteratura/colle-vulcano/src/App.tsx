@@ -11,6 +11,7 @@ type SceneId =
   | "ginestra"
   | "naples"
   | null;
+type JourneyScene = Exclude<SceneId, null>;
 type HouseStopId = "romanticismo" | "sensismo" | "piacere" | "natura";
 type HillStageId =
   | "limite"
@@ -73,6 +74,175 @@ type KnowledgeItem = {
   x: number;
   y: number;
 };
+
+type StoredJourneyState = {
+  version: 1;
+  introOpen: boolean;
+  mode: "guided" | "free";
+  scene: SceneId;
+  houseVisited: HouseStopId[];
+  hillVisited: HillStageId[];
+  villageVisited: VillageStageId[];
+  natureVisited: NatureStageId[];
+  rebellionVisited: RebellionStageId[];
+  ginestraVisited: GinestraStageId[];
+  naplesVisited: NaplesStageId[];
+  zoom: number;
+};
+
+const JOURNEY_STORAGE_KEY = "leopardi.journey.state.v1";
+const MANUAL_RETURN_KEY = "leopardi.bridge.manualReturnUrl";
+const journeyScenes = [
+  "house",
+  "hill",
+  "village",
+  "nature",
+  "rebellion",
+  "ginestra",
+  "naples",
+] as const;
+const houseStopIds = ["romanticismo", "sensismo", "piacere", "natura"] as const;
+const hillStageIds = [
+  "limite",
+  "spazio",
+  "sgomento",
+  "vento",
+  "tempo",
+  "naufragio",
+] as const;
+const villageStageIds = [
+  "silvia",
+  "promessa",
+  "sabato",
+  "festa",
+  "stelle",
+  "ricordanza",
+] as const;
+const natureStageIds = [
+  "fuga",
+  "patimento",
+  "indifferenza",
+  "circuito",
+  "domanda",
+  "finale",
+] as const;
+const rebellionStageIds = [
+  "filippi",
+  "fato",
+  "indomito",
+  "bellezza",
+  "arcano",
+  "rifiuto",
+] as const;
+const ginestraStageIds = [
+  "deserto",
+  "potenza",
+  "progresso",
+  "nobilta",
+  "catena",
+  "fiore",
+] as const;
+const naplesStageIds = [
+  "riva",
+  "stelle",
+  "misura",
+  "orgoglio",
+  "alleanza",
+  "civilta",
+] as const;
+
+const manualLinks: Record<JourneyScene, { href: string; label: string }> = {
+  house: {
+    href: "../Leopardi/pagine/filosofia-base.html?da=viaggio",
+    label: "Filosofia base",
+  },
+  hill: {
+    href: "../Leopardi/pagine/infinito.html?da=viaggio",
+    label: "L’Infinito",
+  },
+  village: {
+    href: "../Leopardi/pagine/fratture.html?da=viaggio",
+    label: "Le fratture",
+  },
+  nature: {
+    href: "../Leopardi/pagine/natura-islandese.html?da=viaggio",
+    label: "Natura e Islandese",
+  },
+  rebellion: {
+    href: "../Leopardi/pagine/bruto-saffo.html?da=viaggio",
+    label: "Bruto e Saffo",
+  },
+  ginestra: {
+    href: "../Leopardi/pagine/ginestra.html?da=viaggio",
+    label: "La ginestra",
+  },
+  naples: {
+    href: "../Leopardi/pagine/scritti.html?da=viaggio",
+    label: "Gli scritti",
+  },
+};
+
+function isJourneyScene(value: unknown): value is JourneyScene {
+  return journeyScenes.includes(value as JourneyScene);
+}
+
+function storedIds<T extends string>(
+  value: unknown,
+  allowed: readonly T[],
+): T[] {
+  if (!Array.isArray(value)) return [];
+  return value.filter((item): item is T => allowed.includes(item as T));
+}
+
+function readStoredJourney(): StoredJourneyState | null {
+  try {
+    const value = localStorage.getItem(JOURNEY_STORAGE_KEY);
+    if (!value) return null;
+    const stored = JSON.parse(value) as Record<string, unknown>;
+    return {
+      version: 1,
+      introOpen: stored.introOpen === true,
+      mode: stored.mode === "free" ? "free" : "guided",
+      scene: isJourneyScene(stored.scene) ? stored.scene : null,
+      houseVisited: storedIds(stored.houseVisited, houseStopIds),
+      hillVisited: storedIds(stored.hillVisited, hillStageIds),
+      villageVisited: storedIds(stored.villageVisited, villageStageIds),
+      natureVisited: storedIds(stored.natureVisited, natureStageIds),
+      rebellionVisited: storedIds(
+        stored.rebellionVisited,
+        rebellionStageIds,
+      ),
+      ginestraVisited: storedIds(stored.ginestraVisited, ginestraStageIds),
+      naplesVisited: storedIds(stored.naplesVisited, naplesStageIds),
+      zoom:
+        typeof stored.zoom === "number" && Number.isFinite(stored.zoom)
+          ? Math.min(1.65, Math.max(1, stored.zoom))
+          : 1,
+    };
+  } catch {
+    return null;
+  }
+}
+
+function readRequestedScene(): JourneyScene | null {
+  const requested = new URLSearchParams(window.location.search).get("tappa");
+  return isJourneyScene(requested) ? requested : null;
+}
+
+function getManualReturnHref(): string {
+  const fallback = new URL("../Leopardi/index.html", window.location.href).href;
+  try {
+    const stored = localStorage.getItem(MANUAL_RETURN_KEY);
+    if (!stored) return fallback;
+    const target = new URL(stored, window.location.origin);
+    const isManualPage =
+      target.origin === window.location.origin &&
+      target.pathname.includes("/Letteratura/Leopardi/");
+    return isManualPage ? target.href : fallback;
+  } catch {
+    return fallback;
+  }
+}
 
 const houseStops: KnowledgeItem[] = [
   {
@@ -776,7 +946,9 @@ function VideoDock({
     <>
       <aside
         className={`video-dock video-dock-${placement}`}
-        aria-label="Video della tappa"
+        aria-label={
+          placement === "map" ? "Video della mappa" : "Video della tappa"
+        }
       >
         <span className="video-dock-label">Video</span>
         <div>
@@ -873,7 +1045,7 @@ function DraggableCard({
   }
 
   return (
-    <article
+    <section
       className="knowledge-card"
       style={{ left: position.x, top: position.y }}
       role="dialog"
@@ -910,24 +1082,67 @@ function DraggableCard({
           {item.work}
         </p>
       </div>
-    </article>
+    </section>
+  );
+}
+
+function SceneManualBridge({
+  scene,
+  progress,
+}: {
+  scene: JourneyScene;
+  progress: string;
+}) {
+  const manualLink = manualLinks[scene];
+  return (
+    <div className="scene-header-meta">
+      <span>{progress}</span>
+      <a
+        href={manualLink.href}
+        aria-label={`Studia nel manuale: ${manualLink.label}`}
+      >
+        <span aria-hidden="true">↗</span>
+        Manuale
+      </a>
+    </div>
   );
 }
 
 export default function Home() {
-  const [introOpen, setIntroOpen] = useState(true);
-  const [mode, setMode] = useState<"guided" | "free">("guided");
-  const [scene, setScene] = useState<SceneId>(null);
+  const initialJourney = useRef(readStoredJourney()).current;
+  const requestedScene = useRef(readRequestedScene()).current;
+  const manualReturnHref = useRef(getManualReturnHref()).current;
+  const [introOpen, setIntroOpen] = useState(
+    requestedScene ? false : (initialJourney?.introOpen ?? true),
+  );
+  const [mode, setMode] = useState<"guided" | "free">(
+    initialJourney?.mode ?? "guided",
+  );
+  const [scene, setScene] = useState<SceneId>(
+    requestedScene ?? initialJourney?.scene ?? null,
+  );
   const [activeItem, setActiveItem] = useState<KnowledgeItem | null>(null);
-  const [houseVisited, setHouseVisited] = useState<HouseStopId[]>([]);
-  const [hillVisited, setHillVisited] = useState<HillStageId[]>([]);
-  const [villageVisited, setVillageVisited] = useState<VillageStageId[]>([]);
-  const [natureVisited, setNatureVisited] = useState<NatureStageId[]>([]);
+  const [houseVisited, setHouseVisited] = useState<HouseStopId[]>(
+    initialJourney?.houseVisited ?? [],
+  );
+  const [hillVisited, setHillVisited] = useState<HillStageId[]>(
+    initialJourney?.hillVisited ?? [],
+  );
+  const [villageVisited, setVillageVisited] = useState<VillageStageId[]>(
+    initialJourney?.villageVisited ?? [],
+  );
+  const [natureVisited, setNatureVisited] = useState<NatureStageId[]>(
+    initialJourney?.natureVisited ?? [],
+  );
   const [rebellionVisited, setRebellionVisited] = useState<
     RebellionStageId[]
-  >([]);
-  const [ginestraVisited, setGinestraVisited] = useState<GinestraStageId[]>([]);
-  const [naplesVisited, setNaplesVisited] = useState<NaplesStageId[]>([]);
+  >(initialJourney?.rebellionVisited ?? []);
+  const [ginestraVisited, setGinestraVisited] = useState<GinestraStageId[]>(
+    initialJourney?.ginestraVisited ?? [],
+  );
+  const [naplesVisited, setNaplesVisited] = useState<NaplesStageId[]>(
+    initialJourney?.naplesVisited ?? [],
+  );
   const [poemOpen, setPoemOpen] = useState(false);
   const [villageSynthesisOpen, setVillageSynthesisOpen] = useState(false);
   const [natureSynthesisOpen, setNatureSynthesisOpen] = useState(false);
@@ -935,7 +1150,7 @@ export default function Home() {
   const [ginestraSynthesisOpen, setGinestraSynthesisOpen] = useState(false);
   const [naplesSynthesisOpen, setNaplesSynthesisOpen] = useState(false);
   const [activeVideo, setActiveVideo] = useState<VideoItem | null>(null);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(initialJourney?.zoom ?? 1);
   const [notice, setNotice] = useState("");
   const mapViewport = useRef<HTMLDivElement>(null);
   const mapDrag = useRef<{
@@ -950,6 +1165,50 @@ export default function Home() {
       navigator.serviceWorker.register("./sw.js").catch(() => undefined);
     }
   }, []);
+
+  useEffect(() => {
+    const storedJourney: StoredJourneyState = {
+      version: 1,
+      introOpen,
+      mode,
+      scene,
+      houseVisited,
+      hillVisited,
+      villageVisited,
+      natureVisited,
+      rebellionVisited,
+      ginestraVisited,
+      naplesVisited,
+      zoom,
+    };
+    try {
+      localStorage.setItem(JOURNEY_STORAGE_KEY, JSON.stringify(storedJourney));
+    } catch {
+      // La navigazione resta utilizzabile anche quando lo storage è disabilitato.
+    }
+
+    const currentUrl = new URL(window.location.href);
+    if (scene) currentUrl.searchParams.set("tappa", scene);
+    else currentUrl.searchParams.delete("tappa");
+    currentUrl.searchParams.delete("da");
+    window.history.replaceState(
+      null,
+      "",
+      `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`,
+    );
+  }, [
+    introOpen,
+    mode,
+    scene,
+    houseVisited,
+    hillVisited,
+    villageVisited,
+    natureVisited,
+    rebellionVisited,
+    ginestraVisited,
+    naplesVisited,
+    zoom,
+  ]);
 
   useEffect(() => {
     if (!notice) return;
@@ -1221,10 +1480,16 @@ export default function Home() {
             <span style={{ width: `${(sceneCount / sceneTotal) * 100}%` }} />
           </div>
         </div>
-        <button className="route-button" onClick={() => setIntroOpen(true)}>
-          <span aria-hidden="true">✦</span>
-          Il viaggio
-        </button>
+        <nav className="topbar-actions" aria-label="Passa tra viaggio e manuale">
+          <a className="manual-button" href={manualReturnHref}>
+            <span aria-hidden="true">▤</span>
+            Manuale
+          </a>
+          <button className="route-button" onClick={() => setIntroOpen(true)}>
+            <span aria-hidden="true">✦</span>
+            Il viaggio
+          </button>
+        </nav>
       </header>
 
       <section
@@ -1381,6 +1646,11 @@ export default function Home() {
           className="welcome-panel"
           role="dialog"
           aria-labelledby="welcome-title"
+          style={
+            {
+              "--welcome-map": 'url("images/leopardi-map.png")',
+            } as React.CSSProperties
+          }
         >
           <button
             className="panel-close"
@@ -1441,7 +1711,10 @@ export default function Home() {
               <p>Tappa 1</p>
               <h2>La biblioteca di Recanati</h2>
             </div>
-            <span>{houseVisited.length} / 4 esplorati</span>
+            <SceneManualBridge
+              scene="house"
+              progress={`${houseVisited.length} / 4 esplorati`}
+            />
           </header>
 
           <aside className="scene-question">
@@ -1534,7 +1807,10 @@ export default function Home() {
               <p>Tappa 2 · Poesia per immagini</p>
               <h2>La collina dell’Infinito</h2>
             </div>
-            <span>{hillVisited.length} / 6 movimenti</span>
+            <SceneManualBridge
+              scene="hill"
+              progress={`${hillVisited.length} / 6 movimenti`}
+            />
           </header>
 
           <aside className="scene-question hill-question">
@@ -1692,7 +1968,10 @@ export default function Home() {
               <p>Tappa 3 · Il paese dell’attesa</p>
               <h2>Il borgo di Recanati</h2>
             </div>
-            <span>{villageVisited.length} / 6 movimenti</span>
+            <SceneManualBridge
+              scene="village"
+              progress={`${villageVisited.length} / 6 movimenti`}
+            />
           </header>
 
           <aside className="scene-question village-question">
@@ -1867,7 +2146,10 @@ export default function Home() {
               <p>Tappa 4 · La scoperta</p>
               <h2>La Natura indifferente</h2>
             </div>
-            <span>{natureVisited.length} / 6 passaggi</span>
+            <SceneManualBridge
+              scene="nature"
+              progress={`${natureVisited.length} / 6 passaggi`}
+            />
           </header>
 
           <aside className="scene-question nature-question">
@@ -2034,7 +2316,10 @@ export default function Home() {
               <p>Tappa 5 · La ribellione</p>
               <h2>Bruto e Saffo</h2>
             </div>
-            <span>{rebellionVisited.length} / 6 passaggi</span>
+            <SceneManualBridge
+              scene="rebellion"
+              progress={`${rebellionVisited.length} / 6 passaggi`}
+            />
           </header>
 
           <aside className="scene-question rebellion-question">
@@ -2234,7 +2519,10 @@ export default function Home() {
               <p>Tappa 6 · La solidarietà</p>
               <h2>Il Vesuvio e la Ginestra</h2>
             </div>
-            <span>{ginestraVisited.length} / 6 passaggi</span>
+            <SceneManualBridge
+              scene="ginestra"
+              progress={`${ginestraVisited.length} / 6 passaggi`}
+            />
           </header>
 
           <aside className="scene-question ginestra-question">
@@ -2420,7 +2708,10 @@ export default function Home() {
               <p>Tappa 7 · L’ultima soglia</p>
               <h2>Napoli e il mare</h2>
             </div>
-            <span>{naplesVisited.length} / 6 passaggi</span>
+            <SceneManualBridge
+              scene="naples"
+              progress={`${naplesVisited.length} / 6 passaggi`}
+            />
           </header>
 
           <aside className="scene-question naples-question">

@@ -1,4 +1,4 @@
-const CACHE_NAME = "leopardi-foscolo-style-v4";
+const CACHE_NAME = "leopardi-foscolo-style-v5";
 
 const LOCAL_ASSETS = [
   "./",
@@ -59,7 +59,9 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
   if (url.pathname.toLowerCase().includes("/video/")) return;
   event.respondWith(
-    caches.match(event.request).then((cached) => {
+    caches
+      .match(event.request, { ignoreSearch: event.request.mode === "navigate" })
+      .then((cached) => {
       if (cached) return cached;
       return fetch(event.request).then((response) => {
         const copy = response.clone();
@@ -68,6 +70,6 @@ self.addEventListener("fetch", (event) => {
         }
         return response;
       });
-    })
+      })
   );
 });

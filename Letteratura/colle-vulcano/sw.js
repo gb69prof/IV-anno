@@ -1,6 +1,7 @@
-const CACHE = "leopardi-v7";
+const CACHE = "leopardi-v8";
 const CORE = [
   "./",
+  "./index.html",
   "images/leopardi-map.png",
   "images/casa-leopardi.png",
   "images/collina-infinito.png",
@@ -11,8 +12,23 @@ const CORE = [
   "manifest.webmanifest",
 ];
 
+async function cacheAppShell() {
+  const cache = await caches.open(CACHE);
+  await cache.addAll(CORE);
+
+  const indexResponse = await fetch("./index.html", { cache: "reload" });
+  if (!indexResponse.ok) return;
+  await cache.put("./index.html", indexResponse.clone());
+
+  const indexHtml = await indexResponse.text();
+  const generatedAssets = [
+    ...indexHtml.matchAll(/(?:src|href)="(\.\/assets\/[^"]+)"/g),
+  ].map((match) => match[1]);
+  if (generatedAssets.length) await cache.addAll(generatedAssets);
+}
+
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(CORE)));
+  event.waitUntil(cacheAppShell());
   self.skipWaiting();
 });
 
@@ -29,15 +45,23 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+  const request = event.request;
+  const url = new URL(request.url);
   event.respondWith(
-    caches.match(event.request).then(
+    caches.match(request, { ignoreSearch: request.mode === "navigate" }).then(
       (cached) =>
         cached ||
-        fetch(event.request).then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+        fetch(request).then((response) => {
+          if (response.ok && url.origin === self.location.origin) {
+            const copy = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(request, copy));
+          }
           return response;
-        }),
+        }).catch(() =>
+          request.mode === "navigate"
+            ? caches.match("./index.html")
+            : Promise.reject(new Error("Risorsa non disponibile offline")),
+        ),
     ),
   );
 });
