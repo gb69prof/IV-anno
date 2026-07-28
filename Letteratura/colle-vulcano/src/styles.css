@@ -468,7 +468,7 @@ button:focus-visible {
   color: #30281c;
   background:
     linear-gradient(rgba(248, 235, 200, 0.94), rgba(240, 220, 174, 0.96)),
-    url("/images/leopardi-map.png");
+    url("../images/leopardi-map.png");
   box-shadow: var(--shadow);
 }
 
