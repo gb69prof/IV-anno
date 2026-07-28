@@ -1,0 +1,48 @@
+name: Pubblica Dalla collina al vulcano
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Letteratura/collina-vulcano/**"
+      - ".github/workflows/publish-collina-vulcano.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    # The generated files are committed by the bot. Do not rebuild them again.
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Letteratura/collina-vulcano
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: Letteratura/collina-vulcano/package-lock.json
+
+      - run: npm ci
+      - run: npm run build -- --config vite.github.config.ts
+
+      - name: Aggiorna i file statici di GitHub Pages
+        run: |
+          cp dist/index.source.html index.html
+          rsync -a \
+            --exclude 'index.source.html' \
+            dist/ ./
+
+      - name: Registra la versione pubblicabile
+        working-directory: .
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Letteratura/collina-vulcano/index.html Letteratura/collina-vulcano/assets
+          git diff --cached --quiet || git commit -m "Build Dalla collina al vulcano [skip ci]"
+          git push
