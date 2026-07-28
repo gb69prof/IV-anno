@@ -1,4 +1,4 @@
-const CACHE_NAME = "foscolo-pwa-v6";
+const CACHE_NAME = "foscolo-pwa-v7";
 
 const LOCAL_ASSETS = [
   "./",

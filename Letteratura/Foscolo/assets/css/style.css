@@ -581,6 +581,94 @@ body[data-page="home"] main {
   box-shadow: var(--shadow);
 }
 
+.biblioteca-bridge-card {
+  position: relative;
+  overflow: hidden;
+  padding: 1.15rem;
+  color: #f6e7c5;
+  background:
+    linear-gradient(145deg, rgb(75 31 34 / 96%), rgb(27 23 31 / 98%));
+  border: 1px solid #c89543;
+  border-radius: 14px;
+  box-shadow: 0 16px 30px rgb(30 14 16 / 18%);
+}
+
+.biblioteca-bridge-card::after {
+  position: absolute;
+  top: -2.8rem;
+  right: -2.2rem;
+  width: 8rem;
+  aspect-ratio: 1;
+  content: "UF";
+  display: grid;
+  place-items: end start;
+  padding: 0 0 1.1rem 1.05rem;
+  color: rgb(233 195 126 / 18%);
+  border: 1px solid rgb(233 195 126 / 20%);
+  border-radius: 50%;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+}
+
+.biblioteca-bridge-card .bridge-eyebrow {
+  margin: 0 0 0.35rem;
+  color: #e9c37e;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.biblioteca-bridge-card h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #fff4d8;
+  font-size: 1.38rem;
+  line-height: 1.12;
+}
+
+.biblioteca-bridge-card > p:not(.bridge-eyebrow) {
+  position: relative;
+  z-index: 1;
+  margin: 0.65rem 0 0.9rem;
+  color: #e8d6b1;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.biblioteca-bridge-links {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.biblioteca-bridge-links a {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 0.55rem 0.7rem;
+  color: #fff4d8;
+  background: rgb(255 255 255 / 6%);
+  border: 1px solid rgb(233 195 126 / 42%);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.biblioteca-bridge-links a:hover,
+.biblioteca-bridge-links a:focus-visible {
+  background: rgb(233 195 126 / 14%);
+}
+
+.biblioteca-bridge-links i {
+  color: #e9c37e;
+  font-style: normal;
+}
+
 .zante-bridge-card .bridge-eyebrow {
   margin: 0 0 0.35rem;
   color: var(--gold-soft);

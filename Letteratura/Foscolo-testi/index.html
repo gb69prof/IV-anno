@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#061b2b">
+  <meta name="description" content="Testi originali, opere, temi e documenti per leggere Ugo Foscolo nella sua voce.">
+  <title>La Biblioteca di Ugo Foscolo</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Biblioteca di Ugo Foscolo — Home">
+      <span class="brand-mark" aria-hidden="true">UF</span>
+      <span>La Biblioteca di Ugo Foscolo</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+      <span aria-hidden="true">☰</span><span class="sr-only">Apri il menu</span>
+    </button>
+    <nav id="main-nav" class="main-nav" aria-label="Navigazione principale">
+      <a href="#home">Home</a>
+      <a href="#opere">Testi</a>
+      <a href="#temi">Temi</a>
+      <a href="#cronologia">Cronologia</a>
+      <a href="#lezioni">Lezioni</a>
+      <button class="nav-button" type="button" data-open-notes>Appunti <span data-note-count>0</span></button>
+    </nav>
+    <button class="install-button" type="button" data-install hidden>Installa</button>
+  </header>
+
+  <main id="contenuto">
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero-overlay">
+        <p class="eyebrow">Biblioteca testuale interattiva</p>
+        <h1 id="hero-title">La Biblioteca<br>di Ugo Foscolo</h1>
+        <p class="hero-copy">Testi originali, opere, temi e documenti per leggere Foscolo nella sua voce.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#opere">Entra nella biblioteca <span aria-hidden="true">→</span></a>
+          <button class="secondary-button" type="button" data-random-text>Apri un testo a caso</button>
+        </div>
+      </div>
+      <p class="hero-credit">Immagine narrativa originale; i contenuti testuali restano HTML accessibile.</p>
+    </section>
+
+    <section class="entry-section" aria-labelledby="entry-title">
+      <div class="section-heading compact">
+        <p class="eyebrow">Scegli la tua strada</p>
+        <h2 id="entry-title">Sei ingressi, una sola rete di significati</h2>
+      </div>
+      <div class="entry-grid">
+        <a class="entry-card" href="#opere" data-filter-link="ortis">
+          <span class="entry-icon" aria-hidden="true">✉</span>
+          <span class="entry-title">Ortis</span>
+          <span class="entry-copy">Patria, amore e rovina nelle lettere di Jacopo.</span>
+          <span class="entry-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="entry-card" href="#opere" data-filter-link="sonetti">
+          <span class="entry-icon" aria-hidden="true">♬</span>
+          <span class="entry-title">Sonetti</span>
+          <span class="entry-copy">Sera, Zacinto e il fratello Giovanni.</span>
+          <span class="entry-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="entry-card" href="#opere" data-filter-link="sepolcri">
+          <span class="entry-icon" aria-hidden="true">▥</span>
+          <span class="entry-title">Dei Sepolcri</span>
+          <span class="entry-copy">Affetti, memoria civile e poesia contro l’oblio.</span>
+          <span class="entry-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="entry-card" href="#opere" data-filter-link="grazie">
+          <span class="entry-icon" aria-hidden="true">⚱</span>
+          <span class="entry-title">Le Grazie</span>
+          <span class="entry-copy">L’arte che ingentilisce l’umanità ferina.</span>
+          <span class="entry-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="entry-card" href="#opere" data-filter-link="politici">
+          <span class="entry-icon" aria-hidden="true">✒</span>
+          <span class="entry-title">Scritti politici</span>
+          <span class="entry-copy">Napoleone, libertà e disinganno.</span>
+          <span class="entry-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="entry-card" href="#documenti">
+          <span class="entry-icon" aria-hidden="true">⌁</span>
+          <span class="entry-title">Documenti</span>
+          <span class="entry-copy">Campoformio, Saint-Cloud e il ritorno di Ulisse.</span>
+          <span class="entry-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="opere" class="library-section" aria-labelledby="works-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Testi originali</p>
+          <h2 id="works-title">Opere e passi</h2>
+          <p>Apri il testo, raggiungi il passo richiamato nelle lezioni e torna al punto di partenza.</p>
+        </div>
+        <label class="search-box">
+          <span class="sr-only">Cerca nella biblioteca</span>
+          <span aria-hidden="true">⌕</span>
+          <input type="search" data-search placeholder="Cerca opera, verso o tema…" autocomplete="off">
+        </label>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filtra per genere" data-filters></div>
+      <p class="results-status" aria-live="polite" data-results-status></p>
+      <div class="works-grid" data-works-grid></div>
+    </section>
+
+    <section id="temi" class="themes-section" aria-labelledby="themes-title">
+      <div class="section-heading centered">
+        <p class="eyebrow">Esplora per temi</p>
+        <h2 id="themes-title">Le idee attraversano le opere</h2>
+        <p>Scegli un tema: la biblioteca mostrerà i testi in cui prende forma.</p>
+      </div>
+      <div class="themes-orbit" data-themes></div>
+      <div class="theme-result" data-theme-result hidden>
+        <div>
+          <p class="eyebrow">Percorso tematico</p>
+          <h3 data-theme-title></h3>
+          <p data-theme-description></p>
+        </div>
+        <div class="theme-links" data-theme-links></div>
+      </div>
+    </section>
+
+    <section id="cronologia" class="timeline-section" aria-labelledby="timeline-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Cronologia interattiva</p>
+          <h2 id="timeline-title">La vita dentro la storia e le opere</h2>
+        </div>
+        <p>La linea non è una biografia ornamentale: collega gli eventi alle fratture che diventano scrittura.</p>
+      </div>
+      <ol class="timeline" data-timeline></ol>
+    </section>
+
+    <section id="lezioni" class="connections-section" aria-labelledby="lessons-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Collegamenti bidirezionali</p>
+          <h2 id="lessons-title">Dai testi alle lezioni</h2>
+        </div>
+        <p>Ogni lezione resta autonoma. La biblioteca aggiunge il testo originale, il contesto e le varianti.</p>
+      </div>
+      <div class="lesson-grid" data-lessons></div>
+    </section>
+
+    <section id="documenti" class="documents-section" aria-labelledby="documents-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Documenti e intertesti</p>
+          <h2 id="documents-title">La storia intorno alla voce di Foscolo</h2>
+        </div>
+        <p>Questi testi non sono di Foscolo: servono a verificare il contesto, non a confonderlo con l’opera.</p>
+      </div>
+      <div class="document-grid" data-documents></div>
+    </section>
+
+    <section id="fonti" class="sources-section" aria-labelledby="sources-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Fonti e varianti</p>
+          <h2 id="sources-title">Leggere con responsabilità</h2>
+        </div>
+        <p>Ogni scheda dichiara l’edizione usata, la fonte digitale e i punti che richiedono cautela filologica.</p>
+      </div>
+      <div class="source-principles">
+        <article><span aria-hidden="true">I</span><h3>Testo verificabile</h3><p>Il testo di lettura rinvia a un testimone digitale consultabile.</p></article>
+        <article><span aria-hidden="true">II</span><h3>Varianti visibili</h3><p>Le differenze rilevanti non vengono corrette in silenzio.</p></article>
+        <article><span aria-hidden="true">III</span><h3>Opere incompiute</h3><p>Per <i>Le Grazie</i> si parla di frammenti e ricostruzioni, non di un “integrale definitivo”.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <blockquote>
+      «Forse perché della fatal quiete<br>tu sei l’imago, a me sì cara vieni,<br>o Sera!»
+      <cite>— <i>Alla sera</i></cite>
+    </blockquote>
+    <div class="footer-row">
+      <span class="brand-mark" aria-hidden="true">UF</span>
+      <p>Progetto didattico gbprof · Testi di pubblico dominio · Fonti dichiarate nelle schede</p>
+      <a href="#fonti">Criteri editoriali</a>
+    </div>
+  </footer>
+
+  <dialog class="reader-dialog" data-reader aria-labelledby="reader-title">
+    <div class="reader-shell">
+      <header class="reader-bar">
+        <button class="reader-back" type="button" data-reader-close><span aria-hidden="true">←</span> Biblioteca</button>
+        <div class="reader-tools">
+          <button type="button" data-font-decrease aria-label="Riduci il testo">A−</button>
+          <button type="button" data-font-increase aria-label="Ingrandisci il testo">A+</button>
+          <button type="button" data-favorite aria-pressed="false">☆ Preferito</button>
+        </div>
+      </header>
+      <div class="reader-layout">
+        <aside class="reader-index" aria-label="Indice del testo">
+          <p class="eyebrow">Nell’opera</p>
+          <nav data-reader-index></nav>
+        </aside>
+        <article class="reader-content">
+          <p class="reader-kind" data-reader-kind></p>
+          <h2 id="reader-title" data-reader-title></h2>
+          <p class="reader-meta" data-reader-meta></p>
+          <p class="reader-description" data-reader-description></p>
+          <div class="reader-passages" data-reader-passages></div>
+        </article>
+        <aside class="reader-context" aria-label="Contesto editoriale">
+          <section>
+            <h3>Edizione e fonte</h3>
+            <p data-reader-edition></p>
+            <a data-reader-source target="_blank" rel="noopener">Apri la fonte digitale ↗</a>
+          </section>
+          <section>
+            <h3>Nota filologica</h3>
+            <p data-reader-note></p>
+          </section>
+          <section>
+            <h3>Lezioni collegate</h3>
+            <div class="reader-lessons" data-reader-lessons></div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="notes-dialog" data-notes-dialog aria-labelledby="notes-title">
+    <div class="notes-shell">
+      <header>
+        <div>
+          <p class="eyebrow">Taccuino personale</p>
+          <h2 id="notes-title">Appunti</h2>
+        </div>
+        <button type="button" data-close-notes>Chiudi</button>
+      </header>
+      <p>Gli appunti restano in questo dispositivo. Puoi esportarli come file di testo.</p>
+      <div data-notes-list></div>
+      <button class="primary-button" type="button" data-export-notes>Esporta appunti</button>
+    </div>
+  </dialog>
+
+  <div class="offline-status" data-offline-status role="status" hidden>Sei offline: la biblioteca resta consultabile.</div>
+  <noscript><p class="noscript">Per usare filtri, testi e taccuino è necessario attivare JavaScript.</p></noscript>
+</body>
+</html>
