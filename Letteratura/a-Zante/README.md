@@ -5,15 +5,15 @@ fratture, alle illusioni, alle opere e all'epilogo di *A Zacinto*.
 
 ## Pubblicazione su GitHub Pages
 
-1. Crea un nuovo repository GitHub vuoto.
-2. Carica **tutto il contenuto** di questo archivio nella radice del repository.
-3. In GitHub apri **Settings → Pages** e, in **Build and deployment**, seleziona
-   **GitHub Actions**.
-4. Apri la scheda **Actions**: il flusso “Deploy to GitHub Pages” partirà da solo
-   dopo il caricamento. Al termine, GitHub mostrerà l'indirizzo pubblico.
+Il progetto vive nel repository `gb69prof/IV-anno`, nella cartella
+`Letteratura/a-Zante`.
 
-Per aggiornare il sito in futuro, modifica o sostituisci i file del repository e
-carica le modifiche su `main`: GitHub ripubblicherà automaticamente il sito.
+L'indirizzo pubblico è:
+
+`https://gb69prof.github.io/IV-anno/Letteratura/a-Zante/`
+
+Ogni modifica a questa cartella avvia il workflow `Pubblica A Zante`, che genera
+la versione statica da servire con GitHub Pages.
 
 ## Avvio sul computer
 
@@ -98,35 +98,3 @@ optional or required ChatGPT sign-in:
 - Pass a same-origin relative `returnTo` path for the destination after sign-in
   or sign-out. The helper validates and safely encodes it.
 - Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
-
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
-
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
-
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
-
-## Diagnostic Commands
-
-- `npm run install:ci`: perform the one bounded lockfile install
-- `npm run dev`: start the Vite/Vinext development server
-- `npm run build`: build and validate the deployable Sites artifact
-- `npm run start`: start the built Vinext application
-- `npm test`: build, validate, and verify the rendered development-preview metadata
-- `npm run validate:artifact`: recheck an existing artifact's manifest and ESM `default.fetch` export
-- `npm run db:generate`: generate Drizzle migrations after schema changes
-
-Use build and validation commands for targeted diagnosis after a remote failure, not as part of the normal checkpoint path.
-
-The timeout defaults can be overridden for a controlled canary with `SITES_INSTALL_TIMEOUT`, `SITES_INSTALL_KILL_AFTER`, `SITES_BUILD_TIMEOUT`, and `SITES_BUILD_KILL_AFTER`. A timeout fails the command; the helpers never retry an unchanged install or build.
-
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
