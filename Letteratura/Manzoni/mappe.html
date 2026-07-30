@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#061d2f">
+    <title>Mappe | Alessandro Manzoni</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body data-root="./" data-page="mappe">
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Torna alla homepage">
+        <span class="brand-mark">AM</span>
+        <span>Alessandro Manzoni</span>
+      </a>
+      <nav class="top-nav" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="Lezioni/introduzione.html">Introduzione</a>
+        <a href="Lezioni/fratture.html">Fratture</a>
+        <a href="Lezioni/immagine-del-mondo.html">Immagine del mondo</a>
+        <a href="Lezioni/poetica.html">Poetica</a>
+        <a href="Lezioni/opere.html">Opere</a>
+        <a href="Lezioni/capitoli.html">Capitoli</a>
+        <a href="Lezioni/conclusione.html">Conclusione</a>
+        <a href="mappe.html">Mappe</a>
+        <a href="video.html">Video</a>
+      </nav>
+    </header>
+
+    <main class="map-page">
+      <section class="map-index">
+        <h1>Mappe concettuali</h1>
+        <p class="lesson-subtitle">Quadri sintetici, capitoli chiave e collegamenti del percorso su Manzoni.</p>
+        <div class="map-grid">
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/mondo-pre-Manzoni.png" data-map-title="Mondo pre-Manzoni">
+              <img src="assets/mappe/mondo-pre-Manzoni.png" alt="Mappa concettuale: Mondo pre-Manzoni">
+            </button>
+            <strong>Mondo pre-Manzoni</strong>
+          </article>
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/fratture.png" data-map-title="Le fratture">
+              <img src="assets/mappe/fratture.png" alt="Mappa concettuale: Le fratture">
+            </button>
+            <strong>Le fratture</strong>
+          </article>
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/immagine-mondo.png" data-map-title="Immagine del mondo">
+              <img src="assets/mappe/immagine-mondo.png" alt="Mappa concettuale: Immagine del mondo">
+            </button>
+            <strong>Immagine del mondo</strong>
+          </article>
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/provvida-sventura.png" data-map-title="Provvida sventura">
+              <img src="assets/mappe/provvida-sventura.png" alt="Mappa concettuale: Provvida sventura">
+            </button>
+            <strong>Provvida sventura</strong>
+          </article>
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/poetica.png" data-map-title="Poetica">
+              <img src="assets/mappe/poetica.png" alt="Mappa concettuale: Poetica">
+            </button>
+            <strong>Poetica</strong>
+          </article>
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/opere.png" data-map-title="Opere principali">
+              <img src="assets/mappe/opere.png" alt="Mappa concettuale: Opere principali">
+            </button>
+            <strong>Opere principali</strong>
+          </article>
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/Promessi-sposi.png" data-map-title="I Promessi sposi">
+              <img src="assets/mappe/Promessi-sposi.png" alt="Mappa concettuale: I Promessi sposi">
+            </button>
+            <strong>I Promessi sposi</strong>
+          </article>
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/capitolo1.png" data-map-title="Capitolo I">
+              <img src="assets/mappe/capitolo1.png" alt="Mappa concettuale: Capitolo I">
+            </button>
+            <strong>Capitolo I</strong>
+          </article>
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/capitolo4.png" data-map-title="Capitolo IV">
+              <img src="assets/mappe/capitolo4.png" alt="Mappa concettuale: Capitolo IV">
+            </button>
+            <strong>Capitolo IV</strong>
+          </article>
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/capitolo9.png" data-map-title="Capitolo IX">
+              <img src="assets/mappe/capitolo9.png" alt="Mappa concettuale: Capitolo IX">
+            </button>
+            <strong>Capitolo IX</strong>
+          </article>
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/capitolo10.png" data-map-title="Capitolo X">
+              <img src="assets/mappe/capitolo10.png" alt="Mappa concettuale: Capitolo X">
+            </button>
+            <strong>Capitolo X</strong>
+          </article>
+          <article class="map-tile">
+            <button type="button" data-open-map data-map-src="assets/mappe/Innominato.png" data-map-title="L&#x27;Innominato">
+              <img src="assets/mappe/Innominato.png" alt="Mappa concettuale: L&#x27;Innominato">
+            </button>
+            <strong>L&#x27;Innominato</strong>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="map-modal" data-map-modal>
+      <div class="modal-inner">
+        <div class="modal-bar">
+          <strong data-map-title>Mappa</strong>
+          <button class="modal-close" type="button" data-close-modal>Chiudi</button>
+        </div>
+        <img class="modal-image" src="" alt="">
+      </div>
+    </dialog>
+
+
+    <footer class="site-footer">
+      <span>Lezione</span>
+      <span>Mappe fullscreen</span>
+      <span>PWA didattica</span>
+    </footer>
+    <script src="./assets/js/app.js" defer></script>
+  </body>
+</html>
