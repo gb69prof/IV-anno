@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#061d2f">
+  <meta name="description" content="Romanticismo — Dalle rovine all’infinito: una lezione narrativa e interattiva secondo il metodo gbprof.">
+  <title>Romanticismo — Dalle rovine all’infinito</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/images/icon-192.png">
+  <link rel="apple-touch-icon" href="./assets/images/icon-192.png">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <header class="site-header" aria-label="Intestazione del sito">
+    <a class="brand" href="#home" aria-label="Romanticismo, torna alla copertina">
+      <span class="brand-mark" aria-hidden="true">R</span>
+      <span><strong>Romanticismo</strong><small>Dalle rovine all’infinito</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">
+      <span aria-hidden="true">☰</span> Menu
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="Navigazione principale">
+      <a href="#percorso">Percorso</a>
+      <a href="#testi">Testi</a>
+      <a href="#mappe">Mappe</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#verifica">Verifica</a>
+      <button class="nav-button" id="notebookOpen" type="button">Taccuino</button>
+      <button class="nav-button install-button" id="installButton" type="button">Installa</button>
+    </nav>
+  </header>
+
+  <main id="contenuto">
+    <section class="cover-section" id="home" aria-labelledby="coverTitle">
+      <h1 class="sr-only" id="coverTitle">Romanticismo — Dalle rovine all’infinito</h1>
+      <div class="cover-frame">
+        <img src="./assets/images/copertina-romanticismo.webp"
+          alt="Copertina illustrata: una città ordinata si spezza in rovine e conduce verso montagne, notte e infinito. Contiene le porte del percorso romantico."
+          width="941" height="1672">
+
+        <a class="hotspot hs-home" href="#home" aria-label="Home"></a>
+        <a class="hotspot hs-percorso" href="#percorso" aria-label="Percorso completo"></a>
+        <a class="hotspot hs-testi" href="#testi" aria-label="Testi"></a>
+        <a class="hotspot hs-mappe" href="#mappe" aria-label="Mappe"></a>
+        <a class="hotspot hs-autori" href="#autori" aria-label="Autori"></a>
+        <a class="hotspot hs-enter" href="#prologo" aria-label="Entra nel libro"></a>
+
+        <a class="hotspot hs-door-1" href="#mondo-ordinato" aria-label="Prima porta: Il mondo ordinato"></a>
+        <a class="hotspot hs-door-2" href="#fratture" aria-label="Seconda porta: Le fratture"></a>
+        <a class="hotspot hs-door-3" href="#nuova-immagine" aria-label="Terza porta: La nuova immagine del mondo"></a>
+        <a class="hotspot hs-door-4" href="#letteratura-crisi" aria-label="Quarta porta: La letteratura della crisi"></a>
+
+        <a class="hotspot hs-branch-1" href="#germania" aria-label="Diramazione: Germania"></a>
+        <a class="hotspot hs-branch-2" href="#inghilterra" aria-label="Diramazione: Inghilterra"></a>
+        <a class="hotspot hs-branch-3" href="#francia" aria-label="Diramazione: Francia"></a>
+        <a class="hotspot hs-branch-4" href="#italia" aria-label="Diramazione: Italia"></a>
+        <a class="hotspot hs-branch-5" href="#testi" aria-label="Diramazione: Testi"></a>
+        <a class="hotspot hs-branch-6" href="#mappe" aria-label="Diramazione: Mappe"></a>
+        <a class="hotspot hs-branch-7" href="#timeline" aria-label="Diramazione: Timeline"></a>
+        <a class="hotspot hs-branch-8" href="#conclusione" aria-label="Diramazione: Conclusione"></a>
+
+        <a class="hotspot hs-bridge-1" href="../Manzoni/" aria-label="Ponte verso la PWA autonoma di Alessandro Manzoni"></a>
+        <a class="hotspot hs-bridge-2" href="../Leopardi/" aria-label="Ponte verso la PWA autonoma di Giacomo Leopardi"></a>
+      </div>
+
+      <div class="cover-actions" role="note" aria-label="Istruzioni della copertina">
+        <p><strong>La copertina è una mappa.</strong> Tocca o seleziona con Tab le sue porte.</p>
+        <a class="primary-button" href="#prologo">Entra nel libro <span aria-hidden="true">→</span></a>
+      </div>
+
+      <nav class="text-index paper" aria-label="Indice testuale accessibile della copertina">
+        <h2>Indice del viaggio</h2>
+        <ol class="journey-index">
+          <li><a href="#mondo-ordinato"><span>1</span> Il mondo ordinato</a></li>
+          <li><a href="#fratture"><span>2</span> Le fratture</a></li>
+          <li><a href="#nuova-immagine"><span>3</span> La nuova immagine del mondo</a></li>
+          <li><a href="#letteratura-crisi"><span>4</span> La letteratura della crisi</a></li>
+          <li><a href="#vie-europee"><span>5</span> Le vie europee</a></li>
+          <li><a href="#italia"><span>6</span> La via italiana</a></li>
+          <li><a href="#conclusione"><span>7</span> Che cosa resta</a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <section class="chapter prologue" id="prologo" aria-labelledby="prologoTitle">
+      <div class="chapter-inner narrow">
+        <p class="kicker">Prologo · La crepa nel mondo</p>
+        <h2 id="prologoTitle">Quando l’ordine non basta più</h2>
+        <p class="generating-question">Che cosa accade quando l’uomo continua ad avere bisogno della ragione, ma scopre che la ragione non riesce a spiegare interamente la storia, il dolore, la natura e sé stesso?</p>
+        <div class="prologue-grid">
+          <p>Il Romanticismo nasce dentro questa crepa. Non è un gesto irrazionale contro l’Illuminismo: è la richiesta di un’immagine dell’uomo più ampia. La storia ha mostrato che le idee, entrando nel mondo, incontrano passioni, violenza, memoria e interessi. L’io ha scoperto di non essere trasparente a sé stesso. La natura non appare soltanto come un meccanismo da misurare.</p>
+          <blockquote>Il Romanticismo non sostituisce la ragione con il sentimento: riconosce che la realtà umana è anche storia, memoria, immaginazione, conflitto, appartenenza e desiderio.</blockquote>
+        </div>
+        <a class="next-link" href="#mondo-ordinato">Prima della crepa: il mondo ordinato <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <div id="percorso">
+      <section class="chapter parchment" id="mondo-ordinato" aria-labelledby="mondoTitle">
+        <div class="chapter-inner">
+          <header class="chapter-heading">
+            <p class="chapter-number">01</p>
+            <div><p class="kicker">Ciò che c’era prima</p><h2 id="mondoTitle">Il mondo ordinato</h2></div>
+          </header>
+          <p class="generating-question dark-question">È possibile ordinare razionalmente anche la storia, il dolore e l’interiorità?</p>
+          <p class="lead">Il Settecento non è un errore da liquidare. L’Illuminismo costruisce strumenti decisivi di emancipazione; il Classicismo e il Neoclassicismo offrono misura, forma e dialogo con l’antico. Il Romanticismo nasce da questa eredità e, insieme, dai suoi limiti.</p>
+
+          <div class="two-columns">
+            <article class="concept-panel">
+              <h3>La promessa illuministica</h3>
+              <ul class="key-list">
+                <li>ragione universale e critica;</li>
+                <li>fiducia nel progresso e nelle riforme;</li>
+                <li>cosmopolitismo e apertura europea;</li>
+                <li>natura governata da leggi conoscibili;</li>
+                <li>individuo dotato di dignità e autonomia.</li>
+              </ul>
+            </article>
+            <article class="concept-panel">
+              <h3>La forma classica</h3>
+              <ul class="key-list">
+                <li>equilibrio, misura e proporzione;</li>
+                <li>modelli antichi come lingua comune;</li>
+                <li>distinzione dei generi e regole;</li>
+                <li>Neoclassicismo come risposta moderna alla crisi;</li>
+                <li>bellezza come ordine dato al conflitto.</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside class="conservation-box" aria-label="Ciò che il Romanticismo conserva">
+            <h3>Ciò che il Romanticismo conserva</h3>
+            <p>Libertà critica, dignità dell’individuo, apertura europea, rifiuto del dogmatismo e volontà di intervenire sulla società. La frattura non è una cancellazione: è una trasformazione.</p>
+          </aside>
+
+          <div class="apparatus">
+            <div><h3>Parole chiave</h3><p>Illuminismo · progresso · cosmopolitismo · Classicismo · Neoclassicismo · misura</p></div>
+            <div><h3>Comprendi</h3><p>Quale eredità illuministica rimane viva nel Romanticismo?</p></div>
+            <div><h3>Interpreta</h3><p>Una forma ordinata può rappresentare un’esperienza radicalmente disordinata?</p></div>
+            <div><h3>Verso il testo</h3><p>La proposta di tradurre i moderni europei di Madame de Staël nasce proprio dentro l’apertura cosmopolita dei Lumi.</p></div>
+          </div>
+          <button class="map-button" type="button" data-map="map-transition">Apri la mappa: dall’ordine alla crepa</button>
+          <a class="next-link dark-link" href="#fratture">L’ordine entra nella storia <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <section class="chapter midnight" id="fratture" aria-labelledby="frattureTitle">
+        <div class="chapter-inner">
+          <header class="chapter-heading light-heading">
+            <p class="chapter-number">02</p>
+            <div><p class="kicker">La crisi</p><h2 id="frattureTitle">Le quattro fratture</h2></div>
+          </header>
+          <p class="generating-question">Che cosa si spezza tra la fine del Settecento e la Restaurazione?</p>
+          <p class="lead light-lead">Non “fallisce la ragione”. Fallisce la pretesa che un’unica ragione astratta possa spiegare, governare e pacificare ogni dimensione dell’esperienza.</p>
+
+          <div class="fracture-grid">
+            <details class="fracture-card" open>
+              <summary><span>2.1</span> La frattura storica</summary>
+              <div>
+                <p>La Rivoluzione francese promette libertà e cittadinanza, ma attraversa Terrore, guerre e conflitti. Napoleone diffonde principi nuovi e costruisce un impero. La Restaurazione tenta di ricomporre l’ordine, mentre liberalismo e aspirazioni nazionali continuano a premere.</p>
+                <p class="logic"><strong>Effetto:</strong> la storia non appare più come una linea docile alla teoria.</p>
+              </div>
+            </details>
+            <details class="fracture-card">
+              <summary><span>2.2</span> La frattura della ragione</summary>
+              <div>
+                <p>Kant mostra che il soggetto non riceve passivamente il mondo e che la conoscenza possiede limiti. Idealismo e Romanticismo interrogano il rapporto tra io, natura e assoluto. Immaginazione e simbolo diventano modi per esplorare ciò che il calcolo non esaurisce.</p>
+                <p class="logic"><strong>Effetto:</strong> la ragione deve riconoscere il soggetto e i propri confini.</p>
+              </div>
+            </details>
+            <details class="fracture-card">
+              <summary><span>2.3</span> La frattura dell’io</summary>
+              <div>
+                <p>Memoria, sogno, desiderio, solitudine e nostalgia mostrano un’identità incompiuta. L’io aspira all’infinito e incontra il limite; cerca unità e scopre il conflitto.</p>
+                <p class="logic"><strong>Effetto:</strong> l’interiorità diventa un problema conoscitivo, non un semplice sfogo.</p>
+              </div>
+            </details>
+            <details class="fracture-card">
+              <summary><span>2.4</span> La frattura della tradizione</summary>
+              <div>
+                <p>Le forme artistiche sono storiche: ciò che vale per un’epoca non vale meccanicamente per tutte. Medioevo, lingue nazionali e tradizioni popolari tornano visibili; l’imitazione degli antichi perde il monopolio.</p>
+                <p class="logic"><strong>Effetto:</strong> non esiste un unico modello artistico universale.</p>
+              </div>
+            </details>
+          </div>
+          <button class="map-button light-map-button" type="button" data-map="map-fractures">Apri la mappa delle quattro fratture</button>
+          <div class="apparatus dark-apparatus">
+            <div><h3>Sintesi</h3><p>Storia, ragione, io e tradizione si scoprono mobili, limitati e conflittuali.</p></div>
+            <div><h3>Comprendi</h3><p>Perché “crisi della ragione autosufficiente” è più preciso di “rifiuto della ragione”?</p></div>
+            <div><h3>Interpreta</h3><p>Quale delle quattro fratture produce gli effetti più profondi sulla letteratura?</p></div>
+            <div><h3>Verso il testo</h3><p>Il frammento romantico rende visibile una conoscenza che non pretende di chiudere il tutto.</p></div>
+          </div>
+          <a class="next-link" href="#nuova-immagine">Dalle crepe nasce un nuovo mondo <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <section class="chapter parchment" id="nuova-immagine" aria-labelledby="immagineTitle">
+        <div class="chapter-inner">
+          <header class="chapter-heading">
+            <p class="chapter-number">03</p>
+            <div><p class="kicker">La risposta</p><h2 id="immagineTitle">La nuova immagine del mondo</h2></div>
+          </header>
+          <p class="generating-question dark-question">Come cambia il mondo quando uomo, natura e storia non sono più separabili?</p>
+          <p class="lead">I concetti romantici non sono una collezione di temi. Formano una rete: l’uomo finito desidera l’infinito; cerca nella natura un’immagine di sé; riconosce nella storia la memoria di un popolo; immagina la nazione; affida all’arte il compito di collegare visibile e invisibile.</p>
+
+          <div class="world-network" role="group" aria-label="Relazioni della nuova immagine del mondo">
+            <article><span aria-hidden="true">◐</span><h3>L’uomo</h3><p>Finito, incompiuto, inquieto. La <em>Sehnsucht</em> è desiderio di ciò che resta lontano; titanismo e ribellione sfidano il limite.</p></article>
+            <article><span aria-hidden="true">♧</span><h3>La natura</h3><p>Organismo, specchio dell’io, simbolo, sublime; ma anche potenza minacciosa o presenza indifferente.</p></article>
+            <article><span aria-hidden="true">⌛</span><h3>La storia</h3><p>Ogni epoca possiede una fisionomia. Il passato interroga il presente e diventa processo, non repertorio.</p></article>
+            <article><span aria-hidden="true">♟</span><h3>Il popolo</h3><p>Lingua, memoria e tradizioni, ma anche pubblico da costruire. Spesso è un’immagine elaborata dagli intellettuali.</p></article>
+            <article><span aria-hidden="true">⚑</span><h3>La nazione</h3><p>Comunità culturale prima dello Stato: può liberare, ma può anche irrigidirsi in nazionalismo.</p></article>
+            <article><span aria-hidden="true">✦</span><h3>L’arte</h3><p>Conoscenza per immaginazione, intuizione e simbolo: rende percepibili relazioni che il concetto non esaurisce.</p></article>
+          </div>
+          <aside class="critical-note" aria-label="Cautele su popolo e nazione">
+            <h3>Due cautele</h3>
+            <p>Il “popolo” romantico non coincide automaticamente con la complessità delle classi popolari reali. La “nazione” può essere principio di liberazione, ma anche diventare mito esclusivo.</p>
+          </aside>
+          <button class="map-button" type="button" data-map="map-world">Apri la mappa della nuova immagine</button>
+          <div class="apparatus">
+            <div><h3>Parole chiave</h3><p>Sehnsucht · sublime · titanismo · storicismo · popolo · nazione · simbolo</p></div>
+            <div><h3>Comprendi</h3><p>In quali sensi diversi la natura può comparire nell’arte romantica?</p></div>
+            <div><h3>Interpreta</h3><p>Perché la nazione romantica è culturale prima che politica?</p></div>
+            <div><h3>Verso il testo</h3><p>Wordsworth collega natura e memoria; Leopardi userà il limite per aprire lo spazio dell’immaginazione.</p></div>
+          </div>
+          <a class="next-link dark-link" href="#letteratura-crisi">Un nuovo mondo chiede nuove forme <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <section class="chapter burgundy" id="letteratura-crisi" aria-labelledby="letteraturaTitle">
+        <div class="chapter-inner">
+          <header class="chapter-heading light-heading">
+            <p class="chapter-number">04</p>
+            <div><p class="kicker">La forma della crisi</p><h2 id="letteraturaTitle">La nuova letteratura</h2></div>
+          </header>
+          <p class="generating-question">Quali forme può assumere una realtà che non appare più ordinata e stabile?</p>
+          <div class="literature-grid">
+            <article><h3>Libertà dalle regole meccaniche</h3><p>Le unità aristoteliche non sono verità eterne. Generi e forme dipendono dalla storia; tragico e comico, sublime e grottesco possono convivere.</p></article>
+            <article><h3>Generi mobili</h3><p>Lirica dell’io, ballata, frammento, romanzo e dramma storico, fantastico, confessione, romanzo di formazione e poesia civile.</p></article>
+            <article><h3>Linguaggio evocativo</h3><p>Metafora, analogia, musicalità, notte, paesaggio interiore e simbolo rappresentano esperienze che il linguaggio esclusivamente concettuale non esaurisce.</p></article>
+            <article><h3>Nuovo autore</h3><p>Profeta, ribelle, esule, testimone, educatore civile, interprete di un popolo o coscienza critica della società.</p></article>
+            <article><h3>Nuovo pubblico</h3><p>Editoria, periodici, teatro, salotti, biblioteche e gabinetti di lettura ampliano i destinatari; le donne sono lettrici e mediatrici culturali decisive.</p></article>
+          </div>
+          <blockquote class="large-quote">La forma romantica non è libera perché ignora ogni disciplina: è libera perché cerca la forma adeguata a un’esperienza storica nuova.</blockquote>
+          <button class="map-button light-map-button" type="button" data-map="map-literature">Apri la mappa della letteratura della crisi</button>
+          <div class="apparatus dark-apparatus">
+            <div><h3>Sintesi</h3><p>Cambiano generi, lingua, autore e pubblico perché è cambiata l’immagine della realtà.</p></div>
+            <div><h3>Comprendi</h3><p>Perché la mescolanza di sublime e grottesco è una scelta conoscitiva?</p></div>
+            <div><h3>Interpreta</h3><p>La libertà formale elimina la necessità della forma o la rende più esigente?</p></div>
+            <div><h3>Verso il testo</h3><p>La prefazione al <em>Cromwell</em> di Hugo trasforma questa esigenza in programma teatrale.</p></div>
+          </div>
+          <a class="next-link" href="#vie-europee">Una crisi, molte risposte europee <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </div>
+
+    <section class="chapter atlas" id="vie-europee" aria-labelledby="europeeTitle">
+      <div class="chapter-inner">
+        <header class="chapter-heading light-heading">
+          <p class="chapter-number">05</p>
+          <div><p class="kicker">Una costellazione, non un blocco</p><h2 id="europeeTitle">Le vie europee</h2></div>
+        </header>
+        <p class="lead light-lead">Il Romanticismo nasce in più centri. Ogni area trasforma la crisi comune in una domanda differente.</p>
+
+        <div class="country-tabs" role="tablist" aria-label="Vie europee">
+          <button id="tab-germania" type="button" role="tab" aria-selected="true" aria-controls="germania">Germania</button>
+          <button id="tab-inghilterra" type="button" role="tab" aria-selected="false" aria-controls="inghilterra" tabindex="-1">Inghilterra</button>
+          <button id="tab-francia" type="button" role="tab" aria-selected="false" aria-controls="francia" tabindex="-1">Francia</button>
+          <button id="tab-italia" type="button" role="tab" aria-selected="false" aria-controls="italia" tabindex="-1">Italia</button>
+        </div>
+
+        <div class="country-panel" id="germania" role="tabpanel" aria-labelledby="tab-germania">
+          <p class="country-question">Come raggiungere l’assoluto?</p>
+          <div><h3>Snodi</h3><p><em>Sturm und Drang</em> come antecedente; Goethe e Schiller figure di passaggio; il gruppo di Jena, Schlegel, Novalis e Hölderlin; idealismo, frammento, ironia romantica, natura e <em>Sehnsucht</em>.</p></div>
+          <aside aria-label="Errore da evitare sulla Germania"><strong>Errore da evitare:</strong> Goethe non è un “romantico puro”. Attraversa più stagioni e dialoga criticamente con il movimento.</aside>
+        </div>
+        <div class="country-panel" id="inghilterra" role="tabpanel" aria-labelledby="tab-inghilterra" hidden>
+          <p class="country-question">Come ricostruire il rapporto tra uomo e natura?</p>
+          <div><h3>Snodi</h3><p>Wordsworth e Coleridge rinnovano lingua poetica, memoria e immaginazione; Byron, Shelley e Keats danno forme diverse al poeta ribelle, al desiderio e alla bellezza; Scott inventa il modello europeo del romanzo storico.</p></div>
+          <aside aria-label="Idea chiave sull’Inghilterra"><strong>Idea chiave:</strong> la natura non è fondale. Diventa esperienza interiore, morale, simbolica o sublime.</aside>
+        </div>
+        <div class="country-panel" id="francia" role="tabpanel" aria-labelledby="tab-francia" hidden>
+          <p class="country-question">Come liberare le forme e interpretare la storia?</p>
+          <div><h3>Snodi</h3><p>Madame de Staël media la cultura tedesca; Chateaubriand e Lamartine esplorano religione e interiorità; Hugo combatte il classicismo normativo e unisce sublime e grottesco nel dramma moderno.</p></div>
+          <aside aria-label="Idea chiave sulla Francia"><strong>Idea chiave:</strong> libertà artistica e impegno politico si incontrano, ma senza produrre una sola poetica.</aside>
+        </div>
+        <div class="country-panel" id="italia" role="tabpanel" aria-labelledby="tab-italia" hidden>
+          <p class="country-question">Come costruire una letteratura per una nazione ancora senza Stato?</p>
+          <div><h3>Snodi</h3><p>Milano, 1816, la polemica classico-romantica, Berchet, Borsieri e «Il Conciliatore». Traduzione, lingua, pubblico, utilità civile e storia diventano problemi di una cultura politicamente frammentata.</p></div>
+          <a class="primary-button" href="#romanticismo-italiano">Entra nella via italiana <span aria-hidden="true">→</span></a>
+        </div>
+        <button class="map-button light-map-button" type="button" data-map="map-europe">Confronta i Romanticismi europei</button>
+      </div>
+    </section>
+
+    <section class="chapter parchment" id="romanticismo-italiano" aria-labelledby="italianoTitle">
+      <div class="chapter-inner">
+        <header class="chapter-heading">
+          <p class="chapter-number">06</p>
+          <div><p class="kicker">La via italiana</p><h2 id="italianoTitle">Una letteratura per una nazione da costruire</h2></div>
+        </header>
+        <p class="generating-question dark-question">Chi sono “i vivi” ai quali la letteratura italiana deve finalmente parlare?</p>
+        <p class="lead">L’Italia della Restaurazione è frammentata e in larga parte sottoposta all’egemonia austriaca. Milano conserva l’eredità riformatrice dell’Illuminismo lombardo: tra «Il Caffè» e «Il Conciliatore» non c’è identità, ma una continuità nella volontà di intervenire sulla società.</p>
+
+        <div class="italy-flow">
+          <article><span>1816</span><h3>La miccia</h3><p>Madame de Staël invita gli italiani a tradurre e conoscere le letterature moderne. Si apre la polemica tra classicisti e romantici.</p></article>
+          <article><span>Il pubblico</span><h3>Reale e da costruire</h3><p>Berchet contrappone alla poesia per pochi una letteratura capace di parlare ai vivi: non populismo, ma comunicazione moderna.</p></article>
+          <article><span>1818–1819</span><h3>«Il Conciliatore»</h3><p>Borsieri, Berchet e altri intrecciano letteratura, scienza, economia e riforma civile; la censura austriaca sopprime il periodico.</p></article>
+          <article><span>La nazione</span><h3>Prima dello Stato</h3><p>Lingua, memoria e storia costruiscono una comunità culturale. Il romanzo storico rende visibile il rapporto tra individui e processi collettivi.</p></article>
+        </div>
+        <blockquote class="thesis-box">Il Romanticismo italiano non è una copia attenuata di quello europeo. Trasforma apertura internazionale, storia, libertà delle forme e ricerca di un nuovo pubblico in un progetto di letteratura civile destinato a una nazione ancora da costruire.</blockquote>
+        <aside class="critical-note" aria-label="Distinzione tra Romanticismo e Risorgimento">
+          <h3>Distinzione necessaria</h3>
+          <p>Romanticismo e Risorgimento si intrecciano, ma non coincidono. Il primo è un movimento culturale plurale; il secondo è un processo politico e nazionale. La letteratura può alimentarlo senza esaurirsi in esso.</p>
+        </aside>
+        <button class="map-button" type="button" data-map="map-italy">Apri la mappa del Romanticismo italiano</button>
+        <div class="apparatus">
+          <div><h3>Parole chiave</h3><p>Restaurazione · 1816 · traduzione · pubblico · lingua · utile · nazione · censura</p></div>
+          <div><h3>Comprendi</h3><p>Perché la questione del pubblico è anche una questione politica?</p></div>
+          <div><h3>Interpreta</h3><p>In che senso tradurre può diventare un gesto di apertura e rinnovamento?</p></div>
+          <div><h3>Verso il testo</h3><p>Confronta la proposta europea di Staël con il programma “popolare” di Berchet.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter library" id="testi" aria-labelledby="testiTitle">
+      <div class="chapter-inner">
+        <header class="chapter-heading light-heading">
+          <p class="chapter-number">07</p>
+          <div><p class="kicker">Le idee prendono voce</p><h2 id="testiTitle">Laboratorio dei testi</h2></div>
+        </header>
+        <p class="lead light-lead">Le schede non sostituiscono i testi: indicano che cosa cercare e quale passaggio della lezione mettere alla prova.</p>
+
+        <div class="text-lab">
+          <article>
+            <p class="text-meta">1816 · Dibattito italiano</p>
+            <h3>Madame de Staël</h3>
+            <h4><em>Sulla maniera e l’utilità delle traduzioni</em></h4>
+            <p><strong>Contesto:</strong> l’articolo appare nella «Biblioteca italiana» e invita la cultura italiana ad aprirsi alle letterature moderne europee.</p>
+            <p><strong>Nodo:</strong> traduzione, contemporaneità, cosmopolitismo.</p>
+            <p><strong>Domanda:</strong> aprirsi all’Europa significa imitare o trasformarsi?</p>
+            <a href="https://www.treccani.it/enciclopedia/romanticismo_%28Enciclopedia-dei-ragazzi%29/" target="_blank" rel="noopener">Contesto verificato su Treccani</a>
+          </article>
+          <article>
+            <p class="text-meta">1816 · Manifesto italiano</p>
+            <h3>Giovanni Berchet</h3>
+            <h4><em>Lettera semiseria di Grisostomo</em></h4>
+            <p><strong>Contesto:</strong> la distinzione tra “Parigini”, “Ottentotti” e popolo cerca un destinatario vivo per la poesia moderna.</p>
+            <p><strong>Nodo:</strong> pubblico, utilità, letteratura dei vivi.</p>
+            <p><strong>Domanda:</strong> il “popolo” di Berchet descrive i lettori reali o li progetta?</p>
+            <p class="source-note">Passo consigliato: la definizione del pubblico intermedio, da leggere nell’edizione scolastica o critica adottata.</p>
+          </article>
+          <article>
+            <p class="text-meta">1823 · Poetica</p>
+            <h3>Alessandro Manzoni</h3>
+            <h4><em>Lettera sul Romanticismo</em></h4>
+            <p><strong>Contesto:</strong> Manzoni difende una letteratura moderna fondata sul vero e rifiuta l’uso meccanico della mitologia.</p>
+            <p><strong>Nodo:</strong> «l’utile per iscopo, il vero per soggetto e l’interessante per mezzo».</p>
+            <p><strong>Domanda:</strong> come può una letteratura essere utile senza diventare predica?</p>
+            <a href="https://www.alessandromanzoni.org/opere/12" target="_blank" rel="noopener">Scheda dell’opera</a>
+          </article>
+          <article>
+            <p class="text-meta">1798 / 1800 · Poesia inglese</p>
+            <h3>Wordsworth e Coleridge</h3>
+            <h4><em>Lyrical Ballads</em> e Prefazione</h4>
+            <p><strong>Contesto:</strong> la raccolta del 1798 rinnova temi e lingua; la prefazione dell’edizione 1800 espone il programma poetico di Wordsworth.</p>
+            <p><strong>Nodo:</strong> natura, memoria, emozione rielaborata, lingua comune.</p>
+            <p><strong>Domanda:</strong> che differenza c’è tra emozione vissuta e poesia?</p>
+            <a href="https://www.gutenberg.org/files/9622/9622-h/9622-h.htm" target="_blank" rel="noopener">Edizione 1798</a>
+          </article>
+          <article>
+            <p class="text-meta">1827 · Teatro francese</p>
+            <h3>Victor Hugo</h3>
+            <h4>Prefazione al <em>Cromwell</em></h4>
+            <p><strong>Contesto:</strong> la prefazione diventa manifesto del dramma romantico e attacca la separazione rigida dei registri.</p>
+            <p><strong>Nodo:</strong> sublime, grottesco, libertà delle forme.</p>
+            <p><strong>Domanda:</strong> perché il grottesco appartiene alla verità dell’uomo moderno?</p>
+            <a href="https://essentiels.bnf.fr/fr/litterature/19e-siecle-1/e7bb7905-4ec3-45c9-bb63-0bd87831aef0-theatre-19e-siecle/article/cfdbd878-5a6a-4324-a300-7be633d1c5e2-cromwell-et-sa-preface" target="_blank" rel="noopener">Dossier BnF</a>
+          </article>
+          <article>
+            <p class="text-meta">1818 · Critica del Romanticismo</p>
+            <h3>Giacomo Leopardi</h3>
+            <h4><em>Discorso di un italiano intorno alla poesia romantica</em></h4>
+            <p><strong>Contesto:</strong> Leopardi respinge il programma romantico italiano, ma affronta gli stessi problemi di natura, immaginazione e modernità.</p>
+            <p><strong>Nodo:</strong> antico/moderno, immaginazione, natura.</p>
+            <p><strong>Domanda:</strong> come può un autore essere dentro una crisi e contro le risposte dominanti?</p>
+            <a href="../Leopardi/" class="internal-bridge">Prosegui nella PWA di Leopardi</a>
+          </article>
+        </div>
+        <p class="copyright-note">Gli estratti sono limitati a brevi formule di pubblico dominio e rimandi. Le edizioni complete vanno verificate nell’antologia o in una fonte filologica affidabile.</p>
+      </div>
+    </section>
+
+    <section class="chapter parchment" id="mappe" aria-labelledby="mappeTitle">
+      <div class="chapter-inner">
+        <header class="chapter-heading">
+          <p class="chapter-number">08</p>
+          <div><p class="kicker">Vedere le relazioni</p><h2 id="mappeTitle">Mappe concettuali</h2></div>
+        </header>
+        <p class="lead">Le mappe principali sono costruite in HTML: restano nitide, ingrandibili e leggibili anche senza interpretare il testo dentro un’immagine.</p>
+        <div class="maps-grid">
+          <article><h3>Dall’ordine alle fratture</h3><p>Il passaggio causale che apre il percorso.</p><button type="button" data-map="map-transition">Apri</button></article>
+          <article><h3>Le quattro fratture</h3><p>Storia, ragione, io, tradizione.</p><button type="button" data-map="map-fractures">Apri</button></article>
+          <article><h3>La nuova immagine</h3><p>Uomo, natura, storia, popolo, nazione, arte.</p><button type="button" data-map="map-world">Apri</button></article>
+          <article><h3>La nuova letteratura</h3><p>Forme, generi, lingua, autore, pubblico.</p><button type="button" data-map="map-literature">Apri</button></article>
+          <article><h3>Le vie europee</h3><p>Quattro domande, quattro trasformazioni.</p><button type="button" data-map="map-europe">Apri</button></article>
+          <article><h3>Il Romanticismo italiano</h3><p>Traduzione, pubblico, lingua, nazione.</p><button type="button" data-map="map-italy">Apri</button></article>
+          <article><h3>Mappa finale</h3><p>L’intera catena del metodo gbprof.</p><button type="button" data-map="map-final">Apri</button></article>
+        </div>
+
+        <h3 class="subsection-title">Tre tavole illustrate recuperate</h3>
+        <p>Queste tavole della PWA precedente sono state conservate perché coerenti e utili come secondo livello visuale. Si aprono a pieno schermo e possono essere ingrandite.</p>
+        <div class="illustrated-maps">
+          <button type="button" data-image="./assets/images/tavola-contraddizioni.png" data-title="Le contraddizioni romantiche">
+            <img src="./assets/images/tavola-contraddizioni.png" alt="Anteprima della tavola illustrata sulle contraddizioni romantiche" loading="lazy">
+            <span>Le contraddizioni romantiche</span>
+          </button>
+          <button type="button" data-image="./assets/images/tavola-romanticismo-europeo.png" data-title="Il Romanticismo europeo">
+            <img src="./assets/images/tavola-romanticismo-europeo.png" alt="Anteprima della tavola illustrata sul Romanticismo europeo" loading="lazy">
+            <span>Il Romanticismo europeo</span>
+          </button>
+          <button type="button" data-image="./assets/images/tavola-romanticismo-italiano.png" data-title="Il Romanticismo italiano">
+            <img src="./assets/images/tavola-romanticismo-italiano.png" alt="Anteprima della tavola illustrata sul Romanticismo italiano" loading="lazy">
+            <span>Il Romanticismo italiano</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter timeline-section" id="timeline" aria-labelledby="timelineTitle">
+      <div class="chapter-inner">
+        <header class="chapter-heading light-heading">
+          <p class="chapter-number">09</p>
+          <div><p class="kicker">La crisi nel tempo</p><h2 id="timelineTitle">Timeline interattiva</h2></div>
+        </header>
+        <p class="lead light-lead">Le date non sono chiodi isolati: ciascuna modifica la domanda posta alla letteratura.</p>
+        <div class="timeline-controls" id="timelineControls" role="group" aria-label="Date del percorso"></div>
+        <article class="timeline-detail" id="timelineDetail" aria-live="polite" tabindex="-1">
+          <p class="timeline-year" id="timelineYear">1789</p>
+          <h3 id="timelineEvent">La Rivoluzione francese</h3>
+          <p id="timelineMeaning">Le idee illuministiche entrano nella storia come forza politica.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="chapter parchment" id="autori" aria-labelledby="autoriTitle">
+      <div class="chapter-inner">
+        <header class="chapter-heading">
+          <p class="chapter-number">10</p>
+          <div><p class="kicker">Costellazione</p><h2 id="autoriTitle">Autori-nodo</h2></div>
+        </header>
+        <p class="lead">Non un catalogo di biografie: ogni autore rende visibile una trasformazione del movimento.</p>
+        <div class="authors-grid">
+          <article><h3>Friedrich Schlegel</h3><p>Frammento, ironia, poesia come processo mai concluso.</p><span>Germania · teoria</span></article>
+          <article><h3>Novalis</h3><p>Notte, desiderio, assoluto e trasformazione poetica del mondo.</p><span>Germania · Sehnsucht</span></article>
+          <article><h3>Wordsworth</h3><p>Natura, memoria e lingua della vita comune.</p><span>Inghilterra · poesia</span></article>
+          <article><h3>Coleridge</h3><p>Immaginazione, soprannaturale credibile e potenza simbolica.</p><span>Inghilterra · immaginazione</span></article>
+          <article><h3>Byron</h3><p>Eroe ribelle, individualismo e titanismo.</p><span>Europa · mito d’autore</span></article>
+          <article><h3>Walter Scott</h3><p>Il passato come processo vivo nel romanzo storico.</p><span>Inghilterra · storia</span></article>
+          <article><h3>Madame de Staël</h3><p>Mediatrice europea e detonatore del dibattito italiano.</p><span>Francia/Europa · traduzione</span></article>
+          <article><h3>Victor Hugo</h3><p>Sublime e grottesco nel dramma moderno.</p><span>Francia · libertà delle forme</span></article>
+          <article><h3>Giovanni Berchet</h3><p>La poesia dei vivi e il problema del pubblico.</p><span>Italia · funzione civile</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter conclusion" id="conclusione" aria-labelledby="conclusioneTitle">
+      <div class="chapter-inner">
+        <p class="kicker">Conclusione</p>
+        <h2 id="conclusioneTitle">Che cosa ha lasciato il Romanticismo?</h2>
+        <p class="lead light-lead">Ha consegnato alla modernità un individuo problematico, la centralità dell’interiorità e della memoria, il desiderio dell’infinito, la storicità delle culture, la natura come esperienza, il romanzo moderno, la libertà delle forme e un nuovo ruolo pubblico dell’autore.</p>
+        <div class="legacy-grid">
+          <article><h3>Una conquista</h3><p>Le differenze storiche e culturali non sono deviazioni da un modello unico.</p><h4>Un rischio</h4><p>La differenza può irrigidirsi in nazionalismo.</p></article>
+          <article><h3>Una conquista</h3><p>L’individuo diventa irriducibile e degno di ascolto.</p><h4>Un rischio</h4><p>L’io può trasformarsi in culto narcisistico.</p></article>
+          <article><h3>Una conquista</h3><p>Il popolo entra nella letteratura e nel progetto culturale.</p><h4>Un rischio</h4><p>Può essere idealizzato e parlato dagli intellettuali.</p></article>
+          <article><h3>Una conquista</h3><p>L’infinito rende visibile il desiderio umano.</p><h4>Un rischio</h4><p>Può diventare fuga dal reale.</p></article>
+          <article><h3>Una conquista</h3><p>La storia permette di comprendere la pluralità delle epoche.</p><h4>Un rischio</h4><p>Il passato può essere trasformato in mito consolatorio.</p></article>
+        </div>
+        <blockquote class="final-formula">Il Romanticismo non sostituisce la ragione con il sentimento. Scopre che l’uomo è ragione, memoria, corpo, storia, immaginazione, appartenenza e desiderio; e che nessuna di queste dimensioni, presa da sola, basta a definirlo.</blockquote>
+        <button class="map-button light-map-button" type="button" data-map="map-final">Apri la mappa finale</button>
+      </div>
+    </section>
+
+    <section class="chapter parchment essentials" id="saperi" aria-labelledby="saperiTitle">
+      <div class="chapter-inner">
+        <header class="chapter-heading">
+          <p class="chapter-number">11</p>
+          <div><p class="kicker">Ciò che deve restare</p><h2 id="saperiTitle">Saperi irrinunciabili</h2></div>
+        </header>
+        <ol class="essential-list">
+          <li>Il Romanticismo è un movimento europeo plurale, non “sentimento contro ragione”.</li>
+          <li>Nasce dalla crisi della ragione autosufficiente e trasforma, senza cancellarla, l’eredità illuministica.</li>
+          <li>Le fratture riguardano storia, ragione, io e tradizione.</li>
+          <li>Uomo, natura, storia, popolo, nazione e arte formano una nuova rete di significati.</li>
+          <li>La nuova immagine del mondo produce nuovi generi, linguaggi, ruoli d’autore e pubblici.</li>
+          <li>Germania, Inghilterra, Francia e Italia rispondono alla crisi in modi differenti.</li>
+          <li>Il Romanticismo italiano trasforma apertura europea e libertà formale in progetto civile.</li>
+          <li>Romanticismo e Risorgimento si intrecciano, ma non coincidono.</li>
+          <li>Manzoni assume storia, vero, popolo e responsabilità; Leopardi condivide i problemi moderni ma contesta le risposte romantiche italiane.</li>
+          <li>L’eredità romantica è ambivalente: libera e insieme può costruire nuovi miti.</li>
+        </ol>
+
+        <h3 class="subsection-title">Vocabolario essenziale</h3>
+        <div class="glossary">
+          <details><summary>Romanticismo</summary><p>Movimento culturale europeo plurale che ridefinisce soggetto, storia, natura, arte e nazione tra la fine del Settecento e l’Ottocento.</p></details>
+          <details><summary>Sublime</summary><p>Esperienza di una grandezza o potenza che attrae e sgomenta, eccedendo la misura ordinaria.</p></details>
+          <details><summary>Sehnsucht</summary><p>Desiderio inquieto e inesauribile di ciò che è lontano, assente o infinito.</p></details>
+          <details><summary>Titanismo</summary><p>Ribellione dell’individuo contro autorità, destino o limite, anche quando la sconfitta è probabile.</p></details>
+          <details><summary>Storicismo</summary><p>Consapevolezza che istituzioni, idee e forme culturali vadano comprese nel loro sviluppo storico.</p></details>
+          <details><summary>Popolo</summary><p>Comunità culturale e destinatario della letteratura; spesso progetto degli intellettuali più che fotografia sociale.</p></details>
+          <details><summary>Nazione</summary><p>Comunità di lingua, memoria e storia, pensata culturalmente prima della piena realizzazione statale.</p></details>
+          <details><summary>Romanzo storico</summary><p>Genere che intreccia personaggi inventati e processi storici reali per mostrare la storia nella vita concreta.</p></details>
+          <details><summary>Idealismo</summary><p>Famiglia di filosofie che attribuisce al soggetto e allo spirito un ruolo costitutivo nella comprensione della realtà.</p></details>
+          <details><summary>Immaginazione</summary><p>Facoltà conoscitiva e creativa che mette in relazione esperienza, memoria, simbolo e possibilità.</p></details>
+          <details><summary>Simbolo</summary><p>Immagine o forma concreta che apre a significati ulteriori senza esaurirli in una definizione.</p></details>
+          <details><summary>Grottesco</summary><p>Registro del deformato, comico o perturbante che Hugo affianca al sublime per rappresentare la contraddizione moderna.</p></details>
+          <details><summary>Restaurazione</summary><p>Riassetto politico europeo seguito al Congresso di Vienna, volto a ricostruire l’ordine dinastico dopo Napoleone.</p></details>
+          <details><summary>Poetica</summary><p>Insieme di principi con cui un autore o movimento concepisce funzione, forme e linguaggio della letteratura.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter quiz-section" id="verifica" aria-labelledby="verificaTitle">
+      <div class="chapter-inner">
+        <header class="chapter-heading light-heading">
+          <p class="chapter-number">12</p>
+          <div><p class="kicker">Verifica ragionata</p><h2 id="verificaTitle">Non basta ricordare: bisogna collegare</h2></div>
+        </header>
+        <div class="quiz-intro">
+          <p>Dieci domande su conoscenze, causa-effetto, confronti e interpretazione. Dopo ogni risposta compare una spiegazione.</p>
+          <button type="button" class="primary-button" id="quizStart">Inizia la verifica</button>
+        </div>
+        <div id="quizForm" class="quiz-form" hidden></div>
+        <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="bridges" aria-labelledby="bridgesTitle">
+      <div class="chapter-inner">
+        <p class="kicker">Il viaggio continua</p>
+        <h2 id="bridgesTitle">Due ponti, non due capitoli</h2>
+        <div class="bridge-grid">
+          <article class="bridge manzoni">
+            <p class="bridge-label">Ponte verso Manzoni</p>
+            <h3>La responsabilità nella storia</h3>
+            <p>Manzoni accoglie dal Romanticismo la storia, il nuovo pubblico, la libertà dalle regole astratte e la responsabilità civile della letteratura. Trasforma questi elementi dentro una visione cristiana del male, della libertà e della Provvidenza.</p>
+            <p class="keywords">storia · vero · popolo · lingua · utile · interessante · responsabilità</p>
+            <a class="primary-button" href="../Manzoni/">Entra nella PWA di Manzoni <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="bridge leopardi">
+            <p class="bridge-label">Ponte verso Leopardi</p>
+            <h3>Dentro e contro il Romanticismo</h3>
+            <p>Leopardi appartiene alla crisi moderna da cui nasce il Romanticismo, ma rifiuta il programma dei romantici italiani e molte loro convinzioni. Condivide i problemi dell’infinito, dell’immaginazione, della natura e dell’interiorità, ma ne capovolge spesso le risposte.</p>
+            <p class="keywords">infinito · immaginazione · limite · natura · disincanto · modernità</p>
+            <a class="primary-button" href="../Leopardi/">Entra nella PWA di Leopardi <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources chapter parchment" id="fonti" aria-labelledby="fontiTitle">
+      <div class="chapter-inner narrow">
+        <h2 id="fontiTitle">Fonti e strumenti</h2>
+        <p>La lezione riorganizza i materiali della PWA e della dispensa precedenti. Le date-chiave sono state controllate su fonti istituzionali e testi digitali affidabili.</p>
+        <ul>
+          <li><a href="https://www.treccani.it/enciclopedia/romanticismo_%28Enciclopedia-dei-ragazzi%29/" target="_blank" rel="noopener">Treccani — Romanticismo e dibattito italiano del 1816</a></li>
+          <li><a href="https://www.treccani.it/enciclopedia/il-conciliatore/" target="_blank" rel="noopener">Treccani — «Il Conciliatore», 1818–1819</a></li>
+          <li><a href="https://www.poetryfoundation.org/articles/69383/observations-prefixed-to-lyrical-ballads" target="_blank" rel="noopener">Poetry Foundation — <em>Lyrical Ballads</em>, 1798</a></li>
+          <li><a href="https://essentiels.bnf.fr/fr/litterature/19e-siecle-1/e7bb7905-4ec3-45c9-bb63-0bd87831aef0-theatre-19e-siecle/article/cfdbd878-5a6a-4324-a300-7be633d1c5e2-cromwell-et-sa-preface" target="_blank" rel="noopener">Bibliothèque nationale de France — <em>Cromwell</em> e la prefazione, 1827</a></li>
+          <li><a href="https://www.alessandromanzoni.org/opere/12" target="_blank" rel="noopener">Centro Nazionale Studi Manzoniani — <em>Sul Romanticismo</em></a></li>
+        </ul>
+        <a class="download-link" href="./assets/docs/Dispensa_Romanticismo_gbprof_Libera.docx" download>Scarica la dispensa di partenza in formato Word</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 gbprof e Libera — PWA didattica</p>
+    <div><a href="#home">Torna alla copertina</a><a href="#saperi">Ripassa</a><button id="notebookFooter" type="button">Apri il taccuino</button></div>
+  </footer>
+
+  <dialog class="map-dialog" id="mapDialog" aria-labelledby="mapDialogTitle">
+    <div class="dialog-shell">
+      <div class="dialog-header"><h2 id="mapDialogTitle">Mappa concettuale</h2><button type="button" id="mapClose" aria-label="Chiudi la mappa">×</button></div>
+      <div class="map-toolbar">
+        <button type="button" id="mapZoomOut" aria-label="Riduci mappa">−</button>
+        <output id="mapZoomValue">100%</output>
+        <button type="button" id="mapZoomIn" aria-label="Ingrandisci mappa">+</button>
+        <button type="button" id="mapZoomReset">Adatta</button>
+      </div>
+      <div class="map-viewport" id="mapViewport">
+        <div class="map-content" id="mapContent"></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="image-dialog" id="imageDialog" aria-labelledby="imageDialogTitle">
+    <div class="dialog-shell">
+      <div class="dialog-header"><h2 id="imageDialogTitle">Tavola illustrata</h2><button type="button" id="imageClose" aria-label="Chiudi la tavola">×</button></div>
+      <div class="image-viewport"><img id="imageFull" src="./assets/images/tavola-contraddizioni.png" alt=""></div>
+    </div>
+  </dialog>
+
+  <dialog class="notebook-dialog" id="notebookDialog" aria-labelledby="notebookTitle">
+    <div class="notebook-shell">
+      <div class="dialog-header"><div><p class="kicker">Spazio personale sul dispositivo</p><h2 id="notebookTitle">Taccuino</h2></div><button type="button" id="notebookClose" aria-label="Chiudi il taccuino">×</button></div>
+      <label for="notebookText">Appunti sul percorso</label>
+      <textarea id="notebookText" rows="16" placeholder="Scrivi qui relazioni, domande, confronti…"></textarea>
+      <p class="save-status" id="saveStatus" aria-live="polite">Gli appunti restano soltanto in questo browser.</p>
+      <div class="notebook-actions">
+        <button type="button" id="notebookSave">Salva</button>
+        <button type="button" id="notebookCopy">Copia</button>
+        <button type="button" id="notebookExport">Esporta .txt</button>
+        <button type="button" class="danger-button" id="notebookClear">Cancella</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <template id="map-transition" data-title="Dal mondo ordinato alle fratture">
+    <div class="concept-map vertical-map">
+      <div class="map-node source"><strong>Mondo ordinato</strong><span>ragione · progresso · misura · modelli</span></div>
+      <div class="map-arrow">↓</div>
+      <div class="map-node process"><strong>La storia mette alla prova le idee</strong><span>rivoluzione · impero · restaurazione</span></div>
+      <div class="map-arrow">↓</div>
+      <div class="map-row">
+        <div class="map-node">limiti della ragione</div><div class="map-node">io inquieto</div><div class="map-node">forme storiche</div>
+      </div>
+      <div class="map-arrow">↓</div>
+      <div class="map-node outcome"><strong>Nuova domanda</strong><span>come comprendere una realtà umana non riducibile al calcolo?</span></div>
+    </div>
+  </template>
+
+  <template id="map-fractures" data-title="Le quattro fratture">
+    <div class="concept-map radial-map">
+      <div class="map-center"><strong>Crisi della modernità</strong><span>l’ordine non basta</span></div>
+      <div class="map-row four">
+        <div class="map-node"><strong>Storia</strong><span>promesse ↔ conflitti</span></div>
+        <div class="map-node"><strong>Ragione</strong><span>conoscenza ↔ limite</span></div>
+        <div class="map-node"><strong>Io</strong><span>unità ↔ desiderio</span></div>
+        <div class="map-node"><strong>Tradizione</strong><span>modello ↔ storicità</span></div>
+      </div>
+      <div class="map-arrow">↓</div>
+      <div class="map-node outcome"><strong>Esito comune</strong><span>la realtà è processo, relazione e conflitto</span></div>
+    </div>
+  </template>
+
+  <template id="map-world" data-title="La nuova immagine del mondo">
+    <div class="concept-map network-map">
+      <div class="map-row">
+        <div class="map-node"><strong>Uomo</strong><span>finito → infinito</span></div>
+        <div class="map-node"><strong>Natura</strong><span>organismo · simbolo · sublime</span></div>
+        <div class="map-node"><strong>Storia</strong><span>identità delle epoche</span></div>
+      </div>
+      <div class="map-center"><strong>Relazione</strong><span>nessun elemento si comprende da solo</span></div>
+      <div class="map-row">
+        <div class="map-node"><strong>Popolo</strong><span>memoria · lingua · pubblico</span></div>
+        <div class="map-node"><strong>Nazione</strong><span>cultura → politica</span></div>
+        <div class="map-node"><strong>Arte</strong><span>visibile ↔ invisibile</span></div>
+      </div>
+    </div>
+  </template>
+
+  <template id="map-literature" data-title="La letteratura della crisi">
+    <div class="concept-map vertical-map">
+      <div class="map-node source"><strong>Nuova immagine del mondo</strong></div>
+      <div class="map-arrow">↓ produce ↓</div>
+      <div class="map-row">
+        <div class="map-node"><strong>Forme</strong><span>mescolanza e libertà</span></div>
+        <div class="map-node"><strong>Generi</strong><span>lirica · romanzo · dramma</span></div>
+        <div class="map-node"><strong>Lingua</strong><span>simbolo · evocazione</span></div>
+      </div>
+      <div class="map-row">
+        <div class="map-node"><strong>Autore</strong><span>ribelle · testimone · educatore</span></div>
+        <div class="map-node"><strong>Pubblico</strong><span>editoria · periodici · lettori</span></div>
+      </div>
+      <div class="map-arrow">↓</div>
+      <div class="map-node outcome"><strong>Letteratura come conoscenza e intervento</strong></div>
+    </div>
+  </template>
+
+  <template id="map-europe" data-title="I Romanticismi europei a confronto">
+    <div class="concept-map comparison-map">
+      <div class="map-row four">
+        <div class="map-node"><strong>Germania</strong><span>Come raggiungere l’assoluto?<br>frammento · ironia · Sehnsucht</span></div>
+        <div class="map-node"><strong>Inghilterra</strong><span>Come ricostruire uomo e natura?<br>memoria · sublime · romanzo</span></div>
+        <div class="map-node"><strong>Francia</strong><span>Come liberare le forme?<br>storia · sublime e grottesco</span></div>
+        <div class="map-node"><strong>Italia</strong><span>Come parlare a una nazione senza Stato?<br>pubblico · lingua · funzione civile</span></div>
+      </div>
+      <div class="map-arrow">↓</div>
+      <div class="map-node outcome"><strong>Unità nella pluralità</strong><span>una crisi comune, risposte storicamente diverse</span></div>
+    </div>
+  </template>
+
+  <template id="map-italy" data-title="Il Romanticismo italiano">
+    <div class="concept-map vertical-map">
+      <div class="map-node source"><strong>Restaurazione e frammentazione</strong><span>egemonia austriaca · Milano · censura</span></div>
+      <div class="map-arrow">↓</div>
+      <div class="map-node process"><strong>1816: apertura europea</strong><span>Madame de Staël · traduzioni · polemica</span></div>
+      <div class="map-arrow">↓</div>
+      <div class="map-row">
+        <div class="map-node"><strong>Pubblico</strong><span>parlare ai vivi</span></div>
+        <div class="map-node"><strong>Lingua</strong><span>comunicazione nazionale</span></div>
+        <div class="map-node"><strong>Storia</strong><span>memoria e romanzo</span></div>
+      </div>
+      <div class="map-arrow">↓</div>
+      <div class="map-node outcome"><strong>Letteratura civile</strong><span>nazione culturale prima dello Stato</span></div>
+    </div>
+  </template>
+
+  <template id="map-final" data-title="Mappa finale del percorso">
+    <div class="concept-map vertical-map final-map">
+      <div class="map-node source"><strong>1 · Mondo ordinato</strong><span>ragione · progresso · misura</span></div>
+      <div class="map-arrow">↓</div>
+      <div class="map-node"><strong>2 · Fratture</strong><span>storia · ragione · io · tradizione</span></div>
+      <div class="map-arrow">↓</div>
+      <div class="map-node"><strong>3 · Nuova immagine</strong><span>uomo · natura · storia · popolo · nazione · arte</span></div>
+      <div class="map-arrow">↓</div>
+      <div class="map-node"><strong>4 · Nuova letteratura</strong><span>forme · generi · linguaggio · autore · pubblico</span></div>
+      <div class="map-arrow">↓</div>
+      <div class="map-row">
+        <div class="map-node"><strong>Vie europee</strong><span>risposte plurali</span></div>
+        <div class="map-node"><strong>Via italiana</strong><span>letteratura civile</span></div>
+      </div>
+      <div class="map-arrow">↓</div>
+      <div class="map-node outcome"><strong>Eredità moderna</strong><span>libertà e ambivalenza</span></div>
+    </div>
+  </template>
+
+  <script src="./assets/js/app.js" defer></script>
+</body>
+</html>
