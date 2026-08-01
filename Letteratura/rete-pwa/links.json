@@ -1,0 +1,266 @@
+{
+  "version": 1,
+  "apps": [
+    { "id": "manuale", "label": "Manuale dell’Ottocento", "path": "Ottocento_letterario.html" },
+    { "id": "romanticismo", "label": "Romanticismo", "path": "Romanticismo/" },
+    { "id": "romanticismo-lezioni", "label": "Romanticismo – lezioni", "path": "Romanticismo-lezioni/" },
+    { "id": "foscolo", "label": "Foscolo", "path": "Foscolo/" },
+    { "id": "leopardi", "label": "Leopardi", "path": "Leopardi/" },
+    { "id": "manzoni", "label": "Manzoni", "path": "Manzoni/" },
+    { "id": "parini", "label": "Parini", "path": "Parini/" }
+  ],
+  "related": {
+    "manuale": ["foscolo", "romanticismo", "leopardi", "manzoni", "parini"],
+    "romanticismo": ["romanticismo-lezioni", "manzoni", "leopardi"],
+    "romanticismo-lezioni": ["romanticismo", "manzoni", "leopardi"],
+    "foscolo": ["manuale", "romanticismo", "leopardi", "parini"],
+    "leopardi": ["manuale", "romanticismo-lezioni", "foscolo"],
+    "manzoni": ["manuale", "romanticismo-lezioni", "romanticismo"],
+    "parini": ["manuale", "foscolo"]
+  },
+  "bridges": [
+    {
+      "id": "manuale-neoclassicismo-autori",
+      "kindLabel": "Dal quadro agli autori",
+      "title": "Due forme della funzione civile",
+      "description": "Parini porta la critica illuministica nella satira; Foscolo trasforma l’eredità classica dentro la crisi moderna.",
+      "source": { "app": "manuale", "page": "Ottocento_letterario.html", "selector": "#neoclassicismo-s6" },
+      "destinations": [
+        { "path": "Parini/", "label": "Parini riformatore", "hash": "profilo" },
+        { "path": "Foscolo/lezioni/poetica.html", "label": "Foscolo: Neoclassicismo e Preromanticismo", "hash": "neoclassicismo" }
+      ]
+    },
+    {
+      "id": "manuale-foscolo-illusioni",
+      "kindLabel": "Approfondimento d’autore",
+      "title": "Le illusioni messe alla prova",
+      "description": "Dal quadro generale passa alla lezione in cui Foscolo risponde al nulla con memoria, affetti e poesia.",
+      "source": { "app": "manuale", "page": "Ottocento_letterario.html", "selector": "#foscolo-s5" },
+      "destinations": [
+        { "path": "Foscolo/lezioni/immagine-del-mondo.html", "label": "La religione delle illusioni", "hash": "religione-illusioni" },
+        { "path": "Leopardi/pagine/scritti.html", "label": "Confronta con Leopardi", "hash": "il-percorso-dellevoluzione-leopardiana" }
+      ]
+    },
+    {
+      "id": "manuale-ortis-parini",
+      "kindLabel": "Dal manuale al testo",
+      "title": "Jacopo incontra Parini",
+      "description": "Il dialogo lega delusione politica, libertà tradita e funzione civile della parola.",
+      "source": { "app": "manuale", "page": "Ottocento_letterario.html", "selector": "#foscolo-s7" },
+      "destinations": [
+        { "path": "Foscolo/lezioni/ortis-parini.html", "label": "Leggi il percorso Ortis–Parini", "hash": "prima-di-leggere" },
+        { "path": "Parini/", "label": "Ritrova il Parini riformatore", "hash": "profilo" }
+      ]
+    },
+    {
+      "id": "manuale-romanticismo-italiano",
+      "kindLabel": "Lezione collegata",
+      "title": "La polemica del 1816 nel suo contesto",
+      "description": "Approfondisci il passaggio dalla crisi europea alla via civile e nazionale del Romanticismo italiano.",
+      "source": { "app": "manuale", "page": "Ottocento_letterario.html", "selector": "#romanticismo-s5" },
+      "destinations": [
+        { "path": "Romanticismo-lezioni/", "label": "La via italiana", "hash": "romanticismo-italiano" },
+        { "path": "Romanticismo/", "label": "Sintesi interattiva", "hash": "lezione-5" }
+      ]
+    },
+    {
+      "id": "manuale-romanticismo-manzoni",
+      "kindLabel": "Ponte necessario",
+      "title": "Dal programma romantico alla poetica di Manzoni",
+      "description": "Vero, utile e interessante diventano un progetto letterario fondato su storia, pubblico e responsabilità.",
+      "source": { "app": "manuale", "page": "Ottocento_letterario.html", "selector": "#romanticismo-s8" },
+      "destinations": [
+        { "path": "Manzoni/Lezioni/poetica.html", "label": "Le tre colonne della poetica", "hash": "4-1-le-tre-colonne-della-poetica" }
+      ]
+    },
+    {
+      "id": "manuale-romanticismo-leopardi",
+      "kindLabel": "Confronto critico",
+      "title": "Leopardi dentro e contro il Romanticismo",
+      "description": "La crisi moderna è condivisa, ma Leopardi contesta il programma dei romantici italiani e le loro consolazioni.",
+      "source": { "app": "manuale", "page": "Ottocento_letterario.html", "selector": "#romanticismo-s9" },
+      "destinations": [
+        { "path": "Leopardi/pagine/filosofia-base.html", "label": "Contesto culturale e polemica", "hash": "il-mondo-delle-idee-tra-settecento-e-ottocento" },
+        { "path": "Romanticismo-lezioni/", "label": "Laboratorio dei testi", "hash": "testi" }
+      ]
+    },
+    {
+      "id": "manuale-manzoni-provvidenza",
+      "kindLabel": "Approfondimento d’autore",
+      "title": "La Provvidenza non è un lieto fine facile",
+      "description": "Segui l’evoluzione del concetto dentro la visione storica e morale di Manzoni.",
+      "source": { "app": "manuale", "page": "Ottocento_letterario.html", "selector": "#manzoni-s6" },
+      "destinations": [
+        { "path": "Manzoni/Lezioni/immagine-del-mondo.html", "label": "Male, storia e Provvidenza", "hash": "3-3-la-provvidenza-prima-fase" }
+      ]
+    },
+    {
+      "id": "manuale-leopardi-natura",
+      "kindLabel": "Dal quadro all’opera",
+      "title": "La Natura sottoposta a processo",
+      "description": "Il passaggio al pessimismo cosmico diventa scena filosofica nel Dialogo della Natura e di un Islandese.",
+      "source": { "app": "manuale", "page": "Ottocento_letterario.html", "selector": "#leopardi-s10" },
+      "destinations": [
+        { "path": "Leopardi/pagine/natura-islandese.html", "label": "Dialogo della Natura e di un Islandese", "hash": "il-processo-alla-natura" }
+      ]
+    },
+    {
+      "id": "foscolo-poetica-correnti",
+      "kindLabel": "Quadro e corrente",
+      "title": "Foscolo sulla soglia tra due sensibilità",
+      "description": "Ricollega la poetica dell’autore al quadro generale e alle fratture che preparano il Romanticismo.",
+      "source": { "app": "foscolo", "page": "lezioni/poetica.html", "selector": "#neoclassicismo" },
+      "destinations": [
+        { "path": "Ottocento_letterario.html", "label": "Quadro: Foscolo come ponte", "hash": "neoclassicismo-s10" },
+        { "path": "Romanticismo-lezioni/", "label": "Le quattro fratture", "hash": "fratture" }
+      ]
+    },
+    {
+      "id": "foscolo-illusioni-leopardi",
+      "kindLabel": "Confronto tra autori",
+      "title": "Illusioni necessarie o verità senza consolazioni?",
+      "description": "Foscolo costruisce valori capaci di resistere al nulla; Leopardi segue la crisi delle illusioni fino alla solidarietà della Ginestra.",
+      "source": { "app": "foscolo", "page": "lezioni/immagine-del-mondo.html", "selector": "#religione-illusioni" },
+      "destinations": [
+        { "path": "Leopardi/pagine/scritti.html", "label": "L’evoluzione leopardiana", "hash": "il-percorso-dellevoluzione-leopardiana" },
+        { "path": "Leopardi/pagine/ginestra.html", "label": "La Ginestra e la social catena", "hash": "il-fiore-fragile-davanti-al-vesuvio" }
+      ]
+    },
+    {
+      "id": "foscolo-parini-civile",
+      "kindLabel": "Autore nel testo",
+      "title": "Dal Parini-personaggio al Parini riformatore",
+      "description": "Il vecchio poeta dell’Ortis rinvia alla critica civile della nobiltà e alla responsabilità dell’intellettuale.",
+      "source": { "app": "foscolo", "page": "lezioni/ortis-parini.html", "selector": "#prima-di-leggere" },
+      "destinations": [
+        { "path": "Parini/", "label": "Parini: critica, satira e cittadinanza", "hash": "profilo" }
+      ]
+    },
+    {
+      "id": "leopardi-romanticismo-polemica",
+      "kindLabel": "Corrente e dissenso",
+      "title": "Leopardi nel dibattito classico-romantico",
+      "description": "Confronta la formazione classica e sensistica di Leopardi con il programma del Romanticismo italiano.",
+      "source": { "app": "leopardi", "page": "pagine/filosofia-base.html", "selector": "#il-mondo-delle-idee-tra-settecento-e-ottocento" },
+      "destinations": [
+        { "path": "Romanticismo-lezioni/", "label": "Laboratorio: Leopardi e i romantici", "hash": "testi" },
+        { "path": "Romanticismo/", "label": "Dentro e contro il Romanticismo", "hash": "lezione-9" }
+      ]
+    },
+    {
+      "id": "leopardi-foscolo-illusioni",
+      "kindLabel": "Confronto tra autori",
+      "title": "Due risposte alla crisi delle illusioni",
+      "description": "Leopardi ricostruisce il rapporto tra natura, ragione e illusioni; Foscolo affida agli affetti e alla memoria una funzione vitale.",
+      "source": { "app": "leopardi", "page": "pagine/scritti.html", "selector": "#il-percorso-dellevoluzione-leopardiana" },
+      "destinations": [
+        { "path": "Foscolo/lezioni/immagine-del-mondo.html", "label": "Foscolo: religione delle illusioni", "hash": "religione-illusioni" }
+      ]
+    },
+    {
+      "id": "manzoni-romanticismo-prototipo",
+      "kindLabel": "Ponte bidirezionale",
+      "title": "Il Romanticismo italiano diventa responsabilità",
+      "description": "La formula vero, utile e interessante nasce dal nuovo rapporto tra letteratura, storia e pubblico.",
+      "source": { "app": "manzoni", "page": "Lezioni/poetica.html", "selector": "[id=\"4-1-le-tre-colonne-della-poetica\"]" },
+      "destinations": [
+        { "path": "Romanticismo-lezioni/", "label": "La via italiana e i testi", "hash": "romanticismo-italiano" },
+        { "path": "Romanticismo/", "label": "Ponte verso Manzoni", "hash": "lezione-8" }
+      ]
+    },
+    {
+      "id": "manzoni-romanzo-storico",
+      "kindLabel": "Genere letterario",
+      "title": "Dal modello europeo al romanzo manzoniano",
+      "description": "Walter Scott apre il genere; Manzoni lo trasforma in indagine sul vero storico e morale.",
+      "source": { "app": "manzoni", "page": "Lezioni/poetica.html", "selector": "[id=\"4-4-il-romanzo-storico\"]" },
+      "destinations": [
+        { "path": "Romanticismo/", "label": "Il romanzo storico europeo", "hash": "lezione-7" }
+      ]
+    },
+    {
+      "id": "romanticismo-via-italiana",
+      "kindLabel": "Dalla sintesi alla lezione",
+      "title": "La via italiana: pubblico, nazione, utilità",
+      "description": "Approfondisci il dibattito del 1816 e osserva come Manzoni traduce il programma romantico nella propria poetica.",
+      "source": { "app": "romanticismo", "page": "index.html", "selector": "#lezione-5" },
+      "destinations": [
+        { "path": "Romanticismo-lezioni/", "label": "Lezione: Romanticismo italiano", "hash": "romanticismo-italiano" },
+        { "path": "Manzoni/Lezioni/introduzione.html", "label": "Il Romanticismo manzoniano", "hash": "1-2-il-romanticismo-manzoniano" }
+      ]
+    },
+    {
+      "id": "romanticismo-manzoni-romanzo",
+      "kindLabel": "Dal genere all’autore",
+      "title": "Il romanzo storico secondo Manzoni",
+      "description": "Dal modello di Scott passa alla riflessione manzoniana sul rapporto fra invenzione e storia.",
+      "source": { "app": "romanticismo", "page": "index.html", "selector": "#lezione-7" },
+      "destinations": [
+        { "path": "Manzoni/Lezioni/poetica.html", "label": "La poetica del romanzo storico", "hash": "4-4-il-romanzo-storico" }
+      ]
+    },
+    {
+      "id": "romanticismo-manzoni-responsabilita",
+      "kindLabel": "Ponte d’autore",
+      "title": "Manzoni: il Romanticismo della responsabilità",
+      "description": "Storia, popolo, lingua e verità convergono nella formula utile, vero e interessante.",
+      "source": { "app": "romanticismo", "page": "index.html", "selector": "#lezione-8" },
+      "destinations": [
+        { "path": "Manzoni/Lezioni/poetica.html", "label": "Le tre colonne della poetica", "hash": "4-1-le-tre-colonne-della-poetica" }
+      ]
+    },
+    {
+      "id": "romanticismo-leopardi-dissenso",
+      "kindLabel": "Ponte d’autore",
+      "title": "Leopardi: dentro e contro il Romanticismo",
+      "description": "Infinito, immaginazione e natura sono problemi condivisi; le risposte leopardiane capovolgono il programma romantico.",
+      "source": { "app": "romanticismo", "page": "index.html", "selector": "#lezione-9" },
+      "destinations": [
+        { "path": "Leopardi/pagine/filosofia-base.html", "label": "Filosofia base e contesto culturale", "hash": "il-mondo-delle-idee-tra-settecento-e-ottocento" },
+        { "path": "Leopardi/pagine/poetica.html", "label": "Il vago e l’indefinito", "hash": "la-poetica-del-vago-e-dellindefinito" }
+      ]
+    },
+    {
+      "id": "lezioni-romanticismo-manzoni-prototipo",
+      "kindLabel": "Prototipo verificabile",
+      "title": "Dalla via italiana alla poetica di Manzoni",
+      "description": "Il programma civile del Romanticismo trova in Manzoni una forma precisa: vero per soggetto, interessante per mezzo, utile per scopo.",
+      "source": { "app": "romanticismo-lezioni", "page": "index.html", "selector": "#romanticismo-italiano" },
+      "destinations": [
+        { "path": "Manzoni/Lezioni/poetica.html", "label": "Manzoni: le tre colonne", "hash": "4-1-le-tre-colonne-della-poetica" },
+        { "path": "Romanticismo/", "label": "Sintesi: Romanticismo italiano", "hash": "lezione-5" }
+      ]
+    },
+    {
+      "id": "lezioni-romanticismo-autori",
+      "kindLabel": "Dai testi agli autori",
+      "title": "Due esiti italiani opposti",
+      "description": "Manzoni sviluppa il programma romantico; Leopardi ne condivide le domande moderne ma ne contesta le risposte.",
+      "source": { "app": "romanticismo-lezioni", "page": "index.html", "selector": "#testi" },
+      "destinations": [
+        { "path": "Manzoni/Lezioni/poetica.html", "label": "Manzoni: vero, utile, interessante", "hash": "4-1-le-tre-colonne-della-poetica" },
+        { "path": "Leopardi/pagine/filosofia-base.html", "label": "Leopardi e il contesto culturale", "hash": "il-mondo-delle-idee-tra-settecento-e-ottocento" }
+      ]
+    },
+    {
+      "id": "parini-manuale-illuminismo",
+      "kindLabel": "Autore e contesto",
+      "title": "Parini tra Illuminismo e funzione civile",
+      "description": "Ricollega la satira della nobiltà al quadro del secondo Settecento e alla trasformazione della letteratura.",
+      "source": { "app": "parini", "page": "index.html", "selector": "#profilo" },
+      "destinations": [
+        { "path": "Ottocento_letterario.html", "label": "Parini nel quadro neoclassico", "hash": "neoclassicismo-s6" }
+      ]
+    },
+    {
+      "id": "parini-foscolo-incontro",
+      "kindLabel": "Ripresa intertestuale",
+      "title": "Parini diventa personaggio dell’Ortis",
+      "description": "Foscolo trasforma l’autore civile in interlocutore della disillusione politica di Jacopo.",
+      "source": { "app": "parini", "page": "index.html", "selector": "#giorno" },
+      "destinations": [
+        { "path": "Foscolo/lezioni/ortis-parini.html", "label": "L’incontro tra Jacopo Ortis e Parini", "hash": "prima-di-leggere" }
+      ]
+    }
+  ]
+}
