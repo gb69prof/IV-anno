@@ -19,3 +19,12 @@ let qi=0,score=0;const box=document.getElementById('quizBox');
 function renderQ(){if(!box)return;if(qi>=questions.length){box.innerHTML=`<p><strong>Risultato:</strong> ${score}/${questions.length}. ${score===questions.length?'Ottimo: hai colto il meccanismo.':'Rivedi mappe e antifrasi: lì c’è la chiave.'}</p><button onclick="location.reload()">Ricomincia</button>`;return;}const qu=questions[qi];box.innerHTML=`<p><strong>${qi+1}. ${qu.q}</strong></p>`+qu.a.map((x,i)=>`<button data-i="${i}">${x}</button>`).join('');box.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const ok=+b.dataset.i===qu.ok;b.classList.add(ok?'correct':'wrong');if(ok)score++;setTimeout(()=>{qi++;renderQ()},650)}));}
 renderQ();
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+
+(function setupOttocentoBridge(){
+  if(document.querySelector('script[data-ottocento-bridge]')) return;
+  const script=document.createElement('script');
+  script.src=new URL('../rete-pwa/bridge.js?v=2',location.href).href;
+  script.dataset.ottocentoBridge='';
+  script.dataset.ottocentoApp='parini';
+  document.head.appendChild(script);
+})();

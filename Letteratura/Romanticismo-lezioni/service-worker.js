@@ -1,4 +1,4 @@
-const CACHE_VERSION = "romanticismo-lezioni-v3";
+const CACHE_VERSION = "romanticismo-lezioni-v5";
 const OFFLINE_URL = "./offline.html";
 const CORE_ASSETS = [
   "./",
@@ -13,7 +13,10 @@ const CORE_ASSETS = [
   "./assets/images/tavola-contraddizioni.png",
   "./assets/images/tavola-romanticismo-europeo.png",
   "./assets/images/tavola-romanticismo-italiano.png",
-  "./assets/docs/Dispensa_Romanticismo_gbprof_Libera.docx"
+  "./assets/docs/Dispensa_Romanticismo_gbprof_Libera.docx",
+  "../rete-pwa/bridge.js?v=2",
+  "../rete-pwa/bridge.css?v=2",
+  "../rete-pwa/links.json?v=2"
 ];
 
 self.addEventListener("install", event => {

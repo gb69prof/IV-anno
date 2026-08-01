@@ -351,6 +351,16 @@ function getRoot() {
   return document.body.dataset.root || "./";
 }
 
+function setupOttocentoBridge() {
+  if (document.querySelector("script[data-ottocento-bridge]")) return;
+  const appRoot = new URL(getRoot(), location.href);
+  const script = document.createElement("script");
+  script.src = new URL("../rete-pwa/bridge.js?v=2", appRoot).href;
+  script.dataset.ottocentoBridge = "";
+  script.dataset.ottocentoApp = "manzoni";
+  document.head.appendChild(script);
+}
+
 function youtubeEmbedUrl(url) {
   if (!url) return "";
   const match = url.match(/(?:shorts\/|watch\?v=|youtu\.be\/)([A-Za-z0-9_-]+)/);
@@ -698,3 +708,4 @@ setupMapModal();
 setupLessonVideoSwap();
 setupLessonStudyTools();
 setupNotesTool();
+setupOttocentoBridge();

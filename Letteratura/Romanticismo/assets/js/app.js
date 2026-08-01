@@ -150,3 +150,12 @@ const obs = new IntersectionObserver(entries => {
   });
 }, {rootMargin:'-45% 0px -50% 0px'});
 sections.forEach(s => obs.observe(s));
+
+(function setupOttocentoBridge(){
+  if(document.querySelector('script[data-ottocento-bridge]')) return;
+  const script = document.createElement('script');
+  script.src = new URL('../rete-pwa/bridge.js?v=2', location.href).href;
+  script.dataset.ottocentoBridge = '';
+  script.dataset.ottocentoApp = 'romanticismo';
+  document.head.appendChild(script);
+})();

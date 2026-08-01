@@ -1,4 +1,4 @@
-const CACHE_NAME = 'romanticismo-pwa-v1';
+const CACHE_NAME = 'romanticismo-pwa-v2';
 const CORE_ASSETS = [
   './', './index.html', './manifest.webmanifest', './assets/css/style.css', './assets/js/app.js',
   './assets/images/il_romanticismo_un_viaggio_interattivo.png',
@@ -16,7 +16,8 @@ const CORE_ASSETS = [
   './assets/images/a_highly_detailed_infographic_mind_map_style_pos.png',
   './assets/images/a_detailed_infographic_mind_map_poster_style_ima.png',
   './assets/images/icon-192.png', './assets/images/icon-512.png',
-  './assets/docs/Dispensa_Romanticismo_gbprof_Libera.docx'
+  './assets/docs/Dispensa_Romanticismo_gbprof_Libera.docx',
+  '../rete-pwa/bridge.js?v=2', '../rete-pwa/bridge.css?v=2', '../rete-pwa/links.json?v=2'
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS)).then(() => self.skipWaiting()));
