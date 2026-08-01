@@ -1,4 +1,4 @@
-const CACHE_NAME = "manzoni-pwa-v1";
+const CACHE_NAME = "manzoni-pwa-v3";
 
 const LOCAL_ASSETS = [
   "./",
@@ -30,7 +30,10 @@ const LOCAL_ASSETS = [
   "./Lezioni/poetica.html",
   "./Lezioni/opere.html",
   "./Lezioni/capitoli.html",
-  "./Lezioni/conclusione.html"
+  "./Lezioni/conclusione.html",
+  "../rete-pwa/bridge.js?v=2",
+  "../rete-pwa/bridge.css?v=2",
+  "../rete-pwa/links.json?v=2"
 ];
 
 self.addEventListener("install", (event) => {

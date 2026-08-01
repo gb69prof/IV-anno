@@ -693,6 +693,16 @@ function getRoot() {
   return document.body.dataset.root || "./";
 }
 
+function setupOttocentoBridge() {
+  if (document.querySelector("script[data-ottocento-bridge]")) return;
+  const appRoot = new URL(getRoot(), location.href);
+  const script = document.createElement("script");
+  script.src = new URL("../rete-pwa/bridge.js?v=2", appRoot).href;
+  script.dataset.ottocentoBridge = "";
+  script.dataset.ottocentoApp = "leopardi";
+  document.head.appendChild(script);
+}
+
 const LEOPARDI_JOURNEY_RETURN_KEY = "leopardi.bridge.manualReturnUrl";
 const LEOPARDI_JOURNEY_LINKS = {
   "filosofia-base": [
@@ -1080,3 +1090,4 @@ setupMapModal();
 setupLessonStudyTools();
 setupNotesTool();
 setupJourneyBridges();
+setupOttocentoBridge();

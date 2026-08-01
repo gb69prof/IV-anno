@@ -1,4 +1,4 @@
-const CACHE_NAME = "leopardi-foscolo-style-v5";
+const CACHE_NAME = "leopardi-foscolo-style-v6";
 
 const LOCAL_ASSETS = [
   "./",
@@ -37,7 +37,10 @@ const LOCAL_ASSETS = [
   "./assets/mappe/infinito.png",
   "./assets/mappe/macchina-anima.png",
   "./assets/mappe/natura-islandese.png",
-  "./assets/mappe/siepe-lava.png"
+  "./assets/mappe/siepe-lava.png",
+  "../rete-pwa/bridge.js?v=2",
+  "../rete-pwa/bridge.css?v=2",
+  "../rete-pwa/links.json?v=2"
 ];
 
 self.addEventListener("install", (event) => {

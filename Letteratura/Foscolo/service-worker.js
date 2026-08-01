@@ -1,4 +1,4 @@
-const CACHE_NAME = "foscolo-pwa-v8";
+const CACHE_NAME = "foscolo-pwa-v9";
 
 const LOCAL_ASSETS = [
   "./",
@@ -26,7 +26,10 @@ const LOCAL_ASSETS = [
   "./lezioni/poetica.html",
   "./lezioni/opere.html",
   "./lezioni/ortis-parini.html",
-  "./lezioni/alla-sera.html"
+  "./lezioni/alla-sera.html",
+  "../rete-pwa/bridge.js?v=2",
+  "../rete-pwa/bridge.css?v=2",
+  "../rete-pwa/links.json?v=2"
 ];
 
 self.addEventListener("install", (event) => {

@@ -556,3 +556,12 @@
     });
   }
 })();
+
+(function setupOttocentoBridge() {
+  if (document.querySelector("script[data-ottocento-bridge]")) return;
+  const script = document.createElement("script");
+  script.src = new URL("../rete-pwa/bridge.js?v=2", location.href).href;
+  script.dataset.ottocentoBridge = "";
+  script.dataset.ottocentoApp = "romanticismo-lezioni";
+  document.head.appendChild(script);
+})();

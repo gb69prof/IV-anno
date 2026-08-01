@@ -1,0 +1,168 @@
+.ottocento-bridge-hub,
+.ottocento-context {
+  --ob-accent: #6f4d2f;
+  --ob-bg: #fffdf7;
+  --ob-ink: #20252b;
+  --ob-muted: #5f6670;
+  --ob-border: rgba(32, 37, 43, .25);
+  box-sizing: border-box;
+  color: var(--ob-ink);
+  font-family: inherit;
+}
+
+.ottocento-bridge-hub[data-app="foscolo"],
+.ottocento-bridge-hub[data-app="leopardi"],
+.ottocento-bridge-hub[data-app="manzoni"],
+.ottocento-context[data-app="foscolo"],
+.ottocento-context[data-app="leopardi"],
+.ottocento-context[data-app="manzoni"] {
+  --ob-accent: #d5a85b;
+  --ob-bg: #0b2639;
+  --ob-ink: #fffaf0;
+  --ob-muted: #d8e0e7;
+  --ob-border: rgba(255, 250, 240, .26);
+}
+
+.ottocento-bridge-hub[data-app="romanticismo"],
+.ottocento-context[data-app="romanticismo"] {
+  --ob-accent: #d7a75f;
+  --ob-bg: #071f32;
+  --ob-ink: #fff9ed;
+  --ob-muted: #d8e0e7;
+  --ob-border: rgba(215, 167, 95, .42);
+}
+
+.ottocento-bridge-hub[data-app="romanticismo-lezioni"],
+.ottocento-context[data-app="romanticismo-lezioni"] {
+  --ob-accent: #9e493d;
+  --ob-bg: #f2ead8;
+  --ob-ink: #20252b;
+  --ob-muted: #5f5b54;
+  --ob-border: rgba(79, 43, 35, .28);
+}
+
+.ottocento-bridge-hub[data-app="parini"],
+.ottocento-context[data-app="parini"] {
+  --ob-accent: #8c4f32;
+  --ob-bg: #f4ecd8;
+  --ob-ink: #1d252d;
+  --ob-muted: #555c61;
+  --ob-border: rgba(29, 37, 45, .28);
+}
+
+.ottocento-bridge-hub {
+  position: fixed;
+  z-index: 900;
+  right: max(14px, env(safe-area-inset-right));
+  bottom: max(14px, env(safe-area-inset-bottom));
+  width: min(320px, calc(100vw - 28px));
+}
+
+.ottocento-bridge-hub > summary {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  min-height: 44px;
+  padding: 11px 16px;
+  border: 1px solid var(--ob-border);
+  border-radius: 999px;
+  background: var(--ob-bg);
+  color: var(--ob-ink);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .22);
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.25;
+  list-style: none;
+}
+
+.ottocento-bridge-hub > summary::-webkit-details-marker { display: none; }
+.ottocento-bridge-hub[open] > summary { border-radius: 18px 18px 0 0; }
+
+.ottocento-bridge-menu {
+  display: grid;
+  gap: 7px;
+  padding: 15px;
+  border: 1px solid var(--ob-border);
+  border-radius: 14px 0 14px 14px;
+  background: var(--ob-bg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .24);
+}
+
+.ottocento-bridge-menu strong { color: var(--ob-ink); font-size: 1rem; }
+.ottocento-bridge-hub-link,
+.ottocento-bridge-return,
+.ottocento-bridge-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ob-ink);
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.ottocento-bridge-hub-link { border-top: 1px solid var(--ob-border); padding: 8px 2px; }
+.ottocento-bridge-return {
+  padding: 9px 11px;
+  border-radius: 8px;
+  background: var(--ob-accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+.ottocento-context {
+  max-width: 760px;
+  margin: 28px auto;
+  padding: 20px clamp(18px, 4vw, 28px);
+  border: 1px solid var(--ob-border);
+  border-left: 5px solid var(--ob-accent);
+  border-radius: 10px;
+  background: var(--ob-bg);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, .10);
+}
+
+.ottocento-context-label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--ob-accent);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.ottocento-context h3 { margin: 0 0 8px; color: var(--ob-ink); font-size: clamp(1.15rem, 3vw, 1.45rem); }
+.ottocento-context p { margin: 0; color: var(--ob-muted); }
+.ottocento-context-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+.ottocento-bridge-link {
+  padding: 9px 13px;
+  border: 1px solid var(--ob-accent);
+  border-radius: 7px;
+  color: var(--ob-accent);
+  font-weight: 750;
+}
+
+.ottocento-bridge-link:hover,
+.ottocento-bridge-hub-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.ottocento-bridge-hub :focus-visible,
+.ottocento-context :focus-visible {
+  outline: 3px solid var(--ob-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .ottocento-bridge-hub { right: 10px; left: 10px; bottom: max(10px, env(safe-area-inset-bottom)); width: auto; }
+  .ottocento-bridge-hub > summary { min-height: 48px; }
+  .ottocento-bridge-menu { max-height: min(70vh, 520px); overflow: auto; }
+  .ottocento-context-links { display: grid; }
+  .ottocento-bridge-link { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ottocento-bridge-hub *, .ottocento-context * { scroll-behavior: auto !important; transition: none !important; }
+}
+
+@media print {
+  .ottocento-bridge-hub, .ottocento-context { display: none !important; }
+}
