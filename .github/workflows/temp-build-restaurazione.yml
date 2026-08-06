@@ -47,27 +47,16 @@ jobs:
           PY
           python - <<'PY'
           from pathlib import Path
-          from urllib.request import Request, urlopen
-          files = {
-              "Storia/Restaurazione/assets/img/protagonisti/metternich.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%20Metternich%20by%20Lawrence.jpeg?width=700",
-              "Storia/Restaurazione/assets/img/protagonisti/alessandro-i.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Alexander%20I%20of%20Russia%20by%20G.Dawe%20%28c.%201818-1825%2C%20Royal%20coll.%20of%20UK%29%20%28cropped%29.jpg?width=700",
-              "Storia/Restaurazione/assets/img/protagonisti/francesco-i.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Francis%20II%2C%20Holy%20Roman%20Emperor%20by%20Friedrich%20von%20Amerling%20%284x5%20cropped%29.jpg?width=700",
-              "Storia/Restaurazione/assets/img/protagonisti/federico-guglielmo-iii.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Friedrich%20Wilhelm%20III.%2C%20K%C3%B6nig%20von%20Preu%C3%9Fen%20%28unbekannter%20Maler%29.jpg?width=700",
-              "Storia/Restaurazione/assets/img/protagonisti/luigi-xviii.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/G%C3%A9rard%20-%20Louis%20XVIII%20of%20France%20in%20Coronation%20Robes.jpg?width=700",
-              "Storia/Restaurazione/assets/img/protagonisti/talleyrand.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Charles%20Maurice%20de%20Talleyrand%20P%C3%A9rigord%20%281754%E2%80%931838%29%2C%20Prince%20de%20Talleyrand%20MET%20DP148275.jpg?width=700",
-              "Storia/Restaurazione/assets/img/maps/europa-1815.png": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Europe_1815_map_en.png?width=1600",
-              "Storia/Restaurazione/assets/img/maps/italia-1815.png": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Italia_1815.png?width=1200",
-          }
-          for output, url in files.items():
-              request = Request(url, headers={"User-Agent": "gbprof-educational-pwa/1.0"})
-              Path(output).write_bytes(urlopen(request, timeout=90).read())
-          PY
-          python - <<'PY'
-          from pathlib import Path
           import cairosvg
           source = Path("Storia/Restaurazione/assets/img/icons/icon.svg")
           for size in (192, 512):
               cairosvg.svg2png(url=str(source), write_to=f"Storia/Restaurazione/assets/img/icons/icon-{size}.png", output_width=size, output_height=size)
+          for name, width in (("europa-1815", 1600), ("italia-1815", 1200)):
+              cairosvg.svg2png(
+                  url=f"Storia/Restaurazione/assets/img/maps/{name}.svg",
+                  write_to=f"Storia/Restaurazione/assets/img/maps/{name}.png",
+                  output_width=width,
+              )
           PY
           python "$root/tools/generate_pdfs.py"
       - name: Commit generated deliverables and remove temporary transport
