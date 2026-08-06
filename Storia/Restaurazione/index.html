@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#08182f">
+  <meta name="description" content="PWA didattica interattiva sulla Restaurazione europea: lezioni, fonti, mappe, biografie, timeline e quiz.">
+  <title>La Restaurazione — gbprof e Libera</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/img/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/icons/icon-192.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+  <a class="skip-link" href="#percorso">Vai al percorso</a>
+  <header class="site-header" aria-label="Navigazione principale">
+    <a class="brand" href="index.html" aria-label="La Restaurazione, home">
+      <img src="assets/img/icons/icon.svg" alt="" width="46" height="46">
+      <span><small>Percorso di storia</small>La Restaurazione</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Sezioni">
+      <a class="active" href="index.html">Home</a>
+      <a href="app.html#lezioni">Lezioni</a>
+      <a href="app.html#fonti">Fonti</a>
+      <a href="app.html#mappe">Mappe</a>
+      <a href="app.html#biografie">Biografie</a>
+    </nav>
+    <a class="button button-ruby header-cta" href="app.html#lezione/mondo-precedente">Inizia il percorso <span aria-hidden="true">→</span></a>
+  </header>
+
+  <main>
+    <section class="cover-hero" aria-labelledby="cover-title">
+      <div class="cover-shade"></div>
+      <div class="cover-copy">
+        <p class="overline">Europa · 1814-1815</p>
+        <h1 id="cover-title">La <span>Restaurazione</span></h1>
+        <p class="byline">a cura di gbprof e Libera</p>
+        <p class="cover-subtitle">L'Europa dopo la Rivoluzione e Napoleone</p>
+        <blockquote>Si può restaurare un ordine politico senza poter restaurare il mondo che lo rendeva possibile?</blockquote>
+        <div class="cover-actions">
+          <a class="button button-gold" href="app.html#lezione/mondo-precedente">Entra nella lezione</a>
+          <a class="button button-ghost" href="app.html#mappe">Esplora le mappe</a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#percorso"><span>Scopri il percorso</span><b aria-hidden="true">↓</b></a>
+    </section>
+
+    <section class="home-section route-section" id="percorso" aria-labelledby="route-title">
+      <div class="section-heading centered">
+        <p class="overline">Un processo, non un elenco di date</p>
+        <h2 id="route-title">Sei passaggi per capire il 1815</h2>
+        <p>Dal mondo trasformato dalla Rivoluzione al conflitto fra ordine conservatore e libertà liberale.</p>
+      </div>
+      <div class="route-grid">
+        <a class="route-card" href="app.html#lezione/mondo-precedente">
+          <span class="route-number">1</span><span class="route-icon" aria-hidden="true">⌛</span>
+          <h3>Il mondo precedente</h3><p>L'eredità che non si può cancellare</p><b aria-hidden="true">→</b>
+        </a>
+        <a class="route-card" href="app.html#lezione/frattura">
+          <span class="route-number">2</span><span class="route-icon" aria-hidden="true">⚡</span>
+          <h3>La frattura</h3><p>La caduta dell'impero napoleonico</p><b aria-hidden="true">→</b>
+        </a>
+        <a class="route-card" href="app.html#lezione/mondo-nuovo">
+          <span class="route-number">3</span><span class="route-icon" aria-hidden="true">◈</span>
+          <h3>L'idea di un mondo nuovo</h3><p>Costituzione, nazione, libertà</p><b aria-hidden="true">→</b>
+        </a>
+        <a class="route-card" href="app.html#lezione/europa-restaurata">
+          <span class="route-number">4</span><span class="route-icon" aria-hidden="true">♜</span>
+          <h3>L'Europa restaurata</h3><p>Vienna ridisegna il continente</p><b aria-hidden="true">→</b>
+        </a>
+        <a class="route-card" href="app.html#lezione/forza-limiti">
+          <span class="route-number">5</span><span class="route-icon" aria-hidden="true">⚖</span>
+          <h3>Forza e limiti</h3><p>Un ordine stabile, ma non immobile</p><b aria-hidden="true">→</b>
+        </a>
+        <a class="route-card" href="app.html#lezione/liberali-conservatori">
+          <span class="route-number">6</span><span class="route-icon" aria-hidden="true">⇄</span>
+          <h3>Liberali e conservatori</h3><p>Due idee contrastanti</p><b aria-hidden="true">→</b>
+        </a>
+      </div>
+      <div class="progress-panel" aria-live="polite">
+        <span>Il tuo percorso</span><div class="progress-track"><i id="homeProgress"></i></div><strong id="homeProgressLabel">0 di 6 lezioni</strong>
+      </div>
+    </section>
+
+    <section class="home-section people-section" aria-labelledby="people-title">
+      <div class="section-heading split-heading">
+        <div><p class="overline">Figure chiave</p><h2 id="people-title">I volti del nuovo ordine</h2></div>
+        <a class="text-link" href="app.html#biografie">Tutte le biografie →</a>
+      </div>
+      <div class="portrait-strip" id="homePeople"></div>
+    </section>
+
+    <section class="home-section feature-grid" aria-label="Strumenti interattivi">
+      <a class="feature-card feature-map" href="app.html#mappe"><span class="feature-symbol">⌖</span><p class="overline">Spazio</p><h2>Mappe e schemi</h2><p>Leggi confini, alleanze e contraddizioni con carte ingrandibili e mappe concettuali.</p><b>Esplora →</b></a>
+      <a class="feature-card feature-time" href="app.html#timeline"><span class="feature-symbol">1815</span><p class="overline">Tempo</p><h2>Timeline ragionata</h2><p>Ogni data risponde alla domanda decisiva: che cosa cambia dopo questo evento?</p><b>Naviga →</b></a>
+      <a class="feature-card feature-quiz" href="app.html#quiz"><span class="feature-symbol">?</span><p class="overline">Verifica</p><h2>Quiz finale</h2><p>Dodici domande motivate, report degli errori e rimando alle lezioni da recuperare.</p><b>Mettiti alla prova →</b></a>
+      <a class="feature-card feature-source" href="app.html#fonti"><span class="feature-symbol">“</span><p class="overline">Laboratorio</p><h2>Le fonti in dialogo</h2><p>Promesse di libertà, linguaggio paternalistico e compromesso costituzionale.</p><b>Analizza →</b></a>
+    </section>
+
+    <section class="home-section thesis-panel">
+      <p class="overline">La tesi del percorso</p>
+      <h2>Si restaurano i troni.<br>Non il mondo che li sosteneva.</h2>
+      <p>Il Congresso di Vienna costruisce un equilibrio internazionale duraturo, ma lascia aperte le domande di costituzione, rappresentanza e nazionalità. La sua grandezza diplomatica e il suo limite politico nascono dalla stessa scelta: difendere l'ordine senza accettare fino in fondo la società nuova.</p>
+      <a class="button button-gold" href="app.html#lezioni">Apri l'indice completo</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><img src="assets/img/icons/icon.svg" alt="" width="42" height="42"><p><strong>La Restaurazione</strong><br>Un percorso interattivo di storia.</p></div>
+    <p>Contenuti chiari e verificabili · Progettato per studenti e docenti · Accessibile e disponibile offline</p>
+    <p>© 2026 gbprof e Libera</p>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
+
