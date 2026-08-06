@@ -1,0 +1,22 @@
+{
+  "name": "La Restaurazione — gbprof e Libera",
+  "short_name": "Restaurazione",
+  "description": "Percorso didattico interattivo sull'Europa della Restaurazione.",
+  "lang": "it",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#030b18",
+  "theme_color": "#08182f",
+  "icons": [
+    { "src": "assets/img/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/img/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Lezioni", "short_name": "Lezioni", "url": "app.html#lezioni", "icons": [{ "src": "assets/img/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Mappe", "short_name": "Mappe", "url": "app.html#mappe", "icons": [{ "src": "assets/img/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Quiz finale", "short_name": "Quiz", "url": "app.html#quiz", "icons": [{ "src": "assets/img/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
+

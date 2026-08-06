@@ -1,0 +1,79 @@
+name: Temporary Restaurazione asset build
+
+on:
+  push:
+    branches: ["agent/restaurazione-pwa"]
+    paths:
+      - "Storia/Restaurazione/**"
+      - ".github/workflows/temp-build-restaurazione.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/restaurazione-pwa
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install document and image dependencies
+        run: python -m pip install --quiet reportlab pillow cairosvg
+      - name: Rebuild local visual assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="Storia/Restaurazione"
+          mkdir -p "$root/assets/img/covers" "$root/assets/img/icons" "$root/assets/img/maps" "$root/assets/img/protagonisti" "$root/assets/pdf/lezioni" "$root/assets/pdf/approfondimenti"
+          cat "$root"/tools/hero-parts/part-* | base64 -d > "$root/assets/img/covers/hero-restaurazione.jpg"
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageOps
+          root = Path("Storia/Restaurazione/assets/img/covers")
+          with Image.open(root / "hero-restaurazione.jpg") as image:
+              ImageOps.fit(image.convert("RGB"), (1000, 1250), method=Image.Resampling.LANCZOS).save(root / "hero-restaurazione-mobile.jpg", quality=86, optimize=True)
+          PY
+          python - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          files = {
+              "Storia/Restaurazione/assets/img/protagonisti/metternich.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%20Metternich%20by%20Lawrence.jpeg?width=700",
+              "Storia/Restaurazione/assets/img/protagonisti/alessandro-i.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Alexander%20I%20of%20Russia%20by%20G.Dawe%20%28c.%201818-1825%2C%20Royal%20coll.%20of%20UK%29%20%28cropped%29.jpg?width=700",
+              "Storia/Restaurazione/assets/img/protagonisti/francesco-i.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Francis%20II%2C%20Holy%20Roman%20Emperor%20by%20Friedrich%20von%20Amerling%20%284x5%20cropped%29.jpg?width=700",
+              "Storia/Restaurazione/assets/img/protagonisti/federico-guglielmo-iii.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Friedrich%20Wilhelm%20III.%2C%20K%C3%B6nig%20von%20Preu%C3%9Fen%20%28unbekannter%20Maler%29.jpg?width=700",
+              "Storia/Restaurazione/assets/img/protagonisti/luigi-xviii.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/G%C3%A9rard%20-%20Louis%20XVIII%20of%20France%20in%20Coronation%20Robes.jpg?width=700",
+              "Storia/Restaurazione/assets/img/protagonisti/talleyrand.jpg": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Charles%20Maurice%20de%20Talleyrand%20P%C3%A9rigord%20%281754%E2%80%931838%29%2C%20Prince%20de%20Talleyrand%20MET%20DP148275.jpg?width=700",
+              "Storia/Restaurazione/assets/img/maps/europa-1815.png": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Europe_1815_map_en.png?width=1600",
+              "Storia/Restaurazione/assets/img/maps/italia-1815.png": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Italia_1815.png?width=1200",
+          }
+          for output, url in files.items():
+              request = Request(url, headers={"User-Agent": "gbprof-educational-pwa/1.0"})
+              Path(output).write_bytes(urlopen(request, timeout=90).read())
+          PY
+          python - <<'PY'
+          from pathlib import Path
+          import cairosvg
+          source = Path("Storia/Restaurazione/assets/img/icons/icon.svg")
+          for size in (192, 512):
+              cairosvg.svg2png(url=str(source), write_to=f"Storia/Restaurazione/assets/img/icons/icon-{size}.png", output_width=size, output_height=size)
+          PY
+          python "$root/tools/generate_pdfs.py"
+      - name: Commit generated deliverables and remove temporary transport
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf Storia/Restaurazione/tools/hero-parts
+          rm -f .github/workflows/temp-build-restaurazione.yml
+          git config user.name "gbprof PWA builder"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A Storia/Restaurazione .github/workflows/temp-build-restaurazione.yml
+          git diff --cached --quiet && exit 0
+          git commit -m "build Restaurazione visual assets and PDFs"
+          git push origin HEAD:agent/restaurazione-pwa

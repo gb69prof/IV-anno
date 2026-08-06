@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="t d">
+  <title id="t">La Restaurazione</title><desc id="d">Una corona sopra una carta europea, circondate da rami d'alloro.</desc>
+  <defs><radialGradient id="b"><stop stop-color="#17345e"/><stop offset="1" stop-color="#07162b"/></radialGradient><linearGradient id="g" x2="0" y2="1"><stop stop-color="#f4d58a"/><stop offset="1" stop-color="#aa7628"/></linearGradient></defs>
+  <circle cx="256" cy="256" r="244" fill="url(#b)" stroke="#d6aa5e" stroke-width="12"/>
+  <path d="M111 340c-44-69-31-156 25-211M401 340c44-69 31-156-25-211" fill="none" stroke="#d6aa5e" stroke-width="13" stroke-linecap="round"/>
+  <path d="M126 300l-34-9m42-27l-37-20m55-11l-31-30m72 94l-25-33m-42 75l-40 3m300-42l34-9m-42-27l37-20m-55-11l31-30m-72 94l25-33m42 75l40 3" fill="none" stroke="#d6aa5e" stroke-width="10" stroke-linecap="round"/>
+  <path d="M167 213l34-62 55 48 55-48 34 62-18 68H185z" fill="url(#g)" stroke="#f7df9f" stroke-width="7"/>
+  <circle cx="201" cy="151" r="12" fill="#a52822"/><circle cx="256" cy="199" r="12" fill="#a52822"/><circle cx="311" cy="151" r="12" fill="#a52822"/>
+  <path d="M171 303h170v43c-22 18-50 27-85 27s-63-9-85-27z" fill="#f2e4c3" stroke="#d6aa5e" stroke-width="7"/>
+  <path d="M201 323c30-19 80-19 110 0M222 348l11-25 23 16 23-16 11 25" fill="none" stroke="#18365f" stroke-width="7" stroke-linecap="round"/>
+</svg>
