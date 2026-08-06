@@ -19,4 +19,6 @@ Le brevi citazioni italiane del proclama di Nugent e della Santa Alleanza proven
 
 ## Apparato visivo
 
-Le due carte schematiche e i sei medaglioni dei protagonisti sono illustrazioni SVG originali realizzate per questa PWA. Sono volutamente interpretazioni didattiche, non carte geografiche in scala né ritratti documentari; etichette e testi della lezione forniscono il contenuto storico verificabile.
+Le due carte schematiche sono illustrazioni SVG originali realizzate per questa PWA e sono volutamente interpretazioni didattiche, non carte geografiche in scala.
+
+I ritratti di Metternich, Alessandro I, Francesco I d'Austria, Federico Guglielmo III, Luigi XVIII e Talleyrand sono riproduzioni digitali di dipinti storici fornite dal curatore del progetto. Le immagini sono state adattate esclusivamente nel formato e nel peso per consentirne la consultazione offline.
