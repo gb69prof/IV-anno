@@ -1,4 +1,4 @@
-const CACHE = 'restaurazione-v1';
+const CACHE = 'restaurazione-v2';
 const CORE = [
   './',
   'index.html',
@@ -15,12 +15,12 @@ const CORE = [
   'assets/img/covers/hero-restaurazione-mobile.jpg',
   'assets/img/maps/europa-1815.svg',
   'assets/img/maps/italia-1815.svg',
-  'assets/img/protagonisti/metternich.svg',
-  'assets/img/protagonisti/alessandro-i.svg',
-  'assets/img/protagonisti/francesco-i.svg',
-  'assets/img/protagonisti/federico-guglielmo-iii.svg',
-  'assets/img/protagonisti/luigi-xviii.svg',
-  'assets/img/protagonisti/talleyrand.svg',
+  'assets/img/protagonisti/metternich.jpg',
+  'assets/img/protagonisti/alessandro-i.jpg',
+  'assets/img/protagonisti/francesco-i.jpg',
+  'assets/img/protagonisti/federico-guglielmo-iii.jpg',
+  'assets/img/protagonisti/luigi-xviii.jpg',
+  'assets/img/protagonisti/talleyrand.jpg',
   'assets/pdf/lezioni/1-mondo-precedente.pdf',
   'assets/pdf/lezioni/2-frattura.pdf',
   'assets/pdf/lezioni/3-mondo-nuovo.pdf',
