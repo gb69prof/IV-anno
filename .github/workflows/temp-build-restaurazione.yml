@@ -6,6 +6,11 @@ on:
     paths:
       - "Storia/Restaurazione/**"
       - ".github/workflows/temp-build-restaurazione.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "Storia/Restaurazione/**"
+      - ".github/workflows/temp-build-restaurazione.yml"
 
 permissions:
   contents: write
