@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#15201d"><meta name="description" content="Porta di accesso ai percorsi di Letteratura e Storia del quarto anno.">
+<title>Quarto anno — gbprof e Libera</title>
+<style>
+:root{--ink:#faf5e8;--muted:#cbd3cd;--line:rgba(255,255,255,.15);--gold:#dfb65f}
+*{box-sizing:border-box}body{margin:0;min-height:100svh;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#15201d}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 16% 18%,rgba(74,133,111,.28),transparent 32rem),radial-gradient(circle at 86% 78%,rgba(170,91,54,.22),transparent 32rem),linear-gradient(120deg,transparent 0 48%,rgba(255,255,255,.025) 48% 52%,transparent 52%)}
+.skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;z-index:10;background:#fff;color:#111;padding:.8rem 1rem;border-radius:.6rem}
+main{position:relative;width:min(1120px,calc(100% - 2rem));margin:auto;padding:clamp(2.5rem,7vw,6rem) 0}
+.eyebrow{margin:0 0 .8rem;color:var(--gold);font-size:.8rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+h1{max-width:850px;margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(3rem,9vw,7rem);font-weight:500;line-height:.88;letter-spacing:-.05em}
+.intro{max-width:720px;margin:1.6rem 0 3rem;color:var(--muted);font-size:clamp(1rem,2vw,1.2rem);line-height:1.7}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
+.card{position:relative;isolation:isolate;min-height:350px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;border:1px solid var(--line);border-radius:1.5rem;padding:clamp(1.5rem,4vw,2.5rem);color:inherit;text-decoration:none;box-shadow:0 24px 70px rgba(0,0,0,.22);transition:transform .25s,border-color .25s,box-shadow .25s}
+.card::before{content:"";position:absolute;z-index:-2;inset:0;background:var(--wash)}.card::after{content:attr(data-mark);position:absolute;z-index:-1;right:-.03em;top:-.18em;color:rgba(255,255,255,.07);font-family:Georgia,serif;font-size:17rem;line-height:1}
+.card:hover,.card:focus-visible{transform:translateY(-6px);border-color:rgba(255,255,255,.4);box-shadow:0 30px 80px rgba(0,0,0,.34)}
+.literature{--wash:linear-gradient(155deg,#345c4d,#203d34 55%,#15201d)}.history{--wash:linear-gradient(155deg,#71422c,#422c25 55%,#15201d)}
+.number{font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+h2{margin:.5rem 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:500}.card p{max-width:34rem;margin:0;color:rgba(255,255,255,.76);line-height:1.55}
+.open{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.5rem;font-weight:800}.open::after{content:"→";font-size:1.3em;transition:transform .2s}.card:hover .open::after{transform:translateX(.3rem)}
+footer{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem;color:#9faea7;font-size:.82rem}
+@media(max-width:720px){.choices{grid-template-columns:1fr}.card{min-height:290px}footer{flex-direction:column}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body><a class="skip" href="#percorsi">Vai ai percorsi</a><main>
+<header><p class="eyebrow">gbprof · Percorsi didattici</p><h1>Quarto anno</h1><p class="intro">Il laboratorio della modernità: la letteratura dà voce all’individuo, la storia abbatte l’Antico regime e costruisce nazioni, industrie e società nuove.</p></header>
+<section id="percorsi" class="choices" aria-label="Scegli la disciplina">
+<a class="card literature" href="./Letteratura/" data-mark="L"><span class="number">Percorso 01</span><h2>Letteratura</h2><p>Dall’Illuminismo al Romanticismo: Parini, Foscolo, Manzoni e Leopardi dentro la nascita della sensibilità moderna.</p><span class="open">Entra nel percorso</span></a>
+<a class="card history" href="./Storia/" data-mark="S"><span class="number">Percorso 02</span><h2>Storia</h2><p>Dalle rivoluzioni del Settecento all’Italia unita e alla società di massa: il lungo Ottocento che inventa il presente.</p><span class="open">Entra nel percorso</span></a>
+</section><footer><span>Quarto anno · Italiano e Storia</span><span>gbprof e Libera</span></footer>
+</main></body></html>
