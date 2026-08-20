@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Monogramma N con corona d'alloro">
+  <rect width="512" height="512" rx="96" fill="#07162b"/><circle cx="256" cy="256" r="202" fill="none" stroke="#d6aa5e" stroke-width="13"/>
+  <path d="M121 359c-45-64-48-142-11-218M391 359c45-64 48-142 11-218" fill="none" stroke="#d6aa5e" stroke-width="14" stroke-linecap="round"/>
+  <g fill="#d6aa5e"><ellipse cx="115" cy="173" rx="13" ry="28" transform="rotate(-34 115 173)"/><ellipse cx="104" cy="223" rx="13" ry="28" transform="rotate(-50 104 223)"/><ellipse cx="110" cy="275" rx="13" ry="28" transform="rotate(-68 110 275)"/><ellipse cx="397" cy="173" rx="13" ry="28" transform="rotate(34 397 173)"/><ellipse cx="408" cy="223" rx="13" ry="28" transform="rotate(50 408 223)"/><ellipse cx="402" cy="275" rx="13" ry="28" transform="rotate(68 402 275)"/></g>
+  <path d="M163 350V158h43l103 126V158h40v192h-40L204 222v128z" fill="#f5ead3"/><path d="M208 122h96" stroke="#9d2d25" stroke-width="18" stroke-linecap="round"/>
+</svg>

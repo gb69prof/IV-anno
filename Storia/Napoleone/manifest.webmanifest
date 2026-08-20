@@ -1,0 +1,8 @@
+{
+  "name": "Napoleone — gbprof e Libera", "short_name": "Napoleone",
+  "description": "Percorso didattico interattivo su Napoleone e l'eredità della Rivoluzione.",
+  "lang": "it", "start_url": "./index.html", "scope": "./", "display": "standalone", "orientation": "any",
+  "background_color": "#030b18", "theme_color": "#08182f",
+  "icons": [{ "src": "assets/img/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },{ "src": "assets/img/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }],
+  "shortcuts": [{ "name": "Lezioni", "short_name": "Lezioni", "url": "app.html#lezioni", "icons": [{ "src": "assets/img/icons/icon-192.png", "sizes": "192x192" }] },{ "name": "Laboratorio", "short_name": "Laboratorio", "url": "app.html#laboratorio", "icons": [{ "src": "assets/img/icons/icon-192.png", "sizes": "192x192" }] },{ "name": "Quiz finale", "short_name": "Quiz", "url": "app.html#quiz", "icons": [{ "src": "assets/img/icons/icon-192.png", "sizes": "192x192" }] }]
+}
