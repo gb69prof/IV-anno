@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Unità d'Italia</title><desc id="desc">Una carta avorio attraversata da sette nodi collegati</desc>
+  <rect width="512" height="512" rx="112" fill="#233746"/>
+  <path d="M202 72l69 24 31 78-15 71 52 83-39 47-66-77-49-61-33-77z" fill="#efe4cf" stroke="#c38a49" stroke-width="13" stroke-linejoin="round"/>
+  <path d="M209 99C345 152 122 229 321 342" fill="none" stroke="#a65044" stroke-width="12" stroke-linecap="round"/>
+  <g fill="#c38a49" stroke="#233746" stroke-width="7"><circle cx="214" cy="102" r="16"/><circle cx="276" cy="152" r="16"/><circle cx="221" cy="210" r="16"/><circle cx="272" cy="271" r="16"/><circle cx="319" cy="342" r="16"/></g>
+</svg>

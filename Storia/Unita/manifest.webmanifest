@@ -1,0 +1,16 @@
+{
+  "name": "L'Unità d'Italia - gbprof e Libera",
+  "short_name": "Unità d'Italia",
+  "description": "Percorso storico interattivo dall'Italia del 1849 a Roma capitale.",
+  "lang": "it",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f1eee8",
+  "theme_color": "#233746",
+  "icons": [
+    { "src": "assets/img/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/img/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

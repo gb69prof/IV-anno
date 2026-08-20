@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="t d">
+  <title id="t">L'Italia fra il 1849 e il 1870</title><desc id="d">Composizione cartografica originale con una penisola frammentata che diventa uno Stato incompleto</desc>
+  <defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#142936"/><stop offset="1" stop-color="#40586a"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="20" stdDeviation="24" flood-opacity=".35"/></filter></defs>
+  <rect width="1600" height="1000" fill="url(#g)"/>
+  <g opacity=".13" stroke="#fff"><path d="M0 160h1600M0 320h1600M0 480h1600M0 640h1600M0 800h1600"/><path d="M200 0v1000M400 0v1000M600 0v1000M800 0v1000M1000 0v1000M1200 0v1000M1400 0v1000"/></g>
+  <g transform="translate(920 100) scale(1.05)" filter="url(#s)"><path d="M150 0l126 36 57 140-27 127 94 149-70 83-119-138-89-110-59-139z" fill="#efe4cf" stroke="#d2a25e" stroke-width="10"/><path d="M111 550l143-35 152 49-62 76-195 9z" fill="#efe4cf" stroke="#d2a25e" stroke-width="10"/><path d="M145 57l132 70M120 170l197 63M156 300l186 64M211 397l120 139" stroke="#a65044" stroke-width="13" opacity=".78"/><g fill="#d2a25e" stroke="#233746" stroke-width="7"><circle cx="153" cy="57" r="17"/><circle cx="276" cy="126" r="17"/><circle cx="121" cy="170" r="17"/><circle cx="317" cy="233" r="17"/><circle cx="156" cy="300" r="17"/><circle cx="341" cy="364" r="17"/><circle cx="330" cy="535" r="17"/></g></g>
+  <g font-family="Georgia,serif" fill="#fff" opacity=".13"><text x="70" y="175" font-size="130">1849</text><text x="72" y="910" font-size="180">1870</text></g>
+  <path d="M160 500H780" stroke="#d2a25e" stroke-width="5"/><g fill="#d2a25e"><circle cx="160" cy="500" r="12"/><circle cx="365" cy="500" r="12"/><circle cx="570" cy="500" r="12"/><circle cx="780" cy="500" r="12"/></g>
+</svg>
