@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 760" role="img" aria-labelledby="title description">
+  <title id="title">Italia amministrativa dopo l'unificazione</title>
+  <desc id="description">Schema territoriale e gerarchico di Stato, prefetto, provincia e comune</desc>
+  <rect width="1100" height="760" fill="#f4efe5"/>
+  <text x="48" y="58" font-family="Georgia,serif" font-size="36" fill="#293a32">Unificare il territorio, dirigere dal centro</text>
+  <g transform="translate(85 105) scale(.72)">
+    <path d="M170 0l104 28 48 116-18 74-30 79 48 78 54 86-91 64 62 99-69 82-119-139-89-110-59-139 45-95-47-91z" fill="#d9c9a8" stroke="#293a32" stroke-width="8"/>
+    <path d="M111 720l143-35 152 49-62 76-195 9z" fill="#d9c9a8" stroke="#293a32" stroke-width="8"/>
+    <g fill="#8f493c" stroke="#f4efe5" stroke-width="5">
+      <circle cx="205" cy="105" r="16"/><circle cx="247" cy="220" r="16"/><circle cx="225" cy="340" r="16"/>
+      <circle cx="295" cy="455" r="16"/><circle cx="280" cy="585" r="16"/><circle cx="260" cy="735" r="16"/>
+    </g>
+  </g>
+  <g transform="translate(510 125)" font-family="system-ui" fill="#293a32">
+    <rect width="470" height="95" rx="16" fill="#293a32"/>
+    <text x="235" y="58" text-anchor="middle" fill="#fff" font-size="26" font-weight="800">MINISTERI CENTRALI</text>
+    <path d="M235 95v56" stroke="#ba9554" stroke-width="5"/>
+    <rect y="151" width="470" height="105" rx="16" fill="#e4d6bb" stroke="#ba9554" stroke-width="3"/>
+    <text x="235" y="194" text-anchor="middle" font-size="26" font-weight="850">PREFETTO</text>
+    <text x="235" y="226" text-anchor="middle" font-size="17">rappresenta il Governo nella provincia</text>
+    <path d="M235 256v56" stroke="#ba9554" stroke-width="5"/>
+    <rect y="312" width="470" height="105" rx="16" fill="#fffaf0" stroke="#cbbd9f" stroke-width="3"/>
+    <text x="235" y="356" text-anchor="middle" font-size="26" font-weight="850">PROVINCIA</text>
+    <text x="235" y="388" text-anchor="middle" font-size="17">consiglio elettivo ristretto · deputazione</text>
+    <path d="M235 417v56" stroke="#ba9554" stroke-width="5"/>
+    <rect y="473" width="470" height="118" rx="16" fill="#fffaf0" stroke="#cbbd9f" stroke-width="3"/>
+    <text x="235" y="518" text-anchor="middle" font-size="26" font-weight="850">COMUNE</text>
+    <text x="235" y="551" text-anchor="middle" font-size="17">consiglio eletto · sindaco nominato dal re</text>
+    <text x="235" y="580" text-anchor="middle" font-size="15" fill="#687069">autonomia amministrativa sotto vigilanza</text>
+  </g>
+  <text x="48" y="744" font-family="system-ui" font-size="15" fill="#687069">Fonte: legge 20 marzo 1865, n. 2248. Schema didattico originale.</text>
+</svg>

@@ -7,7 +7,7 @@ window.HIST_DATA = {
     thesis: "L'unificazione non fu l'esecuzione di un piano già pronto. Nacque dall'interazione contingente fra monarchia sabauda, Parlamento, diplomazia francese, guerre, reti patriottiche, rivoluzioni locali, iniziativa garibaldina e crisi degli Stati preunitari. Il nuovo Regno estese istituzioni piemontesi a territori differenti, costruendo cittadinanza e amministrazione ma anche esclusioni, resistenze e conflitti.",
     workshopIntro: "Costruisci una spiegazione che distingua condizioni, occasioni, decisioni e risultati imprevisti. Usa almeno una carta e due fonti; indica anche un'alternativa allora possibile e una categoria sociale rimasta ai margini del voto.",
     previous: { title: "Rivoluzioni del 1848-1849", url: "../1849/" },
-    next: { title: "Italia postunitaria - tappa futura", url: "#" }
+    next: { title: "La Destra storica", url: "../Destra-storica/" }
   },
   lessons: [
     {

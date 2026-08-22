@@ -1,0 +1,15 @@
+{
+  "name": "La Destra storica — costruire lo Stato italiano",
+  "short_name": "Destra storica",
+  "description": "Percorso didattico interattivo sull'Italia 1861-1876.",
+  "lang": "it",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eeeae1",
+  "theme_color": "#293a32",
+  "icons": [
+    {"src":"assets/img/icons/icon-192.png","sizes":"192x192","type":"image/png"},
+    {"src":"assets/img/icons/icon-512.png","sizes":"512x512","type":"image/png"}
+  ]
+}
