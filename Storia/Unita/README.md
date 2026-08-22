@@ -26,4 +26,4 @@ Per installare la PWA, aprire la versione pubblicata in un browser compatibile e
 
 `python3 Storia/Unita/tools/generate_pdfs.py` rigenera sette lezioni, `fonti-in-dialogo.pdf` e `mappe-e-schemi.pdf`. Fonti, provenienze e licenze sono documentate in `ATTRIBUTIONS.md`.
 
-Sequenza: **Rivoluzioni del 1848-1849 → Unità d'Italia → Italia postunitaria (tappa futura)**.
+Sequenza: **Rivoluzioni del 1848-1849 → Unità d'Italia → Destra storica**.

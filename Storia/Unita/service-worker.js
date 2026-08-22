@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "storia-unita-";
-const CACHE = `${CACHE_PREFIX}v1`;
+const CACHE = `${CACHE_PREFIX}v2`;
 const CORE = [
   "./", "index.html", "app.html", "css/style.css", "js/data.js", "js/home.js", "js/app.js", "manifest.webmanifest",
   "assets/img/icons/icon.svg", "assets/img/icons/icon-192.png", "assets/img/icons/icon-512.png", "assets/img/covers/unita-cover.svg",
