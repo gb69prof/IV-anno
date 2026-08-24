@@ -1,0 +1,12 @@
+{
+  "name": "Crispi e la crisi di fine secolo — 1887-1901",
+  "short_name": "Crispi 1887-1901",
+  "description": "Percorso didattico interattivo su riforme, autoritarismo, conflitto sociale, colonialismo e crisi dello Stato liberale.",
+  "lang": "it",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f0ece6",
+  "theme_color": "#352f4a",
+  "icons": [{"src":"assets/img/icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}
