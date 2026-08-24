@@ -7,7 +7,7 @@ window.HIST_DATA = {
     thesis: "Fra il 1861 e il 1876 la Destra storica rese governabile il nuovo Regno: uniformò istituzioni e codici, allargò infrastrutture e mercato, consolidò il credito pubblico e completò quasi interamente l'unità territoriale. Lo fece però con un suffragio strettissimo, un'amministrazione accentrata, un prelievo fiscale socialmente diseguale e un uso esteso della forza. Il risultato fu uno Stato più solido, ma non ancora una comunità politica capace di includere la maggioranza degli italiani.",
     workshopIntro: "Valuta insieme capacità e costi della classe dirigente. Una buona tesi deve distinguere ciò che nel 1861 appariva necessario, le alternative allora discusse, chi poteva decidere, chi pagava e quali problemi rimasero aperti.",
     previous: { title: "Unità d'Italia", url: "../Unita/" },
-    next: { title: "Sinistra storica - tappa futura", url: "#" }
+    next: { title: "Sinistra storica", url: "../Sinistra-storica/" }
   },
   lessons: [
     {

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">La Sinistra storica</title><desc id="desc">Una scheda elettorale e un libro aperto, simboli di voto e istruzione</desc>
+  <rect width="512" height="512" rx="112" fill="#352f4a"/>
+  <path d="M96 135q80-38 160 5v238q-80-42-160-5z" fill="#f0e4cb" stroke="#c49a55" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M416 135q-80-38-160 5v238q80-42 160-5z" fill="#fffaf4" stroke="#c49a55" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M256 140v238" fill="none" stroke="#c49a55" stroke-width="10"/>
+  <rect x="162" y="68" width="188" height="212" rx="18" fill="#fffaf4" stroke="#a24f5f" stroke-width="12" transform="rotate(7 256 174)"/>
+  <g fill="none" stroke="#6a5b78" stroke-width="9" stroke-linecap="round" transform="rotate(7 256 174)"><path d="M205 123h100M205 168h100M205 213h100"/></g>
+  <path d="m181 153 15 17 30-43" fill="none" stroke="#a24f5f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" transform="rotate(7 256 174)"/>
+</svg>
