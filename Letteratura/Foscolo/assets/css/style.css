@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -1905,6 +1909,10 @@ body[data-page="lesson"] .lesson-sidebar {
   border-radius: 0.45rem;
   background: rgba(6, 29, 47, 0.97);
   box-shadow: var(--shadow);
+}
+
+body[data-page="lesson"] .ottocento-bridge-hub {
+  bottom: calc(var(--study-dock-height) + 0.85rem) !important;
 }
 
 @media (max-width: 1080px) and (min-width: 821px) {

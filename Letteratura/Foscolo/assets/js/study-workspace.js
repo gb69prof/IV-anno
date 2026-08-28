@@ -756,7 +756,10 @@
     if (!contextCards.length || index === activeContextIndex) return;
     activeContextIndex = index;
     const hint = normalizeKey(hints[index] || hints[hints.length - 1] || "");
-    const card = contextCards.find(item => normalizeKey(item.textContent).includes(hint)) || contextCards[0];
+    const mapCards = contextCards.filter(item => item.matches(".lesson-map-card"));
+    const card = mapCards.find(item => normalizeKey(item.textContent).includes(hint))
+      || contextCards.find(item => normalizeKey(item.textContent).includes(hint))
+      || contextCards[0];
     contextCards.forEach(item => item.classList.toggle("is-contextual", item === card));
     const heading = headings[index];
     contextStatus.textContent = heading ? `Collegato a: ${normalizeText(heading.textContent).replace(/^\d+\.\s*/, "")}` : "Materiali della lezione";
