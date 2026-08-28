@@ -1,10 +1,14 @@
 {
   "name": "Ugo Foscolo - PWA didattica",
   "short_name": "Foscolo",
+  "id": "./",
+  "lang": "it",
   "description": "Percorso didattico interattivo su Ugo Foscolo.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
   "background_color": "#061d2f",
   "theme_color": "#061d2f",
   "icons": [

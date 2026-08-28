@@ -1,4 +1,5 @@
-const CACHE_NAME = "foscolo-pwa-v9";
+const CACHE_PREFIX = "foscolo-pwa-";
+const CACHE_NAME = `${CACHE_PREFIX}v10`;
 
 const LOCAL_ASSETS = [
   "./",
@@ -6,8 +7,9 @@ const LOCAL_ASSETS = [
   "./mappe.html",
   "./video.html",
   "./manifest.json",
-  "./assets/css/style.css",
-  "./assets/js/app.js",
+  "./assets/css/style.css?v=10",
+  "./assets/js/app.js?v=10",
+  "./assets/js/study-workspace.js?v=10",
   "./assets/immagini/Foscolo-foto.PNG",
   "./assets/immagini/index.png",
   "./assets/mappe/Alla-sera.PNG",
@@ -25,6 +27,7 @@ const LOCAL_ASSETS = [
   "./lezioni/immagine-del-mondo.html",
   "./lezioni/poetica.html",
   "./lezioni/opere.html",
+  "./lezioni/conclusione.html",
   "./lezioni/ortis-parini.html",
   "./lezioni/alla-sera.html",
   "../rete-pwa/bridge.js?v=2",
@@ -44,7 +47,11 @@ self.addEventListener("activate", (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
+        Promise.all(
+          keys
+            .filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME)
+            .map((key) => caches.delete(key))
+        )
       )
   );
   self.clients.claim();
@@ -55,19 +62,29 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) {
-        return cached;
-      }
+  const requestUrl = new URL(event.request.url);
+  const isHtml = event.request.mode === "navigate" || requestUrl.pathname.endsWith(".html");
 
-      return fetch(event.request).then((response) => {
-        const copy = response.clone();
-        if (response.ok && new URL(event.request.url).origin === self.location.origin) {
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-        }
-        return response;
-      });
-    })
+  if (isHtml) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response.ok && requestUrl.origin === self.location.origin) {
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, response.clone()));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request).then((cached) => cached || caches.match("./index.html")))
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
+      if (response.ok && requestUrl.origin === self.location.origin) {
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, response.clone()));
+      }
+      return response;
+    }))
   );
 });
