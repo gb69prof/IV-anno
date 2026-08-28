@@ -1912,7 +1912,7 @@ body[data-page="lesson"] .lesson-sidebar {
 }
 
 body[data-page="lesson"] .ottocento-bridge-hub {
-  bottom: calc(var(--study-dock-height) + 0.85rem) !important;
+  display: none !important;
 }
 
 @media (max-width: 1080px) and (min-width: 821px) {

@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "foscolo-pwa-";
-const CACHE_NAME = `${CACHE_PREFIX}v11`;
+const CACHE_NAME = `${CACHE_PREFIX}v12`;
 
 const LOCAL_ASSETS = [
   "./",
@@ -7,9 +7,9 @@ const LOCAL_ASSETS = [
   "./mappe.html",
   "./video.html",
   "./manifest.json",
-  "./assets/css/style.css?v=11",
-  "./assets/js/app.js?v=11",
-  "./assets/js/study-workspace.js?v=11",
+  "./assets/css/style.css?v=12",
+  "./assets/js/app.js?v=12",
+  "./assets/js/study-workspace.js?v=12",
   "./assets/immagini/Foscolo-foto.PNG",
   "./assets/immagini/index.png",
   "./assets/mappe/Alla-sera.PNG",

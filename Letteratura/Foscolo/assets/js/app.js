@@ -392,7 +392,7 @@ function youtubeEmbedUrl(url) {
 function setupServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register(`${getRoot()}service-worker.js?v=11`).catch(() => {});
+    navigator.serviceWorker.register(`${getRoot()}service-worker.js?v=12`).catch(() => {});
   });
 }
 
