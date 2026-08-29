@@ -4,26 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#061d2f">
-  <meta name="description" content="Romanticismo — Quaderno operativo: lettura, micro-antologia, appunti, mappe e recupero mirato.">
-  <title>Romanticismo — Quaderno operativo</title>
+  <meta name="description" content="Romanticismo — ambiente di studio: lezione completa, apparato visivo contestuale, appunti, mappe e recupero mirato.">
+  <title>Romanticismo — Ambiente di studio</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./assets/images/icon-192.png">
   <link rel="apple-touch-icon" href="./assets/images/icon-192.png">
-  <link rel="stylesheet" href="./assets/css/styles.css?v=6">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=7">
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
   <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 
   <header class="site-header" aria-label="Intestazione del sito">
-    <a class="brand" href="#home" aria-label="Romanticismo, quaderno operativo: torna alla copertina">
+    <a class="brand" href="#home" aria-label="Romanticismo, ambiente di studio: torna alla copertina">
       <span class="brand-mark" aria-hidden="true">R</span>
-      <span><strong>Romanticismo</strong><small>Quaderno operativo</small></span>
+      <span><strong>Romanticismo</strong><small>Ambiente di studio</small></span>
     </a>
+    <p class="active-title" id="activeTitle" aria-live="polite">Copertina e indice</p>
     <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">
-      <span aria-hidden="true">☰</span> Menu
+      <span aria-hidden="true">☰</span> Indice
     </button>
     <nav class="main-nav" id="mainNav" aria-label="Navigazione principale">
+      <a href="#home">Home</a>
       <a href="#percorso">Percorso</a>
       <a href="#testi">Testi</a>
       <a href="#mappe">Mappe</a>
@@ -31,6 +33,7 @@
       <a href="#verifica">Verifica</a>
       <button class="nav-button reading-control" id="fontToggle" type="button" aria-label="Cambia dimensione del testo" title="Cambia dimensione del testo">Aa</button>
       <button class="nav-button reading-control" id="themeToggle" type="button" aria-label="Attiva tema scuro" title="Cambia tema di lettura">Tema</button>
+      <button class="nav-button" id="resumeReading" type="button" hidden>Riprendi</button>
       <button class="nav-button" id="notebookOpen" type="button" aria-expanded="false" aria-controls="notebookPanel">Taccuino</button>
       <button class="nav-button install-button" id="installButton" type="button">Installa</button>
     </nav>
@@ -47,7 +50,7 @@
 
   <main id="contenuto">
     <section class="cover-section" id="home" aria-labelledby="coverTitle">
-      <h1 class="sr-only" id="coverTitle">Romanticismo — Quaderno operativo: dalle rovine all’infinito</h1>
+      <h1 class="sr-only" id="coverTitle">Romanticismo — Ambiente di studio: dalle rovine all’infinito</h1>
       <div class="cover-frame">
         <img src="./assets/images/copertina-romanticismo.webp"
           alt="Copertina illustrata: una città ordinata si spezza in rovine e conduce verso montagne, notte e infinito. Contiene le porte del percorso romantico."
@@ -80,9 +83,9 @@
 
       <div class="cover-actions" role="note" aria-label="Istruzioni della copertina">
         <div>
-          <p class="kicker">Quaderno operativo</p>
-          <p><strong>Qui lavori sui concetti:</strong> leggi, evidenzia, raccogli citazioni, annota e verifica gli errori.</p>
-          <p class="companion-note">Per la spiegazione distesa usa la <a href="../Romanticismo/">lezione principale sul Romanticismo</a>.</p>
+          <p class="kicker">Ambiente di studio</p>
+          <p><strong>Qui trovi l’intero percorso:</strong> leggi la lezione, osserva le mappe, evidenzia, raccogli citazioni, annota e recupera gli errori.</p>
+          <p class="companion-note">La <a href="../Romanticismo/">PWA introduttiva sul Romanticismo</a> resta disponibile come percorso parallelo, non necessario per comprendere questa lezione.</p>
         </div>
         <a class="primary-button" href="#prologo">Inizia il lavoro <span aria-hidden="true">→</span></a>
       </div>
@@ -96,10 +99,14 @@
           <li><a href="#letteratura-crisi"><span>4</span> La letteratura della crisi</a></li>
           <li><a href="#vie-europee"><span>5</span> Le vie europee</a></li>
           <li><a href="#italia"><span>6</span> La via italiana</a></li>
-          <li><a href="#conclusione"><span>7</span> Che cosa resta</a></li>
+          <li><a href="#romanzo-storico"><span>7</span> Il romanzo storico</a></li>
+          <li><a href="#conclusione"><span>8</span> Che cosa resta</a></li>
         </ol>
       </nav>
     </section>
+
+    <div class="study-workspace">
+      <div class="lesson-column" id="lessonColumn">
 
     <section class="chapter prologue" id="prologo" aria-labelledby="prologoTitle">
       <div class="chapter-inner narrow">
@@ -501,6 +508,42 @@
       </div>
     </section>
 
+    <section class="chapter midnight" id="romanzo-storico" aria-labelledby="romanzoTitle">
+      <div class="chapter-inner">
+        <header class="chapter-heading light-heading">
+          <p class="chapter-number">11</p>
+          <div><p class="kicker">La storia diventa racconto</p><h2 id="romanzoTitle">Il romanzo storico</h2></div>
+        </header>
+        <p class="generating-question">Come può una vicenda inventata far comprendere meglio la realtà storica?</p>
+        <p class="lead light-lead">Uno dei generi decisivi dell’età romantica è il romanzo storico. Walter Scott ne offre il modello europeo: colloca personaggi inventati dentro un passato riconoscibile e li fa incontrare con conflitti, istituzioni e trasformazioni reali.</p>
+        <div class="history-novel-grid">
+          <article><h3>La storia entra nella vita</h3><p>Il lettore ottocentesco non cerca più soltanto esempi morali astratti o imprese di grandi personaggi. Vuole comprendere come la storia agisca nelle case, nelle paure, nella lingua, nei rapporti sociali e nelle ingiustizie.</p></article>
+          <article><h3>Lo sfondo diventa forza</h3><p>Il passato non è una scenografia decorativa. Condiziona le possibilità dei personaggi, distribuisce potere e vulnerabilità, produce incontri e separazioni. La storia diventa ambiente e destino collettivo.</p></article>
+          <article><h3>L’invenzione rende visibile</h3><p>Il personaggio immaginario consente di mostrare ciò che una cronaca politica spesso tace: la vita quotidiana, la paura, i gesti, le conseguenze concrete delle decisioni prese dai potenti.</p></article>
+        </div>
+        <div class="comparison-table-wrap" tabindex="0" role="region" aria-label="Confronto tra Walter Scott e Alessandro Manzoni">
+          <table class="comparison-table">
+            <caption>Dal modello di Scott alla trasformazione manzoniana</caption>
+            <thead><tr><th scope="col">Elemento</th><th scope="col">Walter Scott</th><th scope="col">Alessandro Manzoni</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Storia</th><td>Ricostruzione vivace, pittoresca e nazionale.</td><td>Ricostruzione documentata, morale e attenta al vero storico.</td></tr>
+              <tr><th scope="row">Personaggi</th><td>Mediatori tra fazioni e conflitti storici.</td><td>Umili e potenti dentro una società segnata da violenza e ingiustizia.</td></tr>
+              <tr><th scope="row">Invenzione</th><td>Rende vivo il passato e coinvolge il lettore.</td><td>Deve essere verosimile e mostrare ciò che la storiografia non racconta.</td></tr>
+              <tr><th scope="row">Finalità</th><td>Intrattenimento, memoria e identità nazionale.</td><td>Responsabilità civile, educazione morale e interrogazione religiosa della storia.</td></tr>
+              <tr><th scope="row">Lingua</th><td>Colore storico e identità locale.</td><td>Ricerca di una lingua nazionale viva e comprensibile.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <blockquote class="large-quote">Con <em>I Promessi sposi</em> Manzoni non copia Scott: ne trasforma il modello. Il romanzo non deve soltanto far vedere il passato; deve aiutare a comprendere il presente e la coscienza dell’uomo dentro la storia.</blockquote>
+        <div class="apparatus dark-apparatus">
+          <div><h3>Sintesi</h3><p>Il romanzo storico unisce invenzione verosimile e processi reali per mostrare la storia vissuta dagli individui.</p></div>
+          <div><h3>Comprendi</h3><p>Perché la storia non può essere soltanto uno sfondo decorativo?</p></div>
+          <div><h3>Interpreta</h3><p>Che cosa permette di vedere un personaggio inventato che un documento politico può tacere?</p></div>
+          <div><h3>Verso Manzoni</h3><p>Vero storico, verosimile poetico e responsabilità morale correggono il pittoresco fine a sé stesso.</p></div>
+        </div>
+      </div>
+    </section>
+
     <section class="chapter conclusion" id="conclusione" aria-labelledby="conclusioneTitle">
       <div class="chapter-inner">
         <p class="kicker">Conclusione</p>
@@ -521,7 +564,7 @@
     <section class="chapter parchment essentials" id="saperi" aria-labelledby="saperiTitle">
       <div class="chapter-inner">
         <header class="chapter-heading">
-          <p class="chapter-number">11</p>
+          <p class="chapter-number">12</p>
           <div><p class="kicker">Ciò che deve restare</p><h2 id="saperiTitle">Saperi irrinunciabili</h2></div>
         </header>
         <ol class="essential-list">
@@ -533,11 +576,12 @@
           <li>Germania, Inghilterra, Francia e Italia rispondono alla crisi in modi differenti.</li>
           <li>Il Romanticismo italiano trasforma apertura europea e libertà formale in progetto civile.</li>
           <li>Romanticismo e Risorgimento si intrecciano, ma non coincidono.</li>
+          <li>Il romanzo storico intreccia personaggi inventati e processi reali per mostrare come la storia agisca nella vita concreta.</li>
           <li>Manzoni assume storia, vero, popolo e responsabilità; Leopardi condivide i problemi moderni ma contesta le risposte romantiche italiane.</li>
           <li>L’eredità romantica è ambivalente: libera e insieme può costruire nuovi miti.</li>
         </ol>
 
-        <h3 class="subsection-title">Vocabolario essenziale</h3>
+        <h3 class="subsection-title" id="vocabolario">Vocabolario essenziale</h3>
         <div class="glossary">
           <details><summary>Romanticismo</summary><p>Movimento culturale europeo plurale che ridefinisce soggetto, storia, natura, arte e nazione tra la fine del Settecento e l’Ottocento.</p></details>
           <details><summary>Sublime</summary><p>Esperienza di una grandezza o potenza che attrae e sgomenta, eccedendo la misura ordinaria.</p></details>
@@ -560,11 +604,12 @@
     <section class="chapter quiz-section" id="verifica" aria-labelledby="verificaTitle">
       <div class="chapter-inner">
         <header class="chapter-heading light-heading">
-          <p class="chapter-number">12</p>
+          <p class="chapter-number">13</p>
           <div><p class="kicker">Verifica ragionata</p><h2 id="verificaTitle">Non basta ricordare: bisogna collegare</h2></div>
         </header>
         <div class="quiz-intro">
-          <p>Dieci domande su conoscenze, causa-effetto, confronti e interpretazione. Ricevi subito la spiegazione; alla fine trovi percentuale, voto orientativo e recupero soltanto degli errori.</p>
+          <p>Undici domande su conoscenze, causa-effetto, confronti e interpretazione. Ricevi subito la spiegazione; alla fine trovi percentuale, voto orientativo e recupero soltanto degli errori.</p>
+          <p class="grade-formula"><strong>Formula:</strong> voto = massimo tra 1 e l’arrotondamento di percentuale ÷ 10.</p>
           <button type="button" class="primary-button" id="quizStart">Inizia la verifica</button>
         </div>
         <div id="quizForm" class="quiz-form" hidden></div>
@@ -611,11 +656,68 @@
         <a class="download-link" href="./assets/docs/Dispensa_Romanticismo_gbprof_Libera.docx" download>Scarica la dispensa di partenza in formato Word</a>
       </div>
     </section>
+
+      </div>
+
+      <aside class="study-rail" aria-label="Apparato visivo e taccuino">
+        <section class="context-panel" id="contextPanel" aria-labelledby="contextTitle">
+          <div class="context-heading">
+            <div><p class="kicker">Osserva mentre leggi</p><h2 id="contextTitle">Le contraddizioni romantiche</h2></div>
+            <span id="contextSection">Prologo</span>
+          </div>
+          <button class="context-image-button" id="contextImageButton" type="button"
+            data-image="./assets/images/tavola-contraddizioni.png" data-title="Le contraddizioni romantiche">
+            <img id="contextImage" src="./assets/images/tavola-contraddizioni.png"
+              alt="Tavola concettuale sulle contraddizioni romantiche" decoding="async">
+            <span>Ingrandisci la tavola</span>
+          </button>
+          <p class="context-description" id="contextDescription">La crisi romantica non elimina la ragione: mette in relazione ordine e inquietudine, libertà e appartenenza, ideale e realtà.</p>
+          <div class="context-gallery" role="group" aria-label="Scegli una tavola">
+            <button type="button" data-context-image="./assets/images/tavola-contraddizioni.png" data-context-title="Le contraddizioni romantiche" data-context-alt="Tavola concettuale sulle contraddizioni romantiche">Contraddizioni</button>
+            <button type="button" data-context-image="./assets/images/tavola-romanticismo-europeo.png" data-context-title="Il Romanticismo europeo" data-context-alt="Tavola concettuale sulle diverse vie del Romanticismo europeo">Europa</button>
+            <button type="button" data-context-image="./assets/images/tavola-romanticismo-italiano.png" data-context-title="Il Romanticismo italiano" data-context-alt="Tavola concettuale sul Romanticismo italiano">Italia</button>
+          </div>
+        </section>
+
+        <aside class="notebook-panel" id="notebookPanel" aria-labelledby="notebookTitle" aria-hidden="true">
+          <div class="notebook-shell">
+            <div class="dialog-header"><div><p class="kicker">Spazio personale sul dispositivo</p><h2 id="notebookTitle">Taccuino di studio</h2></div><button type="button" id="notebookClose" aria-label="Chiudi il taccuino">×</button></div>
+            <div class="notebook-content">
+              <label for="notebookText">Appunti miei</label>
+              <textarea id="notebookText" rows="11" placeholder="Scrivi qui relazioni, domande, confronti…"></textarea>
+              <p class="save-status" id="saveStatus" aria-live="polite">Gli appunti restano soltanto in questo browser.</p>
+
+              <section class="citation-box" aria-labelledby="citationTitle">
+                <div class="citation-heading">
+                  <h3 id="citationTitle">Citazioni dalla lettura</h3>
+                  <span id="citationCount">0</span>
+                </div>
+                <p class="citation-help">Seleziona o evidenzia una frase e portala qui: conserverò anche la sezione di provenienza.</p>
+                <div class="citation-list" id="citationList"></div>
+              </section>
+
+              <div class="notebook-actions">
+                <button type="button" id="notebookSave">Salva</button>
+                <button type="button" id="notebookCopy">Copia tutto</button>
+                <button type="button" id="notebookExport">Scarica TXT</button>
+                <button type="button" class="danger-button" id="notebookClear">Cancella tutto</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </aside>
+    </div>
   </main>
+
+  <nav class="study-dock" aria-label="Strumenti per sedimentare">
+    <a href="#saperi">Saperi irrinunciabili</a>
+    <a href="#vocabolario">Vocabolario</a>
+    <a href="#verifica">Test e recupero</a>
+  </nav>
 
   <footer class="site-footer">
     <p>© 2026 gbprof e Libera — PWA didattica</p>
-    <div><a href="#home">Torna alla copertina</a><a href="#saperi">Ripassa</a><button id="notebookFooter" type="button">Apri il taccuino</button></div>
+    <div><a href="#home">Torna alla copertina</a><a href="#saperi">Ripassa</a><button id="notebookFooter" type="button">Apri il taccuino</button><button id="resetStudyData" type="button">Azzera i dati di studio</button></div>
   </footer>
 
   <dialog class="map-dialog" id="mapDialog" aria-labelledby="mapDialogTitle">
@@ -640,145 +742,36 @@
     </div>
   </dialog>
 
-  <aside class="notebook-panel" id="notebookPanel" aria-labelledby="notebookTitle" aria-hidden="true">
-    <div class="notebook-shell">
-      <div class="dialog-header"><div><p class="kicker">Spazio personale sul dispositivo</p><h2 id="notebookTitle">Taccuino di studio</h2></div><button type="button" id="notebookClose" aria-label="Chiudi il taccuino">×</button></div>
-      <div class="notebook-content">
-        <label for="notebookText">Appunti miei</label>
-        <textarea id="notebookText" rows="11" placeholder="Scrivi qui relazioni, domande, confronti…"></textarea>
-        <p class="save-status" id="saveStatus" aria-live="polite">Gli appunti restano soltanto in questo browser.</p>
-
-        <section class="citation-box" aria-labelledby="citationTitle">
-          <div class="citation-heading">
-            <h3 id="citationTitle">Citazioni dalla lettura</h3>
-            <span id="citationCount">0</span>
-          </div>
-          <p class="citation-help">Seleziona o evidenzia una frase e portala qui: conserverò anche la sezione di provenienza.</p>
-          <div class="citation-list" id="citationList"></div>
-        </section>
-
-        <div class="notebook-actions">
-          <button type="button" id="notebookSave">Salva</button>
-          <button type="button" id="notebookCopy">Copia tutto</button>
-          <button type="button" id="notebookExport">Esporta .txt</button>
-          <button type="button" class="danger-button" id="notebookClear">Cancella tutto</button>
-        </div>
-      </div>
-    </div>
-  </aside>
-
   <div class="toast" id="toast" aria-live="polite"></div>
 
   <template id="map-transition" data-title="Dal mondo ordinato alle fratture">
-    <div class="concept-map vertical-map">
-      <div class="map-node source"><strong>Mondo ordinato</strong><span>ragione · progresso · misura · modelli</span></div>
-      <div class="map-arrow">↓</div>
-      <div class="map-node process"><strong>La storia mette alla prova le idee</strong><span>rivoluzione · impero · restaurazione</span></div>
-      <div class="map-arrow">↓</div>
-      <div class="map-row">
-        <div class="map-node">limiti della ragione</div><div class="map-node">io inquieto</div><div class="map-node">forme storiche</div>
-      </div>
-      <div class="map-arrow">↓</div>
-      <div class="map-node outcome"><strong>Nuova domanda</strong><span>come comprendere una realtà umana non riducibile al calcolo?</span></div>
-    </div>
+    <figure class="map-image-figure"><img src="./assets/maps/dall-ordine-alla-crepa.svg" alt="Mappa: il mondo ordinato entra nella prova della storia, che mette in crisi ragione, io e forme e produce una nuova domanda sul reale."><figcaption>Dall’ordine alla crepa: la catena causale che apre il percorso.</figcaption></figure>
   </template>
 
   <template id="map-fractures" data-title="Le quattro fratture">
-    <div class="concept-map radial-map">
-      <div class="map-center"><strong>Crisi della modernità</strong><span>l’ordine non basta</span></div>
-      <div class="map-row four">
-        <div class="map-node"><strong>Storia</strong><span>promesse ↔ conflitti</span></div>
-        <div class="map-node"><strong>Ragione</strong><span>conoscenza ↔ limite</span></div>
-        <div class="map-node"><strong>Io</strong><span>unità ↔ desiderio</span></div>
-        <div class="map-node"><strong>Tradizione</strong><span>modello ↔ storicità</span></div>
-      </div>
-      <div class="map-arrow">↓</div>
-      <div class="map-node outcome"><strong>Esito comune</strong><span>la realtà è processo, relazione e conflitto</span></div>
-    </div>
+    <figure class="map-image-figure"><img src="./assets/maps/quattro-fratture.svg" alt="Mappa: la crisi della modernità si manifesta nelle fratture di storia, ragione, io e tradizione, che fanno apparire la realtà come processo e conflitto."><figcaption>Le quattro fratture e il loro esito comune.</figcaption></figure>
   </template>
 
   <template id="map-world" data-title="La nuova immagine del mondo">
-    <div class="concept-map network-map">
-      <div class="map-row">
-        <div class="map-node"><strong>Uomo</strong><span>finito → infinito</span></div>
-        <div class="map-node"><strong>Natura</strong><span>organismo · simbolo · sublime</span></div>
-        <div class="map-node"><strong>Storia</strong><span>identità delle epoche</span></div>
-      </div>
-      <div class="map-center"><strong>Relazione</strong><span>nessun elemento si comprende da solo</span></div>
-      <div class="map-row">
-        <div class="map-node"><strong>Popolo</strong><span>memoria · lingua · pubblico</span></div>
-        <div class="map-node"><strong>Nazione</strong><span>cultura → politica</span></div>
-        <div class="map-node"><strong>Arte</strong><span>visibile ↔ invisibile</span></div>
-      </div>
-    </div>
+    <figure class="map-image-figure"><img src="./assets/maps/nuova-immagine.svg" alt="Mappa: uomo, natura e storia si comprendono attraverso la relazione, dalla quale emergono popolo, nazione e arte."><figcaption>La rete romantica: nessun elemento si comprende da solo.</figcaption></figure>
   </template>
 
   <template id="map-literature" data-title="La letteratura della crisi">
-    <div class="concept-map vertical-map">
-      <div class="map-node source"><strong>Nuova immagine del mondo</strong></div>
-      <div class="map-arrow">↓ produce ↓</div>
-      <div class="map-row">
-        <div class="map-node"><strong>Forme</strong><span>mescolanza e libertà</span></div>
-        <div class="map-node"><strong>Generi</strong><span>lirica · romanzo · dramma</span></div>
-        <div class="map-node"><strong>Lingua</strong><span>simbolo · evocazione</span></div>
-      </div>
-      <div class="map-row">
-        <div class="map-node"><strong>Autore</strong><span>ribelle · testimone · educatore</span></div>
-        <div class="map-node"><strong>Pubblico</strong><span>editoria · periodici · lettori</span></div>
-      </div>
-      <div class="map-arrow">↓</div>
-      <div class="map-node outcome"><strong>Letteratura come conoscenza e intervento</strong></div>
-    </div>
+    <figure class="map-image-figure"><img src="./assets/maps/nuova-letteratura.svg" alt="Mappa: la nuova immagine del mondo produce forme libere, generi mobili e linguaggio evocativo, trasformando autore e pubblico."><figcaption>Dalla nuova immagine del mondo alle nuove forme letterarie.</figcaption></figure>
   </template>
 
   <template id="map-europe" data-title="I Romanticismi europei a confronto">
-    <div class="concept-map comparison-map">
-      <div class="map-row four">
-        <div class="map-node"><strong>Germania</strong><span>Come raggiungere l’assoluto?<br>frammento · ironia · Sehnsucht</span></div>
-        <div class="map-node"><strong>Inghilterra</strong><span>Come ricostruire uomo e natura?<br>memoria · sublime · romanzo</span></div>
-        <div class="map-node"><strong>Francia</strong><span>Come liberare le forme?<br>storia · sublime e grottesco</span></div>
-        <div class="map-node"><strong>Italia</strong><span>Come parlare a una nazione senza Stato?<br>pubblico · lingua · funzione civile</span></div>
-      </div>
-      <div class="map-arrow">↓</div>
-      <div class="map-node outcome"><strong>Unità nella pluralità</strong><span>una crisi comune, risposte storicamente diverse</span></div>
-    </div>
+    <figure class="map-image-figure"><img src="./assets/maps/vie-europee.svg" alt="Mappa: Germania, Inghilterra, Francia e Italia trasformano una crisi comune in quattro domande storicamente differenti."><figcaption>Una costellazione europea: unità nella pluralità.</figcaption></figure>
   </template>
 
   <template id="map-italy" data-title="Il Romanticismo italiano">
-    <div class="concept-map vertical-map">
-      <div class="map-node source"><strong>Restaurazione e frammentazione</strong><span>egemonia austriaca · Milano · censura</span></div>
-      <div class="map-arrow">↓</div>
-      <div class="map-node process"><strong>1816: apertura europea</strong><span>Madame de Staël · traduzioni · polemica</span></div>
-      <div class="map-arrow">↓</div>
-      <div class="map-row">
-        <div class="map-node"><strong>Pubblico</strong><span>parlare ai vivi</span></div>
-        <div class="map-node"><strong>Lingua</strong><span>comunicazione nazionale</span></div>
-        <div class="map-node"><strong>Storia</strong><span>memoria e romanzo</span></div>
-      </div>
-      <div class="map-arrow">↓</div>
-      <div class="map-node outcome"><strong>Letteratura civile</strong><span>nazione culturale prima dello Stato</span></div>
-    </div>
+    <figure class="map-image-figure"><img src="./assets/maps/via-italiana.svg" alt="Mappa: Restaurazione e frammentazione conducono al dibattito del 1816; pubblico, lingua e storia confluiscono nella letteratura civile."><figcaption>La via italiana: apertura europea e costruzione della nazione culturale.</figcaption></figure>
   </template>
 
   <template id="map-final" data-title="Mappa finale del percorso">
-    <div class="concept-map vertical-map final-map">
-      <div class="map-node source"><strong>1 · Mondo ordinato</strong><span>ragione · progresso · misura</span></div>
-      <div class="map-arrow">↓</div>
-      <div class="map-node"><strong>2 · Fratture</strong><span>storia · ragione · io · tradizione</span></div>
-      <div class="map-arrow">↓</div>
-      <div class="map-node"><strong>3 · Nuova immagine</strong><span>uomo · natura · storia · popolo · nazione · arte</span></div>
-      <div class="map-arrow">↓</div>
-      <div class="map-node"><strong>4 · Nuova letteratura</strong><span>forme · generi · linguaggio · autore · pubblico</span></div>
-      <div class="map-arrow">↓</div>
-      <div class="map-row">
-        <div class="map-node"><strong>Vie europee</strong><span>risposte plurali</span></div>
-        <div class="map-node"><strong>Via italiana</strong><span>letteratura civile</span></div>
-      </div>
-      <div class="map-arrow">↓</div>
-      <div class="map-node outcome"><strong>Eredità moderna</strong><span>libertà e ambivalenza</span></div>
-    </div>
+    <figure class="map-image-figure"><img src="./assets/maps/mappa-finale.svg" alt="Mappa finale: mondo ordinato, fratture, nuova immagine e nuova letteratura conducono alle vie europee e italiana e all’eredità moderna."><figcaption>L’intera catena interpretativa del percorso.</figcaption></figure>
   </template>
 
-  <script src="./assets/js/app.js?v=6" defer></script>
+  <script src="./assets/js/app.js?v=7" defer></script>
 </body>
 </html>

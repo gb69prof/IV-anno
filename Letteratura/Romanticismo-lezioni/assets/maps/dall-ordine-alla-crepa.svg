@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Dal mondo ordinato alle fratture</title>
+  <desc id="desc">La ragione, il progresso, la misura e i modelli vengono messi alla prova dalla storia; ne derivano i limiti della ragione, l'io inquieto e la storicità delle forme, che producono una nuova domanda sul reale.</desc>
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f7e9c8"/><stop offset="1" stop-color="#dfc28d"/></linearGradient><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#8a5522"/></marker></defs>
+  <rect width="1200" height="820" rx="36" fill="url(#bg)"/>
+  <text x="600" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="34" font-weight="700" fill="#041725">Dall’ordine alla crepa</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <rect x="360" y="95" width="480" height="100" rx="22" fill="#041725" stroke="#c88d35" stroke-width="4"/><text x="600" y="137" font-size="25" font-weight="700" fill="#f1cf88">MONDO ORDINATO</text><text x="600" y="171" font-size="19" fill="#fff5df">ragione · progresso · misura · modelli</text>
+    <path d="M600 195V250" stroke="#8a5522" stroke-width="5" marker-end="url(#a)"/><text x="620" y="229" text-anchor="start" font-size="17" fill="#6d3d16">entra nella</text>
+    <rect x="350" y="255" width="500" height="100" rx="22" fill="#efe0bd" stroke="#8a5522" stroke-width="3"/><text x="600" y="297" font-size="24" font-weight="700" fill="#421b1c">PROVA DELLA STORIA</text><text x="600" y="330" font-size="18" fill="#1f1a14">rivoluzione · impero · restaurazione</text>
+    <path d="M600 355V408" stroke="#8a5522" stroke-width="5" marker-end="url(#a)"/><text x="622" y="390" text-anchor="start" font-size="17" fill="#6d3d16">mette in crisi</text>
+    <rect x="70" y="420" width="300" height="105" rx="20" fill="#fff8e7" stroke="#8a5522" stroke-width="3"/><text x="220" y="463" font-size="21" font-weight="700" fill="#041725">LIMITI DELLA RAGIONE</text><text x="220" y="495" font-size="17" fill="#1f1a14">il calcolo non esaurisce il reale</text>
+    <rect x="450" y="420" width="300" height="105" rx="20" fill="#fff8e7" stroke="#8a5522" stroke-width="3"/><text x="600" y="463" font-size="21" font-weight="700" fill="#041725">IO INQUIETO</text><text x="600" y="495" font-size="17" fill="#1f1a14">memoria · desiderio · conflitto</text>
+    <rect x="830" y="420" width="300" height="105" rx="20" fill="#fff8e7" stroke="#8a5522" stroke-width="3"/><text x="980" y="463" font-size="21" font-weight="700" fill="#041725">FORME STORICHE</text><text x="980" y="495" font-size="17" fill="#1f1a14">nessun modello vale per sempre</text>
+    <path d="M220 525L520 620M600 525V610M980 525L680 620" stroke="#8a5522" stroke-width="4" marker-end="url(#a)"/>
+    <text x="600" y="590" font-size="17" fill="#6d3d16">confluiscono in</text>
+    <rect x="260" y="625" width="680" height="125" rx="24" fill="#041725" stroke="#c88d35" stroke-width="4"/><text x="600" y="672" font-size="25" font-weight="700" fill="#f1cf88">NUOVA DOMANDA</text><text x="600" y="708" font-size="19" fill="#fff5df">Come comprendere una realtà umana</text><text x="600" y="734" font-size="19" fill="#fff5df">che non si lascia ridurre al calcolo?</text>
+  </g>
+</svg>

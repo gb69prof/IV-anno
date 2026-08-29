@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Le vie europee del Romanticismo</title>
+  <desc id="desc">Una crisi comune si traduce in quattro domande: la Germania cerca l'assoluto, l'Inghilterra ricostruisce il rapporto uomo-natura, la Francia libera le forme, l'Italia costruisce pubblico e nazione. Le risposte confluiscono nell'unità plurale del Romanticismo europeo.</desc>
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#08283c"/><stop offset="1" stop-color="#020d15"/></linearGradient><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f1cf88"/></marker></defs>
+  <rect width="1200" height="820" rx="36" fill="url(#bg)"/>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <text x="600" y="62" font-family="Georgia,serif" font-size="36" font-weight="700" fill="#f1cf88">Le vie europee</text>
+    <rect x="390" y="95" width="420" height="100" rx="24" fill="#421b1c" stroke="#c88d35" stroke-width="4"/><text x="600" y="137" font-size="24" font-weight="700" fill="#fff5df">UNA CRISI COMUNE</text><text x="600" y="170" font-size="18" fill="#f1cf88">storia · soggetto · forme · appartenenza</text>
+    <path d="M600 195V245M600 245L185 330M600 245L460 330M600 245L740 330M600 245L1015 330" stroke="#f1cf88" stroke-width="4" marker-end="url(#a)"/><text x="620" y="231" text-anchor="start" font-size="17" fill="#f1cf88">si traduce in</text>
+    <rect x="45" y="335" width="280" height="160" rx="20" fill="#f7e9c8"/><text x="185" y="376" font-size="22" font-weight="700" fill="#041725">GERMANIA</text><text x="185" y="410" font-size="17" fill="#421b1c">Come raggiungere l’assoluto?</text><text x="185" y="447" font-size="16" fill="#1f1a14">frammento · ironia</text><text x="185" y="473" font-size="16" fill="#1f1a14">Sehnsucht</text>
+    <rect x="335" y="335" width="250" height="160" rx="20" fill="#f7e9c8"/><text x="460" y="376" font-size="22" font-weight="700" fill="#041725">INGHILTERRA</text><text x="460" y="410" font-size="17" fill="#421b1c">Come ritrovare la natura?</text><text x="460" y="447" font-size="16" fill="#1f1a14">memoria · sublime</text><text x="460" y="473" font-size="16" fill="#1f1a14">romanzo storico</text>
+    <rect x="615" y="335" width="250" height="160" rx="20" fill="#f7e9c8"/><text x="740" y="376" font-size="22" font-weight="700" fill="#041725">FRANCIA</text><text x="740" y="410" font-size="17" fill="#421b1c">Come liberare le forme?</text><text x="740" y="447" font-size="16" fill="#1f1a14">storia · teatro</text><text x="740" y="473" font-size="16" fill="#1f1a14">sublime ↔ grottesco</text>
+    <rect x="875" y="335" width="280" height="160" rx="20" fill="#f7e9c8"/><text x="1015" y="376" font-size="22" font-weight="700" fill="#041725">ITALIA</text><text x="1015" y="410" font-size="17" fill="#421b1c">Come parlare ai vivi?</text><text x="1015" y="447" font-size="16" fill="#1f1a14">pubblico · lingua</text><text x="1015" y="473" font-size="16" fill="#1f1a14">nazione · funzione civile</text>
+    <path d="M185 495L480 625M460 495L550 615M740 495L650 615M1015 495L720 625" stroke="#f1cf88" stroke-width="4" marker-end="url(#a)"/>
+    <text x="600" y="575" font-size="17" fill="#f1cf88">confluiscono in</text>
+    <rect x="270" y="630" width="660" height="120" rx="24" fill="#254b3d" stroke="#f1cf88" stroke-width="4"/><text x="600" y="675" font-size="25" font-weight="700" fill="#fff5df">UNITÀ NELLA PLURALITÀ</text><text x="600" y="713" font-size="20" fill="#fff5df">molti Romanticismi nazionali · una costellazione europea</text>
+  </g>
+</svg>

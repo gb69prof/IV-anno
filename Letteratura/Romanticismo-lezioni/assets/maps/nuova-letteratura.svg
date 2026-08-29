@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">La letteratura della crisi</title>
+  <desc id="desc">La nuova immagine del mondo produce libertà delle forme, generi mobili e linguaggio evocativo; questi trasformano anche il ruolo dell'autore e il rapporto con il pubblico, facendo della letteratura conoscenza e intervento.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#421b1c"/><stop offset="1" stop-color="#180d11"/></linearGradient><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f1cf88"/></marker></defs>
+  <rect width="1200" height="820" rx="36" fill="url(#bg)"/>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <text x="600" y="62" font-family="Georgia,serif" font-size="36" font-weight="700" fill="#f1cf88">La letteratura della crisi</text>
+    <rect x="350" y="100" width="500" height="105" rx="24" fill="#041725" stroke="#c88d35" stroke-width="4"/><text x="600" y="143" font-size="25" font-weight="700" fill="#f1cf88">NUOVA IMMAGINE DEL MONDO</text><text x="600" y="177" font-size="18" fill="#fff5df">realtà storica · contraddittoria · relazionale</text>
+    <path d="M600 205V265M600 265L205 345M600 265V335M600 265L995 345" stroke="#f1cf88" stroke-width="4" marker-end="url(#a)"/><text x="620" y="248" text-anchor="start" font-size="17" fill="#f1cf88">produce</text>
+    <rect x="55" y="350" width="300" height="130" rx="20" fill="#f7e9c8"/><text x="205" y="393" font-size="23" font-weight="700" fill="#041725">FORME LIBERE</text><text x="205" y="427" font-size="18" fill="#1f1a14">mescolanza · frammento</text><text x="205" y="455" font-size="16" fill="#5c4631">nessuna regola meccanica</text>
+    <rect x="450" y="350" width="300" height="130" rx="20" fill="#f7e9c8"/><text x="600" y="393" font-size="23" font-weight="700" fill="#041725">GENERI MOBILI</text><text x="600" y="427" font-size="18" fill="#1f1a14">lirica · romanzo · dramma</text><text x="600" y="455" font-size="16" fill="#5c4631">forme adeguate al presente</text>
+    <rect x="845" y="350" width="300" height="130" rx="20" fill="#f7e9c8"/><text x="995" y="393" font-size="23" font-weight="700" fill="#041725">LINGUA EVOCATIVA</text><text x="995" y="427" font-size="18" fill="#1f1a14">metafora · simbolo · musica</text><text x="995" y="451" font-size="15" fill="#5c4631">esplora ciò che il concetto</text><text x="995" y="472" font-size="15" fill="#5c4631">non esaurisce</text>
+    <path d="M205 480L430 610M600 480V600M995 480L770 610" stroke="#f1cf88" stroke-width="4" marker-end="url(#a)"/>
+    <rect x="225" y="615" width="350" height="115" rx="22" fill="#254b3d" stroke="#f1cf88" stroke-width="3"/><text x="400" y="658" font-size="23" font-weight="700" fill="#fff5df">NUOVO AUTORE</text><text x="400" y="693" font-size="18" fill="#fff5df">ribelle · testimone · educatore</text>
+    <rect x="625" y="615" width="350" height="115" rx="22" fill="#254b3d" stroke="#f1cf88" stroke-width="3"/><text x="800" y="658" font-size="23" font-weight="700" fill="#fff5df">NUOVO PUBBLICO</text><text x="800" y="693" font-size="18" fill="#fff5df">editoria · periodici · lettori vivi</text>
+    <text x="600" y="780" font-size="19" font-weight="700" fill="#f1cf88">confluiscono in una letteratura che conosce e interviene</text>
+  </g>
+</svg>

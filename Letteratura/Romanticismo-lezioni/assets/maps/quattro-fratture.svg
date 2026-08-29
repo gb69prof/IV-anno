@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Le quattro fratture romantiche</title>
+  <desc id="desc">La crisi della modernità mette in tensione storia, ragione, io e tradizione. Queste quattro fratture confluiscono nell'idea che la realtà sia processo, relazione e conflitto.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#071e30"/><stop offset="1" stop-color="#020c14"/></linearGradient><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f1cf88"/></marker></defs>
+  <rect width="1200" height="820" rx="36" fill="url(#bg)"/>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <text x="600" y="62" font-family="Georgia,serif" font-size="36" font-weight="700" fill="#f1cf88">Le quattro fratture</text>
+    <rect x="390" y="95" width="420" height="105" rx="24" fill="#421b1c" stroke="#c88d35" stroke-width="4"/><text x="600" y="139" font-size="25" font-weight="700" fill="#fff5df">CRISI DELLA MODERNITÀ</text><text x="600" y="174" font-size="19" fill="#f1cf88">l’ordine non basta più</text>
+    <path d="M600 200V260M600 260L190 330M600 260L470 330M600 260L730 330M600 260L1010 330" stroke="#f1cf88" stroke-width="4" marker-end="url(#a)"/>
+    <text x="600" y="244" font-size="17" fill="#f1cf88">si manifesta come</text>
+    <rect x="55" y="335" width="270" height="130" rx="20" fill="#f7e9c8"/><text x="190" y="380" font-size="23" font-weight="700" fill="#041725">STORIA</text><text x="190" y="414" font-size="18" fill="#1f1a14">promesse ↔ conflitti</text><text x="190" y="441" font-size="16" fill="#5c4631">rivoluzione e restaurazione</text>
+    <rect x="335" y="335" width="270" height="130" rx="20" fill="#f7e9c8"/><text x="470" y="380" font-size="23" font-weight="700" fill="#041725">RAGIONE</text><text x="470" y="414" font-size="18" fill="#1f1a14">conoscenza ↔ limite</text><text x="470" y="441" font-size="16" fill="#5c4631">il soggetto entra nel sapere</text>
+    <rect x="615" y="335" width="270" height="130" rx="20" fill="#f7e9c8"/><text x="750" y="380" font-size="23" font-weight="700" fill="#041725">IO</text><text x="750" y="414" font-size="18" fill="#1f1a14">unità ↔ desiderio</text><text x="750" y="441" font-size="16" fill="#5c4631">memoria, sogno, inquietudine</text>
+    <rect x="895" y="335" width="250" height="130" rx="20" fill="#f7e9c8"/><text x="1020" y="380" font-size="23" font-weight="700" fill="#041725">TRADIZIONE</text><text x="1020" y="414" font-size="18" fill="#1f1a14">modello ↔ storicità</text><text x="1020" y="441" font-size="16" fill="#5c4631">forme legate alle epoche</text>
+    <path d="M190 465L480 610M470 465L550 610M750 465L650 610M1020 465L720 610" stroke="#f1cf88" stroke-width="4" marker-end="url(#a)"/>
+    <text x="600" y="570" font-size="17" fill="#f1cf88">producono una nuova idea del reale</text>
+    <rect x="260" y="615" width="680" height="125" rx="24" fill="#254b3d" stroke="#f1cf88" stroke-width="4"/><text x="600" y="663" font-size="25" font-weight="700" fill="#fff5df">ESITO COMUNE</text><text x="600" y="702" font-size="21" fill="#fff5df">la realtà è processo · relazione · conflitto</text>
+  </g>
+</svg>

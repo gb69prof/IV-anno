@@ -63,6 +63,15 @@
   window.addEventListener("resize", updateProgress);
   updateProgress();
 
+  const resumeReading = $("#resumeReading");
+  const savedReadingY = Number.parseInt(safeStorageGet("romanticismo-reading-y", "0"), 10);
+  if (Number.isFinite(savedReadingY) && savedReadingY > 240) resumeReading.hidden = false;
+  resumeReading.addEventListener("click", () => {
+    const targetY = Number.parseInt(safeStorageGet("romanticismo-reading-y", "0"), 10);
+    window.scrollTo({ top: Number.isFinite(targetY) ? targetY : 0, behavior: scrollBehavior });
+    showToast("Lettura ripresa dall’ultimo punto");
+  });
+
   // Reading preferences.
   const fontToggle = $("#fontToggle");
   const themeToggle = $("#themeToggle");
@@ -132,6 +141,84 @@
       });
     }, { rootMargin: "-35% 0px -58% 0px", threshold: 0 });
     observedSections.forEach(section => observer.observe(section));
+  }
+
+  const activeTitle = $("#activeTitle");
+  const contextTitle = $("#contextTitle");
+  const contextSection = $("#contextSection");
+  const contextDescription = $("#contextDescription");
+  const contextImageButton = $("#contextImageButton");
+  const contextImage = $("#contextImage");
+  const contextAssets = {
+    contradictions: {
+      src: "./assets/images/tavola-contraddizioni.png",
+      title: "Le contraddizioni romantiche",
+      alt: "Tavola concettuale sulle contraddizioni romantiche",
+      description: "La crisi romantica non elimina la ragione: mette in relazione ordine e inquietudine, libertà e appartenenza, ideale e realtà."
+    },
+    europe: {
+      src: "./assets/images/tavola-romanticismo-europeo.png",
+      title: "Il Romanticismo europeo",
+      alt: "Tavola concettuale sulle diverse vie del Romanticismo europeo",
+      description: "Germania, Inghilterra e Francia condividono una crisi, ma la trasformano in domande differenti sull’assoluto, sulla natura e sulla libertà delle forme."
+    },
+    italy: {
+      src: "./assets/images/tavola-romanticismo-italiano.png",
+      title: "Il Romanticismo italiano",
+      alt: "Tavola concettuale sul Romanticismo italiano",
+      description: "In Italia apertura europea, pubblico, lingua, storia e nazione confluiscono in una letteratura moderna e civile."
+    }
+  };
+  const contextBySection = {
+    prologo: "contradictions",
+    "mondo-ordinato": "contradictions",
+    fratture: "contradictions",
+    "nuova-immagine": "europe",
+    "letteratura-crisi": "europe",
+    "vie-europee": "europe",
+    "romanticismo-italiano": "italy",
+    testi: "italy",
+    mappe: "europe",
+    timeline: "europe",
+    autori: "europe",
+    "romanzo-storico": "italy",
+    conclusione: "contradictions",
+    saperi: "contradictions",
+    verifica: "contradictions",
+    fonti: "italy"
+  };
+
+  function setContextAsset(assetKey, sectionLabel = "Percorso") {
+    const asset = contextAssets[assetKey] || contextAssets.contradictions;
+    contextTitle.textContent = asset.title;
+    contextSection.textContent = sectionLabel;
+    contextDescription.textContent = asset.description;
+    contextImage.src = asset.src;
+    contextImage.alt = asset.alt;
+    contextImageButton.dataset.image = asset.src;
+    contextImageButton.dataset.title = asset.title;
+    $$("[data-context-image]").forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.contextImage === asset.src));
+    });
+  }
+
+  $$("[data-context-image]").forEach(button => {
+    button.addEventListener("click", () => {
+      const assetKey = Object.keys(contextAssets).find(key => contextAssets[key].src === button.dataset.contextImage);
+      setContextAsset(assetKey || "contradictions", "Scelta manuale");
+    });
+  });
+
+  if ("IntersectionObserver" in window) {
+    const contextObserver = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      const section = visible.target;
+      const label = $("h2", section)?.textContent.trim() || "Percorso";
+      activeTitle.textContent = label;
+      setContextAsset(contextBySection[section.id] || "contradictions", label);
+    }, { rootMargin: "-18% 0px -68% 0px", threshold: [0, .15, .35] });
+    $$(".lesson-column > section[id], .lesson-column > #percorso > section[id]").forEach(section => contextObserver.observe(section));
   }
 
   // Accessible country tabs; cover hotspots can address hidden panels.
@@ -337,7 +424,29 @@
 
   notebookText.value = safeStorageGet(notebookKey, safeStorageGet("romanticismo-notebook-v1"));
 
+  function notebookIsInline() {
+    return window.matchMedia("(min-width: 900px)").matches;
+  }
+
+  function syncNotebookMode() {
+    const inline = notebookIsInline();
+    notebookPanel.setAttribute("aria-hidden", String(!inline && !notebookPanel.classList.contains("open")));
+    if (inline) {
+      notebookPanel.classList.remove("open");
+      document.body.classList.remove("notebook-open");
+      $("#notebookOpen").setAttribute("aria-expanded", "true");
+    } else {
+      $("#notebookOpen").setAttribute("aria-expanded", String(notebookPanel.classList.contains("open")));
+    }
+  }
+
   function openNotebook(focusText = false) {
+    if (notebookIsInline()) {
+      notebookPanel.setAttribute("aria-hidden", "false");
+      notebookPanel.scrollIntoView({ behavior: scrollBehavior, block: "nearest" });
+      if (focusText) notebookText.focus({ preventScroll: true });
+      return;
+    }
     notebookPanel.classList.add("open");
     notebookPanel.setAttribute("aria-hidden", "false");
     document.body.classList.add("notebook-open");
@@ -346,6 +455,7 @@
   }
 
   function closeNotebook() {
+    if (notebookIsInline()) return;
     notebookPanel.classList.remove("open");
     notebookPanel.setAttribute("aria-hidden", "true");
     document.body.classList.remove("notebook-open");
@@ -370,6 +480,7 @@
   function renderCitations() {
     citationList.replaceChildren();
     citationCount.textContent = String(citations.length);
+    updateHighlightCount();
     if (!citations.length) {
       const empty = document.createElement("p");
       empty.className = "citation-empty";
@@ -541,7 +652,11 @@
   }
 
   function updateHighlightCount() {
-    highlightCount.textContent = String(highlights.length);
+    const available = highlights.filter(highlight => (
+      !citations.some(citation => citation.text === highlight.rawText.replace(/\s+/g, " ").trim() && citation.source === highlight.source)
+    )).length;
+    highlightCount.textContent = String(available);
+    $("#pasteHighlights").setAttribute("aria-label", `Incolla nel taccuino ${available} nuovi passaggi evidenziati`);
   }
 
   function restoreHighlights() {
@@ -628,6 +743,7 @@
 
   [$("#notebookOpen"), $("#notebookFooter")].forEach(button => button.addEventListener("click", () => openNotebook(button.id === "notebookFooter")));
   $("#notebookClose").addEventListener("click", closeNotebook);
+  window.addEventListener("resize", syncNotebookMode);
   document.addEventListener("keydown", event => {
     if (event.key === "Escape" && notebookPanel.classList.contains("open")) closeNotebook();
   });
@@ -645,7 +761,8 @@
     const quoteText = citations.length
       ? citations.map(item => `“${item.text}”\nFonte: ${item.source}`).join("\n\n")
       : "Nessuna citazione raccolta.";
-    return `TACCUINO — ROMANTICISMO\n\nAPPUNTI MIEI\n${notebookText.value.trim() || "(nessun appunto)"}\n\nCITAZIONI DALLA LETTURA\n${quoteText}\n`;
+    const exportedAt = new Intl.DateTimeFormat("it-IT", { dateStyle: "long", timeStyle: "short" }).format(new Date());
+    return `ROMANTICISMO — AMBIENTE DI STUDIO\nData e ora: ${exportedAt}\n\nAPPUNTI DELLO STUDENTE\n${notebookText.value.trim() || "(nessun appunto)"}\n\nCITAZIONI DALLA LEZIONE\n${quoteText}\n`;
   }
 
   $("#notebookCopy").addEventListener("click", async () => {
@@ -687,6 +804,7 @@
 
   renderCitations();
   restoreHighlights();
+  syncNotebookMode();
 
   // Reasoned quiz with targeted recovery.
   const quiz = [
@@ -759,6 +877,13 @@
       correct: 1,
       explanation: "Leopardi appartiene alla stessa crisi della modernità, ma rifiuta il programma dei romantici italiani e ne capovolge diversi esiti.",
       recovery: ["Leopardi e la crisi comune", "Condividere una domanda storica non significa condividere la risposta dominante.", "Nel Discorso difende l’immutabilità dei caratteri principali della poesia contro il programma moderno.", "Quale problema condivide e quale soluzione rifiuta?", "testi"]
+    },
+    {
+      question: "In che cosa Manzoni trasforma il modello del romanzo storico di Walter Scott?",
+      options: ["Elimina i personaggi inventati e usa soltanto documenti d’archivio.", "Riduce la storia a uno sfondo pittoresco per avventure individuali.", "Unisce vero storico e invenzione verosimile per interrogare responsabilità, ingiustizia e coscienza."],
+      correct: 2,
+      explanation: "Manzoni conserva l’intreccio tra invenzione e storia, ma rifiuta il pittoresco fine a sé stesso e orienta il racconto verso il vero e la responsabilità morale.",
+      recovery: ["Il romanzo storico come conoscenza", "La storia non è una scenografia: determina le possibilità concrete dei personaggi.", "Renzo e Lucia sono inventati, ma permettono di osservare gli effetti sociali della guerra, della carestia e del potere.", "Che cosa mostra un personaggio verosimile che una cronaca politica può lasciare fuori?", "romanzo-storico"]
     }
   ];
 
@@ -902,6 +1027,21 @@
     quizStart.closest(".quiz-intro").hidden = true;
     quizForm.scrollIntoView({ behavior: scrollBehavior, block: "start" });
     $("input", quizForm)?.focus({ preventScroll: true });
+  });
+
+  $("#resetStudyData").addEventListener("click", () => {
+    if (!window.confirm("Azzerare progresso, preferenze, appunti, citazioni, evidenziazioni e risultati dei test salvati su questo dispositivo?")) return;
+    const keys = [];
+    try {
+      for (let index = 0; index < localStorage.length; index += 1) {
+        const key = localStorage.key(index);
+        if (key?.startsWith("romanticismo-")) keys.push(key);
+      }
+      keys.forEach(key => localStorage.removeItem(key));
+    } catch {
+      // The page remains usable even if storage is unavailable.
+    }
+    window.location.reload();
   });
 
   // Install prompt and iPad fallback guidance.

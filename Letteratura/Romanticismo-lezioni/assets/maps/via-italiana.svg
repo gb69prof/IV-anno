@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">La via italiana al Romanticismo</title>
+  <desc id="desc">La Restaurazione e la frammentazione politica conducono all'apertura europea del 1816; traduzione e dibattito generano attenzione a pubblico, lingua e storia, che confluiscono in una letteratura civile per una nazione culturale ancora senza Stato.</desc>
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f7e9c8"/><stop offset="1" stop-color="#dfc28d"/></linearGradient><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#8a5522"/></marker></defs>
+  <rect width="1200" height="820" rx="36" fill="url(#bg)"/>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <text x="600" y="58" font-family="Georgia,serif" font-size="36" font-weight="700" fill="#041725">Il Romanticismo italiano</text>
+    <rect x="330" y="92" width="540" height="105" rx="24" fill="#041725" stroke="#c88d35" stroke-width="4"/><text x="600" y="135" font-size="24" font-weight="700" fill="#f1cf88">RESTAURAZIONE E FRAMMENTAZIONE</text><text x="600" y="170" font-size="18" fill="#fff5df">egemonia austriaca · Milano · censura</text>
+    <path d="M600 197V260" stroke="#8a5522" stroke-width="5" marker-end="url(#a)"/><text x="620" y="238" text-anchor="start" font-size="17" fill="#6d3d16">provocano</text>
+    <rect x="350" y="265" width="500" height="105" rx="22" fill="#421b1c" stroke="#8a5522" stroke-width="3"/><text x="600" y="307" font-size="24" font-weight="700" fill="#f1cf88">1816 · APERTURA EUROPEA</text><text x="600" y="341" font-size="18" fill="#fff5df">Madame de Staël · traduzioni · polemica</text>
+    <path d="M600 370V420M600 420L220 500M600 420V490M600 420L980 500" stroke="#8a5522" stroke-width="4" marker-end="url(#a)"/><text x="620" y="408" text-anchor="start" font-size="17" fill="#6d3d16">rende centrali</text>
+    <rect x="70" y="505" width="300" height="115" rx="20" fill="#fff8e7" stroke="#8a5522" stroke-width="3"/><text x="220" y="548" font-size="23" font-weight="700" fill="#041725">PUBBLICO</text><text x="220" y="583" font-size="18" fill="#1f1a14">parlare ai vivi</text>
+    <rect x="450" y="505" width="300" height="115" rx="20" fill="#fff8e7" stroke="#8a5522" stroke-width="3"/><text x="600" y="548" font-size="23" font-weight="700" fill="#041725">LINGUA</text><text x="600" y="583" font-size="18" fill="#1f1a14">comunicazione nazionale</text>
+    <rect x="830" y="505" width="300" height="115" rx="20" fill="#fff8e7" stroke="#8a5522" stroke-width="3"/><text x="980" y="548" font-size="23" font-weight="700" fill="#041725">STORIA</text><text x="980" y="583" font-size="18" fill="#1f1a14">memoria e romanzo</text>
+    <path d="M220 620L500 690M600 620V680M980 620L700 690" stroke="#8a5522" stroke-width="4" marker-end="url(#a)"/>
+    <text x="600" y="665" font-size="17" fill="#6d3d16">confluiscono in</text>
+    <rect x="300" y="690" width="600" height="90" rx="24" fill="#254b3d" stroke="#c88d35" stroke-width="4"/><text x="600" y="728" font-size="24" font-weight="700" fill="#fff5df">LETTERATURA CIVILE</text><text x="600" y="758" font-size="18" fill="#fff5df">nazione culturale prima dello Stato</text>
+  </g>
+</svg>
