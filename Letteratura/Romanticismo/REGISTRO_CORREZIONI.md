@@ -20,4 +20,5 @@
 - I test ora hanno tre alternative, una sola risposta corretta, feedback immediato, punteggio, percentuale e voto.
 - Il recupero elenca esclusivamente gli errori e permette il nuovo tentativo sulle sole domande sbagliate senza cancellare i tentativi precedenti.
 - Il service worker elimina soltanto le vecchie cache appartenenti alla PWA Romanticismo.
+- CSS, dati e JavaScript hanno una versione esplicita nell'URL, così i dispositivi che avevano installato la PWA precedente non mescolano file vecchi e nuovi al primo aggiornamento.
 - Le risorse fondamentali sono locali; il collegamento alla rete delle PWA dell'Ottocento resta facoltativo e non blocca la lezione offline.

@@ -1,14 +1,14 @@
 const CACHE_PREFIX = "romanticismo-pwa-";
-const CACHE_NAME = CACHE_PREFIX + "v3.0.0";
+const CACHE_NAME = CACHE_PREFIX + "v3.0.1";
 
 const CORE = [
   "./",
   "./index.html",
   "./offline.html",
-  "./manifest.webmanifest",
-  "./assets/css/style.css",
-  "./assets/js/lessons-data.js",
-  "./assets/js/app.js",
+  "./manifest.webmanifest?v=3.0.1",
+  "./assets/css/style.css?v=3.0.1",
+  "./assets/js/lessons-data.js?v=3.0.1",
+  "./assets/js/app.js?v=3.0.1",
   "./assets/images/icon-192.png",
   "./assets/images/icon-512.png",
   "./assets/images/il_romanticismo_un_viaggio_interattivo.png"
