@@ -851,12 +851,12 @@ function setupLessonEnvironment() {
     const rules = lessonId === "capitoli" ? [["capitolo i ","capitolo1"],["capitolo iv","capitolo4"],["capitolo ix","capitolo9"],["capitolo x ","capitolo10"],["innominato","innominato"]] : lessonId === "immagine-del-mondo" ? [["provvidenza","provvida-sventura"]] : lessonId === "opere" ? [["promessi","promessi-sposi"]] : [];
     const rule = rules.find(([needle]) => text.includes(needle));
     if (rule) { const found=visuals.findIndex(item => item.src.toLowerCase().includes(rule[1])); if(found >= 0) return found; }
-    return Math.min(visuals.length - 1, visuals.length > 1 ? 1 : 0);
+    return rules.length ? null : Math.min(visuals.length - 1, visuals.length > 1 ? 1 : 0);
   };
   article.addEventListener("scroll", () => {
-    const headings=[...source.querySelectorAll("h2,h3")]; let active=null;
-    headings.forEach(heading => { if(heading.getBoundingClientRect().top < 190) active=heading; });
-    setVisual(visualIndexForHeading(active));
+    const headings=[...source.querySelectorAll("h2,h3")]; let target=Math.min(visuals.length - 1, visuals.length > 1 ? 1 : 0);
+    headings.forEach(heading => { if(heading.getBoundingClientRect().top < 190) { const candidate=visualIndexForHeading(heading); if(candidate !== null) target=candidate; } });
+    setVisual(target);
     const max=article.scrollHeight-article.clientHeight; const percent=max>0 ? article.scrollTop/max : 1; article.querySelector("[data-progress-bar]").style.width=`${Math.round(percent*100)}%`; writeStore(`scroll-${lessonId}`,article.scrollTop);
   },{passive:true});
 
