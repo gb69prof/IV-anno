@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="it" data-theme="light" data-font="medium">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071c30">
+  <meta name="description" content="Il Settecento illuminista: Goldoni, Parini e Alfieri in un ambiente di studio interattivo per la quarta superiore.">
+  <title>Il Settecento illuminista — Tre vie alla libertà</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+  <link rel="stylesheet" href="assets/styles.css?v=1">
+  <script src="assets/data.js?v=1" defer></script>
+  <script src="assets/app.js?v=1" defer></script>
+</head>
+<body class="cover-visible">
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <div class="reading-progress" aria-hidden="true"><span id="readingBar"></span></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Copertina del Settecento illuminista"><span>☀</span><b>Settecento illuminista</b></a>
+    <nav class="top-nav" aria-label="Navigazione principale">
+      <a href="#home">Home</a>
+      <a href="#percorso">Percorso</a>
+      <button type="button" data-open="authorsDialog">Autori</button>
+      <a href="#mappe">Mappe</a>
+    </nav>
+    <div class="tools" aria-label="Strumenti di lettura">
+      <button type="button" id="themeBtn" aria-label="Cambia tema">◐</button>
+      <button type="button" id="fontBtn" aria-label="Cambia dimensione del testo">A</button>
+      <button type="button" data-open="notesDialog">Appunti</button>
+    </div>
+  </header>
+
+  <aside class="path-index" aria-label="Indice del percorso">
+    <p>Tre vie alla libertà</p>
+    <ol>
+      <li><a href="#introduzione">Il problema della libertà</a></li>
+      <li><a href="#goldoni">Goldoni: le maschere</a></li>
+      <li><a href="#parini">Parini: i privilegi</a></li>
+      <li><a href="#alfieri">Alfieri: la tirannide</a></li>
+    </ol>
+    <button type="button" id="resumeBtn">Riprendi la lettura</button>
+    <a class="home-letteratura" href="../">← Letteratura</a>
+  </aside>
+
+  <main id="contenuto">
+    <section id="home" class="cover-section" aria-labelledby="coverTitle">
+      <h1 id="coverTitle" class="sr-only">Il Settecento illuminista — copertina e indice interattivo</h1>
+      <div class="cover-wrap">
+        <picture>
+          <source srcset="assets/images/copertina-indice.webp" type="image/webp">
+          <img src="assets/images/copertina-indice.png" width="1672" height="941" alt="Copertina illustrata del percorso sul Settecento illuminista, con Goldoni, Alfieri e Parini e quattro schede di accesso alle lezioni.">
+        </picture>
+        <nav class="hotspots" aria-label="Collegamenti sulla copertina">
+          <a style="--x:20%;--y:1%;--w:13%;--h:6%" href="#home" aria-label="Home"></a>
+          <a style="--x:34%;--y:1%;--w:14%;--h:6%" href="#percorso" aria-label="Percorso"></a>
+          <button style="--x:53%;--y:1%;--w:12%;--h:6%" data-open="authorsDialog" aria-label="Autori"></button>
+          <a style="--x:66%;--y:1%;--w:12%;--h:6%" href="#mappe" aria-label="Mappe"></a>
+
+          <a style="--x:2%;--y:48%;--w:24%;--h:25%" href="#introduzione" aria-label="Il mondo da cui si parte: introduzione"></a>
+          <a style="--x:27%;--y:48%;--w:23%;--h:25%" href="#goldoni" aria-label="Carlo Goldoni: liberarsi dalle maschere"></a>
+          <a style="--x:51%;--y:48%;--w:22%;--h:25%" href="#parini" aria-label="Giuseppe Parini: liberarsi dai privilegi"></a>
+          <a style="--x:74%;--y:48%;--w:24%;--h:25%" href="#alfieri" aria-label="Vittorio Alfieri: liberarsi dalla tirannide"></a>
+
+          <a style="--x:7%;--y:75%;--w:11%;--h:12%" href="#introduzione" aria-label="Introduzione"></a>
+          <a style="--x:24%;--y:75%;--w:11%;--h:12%" href="#goldoni" aria-label="Goldoni"></a>
+          <a style="--x:40%;--y:75%;--w:10%;--h:12%" href="#parini" aria-label="Parini"></a>
+          <a style="--x:55%;--y:75%;--w:10%;--h:12%" href="#alfieri" aria-label="Alfieri"></a>
+          <a style="--x:69%;--y:75%;--w:11%;--h:12%" href="#mappe" aria-label="Mappe"></a>
+          <button style="--x:84%;--y:75%;--w:11%;--h:12%" data-global-panel="vocab" aria-label="Vocabolario"></button>
+
+          <button style="--x:10%;--y:89%;--w:38%;--h:9%" data-open="indexDialog" aria-label="Indice delle lezioni"></button>
+          <button style="--x:51%;--y:89%;--w:39%;--h:9%" data-global-panel="essentials" aria-label="Saperi irrinunciabili"></button>
+        </nav>
+      </div>
+
+      <nav id="percorso" class="mobile-cover-nav" aria-label="Indice alternativo accessibile">
+        <a href="#introduzione"><b>00</b><span>Il Settecento illuminista<small>La libertà come problema</small></span></a>
+        <a href="#goldoni"><b>01</b><span>Carlo Goldoni<small>Liberarsi dalle maschere</small></span></a>
+        <a href="#parini"><b>02</b><span>Giuseppe Parini<small>Liberarsi dai privilegi</small></span></a>
+        <a href="#alfieri"><b>03</b><span>Vittorio Alfieri<small>Liberarsi dalla tirannide</small></span></a>
+        <a href="#mappe"><b>◎</b><span>Galleria delle mappe</span></a>
+        <button type="button" data-global-panel="essentials"><b>✓</b><span>Saperi irrinunciabili</span></button>
+        <button type="button" data-global-panel="vocab"><b>A</b><span>Vocabolario essenziale</span></button>
+        <button type="button" data-global-panel="final"><b>?</b><span>Verifica finale</span></button>
+      </nav>
+    </section>
+
+    <section id="mappe" class="maps-section" aria-labelledby="mapsTitle">
+      <header><p class="eyebrow">Osservare e collegare</p><h2 id="mapsTitle">Mappe concettuali</h2><p>Quattro mappe, una sola domanda: dove comincia la libertà?</p></header>
+      <div id="mapsGrid" class="maps-grid"></div>
+    </section>
+
+    <section class="threshold-section" aria-labelledby="thresholdTitle">
+      <p class="eyebrow">Conclusione del percorso</p>
+      <h2 id="thresholdTitle">La soglia dell’Ottocento</h2>
+      <p>Goldoni libera la persona dalla maschera; Parini libera il valore umano dal privilegio; Alfieri libera la volontà dalla tirannide. Il secolo successivo proverà a trasformare queste esigenze in libertà storica, nazionale e collettiva.</p>
+      <button type="button" data-global-panel="final">Affronta la verifica finale</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Il Settecento illuminista · Ambiente di studio per la quarta superiore · gbprof e Libera</p>
+    <a href="../">Torna a Letteratura</a>
+    <a href="REGISTRO_CORREZIONI.md">Registro delle correzioni</a>
+  </footer>
+
+  <section id="studyApp" class="study-app" hidden aria-label="Ambiente di studio">
+    <header class="study-topbar">
+      <a class="study-home" href="#home"><span aria-hidden="true">←</span> Home</a>
+      <div class="study-heading"><span id="studySectionLabel"></span><h1 id="studyTitle">Lezione</h1></div>
+      <div class="study-actions">
+        <button type="button" id="studyThemeBtn" aria-label="Cambia tema">◐</button>
+        <button type="button" id="studyFontBtn" aria-label="Cambia dimensione del testo">A</button>
+        <button type="button" data-open="indexDialog">Indice</button>
+      </div>
+      <nav class="mobile-study-tabs" aria-label="Pannelli dell’ambiente di studio">
+        <button type="button" class="active" data-mobile-view="read">Lezione</button>
+        <button type="button" data-mobile-view="visual">Apparato</button>
+        <button type="button" data-mobile-view="notes">Taccuino</button>
+      </nav>
+    </header>
+
+    <div id="studyGrid" class="study-grid" data-mobile-panel="read">
+      <article id="readingPane" class="reading-pane" tabindex="0" aria-labelledby="studyTitle">
+        <header class="reading-hero">
+          <p id="readingEyebrow" class="eyebrow"></p>
+          <h2 id="readingMovementTitle"></h2>
+          <p id="readingQuestion" class="generative"></p>
+        </header>
+        <nav id="lessonJump" class="lesson-jump" aria-label="Passaggi della lezione">
+          <a href="#section-1" data-jump="section-1">Mondo precedente</a>
+          <a href="#section-2" data-jump="section-2">Fratture</a>
+          <a href="#section-3" data-jump="section-3">Immagine del mondo</a>
+          <a href="#section-4" data-jump="section-4">Poetica</a>
+          <a href="#section-5" data-jump="section-5">Opere</a>
+          <a href="#section-6" data-jump="section-6">Conclusione</a>
+        </nav>
+        <div id="readingTools" class="reading-tools" role="toolbar" aria-label="Strumenti per evidenziare e raccogliere passaggi">
+          <p id="selectionStatus" role="status" aria-live="polite">Seleziona un passo, poi evidenzialo.</p>
+          <button type="button" id="highlightSelection" disabled>Evidenzia selezione</button>
+          <button type="button" id="addSelection" class="quiet" disabled>Incolla questa selezione</button>
+          <button type="button" id="addHighlights" disabled>Incolla evidenziati <span id="highlightCount" aria-hidden="true">0</span></button>
+          <button type="button" id="clearHighlights" class="quiet" disabled>Rimuovi evidenziature</button>
+        </div>
+        <div id="lessonContent" class="lesson-content" aria-live="polite"></div>
+        <nav class="sequence-nav" aria-label="Lezione precedente e successiva">
+          <a id="previousLesson" href="#home">← Copertina</a>
+          <a id="nextLesson" href="#goldoni">Goldoni →</a>
+        </nav>
+      </article>
+
+      <aside class="study-sidebar" aria-label="Apparato visivo e taccuino">
+        <section class="visual-panel" aria-labelledby="visualTitle">
+          <header><p class="panel-kicker">Osserva mentre leggi</p><h2 id="visualTitle">Apparato contestuale</h2></header>
+          <button type="button" id="contextImageButton" class="context-image image-open">
+            <img id="contextImage" src="assets/images/visual-mondo.svg" alt="" width="1200" height="720">
+            <span aria-hidden="true">Ingrandisci</span>
+          </button>
+          <p id="contextCaption" class="context-caption" aria-live="polite"></p>
+          <div id="visualChoices" class="visual-choices" aria-label="Materiali visivi collegati"></div>
+        </section>
+
+        <section class="notebook-panel" aria-labelledby="notebookTitle">
+          <header><p class="panel-kicker">Elabora</p><h2 id="notebookTitle">Taccuino</h2><span id="autosaveState" role="status">Salvataggio automatico</span></header>
+          <label class="sr-only" for="notebookText">Appunti personali</label>
+          <textarea id="notebookText" rows="7" placeholder="Scrivi osservazioni, domande e collegamenti personali…"></textarea>
+          <div id="citationArea" class="citation-area">
+            <h3>Citazioni dalla lezione</h3>
+            <div id="citationList"></div>
+            <p id="emptyCitations">Evidenzia i passaggi che vuoi conservare, poi usa “Incolla evidenziati”.</p>
+          </div>
+          <div class="notebook-actions">
+            <button type="button" id="downloadNotes">Scarica TXT</button>
+            <button type="button" id="clearNotebook" class="danger">Cancella</button>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <nav class="study-bottombar" aria-label="Strumenti per sedimentare">
+      <button type="button" data-learning-panel="summary">Sintesi</button>
+      <button type="button" data-learning-panel="essentials">Saperi irrinunciabili</button>
+      <button type="button" data-learning-panel="vocab">Vocabolario</button>
+      <button type="button" data-learning-panel="test">Test</button>
+    </nav>
+  </section>
+
+  <div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+
+  <dialog id="indexDialog" class="index-dialog">
+    <form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form>
+    <header><p class="panel-kicker">Quattro ambienti, tre vie</p><h2>Indice delle lezioni</h2></header>
+    <nav id="fullIndex" class="full-index" aria-label="Indice completo"></nav>
+  </dialog>
+
+  <dialog id="learningDialog" class="learning-dialog">
+    <form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form>
+    <header><p id="learningKicker" class="panel-kicker"></p><h2 id="learningTitle">Saperi irrinunciabili</h2></header>
+    <div id="learningContent"></div>
+  </dialog>
+
+  <dialog id="authorsDialog">
+    <form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form>
+    <h2>Tre strade verso la libertà</h2>
+    <div class="author-comparison">
+      <article><h3>Carlo Goldoni</h3><p><b>Ostacolo:</b> maschera sociale e ruolo rigido.</p><p><b>Strumento:</b> commedia realistica e dialogo.</p><a href="#goldoni">Apri la lezione</a></article>
+      <article><h3>Giuseppe Parini</h3><p><b>Ostacolo:</b> privilegio senza merito.</p><p><b>Strumento:</b> satira civile e antifrasi.</p><a href="#parini">Apri la lezione</a></article>
+      <article><h3>Vittorio Alfieri</h3><p><b>Ostacolo:</b> tirannide esterna e interiore.</p><p><b>Strumento:</b> tragedia e parola indipendente.</p><a href="#alfieri">Apri la lezione</a></article>
+    </div>
+  </dialog>
+
+  <dialog id="notesDialog">
+    <form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form>
+    <h2>I miei taccuini</h2>
+    <p>Gli appunti sono separati per lezione e restano su questo dispositivo.</p>
+    <div id="notesOverview" class="notes-overview"></div>
+    <button type="button" id="resetAllData" class="danger">Azzera tutti i dati locali</button>
+  </dialog>
+
+  <dialog id="imageDialog" class="image-dialog">
+    <form method="dialog"><button class="dialog-close" aria-label="Chiudi immagine">×</button></form>
+    <div class="zoom-tools">
+      <button type="button" data-zoom="-" aria-label="Riduci">−</button>
+      <button type="button" data-zoom="reset">Adatta</button>
+      <button type="button" data-zoom="+" aria-label="Ingrandisci">+</button>
+    </div>
+    <div class="image-stage"><img id="dialogImage" alt=""></div>
+    <p id="dialogCaption"></p>
+  </dialog>
+</body>
+</html>
+
