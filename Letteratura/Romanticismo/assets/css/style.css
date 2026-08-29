@@ -192,6 +192,9 @@ dialog::backdrop{background:rgba(2,9,15,.78);backdrop-filter:blur(3px)}
 .image-dialog p{margin:.5rem 1rem .8rem;color:#e7d8bf;text-align:center}
 .toast{position:fixed;left:50%;bottom:calc(var(--sediment-h) + var(--safe-bottom) + 1rem);transform:translate(-50%,18px);z-index:500;max-width:min(90vw,620px);padding:.7rem 1rem;border:1px solid var(--gold);border-radius:999px;background:var(--navy);color:#fff4dd;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s ease;text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
+/* Il ponte condiviso resta disponibile in home, ma non deve coprire i
+   comandi fissi dell'ambiente di studio. */
+body.study-mode .ottocento-bridge-hub{display:none!important}
 @media(max-width:1050px){
   .study-grid{grid-template-columns:minmax(0,1.85fr) minmax(285px,1fr)}
   .header-label{display:none}
