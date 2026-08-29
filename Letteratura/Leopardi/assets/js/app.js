@@ -689,6 +689,8 @@ const LEOPARDI_STUDY_DATA = {
   }
 };
 
+window.LEOPARDI_STUDY_DATA = LEOPARDI_STUDY_DATA;
+
 function getRoot() {
   return document.body.dataset.root || "./";
 }
@@ -1087,7 +1089,12 @@ function setupNotesTool() {
 setupServiceWorker();
 setupActiveNavigation();
 setupMapModal();
-setupLessonStudyTools();
-setupNotesTool();
 setupJourneyBridges();
 setupOttocentoBridge();
+
+if (document.body.dataset.page === "lesson") {
+  const studyScript = document.createElement("script");
+  studyScript.src = `${getRoot()}assets/js/study-environment.js?v=1`;
+  studyScript.defer = true;
+  document.head.append(studyScript);
+}

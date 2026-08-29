@@ -1,4 +1,5 @@
-const CACHE_NAME = "leopardi-foscolo-style-v6";
+const CACHE_PREFIX = "leopardi-";
+const CACHE_NAME = "leopardi-study-environment-v7";
 
 const LOCAL_ASSETS = [
   "./",
@@ -10,8 +11,10 @@ const LOCAL_ASSETS = [
   "./video.html",
   "./test-finale.html",
   "./manifest.json",
+  "./manifest.webmanifest",
   "./assets/css/style.css",
   "./assets/js/app.js",
+  "./assets/js/study-environment.js",
   "./assets/immagini/index.png",
   "./assets/immagini/icon-192.png",
   "./assets/immagini/icon-512.png",
@@ -51,7 +54,11 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
+      Promise.all(
+        keys
+          .filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME)
+          .map((key) => caches.delete(key))
+      )
     )
   );
   self.clients.claim();
@@ -63,7 +70,7 @@ self.addEventListener("fetch", (event) => {
   if (url.pathname.toLowerCase().includes("/video/")) return;
   event.respondWith(
     caches
-      .match(event.request, { ignoreSearch: event.request.mode === "navigate" })
+      .match(event.request, { ignoreSearch: url.origin === self.location.origin })
       .then((cached) => {
       if (cached) return cached;
       return fetch(event.request).then((response) => {
