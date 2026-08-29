@@ -932,8 +932,8 @@ function setupLessonEnvironment() {
   document.querySelector("[data-open-index]").addEventListener("click",() => indexDialog.showModal());
   const learningDialog = document.querySelector("[data-learning-dialog]");
   document.querySelectorAll("[data-learning]").forEach(button => button.addEventListener("click",() => openLearning(button.dataset.learning)));
-  const themeControl = document.querySelector("[data-theme]");
-  const fontControl = document.querySelector("[data-font]");
+  const themeControl = document.querySelector("button[data-theme]");
+  const fontControl = document.querySelector("button[data-font]");
   themeControl.addEventListener("click",() => {
     const value=document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme=value;

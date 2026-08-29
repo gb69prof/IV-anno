@@ -21,3 +21,4 @@ Fonti di controllo per le correzioni sostanziali: Casa del Manzoni, percorso mus
 - Nascosta dalla navigazione la sezione video finché non contiene materiali.
 - Resi più espliciti e robusti i controlli per tema e dimensione del testo.
 - Forzato il controllo degli aggiornamenti del service worker e portata la cache alla versione 11.
+- 2026-08-29: corretti i selettori dei controlli di lettura: tema e dimensione del testo ora agiscono in modo indipendente senza intercettare l'elemento radice della pagina.
