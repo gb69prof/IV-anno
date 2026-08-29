@@ -23,6 +23,7 @@ html[data-font="xlarge"] { font-size:125%; }
   overflow:hidden;
   background:var(--paper);
 }
+.study-mode .ottocento-bridge-hub { display:none !important; }
 
 .study-mode .site-header {
   position:fixed;
