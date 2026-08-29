@@ -30,7 +30,8 @@ const cacheBlock=sw.match(/const LOCAL_ASSETS = \[([\s\S]*?)\];/)?.[1] || "";
 for(const match of cacheBlock.matchAll(/["']\.\/([^"']*)["']/g)){
   const ref=match[1];
   if(!ref) continue;
-  if(!fs.existsSync(path.join(root,ref))) errors.push(`service-worker.js: risorsa in cache mancante ./${ref}`);
+  const localRef=ref.split("?")[0];
+  if(!fs.existsSync(path.join(root,localRef))) errors.push(`service-worker.js: risorsa in cache mancante ./${ref}`);
 }
 const app=fs.readFileSync(path.join(root,"assets/js/app.js"),"utf8");
 for(const id of ["introduzione","fratture","immagine-del-mondo","poetica","opere","capitoli","conclusione"]){
