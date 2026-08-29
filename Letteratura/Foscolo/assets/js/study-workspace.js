@@ -64,7 +64,7 @@
           answer: 2,
           recovery: "Foscolo non torna a una certezza religiosa e non considera sufficiente il puro nulla: affida a memoria, affetti, patria, bellezza e poesia una sopravvivenza simbolica.",
           recoveryQuestion: "Quali strumenti umani sostituiscono la garanzia religiosa?",
-          anchor: "senso-foscolo"
+          anchor: "4-perche-questo-serve-per-capire-foscolo"
         },
         {
           question: "Perché Foscolo può essere definito un autore di passaggio?",
@@ -72,7 +72,7 @@
           answer: 2,
           recovery: "La sua formazione materialistica appartiene all’Illuminismo; esilio, nostalgia, conflitto interiore e bisogno di assoluto anticipano invece temi romantici.",
           recoveryQuestion: "Quale elemento appartiene all’eredità illuministica e quale anticipa il Romanticismo?",
-          anchor: "senso-foscolo"
+          anchor: "4-perche-questo-serve-per-capire-foscolo"
         }
       ]
     },
@@ -302,7 +302,7 @@
   };
 
   const QUESTION_ANCHORS = {
-    introduzione: ["quadro-politico", "quadro-politico", "meccanicismo"],
+    introduzione: ["2-il-quadro-politico-antico-regime-rivoluzione-napoleone", "2-il-quadro-politico-antico-regime-rivoluzione-napoleone", "meccanicismo"],
     fratture: ["zante-origine", "napoleone", "esilio"],
     "immagine-del-mondo": ["religione-illusioni", "religione-illusioni", "nulla-eterno"],
     poetica: ["neoclassicismo", "preromanticismo", "preromanticismo"],
