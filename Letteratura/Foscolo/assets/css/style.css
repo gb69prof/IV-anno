@@ -1177,7 +1177,7 @@ body[data-page="home"] main {
   }
 }
 
-/* Ambiente di studio Foscolo v10 */
+/* Ambiente di studio Foscolo v13 */
 :root {
   --study-font-scale: 1;
   --study-header-height: 4.25rem;
@@ -1505,9 +1505,49 @@ body[data-page="lesson"] .lesson-sidebar {
   gap: 0.7rem;
 }
 
-.notebook-header > span {
+.notebook-header-meta {
+  display: grid;
   flex: 0 0 auto;
+  justify-items: end;
+  gap: 0.28rem;
+  text-align: right;
+}
+
+.notebook-header-meta > [data-autosave-state] {
   font-size: 0.68rem;
+}
+
+.panel-scroll-hint {
+  display: inline-flex !important;
+  width: max-content;
+  padding: 0.18rem 0.42rem;
+  border: 1px solid rgba(238, 210, 162, 0.5);
+  border-radius: 999px;
+  color: #fff6df !important;
+  background: rgba(201, 145, 69, 0.22);
+  font-size: 0.64rem !important;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.visual-context-scroll,
+.notebook-pane,
+body[data-page="lesson"] .lesson-article {
+  scrollbar-gutter: stable;
+}
+
+.visual-context-scroll::-webkit-scrollbar,
+.notebook-pane::-webkit-scrollbar,
+body[data-page="lesson"] .lesson-article::-webkit-scrollbar {
+  width: 10px;
+}
+
+.visual-context-scroll::-webkit-scrollbar-thumb,
+.notebook-pane::-webkit-scrollbar-thumb,
+body[data-page="lesson"] .lesson-article::-webkit-scrollbar-thumb {
+  border: 2px solid rgba(6, 29, 47, 0.25);
+  border-radius: 999px;
+  background: var(--gold);
 }
 
 .notebook-pane > label {
@@ -1644,6 +1684,25 @@ body[data-page="lesson"] .lesson-sidebar {
   color: var(--gold-soft);
   font-size: 0.78rem;
   font-weight: 700;
+}
+
+.reading-progress-label {
+  display: grid;
+  line-height: 1;
+}
+
+.reading-progress-label strong {
+  color: var(--gold-soft);
+  font-size: 0.82rem;
+}
+
+.reading-progress-label small {
+  margin-top: 0.15rem;
+  color: rgba(255, 246, 223, 0.72);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .reading-progress i {
