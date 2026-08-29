@@ -1,12 +1,16 @@
 {
-  "name": "Il Romanticismo - PWA didattica",
+  "id": "./",
+  "name": "Il Romanticismo — Ambiente di studio",
   "short_name": "Romanticismo",
-  "description": "Percorso interattivo essenziale sul Romanticismo europeo e italiano, ponte verso Manzoni e Leopardi.",
+  "description": "Percorso di Italiano per la classe quarta: sei ambienti di studio sul Romanticismo europeo e italiano.",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#061a2b",
+  "orientation": "any",
+  "background_color": "#f7edd9",
   "theme_color": "#061a2b",
   "lang": "it",
+  "categories": ["education"],
   "icons": [
     {
       "src": "assets/images/icon-192.png",
