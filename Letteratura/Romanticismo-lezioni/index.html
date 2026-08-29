@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#061d2f">
-  <meta name="description" content="Romanticismo — Dalle rovine all’infinito: una lezione narrativa e interattiva secondo il metodo gbprof.">
-  <title>Romanticismo — Dalle rovine all’infinito</title>
+  <meta name="description" content="Romanticismo — Quaderno operativo: lettura, micro-antologia, appunti, mappe e recupero mirato.">
+  <title>Romanticismo — Quaderno operativo</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./assets/images/icon-192.png">
   <link rel="apple-touch-icon" href="./assets/images/icon-192.png">
-  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=6">
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
   <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 
   <header class="site-header" aria-label="Intestazione del sito">
-    <a class="brand" href="#home" aria-label="Romanticismo, torna alla copertina">
+    <a class="brand" href="#home" aria-label="Romanticismo, quaderno operativo: torna alla copertina">
       <span class="brand-mark" aria-hidden="true">R</span>
-      <span><strong>Romanticismo</strong><small>Dalle rovine all’infinito</small></span>
+      <span><strong>Romanticismo</strong><small>Quaderno operativo</small></span>
     </a>
     <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">
       <span aria-hidden="true">☰</span> Menu
@@ -29,14 +29,25 @@
       <a href="#mappe">Mappe</a>
       <a href="#timeline">Timeline</a>
       <a href="#verifica">Verifica</a>
-      <button class="nav-button" id="notebookOpen" type="button">Taccuino</button>
+      <button class="nav-button reading-control" id="fontToggle" type="button" aria-label="Cambia dimensione del testo" title="Cambia dimensione del testo">Aa</button>
+      <button class="nav-button reading-control" id="themeToggle" type="button" aria-label="Attiva tema scuro" title="Cambia tema di lettura">Tema</button>
+      <button class="nav-button" id="notebookOpen" type="button" aria-expanded="false" aria-controls="notebookPanel">Taccuino</button>
       <button class="nav-button install-button" id="installButton" type="button">Installa</button>
     </nav>
   </header>
 
+  <div class="study-tools" id="studyTools" role="toolbar" aria-label="Strumenti di studio">
+    <span class="study-tools-label">Studia il testo</span>
+    <button type="button" id="highlightSelection">Evidenzia</button>
+    <button type="button" id="pasteSelection">Porta nel taccuino</button>
+    <button type="button" id="pasteHighlights">Porta evidenziati <span class="tool-count" id="highlightCount">0</span></button>
+    <button type="button" id="clearHighlights" class="quiet-button">Rimuovi evidenziature</button>
+    <span class="selection-status" id="selectionStatus" aria-live="polite">Seleziona una frase nel percorso.</span>
+  </div>
+
   <main id="contenuto">
     <section class="cover-section" id="home" aria-labelledby="coverTitle">
-      <h1 class="sr-only" id="coverTitle">Romanticismo — Dalle rovine all’infinito</h1>
+      <h1 class="sr-only" id="coverTitle">Romanticismo — Quaderno operativo: dalle rovine all’infinito</h1>
       <div class="cover-frame">
         <img src="./assets/images/copertina-romanticismo.webp"
           alt="Copertina illustrata: una città ordinata si spezza in rovine e conduce verso montagne, notte e infinito. Contiene le porte del percorso romantico."
@@ -68,8 +79,12 @@
       </div>
 
       <div class="cover-actions" role="note" aria-label="Istruzioni della copertina">
-        <p><strong>La copertina è una mappa.</strong> Tocca o seleziona con Tab le sue porte.</p>
-        <a class="primary-button" href="#prologo">Entra nel libro <span aria-hidden="true">→</span></a>
+        <div>
+          <p class="kicker">Quaderno operativo</p>
+          <p><strong>Qui lavori sui concetti:</strong> leggi, evidenzia, raccogli citazioni, annota e verifica gli errori.</p>
+          <p class="companion-note">Per la spiegazione distesa usa la <a href="../Romanticismo/">lezione principale sul Romanticismo</a>.</p>
+        </div>
+        <a class="primary-button" href="#prologo">Inizia il lavoro <span aria-hidden="true">→</span></a>
       </div>
 
       <nav class="text-index paper" aria-label="Indice testuale accessibile della copertina">
@@ -330,67 +345,86 @@
       <div class="chapter-inner">
         <header class="chapter-heading light-heading">
           <p class="chapter-number">07</p>
-          <div><p class="kicker">Le idee prendono voce</p><h2 id="testiTitle">Laboratorio dei testi</h2></div>
+          <div><p class="kicker">Micro-antologia operativa</p><h2 id="testiTitle">Le idee prendono voce</h2></div>
         </header>
-        <p class="lead light-lead">Le schede non sostituiscono i testi: indicano che cosa cercare e quale passaggio della lezione mettere alla prova.</p>
+        <p class="lead light-lead">Ogni scheda contiene una breve fonte autentica. Leggila, evidenzia le parole decisive e prova a spiegare quale problema romantico rende visibile.</p>
 
         <div class="text-lab">
           <article>
             <p class="text-meta">1816 · Dibattito italiano</p>
             <h3>Madame de Staël</h3>
             <h4><em>Sulla maniera e l’utilità delle traduzioni</em></h4>
-            <p><strong>Contesto:</strong> l’articolo appare nella «Biblioteca italiana» e invita la cultura italiana ad aprirsi alle letterature moderne europee.</p>
-            <p><strong>Nodo:</strong> traduzione, contemporaneità, cosmopolitismo.</p>
-            <p><strong>Domanda:</strong> aprirsi all’Europa significa imitare o trasformarsi?</p>
-            <a href="https://www.treccani.it/enciclopedia/romanticismo_%28Enciclopedia-dei-ragazzi%29/" target="_blank" rel="noopener">Contesto verificato su Treccani</a>
+            <blockquote class="source-excerpt">«Trasportare da una ad altra favella le opere eccellenti dell’umano ingegno è il maggior benefizio che far si possa alle lettere.»</blockquote>
+            <div class="text-workshop">
+              <p><strong>Osserva:</strong> quali parole trasformano la traduzione in un vantaggio collettivo?</p>
+              <p><strong>Interpreta:</strong> aprirsi all’Europa significa imitare o rinnovare la propria cultura?</p>
+            </div>
+            <a href="https://it.wikisource.org/wiki/Sulla_maniera_e_la_utilit%C3%A0_delle_Traduzioni" target="_blank" rel="noopener">Leggi la fonte completa</a>
           </article>
+
           <article>
             <p class="text-meta">1816 · Manifesto italiano</p>
             <h3>Giovanni Berchet</h3>
             <h4><em>Lettera semiseria di Grisostomo</em></h4>
-            <p><strong>Contesto:</strong> la distinzione tra “Parigini”, “Ottentotti” e popolo cerca un destinatario vivo per la poesia moderna.</p>
-            <p><strong>Nodo:</strong> pubblico, utilità, letteratura dei vivi.</p>
-            <p><strong>Domanda:</strong> il “popolo” di Berchet descrive i lettori reali o li progetta?</p>
-            <p class="source-note">Passo consigliato: la definizione del pubblico intermedio, da leggere nell’edizione scolastica o critica adottata.</p>
+            <blockquote class="source-excerpt">«tutti gli altri individui leggenti ed ascoltanti […] A questi tutti io do nome di “popolo”.»</blockquote>
+            <div class="text-workshop">
+              <p><strong>Osserva:</strong> il pubblico è definito per ceto sociale o per rapporto con la letteratura?</p>
+              <p><strong>Interpreta:</strong> Berchet descrive lettori già esistenti o cerca di formarli?</p>
+            </div>
+            <a href="https://it.wikisource.org/wiki/Lettera_semiseria_di_Grisostomo_al_suo_figliuolo" target="_blank" rel="noopener">Leggi la fonte completa</a>
           </article>
+
           <article>
-            <p class="text-meta">1823 · Poetica</p>
+            <p class="text-meta">1823 · Poetica italiana</p>
             <h3>Alessandro Manzoni</h3>
             <h4><em>Lettera sul Romanticismo</em></h4>
-            <p><strong>Contesto:</strong> Manzoni difende una letteratura moderna fondata sul vero e rifiuta l’uso meccanico della mitologia.</p>
-            <p><strong>Nodo:</strong> «l’utile per iscopo, il vero per soggetto e l’interessante per mezzo».</p>
-            <p><strong>Domanda:</strong> come può una letteratura essere utile senza diventare predica?</p>
-            <a href="https://www.alessandromanzoni.org/opere/12" target="_blank" rel="noopener">Scheda dell’opera</a>
+            <blockquote class="source-excerpt">«l’utile per iscopo, il vero per soggetto, e l’interessante per mezzo.»</blockquote>
+            <div class="text-workshop">
+              <p><strong>Osserva:</strong> assegna a ogni parola una funzione: fine, materia, strategia.</p>
+              <p><strong>Interpreta:</strong> perché “interessante” impedisce all’utile di diventare una predica?</p>
+            </div>
+            <a href="https://it.wikisource.org/wiki/Lettera_sul_romanticismo_a_Cesare_D%27Azeglio" target="_blank" rel="noopener">Leggi la fonte completa</a>
           </article>
+
           <article>
-            <p class="text-meta">1798 / 1800 · Poesia inglese</p>
-            <h3>Wordsworth e Coleridge</h3>
-            <h4><em>Lyrical Ballads</em> e Prefazione</h4>
-            <p><strong>Contesto:</strong> la raccolta del 1798 rinnova temi e lingua; la prefazione dell’edizione 1800 espone il programma poetico di Wordsworth.</p>
-            <p><strong>Nodo:</strong> natura, memoria, emozione rielaborata, lingua comune.</p>
-            <p><strong>Domanda:</strong> che differenza c’è tra emozione vissuta e poesia?</p>
-            <a href="https://www.gutenberg.org/files/9622/9622-h/9622-h.htm" target="_blank" rel="noopener">Edizione 1798</a>
+            <p class="text-meta">1800 · Poesia inglese</p>
+            <h3>William Wordsworth</h3>
+            <h4>Prefazione alle <em>Lyrical Ballads</em></h4>
+            <blockquote class="source-excerpt" lang="en">“Poetry is the spontaneous overflow of powerful feelings: it takes its origin from emotion recollected in tranquillity.”</blockquote>
+            <p class="translation"><strong>Traduzione di servizio:</strong> la poesia è il traboccare spontaneo di sentimenti potenti: nasce dall’emozione ricordata nella tranquillità.</p>
+            <div class="text-workshop">
+              <p><strong>Osserva:</strong> distingui l’emozione immediata dal ricordo che la rielabora.</p>
+              <p><strong>Interpreta:</strong> perché “spontaneo” non significa scrivere senza lavoro?</p>
+            </div>
+            <a href="https://www.gutenberg.org/cache/epub/8905/pg8905-images.html" target="_blank" rel="noopener">Leggi la fonte completa</a>
           </article>
+
           <article>
             <p class="text-meta">1827 · Teatro francese</p>
             <h3>Victor Hugo</h3>
             <h4>Prefazione al <em>Cromwell</em></h4>
-            <p><strong>Contesto:</strong> la prefazione diventa manifesto del dramma romantico e attacca la separazione rigida dei registri.</p>
-            <p><strong>Nodo:</strong> sublime, grottesco, libertà delle forme.</p>
-            <p><strong>Domanda:</strong> perché il grottesco appartiene alla verità dell’uomo moderno?</p>
-            <a href="https://essentiels.bnf.fr/fr/litterature/19e-siecle-1/e7bb7905-4ec3-45c9-bb63-0bd87831aef0-theatre-19e-siecle/article/cfdbd878-5a6a-4324-a300-7be633d1c5e2-cromwell-et-sa-preface" target="_blank" rel="noopener">Dossier BnF</a>
+            <blockquote class="source-excerpt" lang="fr">«mêler dans ses créations, sans pourtant les confondre, l’ombre à la lumière, le grotesque au sublime»</blockquote>
+            <p class="translation"><strong>Traduzione di servizio:</strong> mescolare nelle creazioni, senza confonderli, l’ombra con la luce, il grottesco con il sublime.</p>
+            <div class="text-workshop">
+              <p><strong>Osserva:</strong> quali coppie opposte convivono senza annullarsi?</p>
+              <p><strong>Interpreta:</strong> perché la mescolanza può rappresentare meglio l’uomo moderno?</p>
+            </div>
+            <a href="https://fr.wikisource.org/wiki/Cromwell_-_Pr%C3%A9face" target="_blank" rel="noopener">Leggi la fonte completa</a>
           </article>
+
           <article>
             <p class="text-meta">1818 · Critica del Romanticismo</p>
             <h3>Giacomo Leopardi</h3>
             <h4><em>Discorso di un italiano intorno alla poesia romantica</em></h4>
-            <p><strong>Contesto:</strong> Leopardi respinge il programma romantico italiano, ma affronta gli stessi problemi di natura, immaginazione e modernità.</p>
-            <p><strong>Nodo:</strong> antico/moderno, immaginazione, natura.</p>
-            <p><strong>Domanda:</strong> come può un autore essere dentro una crisi e contro le risposte dominanti?</p>
-            <a href="../Leopardi/pagine/filosofia-base.html#il-mondo-delle-idee-tra-settecento-e-ottocento" class="internal-bridge" data-ottocento-link data-ottocento-topic="romanticismo-leopardi">Prosegui nel contesto culturale di Leopardi</a>
+            <blockquote class="source-excerpt">«la poesia non si venga mutando […] ma ne’ suoi caratteri principali, sia, come la natura, immutabile.»</blockquote>
+            <div class="text-workshop">
+              <p><strong>Osserva:</strong> quale rapporto stabilisce Leopardi tra poesia e natura?</p>
+              <p><strong>Interpreta:</strong> come può condividere la crisi moderna e rifiutare la soluzione dei romantici italiani?</p>
+            </div>
+            <a href="https://it.wikisource.org/wiki/Discorso_di_un_italiano_intorno_alla_poesia_romantica" target="_blank" rel="noopener">Leggi la fonte completa</a>
           </article>
         </div>
-        <p class="copyright-note">Gli estratti sono limitati a brevi formule di pubblico dominio e rimandi. Le edizioni complete vanno verificate nell’antologia o in una fonte filologica affidabile.</p>
+        <p class="copyright-note">Gli estratti sono brevi, di pubblico dominio e collegati alle edizioni digitali complete. Le traduzioni dall’inglese e dal francese sono esclusivamente didattiche.</p>
       </div>
     </section>
 
@@ -415,15 +449,15 @@
         <p>Queste tavole della PWA precedente sono state conservate perché coerenti e utili come secondo livello visuale. Si aprono a pieno schermo e possono essere ingrandite.</p>
         <div class="illustrated-maps">
           <button type="button" data-image="./assets/images/tavola-contraddizioni.png" data-title="Le contraddizioni romantiche">
-            <img src="./assets/images/tavola-contraddizioni.png" alt="Anteprima della tavola illustrata sulle contraddizioni romantiche" loading="lazy">
+            <img src="./assets/images/tavola-contraddizioni.png" alt="Anteprima della tavola illustrata sulle contraddizioni romantiche" loading="lazy" decoding="async">
             <span>Le contraddizioni romantiche</span>
           </button>
           <button type="button" data-image="./assets/images/tavola-romanticismo-europeo.png" data-title="Il Romanticismo europeo">
-            <img src="./assets/images/tavola-romanticismo-europeo.png" alt="Anteprima della tavola illustrata sul Romanticismo europeo" loading="lazy">
+            <img src="./assets/images/tavola-romanticismo-europeo.png" alt="Anteprima della tavola illustrata sul Romanticismo europeo" loading="lazy" decoding="async">
             <span>Il Romanticismo europeo</span>
           </button>
           <button type="button" data-image="./assets/images/tavola-romanticismo-italiano.png" data-title="Il Romanticismo italiano">
-            <img src="./assets/images/tavola-romanticismo-italiano.png" alt="Anteprima della tavola illustrata sul Romanticismo italiano" loading="lazy">
+            <img src="./assets/images/tavola-romanticismo-italiano.png" alt="Anteprima della tavola illustrata sul Romanticismo italiano" loading="lazy" decoding="async">
             <span>Il Romanticismo italiano</span>
           </button>
         </div>
@@ -530,7 +564,7 @@
           <div><p class="kicker">Verifica ragionata</p><h2 id="verificaTitle">Non basta ricordare: bisogna collegare</h2></div>
         </header>
         <div class="quiz-intro">
-          <p>Dieci domande su conoscenze, causa-effetto, confronti e interpretazione. Dopo ogni risposta compare una spiegazione.</p>
+          <p>Dieci domande su conoscenze, causa-effetto, confronti e interpretazione. Ricevi subito la spiegazione; alla fine trovi percentuale, voto orientativo e recupero soltanto degli errori.</p>
           <button type="button" class="primary-button" id="quizStart">Inizia la verifica</button>
         </div>
         <div id="quizForm" class="quiz-form" hidden></div>
@@ -571,6 +605,8 @@
           <li><a href="https://www.poetryfoundation.org/articles/69383/observations-prefixed-to-lyrical-ballads" target="_blank" rel="noopener">Poetry Foundation — <em>Lyrical Ballads</em>, 1798</a></li>
           <li><a href="https://essentiels.bnf.fr/fr/litterature/19e-siecle-1/e7bb7905-4ec3-45c9-bb63-0bd87831aef0-theatre-19e-siecle/article/cfdbd878-5a6a-4324-a300-7be633d1c5e2-cromwell-et-sa-preface" target="_blank" rel="noopener">Bibliothèque nationale de France — <em>Cromwell</em> e la prefazione, 1827</a></li>
           <li><a href="https://www.alessandromanzoni.org/opere/12" target="_blank" rel="noopener">Centro Nazionale Studi Manzoniani — <em>Sul Romanticismo</em></a></li>
+          <li><a href="https://it.wikisource.org/wiki/Lettera_semiseria_di_Grisostomo_al_suo_figliuolo" target="_blank" rel="noopener">Wikisource — Berchet, <em>Lettera semiseria</em></a></li>
+          <li><a href="https://it.wikisource.org/wiki/Discorso_di_un_italiano_intorno_alla_poesia_romantica" target="_blank" rel="noopener">Wikisource — Leopardi, <em>Discorso sulla poesia romantica</em></a></li>
         </ul>
         <a class="download-link" href="./assets/docs/Dispensa_Romanticismo_gbprof_Libera.docx" download>Scarica la dispensa di partenza in formato Word</a>
       </div>
@@ -600,24 +636,36 @@
   <dialog class="image-dialog" id="imageDialog" aria-labelledby="imageDialogTitle">
     <div class="dialog-shell">
       <div class="dialog-header"><h2 id="imageDialogTitle">Tavola illustrata</h2><button type="button" id="imageClose" aria-label="Chiudi la tavola">×</button></div>
-      <div class="image-viewport"><img id="imageFull" src="./assets/images/tavola-contraddizioni.png" alt=""></div>
+      <div class="image-viewport"><img id="imageFull" alt="" decoding="async"></div>
     </div>
   </dialog>
 
-  <dialog class="notebook-dialog" id="notebookDialog" aria-labelledby="notebookTitle">
+  <aside class="notebook-panel" id="notebookPanel" aria-labelledby="notebookTitle" aria-hidden="true">
     <div class="notebook-shell">
-      <div class="dialog-header"><div><p class="kicker">Spazio personale sul dispositivo</p><h2 id="notebookTitle">Taccuino</h2></div><button type="button" id="notebookClose" aria-label="Chiudi il taccuino">×</button></div>
-      <label for="notebookText">Appunti sul percorso</label>
-      <textarea id="notebookText" rows="16" placeholder="Scrivi qui relazioni, domande, confronti…"></textarea>
-      <p class="save-status" id="saveStatus" aria-live="polite">Gli appunti restano soltanto in questo browser.</p>
-      <div class="notebook-actions">
-        <button type="button" id="notebookSave">Salva</button>
-        <button type="button" id="notebookCopy">Copia</button>
-        <button type="button" id="notebookExport">Esporta .txt</button>
-        <button type="button" class="danger-button" id="notebookClear">Cancella</button>
+      <div class="dialog-header"><div><p class="kicker">Spazio personale sul dispositivo</p><h2 id="notebookTitle">Taccuino di studio</h2></div><button type="button" id="notebookClose" aria-label="Chiudi il taccuino">×</button></div>
+      <div class="notebook-content">
+        <label for="notebookText">Appunti miei</label>
+        <textarea id="notebookText" rows="11" placeholder="Scrivi qui relazioni, domande, confronti…"></textarea>
+        <p class="save-status" id="saveStatus" aria-live="polite">Gli appunti restano soltanto in questo browser.</p>
+
+        <section class="citation-box" aria-labelledby="citationTitle">
+          <div class="citation-heading">
+            <h3 id="citationTitle">Citazioni dalla lettura</h3>
+            <span id="citationCount">0</span>
+          </div>
+          <p class="citation-help">Seleziona o evidenzia una frase e portala qui: conserverò anche la sezione di provenienza.</p>
+          <div class="citation-list" id="citationList"></div>
+        </section>
+
+        <div class="notebook-actions">
+          <button type="button" id="notebookSave">Salva</button>
+          <button type="button" id="notebookCopy">Copia tutto</button>
+          <button type="button" id="notebookExport">Esporta .txt</button>
+          <button type="button" class="danger-button" id="notebookClear">Cancella tutto</button>
+        </div>
       </div>
     </div>
-  </dialog>
+  </aside>
 
   <div class="toast" id="toast" aria-live="polite"></div>
 
@@ -731,6 +779,6 @@
     </div>
   </template>
 
-  <script src="./assets/js/app.js" defer></script>
+  <script src="./assets/js/app.js?v=6" defer></script>
 </body>
 </html>

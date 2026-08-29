@@ -1,8 +1,10 @@
-# Romanticismo — Dalle rovine all’infinito
+# Romanticismo — Quaderno operativo
 
-PWA didattica autonoma costruita secondo il metodo gbprof:
+PWA didattica complementare alla [lezione principale sul Romanticismo](../Romanticismo/). Mantiene il percorso gbprof:
 
 `mondo precedente → fratture → nuova immagine del mondo → nuova letteratura → vie europee → via italiana → conclusione`
+
+e lo trasforma in uno spazio di lavoro personale.
 
 ## Apertura
 
@@ -11,16 +13,17 @@ PWA didattica autonoma costruita secondo il metodo gbprof:
 
 ## Funzioni
 
-- copertina-index con hotspot responsive, tastiera e indice testuale;
-- percorso narrativo completo;
-- vie europee a pannelli;
-- laboratorio dei testi con rimandi verificati;
-- sette mappe HTML ingrandibili e tre tavole illustrate;
+- copertina-indice accessibile con hotspot, tastiera e indice testuale;
+- percorso sintetico collegato alla PWA principale;
+- dimensione del testo regolabile e doppio tema carta/notte;
+- evidenziazioni persistenti nel browser;
+- taccuino laterale con appunti e citazioni dotate di provenienza;
+- micro-antologia con brevi fonti autentiche e domande operative;
+- sette mappe HTML ingrandibili e tre tavole illustrate caricate su richiesta;
 - timeline interattiva;
 - saperi irrinunciabili e vocabolario;
-- verifica ragionata con feedback;
-- taccuino locale con salvataggio, copia ed esportazione;
-- manifest e service worker per installazione e uso offline.
+- verifica ragionata con tre alternative, percentuale, voto orientativo, recupero mirato e ripetizione dei soli errori;
+- manifest e service worker per installazione e uso offline essenziale.
 
 ## Ponti
 
@@ -29,6 +32,6 @@ La PWA non duplica i capitoli d’autore. I collegamenti relativi puntano alle P
 - `../Manzoni/`
 - `../Leopardi/`
 
-## Privacy
+## Privacy e dati locali
 
-Il taccuino usa soltanto `localStorage`; nessun appunto viene inviato all’esterno.
+Appunti, citazioni, evidenziazioni, preferenze di lettura e tentativi della verifica usano soltanto `localStorage`; nessun dato personale viene inviato all’esterno.

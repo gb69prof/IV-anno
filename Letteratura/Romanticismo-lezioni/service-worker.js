@@ -1,22 +1,15 @@
-const CACHE_VERSION = "romanticismo-lezioni-v5";
+const CACHE_VERSION = "romanticismo-lezioni-v6";
 const OFFLINE_URL = "./offline.html";
 const CORE_ASSETS = [
   "./",
   "./index.html",
   "./offline.html",
   "./manifest.webmanifest",
-  "./assets/css/styles.css",
-  "./assets/js/app.js",
+  "./assets/css/styles.css?v=6",
+  "./assets/js/app.js?v=6",
   "./assets/images/copertina-romanticismo.webp",
   "./assets/images/icon-192.png",
-  "./assets/images/icon-512.png",
-  "./assets/images/tavola-contraddizioni.png",
-  "./assets/images/tavola-romanticismo-europeo.png",
-  "./assets/images/tavola-romanticismo-italiano.png",
-  "./assets/docs/Dispensa_Romanticismo_gbprof_Libera.docx",
-  "../rete-pwa/bridge.js?v=2",
-  "../rete-pwa/bridge.css?v=2",
-  "../rete-pwa/links.json?v=2"
+  "./assets/images/icon-512.png"
 ];
 
 self.addEventListener("install", event => {
@@ -46,8 +39,10 @@ self.addEventListener("fetch", event => {
     event.respondWith(
       fetch(request)
         .then(response => {
-          const copy = response.clone();
-          caches.open(CACHE_VERSION).then(cache => cache.put(request, copy));
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_VERSION).then(cache => cache.put(request, copy));
+          }
           return response;
         })
         .catch(async () => {

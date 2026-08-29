@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Romanticismo — Dalle rovine all’infinito",
+  "name": "Romanticismo — Quaderno operativo",
   "short_name": "Romanticismo",
-  "description": "Un viaggio narrativo nella crisi che trasforma l’uomo, la storia, la natura e la letteratura.",
+  "description": "Quaderno operativo sul Romanticismo con lettura regolabile, micro-antologia, evidenziazioni, appunti, mappe e recupero mirato.",
   "lang": "it",
   "dir": "ltr",
   "start_url": "./",
@@ -11,7 +11,10 @@
   "orientation": "any",
   "background_color": "#041725",
   "theme_color": "#061d2f",
-  "categories": ["education", "books"],
+  "categories": [
+    "education",
+    "books"
+  ],
   "icons": [
     {
       "src": "./assets/images/icon-192.png",
@@ -28,16 +31,37 @@
   ],
   "shortcuts": [
     {
-      "name": "Inizia il percorso",
+      "name": "Inizia il lavoro",
       "short_name": "Percorso",
       "url": "./#prologo",
-      "icons": [{ "src": "./assets/images/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "./assets/images/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Micro-antologia",
+      "short_name": "Testi",
+      "url": "./#testi",
+      "icons": [
+        {
+          "src": "./assets/images/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Mappe concettuali",
       "short_name": "Mappe",
       "url": "./#mappe",
-      "icons": [{ "src": "./assets/images/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "./assets/images/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }
