@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "manzoni-pwa-";
-const CACHE_NAME = `${CACHE_PREFIX}v10`;
+const CACHE_NAME = `${CACHE_PREFIX}v11`;
 
 const LOCAL_ASSETS = [
   "./",
@@ -8,8 +8,8 @@ const LOCAL_ASSETS = [
   "./video.html",
   "./offline.html",
   "./manifest.json",
-  "./assets/css/style.css?v=10",
-  "./assets/js/app.js?v=10",
+  "./assets/css/style.css?v=11",
+  "./assets/js/app.js?v=11",
   "./assets/immagini/index.png",
   "./assets/immagini/manzoni-ritratto.png",
   "./assets/immagini/icon-192.png",

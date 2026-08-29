@@ -1223,3 +1223,59 @@ body[data-page="home"] main {
 .video-empty strong {
   padding: 0;
 }
+
+
+/* Revisione dello strumento di studio */
+.lesson-brief {
+  margin: 2.2rem 0 0;
+  padding: 1.15rem 1.3rem;
+  border-left: 4px solid var(--gold);
+  border-radius: .65rem;
+  background: rgba(201,145,69,.12);
+}
+.lesson-brief small {
+  display:block;
+  color:#7b4d16;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.lesson-brief h2 { margin:.18rem 0 .55rem; }
+.lesson-brief p { margin:0; }
+.citation-source {
+  display:block;
+  margin-top:.45rem;
+  color:#745126;
+  font-size:.78rem;
+  font-weight:800;
+}
+.recovery-example {
+  margin:.65rem 0;
+  padding:.65rem .8rem;
+  border-left:3px solid var(--gold);
+  background:rgba(201,145,69,.1);
+  font-size:.92rem;
+}
+.recovery-card [data-recovery-jump] {
+  margin-top:.55rem;
+  padding:.55rem .75rem;
+  border:1px solid var(--gold);
+  border-radius:.45rem;
+  background:#fff7e8;
+  color:var(--ink);
+  font-weight:800;
+  cursor:pointer;
+}
+.recovery-focus {
+  outline:4px solid rgba(201,145,69,.62);
+  outline-offset:7px;
+  border-radius:.35rem;
+}
+html[data-theme="dark"] .lesson-brief,
+html[data-theme="dark"] .recovery-example { background:rgba(201,145,69,.16); }
+html[data-theme="dark"] .lesson-brief small,
+html[data-theme="dark"] .citation-source { color:#f0c783; }
+html[data-theme="dark"] .recovery-card [data-recovery-jump] {
+  background:#18384e;
+  color:#fff4dc;
+}

@@ -7,6 +7,7 @@ const LESSON_VIDEO_MAP = {
   "capitoli": "",
   "conclusione": ""
 };
+const HAS_LINKED_VIDEOS = Object.values(LESSON_VIDEO_MAP).some(Boolean);
 
 const LESSON_STUDY_DATA = {
   "introduzione": {
@@ -460,6 +461,66 @@ Object.entries(LESSON_META).forEach(([id, meta]) => {
 });
 
 const LESSON_ORDER = ["introduzione","fratture","immagine-del-mondo","poetica","opere","capitoli","conclusione"];
+const LESSON_SUMMARIES = {
+  "introduzione": "Manzoni nasce tra l’eredità civile dell’Illuminismo e la nuova sensibilità romantica. Conserva la fiducia nella ragione, ma la mette alla prova davanti al male e alla sofferenza. La sua letteratura diventa così storica, morale e religiosa: deve rappresentare la realtà, coinvolgere il lettore e contribuire alla sua formazione. Anche la ricerca linguistica partecipa a questo progetto. In un’Italia ancora divisa, scegliere una lingua viva e comprensibile significa allargare la comunità dei lettori e collaborare alla costruzione della nazione. Da questo mondo ricevuto nasce la frattura decisiva: la conversione trasformerà la domanda religiosa in un nuovo progetto di scrittura.",
+  "fratture": "La biografia di Manzoni illumina alcune svolte della sua opera senza determinarla automaticamente. L’infanzia divisa, gli anni di collegio e il soggiorno parigino gli fanno incontrare mondi culturali differenti. La conversione maturata intorno al 1810 modifica il suo modo di pensare la storia, il male e la funzione della letteratura. I lutti familiari impediscono però di ridurre la fede a una consolazione semplice: il dolore resta reale. Infine Manzoni assume un ruolo civile nel Risorgimento, collegando letteratura, lingua e nazione. Le fratture della vita preparano quindi la sua immagine del mondo: una storia ferita nella quale l’uomo resta fragile e responsabile.",
+  "immagine-del-mondo": "Per Manzoni il male non è astratto: appare nella violenza dei potenti, nella paura, nelle istituzioni ingiuste, nella folla e nella malattia. L’uomo è fragile e ha bisogno della grazia, ma rimane responsabile delle proprie scelte. La Provvidenza non impedisce automaticamente il dolore e non garantisce il successo terreno dei giusti. Può invece aprire, dentro la prova, una possibilità di maturazione, conversione e bene: è il significato della provvida sventura. La giustizia piena appartiene a Dio, mentre nella storia l’uomo deve contrastare il male e soccorrere gli oppressi. Questa visione rende necessaria una poetica capace di unire verità storica, responsabilità morale e coinvolgimento del lettore.",
+  "poetica": "La poetica manzoniana si fonda su tre principi inseparabili: il vero come soggetto, l’utile come scopo e l’interessante come mezzo. La letteratura deve rappresentare la realtà storica e morale, contribuire alla formazione civile e coinvolgere il lettore. Per questo Manzoni rifiuta il mito neoclassico usato come evasione e contesta le unità teatrali di tempo e luogo quando deformano la complessità degli eventi. Il romanzo storico diventa la forma più adatta: intreccia personaggi plausibili, società documentata e conflitti morali, facendo entrare gli umili nella storia. La ricerca di una lingua viva completa il progetto e prepara le opere nelle quali questi principi vengono messi concretamente alla prova.",
+  "opere": "Le opere di Manzoni formano un percorso, non un catalogo. Le tragedie mostrano il dolore prodotto dalla violenza politica e affidano al coro una riflessione morale. Le odi civili leggono gli eventi contemporanei alla luce del limite umano e della fede; gli Inni sacri osservano la storia come luogo nel quale la carità può agire. Nei Promessi sposi tutti i nuclei precedenti confluiscono: storia documentata, attenzione agli umili, domanda sulla Provvidenza, lingua nazionale e personaggi complessi. Il Seicento permette inoltre di interrogare indirettamente anche l’Ottocento. Le opere dimostrano così che il vero, l’utile e l’interessante possono diventare insieme forma narrativa, conoscenza e responsabilità civile.",
+  "capitoli": "I capitoli scelti sono un laboratorio del romanzo. Nel capitolo I la minaccia dei bravi mostra che la prepotenza funziona grazie alla paura e alla debolezza delle istituzioni. Fra Cristoforo rappresenta una colpa riconosciuta e trasformata in servizio agli oppressi. Gertrude è insieme responsabile e vittima di una libertà deformata dalla famiglia e dalle istituzioni. Lucia non è una presenza passiva: la sua parola contribuisce alla crisi dell’Innominato, mentre Renzo matura attraverso errori e prove. La conversione dell’Innominato mostra infine l’incontro fra coscienza, misericordia e possibilità di cambiamento. Queste scene rendono concreti i grandi nuclei di potere, libertà, colpa, conversione e Provvidenza.",
+  "conclusione": "Manzoni tiene insieme ciò che spesso viene separato: fede e storia, morale e narrazione, lingua e nazione, umili e potenti. La sua opera guarda il male senza attenuarlo e non trasforma la Provvidenza in un lieto fine automatico. La fede permette di leggere la storia senza disperare, ma richiede responsabilità e scelta. La poetica del vero, dell’utile e dell’interessante trova nei Promessi sposi la realizzazione più completa: il romanzo racconta istituzioni fragili, violenza, conversione e crescita usando una lingua destinata a una comunità nazionale. L’eredità più viva di Manzoni è quindi una letteratura che coinvolge il lettore, gli mostra la complessità del mondo e gli domanda come agire dentro di essa."
+};
+const RECOVERY_TARGETS = {
+  "introduzione": [
+    "1-1-il-contesto-culturale",
+    "1-2-il-romanticismo-manzoniano",
+    "1-3-la-questione-della-lingua",
+    "1-1-il-contesto-culturale",
+    "1-2-il-romanticismo-manzoniano"
+  ],
+  "fratture": [
+    "2-3-il-1810-la-conversione",
+    "2-4-i-lutti-e-la-fragilita-dellesistenza",
+    "2-5-manzoni-e-litalia-lintellettuale-civile",
+    "2-3-il-1810-la-conversione",
+    "2-1-nascita-famiglia-e-infanzia-difficile"
+  ],
+  "immagine-del-mondo": [
+    "3-1-il-male-come-realta-concreta",
+    "3-4-la-provvidenza-seconda-fase",
+    "3-3-la-provvidenza-prima-fase",
+    "3-5-storia-ed-eternita",
+    "3-4-la-provvidenza-seconda-fase"
+  ],
+  "poetica": [
+    "4-2-il-rifiuto-del-neoclassicismo",
+    "4-1-le-tre-colonne-della-poetica",
+    "4-4-il-romanzo-storico",
+    "4-3-la-tragedia-manzoniana",
+    "4-1-le-tre-colonne-della-poetica"
+  ],
+  "opere": [
+    "5-4-i-promessi-sposi-il-capolavoro",
+    "5-2-le-odi-civili",
+    "5-5-il-sistema-dei-personaggi",
+    "5-4-i-promessi-sposi-il-capolavoro",
+    "5-5-il-sistema-dei-personaggi"
+  ],
+  "capitoli": [
+    "capitolo-i-questo-matrimonio-non-sha-da-fare",
+    "capitolo-iv-fra-cristoforo",
+    "la-conversione-dellinnominato",
+    "capitolo-ix-la-monaca-di-monza-1",
+    "la-conversione-dellinnominato"
+  ],
+  "conclusione": [
+    "sintesi-lezione",
+    "sintesi-lezione",
+    "sintesi-lezione",
+    "sintesi-lezione",
+    "sintesi-lezione"
+  ]
+};
 const STORAGE_PREFIX = "manzoni-study-v5-";
 
 function getRoot() {
@@ -485,11 +546,14 @@ function youtubeEmbedUrl(url) {
 function setupServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register(`${getRoot()}service-worker.js`).catch(() => {});
+    navigator.serviceWorker.register(`${getRoot()}service-worker.js`).then(registration => registration.update()).catch(() => {});
   });
 }
 
 function setupActiveNavigation() {
+  if (!HAS_LINKED_VIDEOS) {
+    document.querySelectorAll('a[href$="video.html"]').forEach(link => link.remove());
+  }
   const current = location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".top-nav a").forEach((link) => {
     const href = link.getAttribute("href") || "";
@@ -694,6 +758,10 @@ function setupLessonEnvironment() {
   source.className = "reading-source";
   source.id = "readingSource";
   originalNodes.forEach(node => source.append(node));
+  const lessonSummary = LESSON_SUMMARIES[lessonId];
+  if (lessonSummary) {
+    source.insertAdjacentHTML("beforeend", `<section class="lesson-brief" id="sintesi-lezione" aria-labelledby="sintesiTitolo"><small>Sintesi</small><h2 id="sintesiTitolo">La lezione in breve</h2><p>${escapeHtml(lessonSummary)}</p></section>`);
+  }
   article.append(source);
 
   const oldVisuals = [
@@ -706,7 +774,7 @@ function setupLessonEnvironment() {
   document.querySelector(".site-header").innerHTML = `
     <a class="study-home" href="../index.html" aria-label="Torna alla copertina">← <span>Home</span></a>
     <div class="study-heading"><span>${escapeHtml(meta.subtitle)}</span><h1>${escapeHtml(meta.title)}</h1></div>
-    <div class="study-actions"><button type="button" data-theme aria-label="Cambia tema">◐</button><button type="button" data-font aria-label="Cambia dimensione testo">A</button><button type="button" data-open-index>Indice</button></div>
+    <div class="study-actions"><button type="button" data-theme aria-label="Cambia tema" title="Tema chiaro o scuro">◐</button><button type="button" data-font aria-label="Cambia dimensione testo" title="Dimensione del testo">A</button><button type="button" data-open-index>Indice</button></div>
     <nav class="mobile-study-tabs" aria-label="Pannelli"><button class="active" type="button" data-mobile-view="read">Lezione</button><button type="button" data-mobile-view="visual">Apparato</button><button type="button" data-mobile-view="notes">Taccuino</button></nav>`;
 
   article.insertAdjacentHTML("afterbegin", `
@@ -737,7 +805,7 @@ function setupLessonEnvironment() {
   document.querySelector(".site-footer").classList.add("study-bottombar");
 
   document.body.insertAdjacentHTML("beforeend", `
-    <dialog class="study-dialog" data-index-dialog><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form><header><p>Sette ambienti collegati</p><h2>Indice completo</h2></header><nav class="full-index">${LESSON_ORDER.map((id,index) => `<a href="${id}.html" ${id === lessonId ? 'aria-current="page"' : ""}><b>${index + 1}</b><span>${escapeHtml(LESSON_META[id].title)}</span></a>`).join("")}<a href="../mappe.html"><b>M</b><span>Mappe e schemi</span></a><a href="../video.html"><b>V</b><span>Video</span></a></nav></dialog>
+    <dialog class="study-dialog" data-index-dialog><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form><header><p>Sette ambienti collegati</p><h2>Indice completo</h2></header><nav class="full-index">${LESSON_ORDER.map((id,index) => `<a href="${id}.html" ${id === lessonId ? 'aria-current="page"' : ""}><b>${index + 1}</b><span>${escapeHtml(LESSON_META[id].title)}</span></a>`).join("")}<a href="../mappe.html"><b>M</b><span>Mappe e schemi</span></a>${HAS_LINKED_VIDEOS ? '<a href="../video.html"><b>V</b><span>Video</span></a>' : ""}</nav></dialog>
     <dialog class="study-dialog learning-dialog" data-learning-dialog><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form><header><p data-learning-kicker>Sedimentare</p><h2 data-learning-title></h2></header><div data-learning-content></div></dialog>`);
 
   const status = article.querySelector("[data-selection-status]");
@@ -754,7 +822,7 @@ function setupLessonEnvironment() {
   let currentVisual = 0;
 
   const renderCitations = () => {
-    citationList.innerHTML = notebook.citations.map(item => `<article class="citation-card"><blockquote>${escapeHtml(item.text)}</blockquote><button type="button" data-remove-citation="${escapeHtml(item.id)}" aria-label="Elimina questa citazione">×</button></article>`).join("");
+    citationList.innerHTML = notebook.citations.map(item => `<article class="citation-card"><blockquote>${escapeHtml(item.text)}</blockquote><small class="citation-source">Da: ${escapeHtml(item.lessonTitle || meta.title)}</small><button type="button" data-remove-citation="${escapeHtml(item.id)}" aria-label="Elimina questa citazione">×</button></article>`).join("");
     emptyCitations.hidden = notebook.citations.length > 0;
   };
   const saveNotebook = () => {
@@ -792,7 +860,7 @@ function setupLessonEnvironment() {
   };
   const addCitation = item => {
     if (citationExists(item)) return false;
-    notebook.citations.push({id:crypto.randomUUID?.() || `${Date.now()}-${Math.random()}`,highlightId:item.id || null,text:item.text,date:new Date().toISOString()});
+    notebook.citations.push({id:crypto.randomUUID?.() || `${Date.now()}-${Math.random()}`,highlightId:item.id || null,text:item.text,lessonId,lessonTitle:meta.title,date:new Date().toISOString()});
     writeStore(`notebook-${lessonId}`,notebook);
     renderCitations();
     return true;
@@ -832,7 +900,7 @@ function setupLessonEnvironment() {
     notebook = {notes:"",citations:[]}; notebookText.value = ""; writeStore(`notebook-${lessonId}`,notebook); renderCitations(); updateTools();
   });
   sidebar.querySelector("[data-download]").addEventListener("click", () => {
-    const lines = [meta.title,new Date().toLocaleString("it-IT"),"","APPUNTI DELLO STUDENTE",notebookText.value.trim() || "(nessun appunto)","","CITAZIONI DALLA LEZIONE",...notebook.citations.flatMap(item => [item.text,""])];
+    const lines = [meta.title,new Date().toLocaleString("it-IT"),"","APPUNTI DELLO STUDENTE",notebookText.value.trim() || "(nessun appunto)","","CITAZIONI DALLA LEZIONE",...notebook.citations.flatMap(item => [`[${item.lessonTitle || meta.title}]`,item.text,""])];
     const blob = new Blob(["\ufeff" + lines.join("\n")],{type:"text/plain;charset=utf-8"});
     const url = URL.createObjectURL(blob); const link = document.createElement("a"); link.href=url; link.download=`appunti-manzoni-${lessonId}.txt`; document.body.append(link); link.click(); link.remove(); sidebar.querySelector("[data-save-state]").textContent="TXT preparato"; setTimeout(() => URL.revokeObjectURL(url),1000);
   });
@@ -864,8 +932,21 @@ function setupLessonEnvironment() {
   document.querySelector("[data-open-index]").addEventListener("click",() => indexDialog.showModal());
   const learningDialog = document.querySelector("[data-learning-dialog]");
   document.querySelectorAll("[data-learning]").forEach(button => button.addEventListener("click",() => openLearning(button.dataset.learning)));
-  document.querySelectorAll("[data-theme]").forEach(button => button.addEventListener("click",() => { const value=document.documentElement.dataset.theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme=value; writeStore("theme",value); }));
-  document.querySelectorAll("[data-font]").forEach(button => button.addEventListener("click",() => { const values=["medium","large","xlarge"]; const next=values[(values.indexOf(document.documentElement.dataset.font)+1)%values.length]; document.documentElement.dataset.font=next; writeStore("font",next); }));
+  const themeControl = document.querySelector("[data-theme]");
+  const fontControl = document.querySelector("[data-font]");
+  themeControl.addEventListener("click",() => {
+    const value=document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme=value;
+    themeControl.setAttribute("aria-pressed",String(value === "dark"));
+    writeStore("theme",value);
+  });
+  fontControl.addEventListener("click",() => {
+    const values=["medium","large","xlarge"];
+    const next=values[(values.indexOf(document.documentElement.dataset.font)+1)%values.length];
+    document.documentElement.dataset.font=next;
+    fontControl.dataset.currentSize=next;
+    writeStore("font",next);
+  });
   document.querySelectorAll("[data-mobile-view]").forEach(button => button.addEventListener("click",() => { shell.dataset.mobilePanel=button.dataset.mobileView; document.querySelectorAll("[data-mobile-view]").forEach(item => item.classList.toggle("active",item===button)); }));
 
   function openLearning(kind) {
@@ -875,6 +956,40 @@ function setupLessonEnvironment() {
     if(kind === "quiz") { title.textContent="Test della lezione"; renderQuiz(mount,data.quiz,data.quiz.map((_,index)=>index)); }
     learningDialog.showModal();
   }
+  function recoveryTarget(index) {
+    const targetId = RECOVERY_TARGETS[lessonId]?.[index];
+    return (targetId && source.querySelector(`#${targetId}`)) || source.querySelector("h1") || source;
+  }
+  function recoveryExample(index) {
+    const target = recoveryTarget(index);
+    if (target.matches(".lesson-brief")) return normalizeText(target.querySelector("p")?.textContent || "").slice(0,320);
+    let cursor = target.nextElementSibling;
+    while (cursor && !cursor.matches("h1,h2")) {
+      const candidate = cursor.matches("p,li,blockquote") ? cursor : cursor.querySelector("p,li,td");
+      const text = normalizeText(candidate?.textContent || "");
+      if (text.length > 45) return `${text.slice(0,320)}${text.length > 320 ? "…" : ""}`;
+      cursor = cursor.nextElementSibling;
+    }
+    return normalizeText(target.textContent || "").slice(0,320);
+  }
+  function recoveryCardHtml(index, questions) {
+    const item = questions[index];
+    const example = recoveryExample(index);
+    return `<article class="recovery-card"><h4>${escapeHtml(item.question)}</h4><p>${escapeHtml(item.recovery)}</p>${example ? `<blockquote class="recovery-example"><b>Dal testo:</b> ${escapeHtml(example)}</blockquote>` : ""}<button type="button" data-recovery-jump="${index}">Rileggi il punto nella lezione</button></article>`;
+  }
+  function jumpToRecovery(index) {
+    const target = recoveryTarget(index);
+    if (learningDialog.open) learningDialog.close();
+    shell.dataset.mobilePanel = "read";
+    document.querySelectorAll("[data-mobile-view]").forEach(button => button.classList.toggle("active",button.dataset.mobileView === "read"));
+    source.querySelectorAll(".recovery-focus").forEach(node => node.classList.remove("recovery-focus"));
+    target.classList.add("recovery-focus");
+    target.setAttribute("tabindex","-1");
+    target.scrollIntoView({behavior:"smooth",block:"center"});
+    target.focus({preventScroll:true});
+    setTimeout(() => target.classList.remove("recovery-focus"),3500);
+  }
+
   function renderQuiz(mount, questions, indices) {
     mount.innerHTML=`<form class="lesson-quiz">${indices.map((index,position)=>{const item=questions[index];return `<fieldset data-q="${index}"><legend>${position+1}. ${escapeHtml(item.question)}</legend>${item.options.map((option,optionIndex)=>`<label><input type="radio" name="q-${index}" value="${optionIndex}"><span>${String.fromCharCode(65+optionIndex)}. ${escapeHtml(option)}</span></label>`).join("")}<p class="answer-feedback" aria-live="polite"></p></fieldset>`}).join("")}<button type="submit">Correggi</button><div class="quiz-report" role="status" aria-live="polite"></div></form>`;
     const form=mount.querySelector("form");
@@ -882,11 +997,14 @@ function setupLessonEnvironment() {
       event.preventDefault(); const wrong=[]; let correct=0;
       indices.forEach(index=>{const item=questions[index];const field=form.querySelector(`[data-q="${index}"]`);const selected=field.querySelector(`input[name="q-${index}"]:checked`);const chosen=selected?Number(selected.value):-1;const ok=chosen===item.answer;field.classList.toggle("correct",ok);field.classList.toggle("wrong",!ok);field.querySelector(".answer-feedback").textContent=ok?`Corretto. ${item.recovery}`:`Non ancora. La risposta corretta è ${String.fromCharCode(65+item.answer)}. ${item.recovery}`;if(ok)correct++;else wrong.push(index);});
       const total=indices.length;const percent=Math.round(correct/total*100);const vote=Math.max(1,Math.round(percent/10));const attempts=readStore(`attempts-${lessonId}`,[]);attempts.push({date:new Date().toISOString(),correct,total,percent,vote,wrong});writeStore(`attempts-${lessonId}`,attempts);
-      const report=form.querySelector(".quiz-report");report.innerHTML=`<h3>Risultato: ${correct}/${total} · ${percent}% · voto ${vote}/10</h3><p>Formula: voto = max(1, arrotonda(percentuale ÷ 10)).</p>${wrong.length?`<h3>Errori da recuperare</h3>${wrong.map(index=>`<article class="recovery-card"><h4>${escapeHtml(questions[index].question)}</h4><p>${escapeHtml(questions[index].recovery)}</p><p><b>Esempio dalla lezione:</b> rileggi il passaggio collegato al concetto e confrontalo con la risposta corretta.</p></article>`).join("")}<button type="button" data-retry>Rifai soltanto gli errori</button>`:`<p class="all-correct">Tutti i nessi verificati sono corretti.</p>`}<p>Tentativo ${attempts.length}: i risultati precedenti restano memorizzati.</p>`;
-      report.querySelector("[data-retry]")?.addEventListener("click",()=>renderQuiz(mount,questions,wrong));report.scrollIntoView({block:"nearest"});
+      const report=form.querySelector(".quiz-report");report.innerHTML=`<h3>Risultato: ${correct}/${total} · ${percent}% · voto ${vote}/10</h3><p>Formula: voto = max(1, arrotonda(percentuale ÷ 10)).</p>${wrong.length?`<h3>Errori da recuperare</h3>${wrong.map(index=>recoveryCardHtml(index,questions)).join("")}<button type="button" data-retry>Rifai soltanto gli errori</button>`:`<p class="all-correct">Tutti i nessi verificati sono corretti.</p>`}<p>Tentativo ${attempts.length}: i risultati precedenti restano memorizzati.</p>`;
+      report.querySelectorAll("[data-recovery-jump]").forEach(button => button.addEventListener("click",() => jumpToRecovery(Number(button.dataset.recoveryJump))));report.querySelector("[data-retry]")?.addEventListener("click",()=>renderQuiz(mount,questions,wrong));report.scrollIntoView({block:"nearest"});
     });
   }
 
+  if (lessonId === "conclusione" && location.hash === "#test-finale") {
+    requestAnimationFrame(() => openLearning("quiz"));
+  }
   requestAnimationFrame(() => { article.scrollTop=readStore(`scroll-${lessonId}`,0); article.dispatchEvent(new Event("scroll")); });
 }
 

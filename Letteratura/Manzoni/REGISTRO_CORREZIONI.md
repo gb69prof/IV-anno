@@ -9,3 +9,15 @@
 - **Test:** portati a cinque quesiti per lezione, con alternative plausibili, feedback, recupero e distribuzione delle risposte corrette.
 
 Fonti di controllo per le correzioni sostanziali: Casa del Manzoni, percorso museale; Enciclopedia Treccani, voce «Alessandro Manzoni» e approfondimento sulla *Lettre à M. Chauvet*.
+
+
+## 29 agosto 2026 — Revisione dopo il collaudo studente
+
+- Aggiunta a ogni lezione una sintesi visibile «La lezione in breve».
+- Inserita la provenienza della lezione nelle citazioni e nell’esportazione TXT.
+- Il recupero dei test mostra ora un esempio reale e porta al paragrafo da rileggere.
+- Corretto il collegamento «Quiz finale»: apre il test complessivo della conclusione.
+- Corretti i collegamenti di Lucia e Renzo verso il sistema dei personaggi.
+- Nascosta dalla navigazione la sezione video finché non contiene materiali.
+- Resi più espliciti e robusti i controlli per tema e dimensione del testo.
+- Forzato il controllo degli aggiornamenti del service worker e portata la cache alla versione 11.
