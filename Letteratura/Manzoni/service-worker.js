@@ -1,10 +1,12 @@
-const CACHE_NAME = "manzoni-pwa-v3";
+const CACHE_PREFIX = "manzoni-pwa-";
+const CACHE_NAME = `${CACHE_PREFIX}v5`;
 
 const LOCAL_ASSETS = [
   "./",
   "./index.html",
   "./mappe.html",
   "./video.html",
+  "./offline.html",
   "./manifest.json",
   "./assets/css/style.css",
   "./assets/js/app.js",
@@ -30,10 +32,7 @@ const LOCAL_ASSETS = [
   "./Lezioni/poetica.html",
   "./Lezioni/opere.html",
   "./Lezioni/capitoli.html",
-  "./Lezioni/conclusione.html",
-  "../rete-pwa/bridge.js?v=2",
-  "../rete-pwa/bridge.css?v=2",
-  "../rete-pwa/links.json?v=2"
+  "./Lezioni/conclusione.html"
 ];
 
 self.addEventListener("install", (event) => {
@@ -48,7 +47,7 @@ self.addEventListener("activate", (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
+        Promise.all(keys.filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME).map((key) => caches.delete(key)))
       )
   );
   self.clients.claim();
@@ -59,19 +58,16 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) {
-        return cached;
-      }
-
-      return fetch(event.request).then((response) => {
-        const copy = response.clone();
-        if (response.ok && new URL(event.request.url).origin === self.location.origin) {
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-        }
-        return response;
-      });
-    })
-  );
+  const requestUrl = new URL(event.request.url);
+  if (event.request.mode === "navigate") {
+    event.respondWith(fetch(event.request).then((response) => {
+      if (response.ok) caches.open(CACHE_NAME).then((cache) => cache.put(event.request,response.clone()));
+      return response;
+    }).catch(() => caches.match(event.request).then((cached) => cached || caches.match("./offline.html"))));
+    return;
+  }
+  event.respondWith(caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
+    if (response.ok && requestUrl.origin === self.location.origin) caches.open(CACHE_NAME).then((cache) => cache.put(event.request,response.clone()));
+    return response;
+  })));
 });
