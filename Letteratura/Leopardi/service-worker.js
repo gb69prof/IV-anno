@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "leopardi-";
-const CACHE_NAME = "leopardi-study-environment-v9";
+const CACHE_NAME = "leopardi-study-environment-v10";
 
 const LOCAL_ASSETS = [
   "./",
