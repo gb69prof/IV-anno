@@ -389,7 +389,7 @@ const LESSON_META = {
       "La fede autentica non sottrae alla storia: chiede di agire nel presente in favore degli oppressi."
     ],
     extras: [
-      {question:"Che cosa unisce la prospettiva eterna e quella storica?",options:["La giustizia piena appartiene a Dio, ma l’uomo deve contrastare il male già nella storia.","La storia non richiede alcuna responsabilità umana.","La salvezza coincide sempre con il successo politico."],answer:0,recovery:"Manzoni distingue la giustizia definitiva di Dio dalla responsabilità concreta che ogni persona esercita nel presente."},
+      {question:"Che cosa unisce la prospettiva eterna e quella storica?",options:["La storia non richiede alcuna responsabilità umana.","La salvezza coincide sempre con il successo politico.","La giustizia piena appartiene a Dio, ma l’uomo deve contrastare il male già nella storia."],answer:2,recovery:"Manzoni distingue la giustizia definitiva di Dio dalla responsabilità concreta che ogni persona esercita nel presente."},
       {question:"Quale personaggio mostra che la colpa può trasformarsi in servizio?",options:["Don Rodrigo.","Fra Cristoforo.","Azzeccagarbugli."],answer:1,recovery:"Fra Cristoforo non cancella il delitto di Ludovico: converte la memoria della colpa in penitenza e difesa degli oppressi."}
     ]
   },
@@ -404,7 +404,7 @@ const LESSON_META = {
       "Il romanzo storico unisce vicende inventate plausibili e quadro documentato, facendo entrare gli umili nella storia."
     ],
     extras: [
-      {question:"Quali unità teatrali contesta direttamente Manzoni nella Lettre à M. Chauvet?",options:["Tempo e luogo.","Azione e stile.","Personaggio e narratore."],answer:0,recovery:"La Lettre è dedicata all’unità di tempo e di luogo; non è corretto dire che Manzoni rifiuti in blocco anche la coerenza dell’azione."},
+      {question:"Quali unità teatrali contesta direttamente Manzoni nella Lettre à M. Chauvet?",options:["Azione e stile.","Personaggio e narratore.","Tempo e luogo."],answer:2,recovery:"La Lettre è dedicata all’unità di tempo e di luogo; non è corretto dire che Manzoni rifiuti in blocco anche la coerenza dell’azione."},
       {question:"Qual è la funzione specifica dell’interessante?",options:["Sostituire il vero con l’invenzione fantastica.","Coinvolgere il lettore perché la funzione conoscitiva e civile del testo sia efficace.","Ridurre il romanzo a intrattenimento."],answer:1,recovery:"L’interessante è il mezzo della poetica manzoniana: senza coinvolgimento, il vero e l’utile non raggiungono davvero il lettore."}
     ]
   },
@@ -435,7 +435,7 @@ const LESSON_META = {
     ],
     extras: [
       {question:"Perché Gertrude è un personaggio tragico e non una semplice figura negativa?",options:["Perché è priva di ogni responsabilità.","Perché in lei colpa personale e violenza del sistema familiare e religioso si intrecciano.","Perché sceglie liberamente il convento."],answer:1,recovery:"Manzoni non assolve Gertrude, ma mostra come la sua libertà sia stata deformata da pressioni, ricatti e istituzioni compiacenti."},
-      {question:"Quale passaggio completa la conversione dell’Innominato?",options:["L’incontro con Federigo Borromeo, preparato dalle parole di Lucia e dalla crisi notturna.","La minaccia di Don Rodrigo.","La fuga di Renzo nel Bergamasco."],answer:0,recovery:"La conversione è un processo: Lucia incrina la coscienza dell’Innominato, la notte porta la crisi al culmine e Federigo gli offre misericordia."}
+      {question:"Quale passaggio completa la conversione dell’Innominato?",options:["La minaccia di Don Rodrigo.","La fuga di Renzo nel Bergamasco.","L’incontro con Federigo Borromeo, preparato dalle parole di Lucia e dalla crisi notturna."],answer:2,recovery:"La conversione è un processo: Lucia incrina la coscienza dell’Innominato, la notte porta la crisi al culmine e Federigo gli offre misericordia."}
     ]
   },
   "conclusione": {
@@ -450,7 +450,7 @@ const LESSON_META = {
     ],
     extras: [
       {question:"Perché la Provvidenza non coincide con un lieto fine automatico?",options:["Perché elimina la libertà dell’uomo.","Perché il dolore resta reale e la fede richiede comunque responsabilità e scelta.","Perché agisce soltanto sui potenti."],answer:1,recovery:"Il percorso insiste sulla durezza delle prove: la fede permette di leggerle senza disperare, non di fingere che non siano avvenute."},
-      {question:"Quale sintesi collega lingua e responsabilità civile?",options:["La ricerca di una lingua viva amplia la comunità dei lettori e contribuisce alla nazione.","La lingua è un esercizio privato senza effetti storici.","Manzoni propone il latino come lingua nazionale."],answer:0,recovery:"La revisione linguistica del romanzo risponde anche al bisogno civile di una lingua condivisa e comprensibile."}
+      {question:"Quale sintesi collega lingua e responsabilità civile?",options:["La lingua è un esercizio privato senza effetti storici.","Manzoni propone il latino come lingua nazionale.","La ricerca di una lingua viva amplia la comunità dei lettori e contribuisce alla nazione."],answer:2,recovery:"La revisione linguistica del romanzo risponde anche al bisogno civile di una lingua condivisa e comprensibile."}
     ]
   }
 };
