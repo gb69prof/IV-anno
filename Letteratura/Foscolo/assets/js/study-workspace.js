@@ -64,7 +64,7 @@
           answer: 2,
           recovery: "Foscolo non torna a una certezza religiosa e non considera sufficiente il puro nulla: affida a memoria, affetti, patria, bellezza e poesia una sopravvivenza simbolica.",
           recoveryQuestion: "Quali strumenti umani sostituiscono la garanzia religiosa?",
-          anchor: "meccanicismo"
+          anchor: "senso-foscolo"
         },
         {
           question: "Perché Foscolo può essere definito un autore di passaggio?",
@@ -72,7 +72,7 @@
           answer: 2,
           recovery: "La sua formazione materialistica appartiene all’Illuminismo; esilio, nostalgia, conflitto interiore e bisogno di assoluto anticipano invece temi romantici.",
           recoveryQuestion: "Quale elemento appartiene all’eredità illuministica e quale anticipa il Romanticismo?",
-          anchor: "meccanicismo"
+          anchor: "senso-foscolo"
         }
       ]
     },
@@ -302,7 +302,7 @@
   };
 
   const QUESTION_ANCHORS = {
-    introduzione: ["meccanicismo", "meccanicismo", "meccanicismo"],
+    introduzione: ["quadro-politico", "quadro-politico", "meccanicismo"],
     fratture: ["zante-origine", "napoleone", "esilio"],
     "immagine-del-mondo": ["religione-illusioni", "religione-illusioni", "nulla-eterno"],
     poetica: ["neoclassicismo", "preromanticismo", "preromanticismo"],
@@ -414,7 +414,7 @@
   const visualScroll = document.createElement("div");
   visualScroll.className = "visual-context-scroll";
   [...sidebar.children].forEach(child => visualScroll.append(child));
-  visualPane.innerHTML = `<header class="workspace-panel-header"><p>Osserva mentre leggi</p><h2 id="visual-context-title">Apparato visivo</h2><span data-context-status aria-live="polite"></span></header>`;
+  visualPane.innerHTML = `<header class="workspace-panel-header"><p>Osserva mentre leggi</p><h2 id="visual-context-title">Apparato visivo</h2><span data-context-status aria-live="polite"></span><span class="panel-scroll-hint" aria-hidden="true">Scorri il pannello ↓</span></header>`;
   visualPane.append(visualScroll);
 
   const notebookPane = document.createElement("section");
@@ -423,7 +423,7 @@
   notebookPane.innerHTML = `
     <header class="workspace-panel-header notebook-header">
       <div><p>Elabora</p><h2 id="notebook-title">Taccuino</h2></div>
-      <span data-autosave-state role="status">Salvataggio automatico</span>
+      <div class="notebook-header-meta"><span data-autosave-state role="status">Salvataggio automatico</span><span class="panel-scroll-hint" aria-hidden="true">Scorri il taccuino ↓</span></div>
     </header>
     <label for="notebook-text">Appunti personali</label>
     <textarea id="notebook-text" rows="6" spellcheck="true" placeholder="Scrivi osservazioni, domande e collegamenti personali…"></textarea>
@@ -439,11 +439,19 @@
   `;
   sidebar.append(visualPane, notebookPane);
 
+  const dismissScrollHint = (scroller, panel) => {
+    const hint = $(".panel-scroll-hint", panel);
+    if (!hint) return;
+    scroller.addEventListener("scroll", () => hint.remove(), { once: true, passive: true });
+  };
+  dismissScrollHint(visualScroll, visualPane);
+  dismissScrollHint(notebookPane, notebookPane);
+
   const dock = document.createElement("nav");
   dock.className = "study-bottombar";
   dock.setAttribute("aria-label", "Strumenti per sedimentare");
   dock.innerHTML = `
-    <div class="reading-progress" aria-label="Progresso di lettura"><span data-progress-label>0%</span><i><b data-progress-bar></b></i></div>
+    <div class="reading-progress" aria-label="Progresso di lettura della sessione corrente"><span class="reading-progress-label"><strong data-progress-label>0%</strong><small>sessione</small></span><i><b data-progress-bar></b></i></div>
     <button type="button" data-learning-panel="essentials">Saperi irrinunciabili</button>
     <button type="button" data-learning-panel="vocab">Vocabolario</button>
     <button type="button" data-learning-panel="test">Test</button>
@@ -732,6 +740,7 @@
     link.click();
     link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
+    showToast("Download TXT avviato.");
   });
 
   $("[data-clear-notebook]", notebookPane).addEventListener("click", () => {
@@ -833,7 +842,7 @@
             <div class="question-feedback" data-question-feedback hidden></div>
           </fieldset>
         `).join("")}
-        <p class="grade-formula">Formula: voto = massimo fra 1 e l’arrotondamento della percentuale divisa per 10.</p>
+        <p class="grade-formula">Le domande hanno lo stesso peso. Il voto è la percentuale convertita in decimi; minimo 1/10.</p>
         <button type="submit" class="quiz-submit">Correggi il test</button>
       </form>
       <div class="advanced-quiz-report" data-advanced-quiz-report hidden></div>
