@@ -38,7 +38,7 @@ const LEOPARDI_STUDY_DATA = {
         "recovery": "Torna al nodo sul progresso: Leopardi eredita un mondo in cui scienza e felicità non coincidono più automaticamente."
       },
       {
-        "question": "Perché e importante il confronto antichi/moderni?",
+        "question": "Perché è importante il confronto antichi/moderni?",
         "options": [
           "Per distinguere latino e greco",
           "Per capire il rapporto tra natura, illusioni e civiltà",
@@ -180,7 +180,7 @@ const LEOPARDI_STUDY_DATA = {
         "recovery": "Ritorna alla poetica del vago: il limite visivo o sonoro attiva l'immaginazione."
       },
       {
-        "question": "Quale elemento concreto puo generare poesia in Leopardi?",
+        "question": "Quale elemento concreto può generare poesia in Leopardi?",
         "options": [
           "Una siepe",
           "Una formula matematica",
@@ -261,8 +261,8 @@ const LEOPARDI_STUDY_DATA = {
         "Rileggi i primi versi e il commento: l'ostacolo rende possibile immaginare lo spazio oltre il visibile."
       ],
       [
-        "Un perdersi appagante nell'immensita immaginata",
-        "Ripassa la conclusione: il pensiero si perde nell'immensita e questa perdita diventa dolce."
+        "Un perdersi appagante nell'immensità immaginata",
+        "Ripassa la conclusione: il pensiero si perde nell'immensità e questa perdita diventa dolce."
       ],
       [
         "Finito e infinito",
@@ -284,19 +284,19 @@ const LEOPARDI_STUDY_DATA = {
       {
         "question": "Che cosa significa il dolce naufragio?",
         "options": [
-          "Un perdersi appagante nell'immensita immaginata",
+          "Un perdersi appagante nell'immensità immaginata",
           "Un fallimento politico",
           "Una fuga realistica in mare",
           "Una rinuncia al pensiero"
         ],
         "answer": 0,
-        "recovery": "Ripassa la conclusione: il pensiero si perde nell'immensita e questa perdita diventa dolce."
+        "recovery": "Ripassa la conclusione: il pensiero si perde nell'immensità e questa perdita diventa dolce."
       },
       {
         "question": "Quale contrasto organizza il testo?",
         "options": [
           "Finito e infinito",
-          "Citta e campagna",
+          "Città e campagna",
           "Commedia e tragedia",
           "Latino e italiano"
         ],
@@ -326,7 +326,7 @@ const LEOPARDI_STUDY_DATA = {
         "options": [
           "La ribellione individuale davanti al dolore",
           "La fiducia nella provvidenza",
-          "La serenita idillica",
+          "La serenità idillica",
           "La celebrazione del progresso"
         ],
         "answer": 0,
@@ -364,7 +364,7 @@ const LEOPARDI_STUDY_DATA = {
       ],
       [
         "Non si accorge del male che produce",
-        "Ripassa la risposta della Natura: la sua indifferenza e più radicale della cattiveria."
+        "Ripassa la risposta della Natura: la sua indifferenza è più radicale della cattiveria."
       ],
       [
         "Distrugge l'idea di una Natura materna",
@@ -392,10 +392,10 @@ const LEOPARDI_STUDY_DATA = {
           "Promette una salvezza futura"
         ],
         "answer": 0,
-        "recovery": "Ripassa la risposta della Natura: la sua indifferenza e più radicale della cattiveria."
+        "recovery": "Ripassa la risposta della Natura: la sua indifferenza è più radicale della cattiveria."
       },
       {
-        "question": "Perché l'operetta e decisiva?",
+        "question": "Perché l'operetta è decisiva?",
         "options": [
           "Distrugge l'idea di una Natura materna",
           "Rende Leopardi ottimista",
@@ -446,12 +446,12 @@ const LEOPARDI_STUDY_DATA = {
         "recovery": "Ripassa il tema morale del canto: gli uomini devono unirsi contro il nemico comune, la Natura."
       },
       {
-        "question": "Perché il paesaggio del Vesuvio e importante?",
+        "question": "Perché il paesaggio del Vesuvio è importante?",
         "options": [
           "Mostra la potenza distruttiva della Natura",
           "Nasconde ogni verità",
           "Rende il testo pastorale",
-          "Celebra la citta moderna"
+          "Celebra la città moderna"
         ],
         "answer": 0,
         "recovery": "Torna all'inizio del canto: lava, cenere e deserto sostituiscono il paesaggio idillico."
@@ -502,7 +502,7 @@ const LEOPARDI_STUDY_DATA = {
           "La verità materiale e distruttiva della Natura",
           "La protezione della Natura",
           "La scomparsa del dolore",
-          "La serenita degli antichi"
+          "La serenità degli antichi"
         ],
         "answer": 0,
         "recovery": "Rivedi l'Atto II: la lava porta davanti agli occhi la fragilità dell'uomo."
@@ -530,7 +530,7 @@ const LEOPARDI_STUDY_DATA = {
         "options": [
           "Perché l'uomo ha bisogno di rivolgere l'accusa a qualcuno",
           "Perché Leopardi torna alla provvidenza",
-          "Perché la Natura e sempre buona",
+          "Perché la Natura è sempre buona",
           "Perché il dolore scompare"
         ],
         "answer": 0,
@@ -585,7 +585,7 @@ const LEOPARDI_STUDY_DATA = {
       },
       {
         "question": "Perché lo stoicismo non basta alla risposta matura di Leopardi?",
-        "options": ["Perché la sola forza individuale non èlimina la comune fragilità", "Perché rifiuta ogni forma di ragione", "Perché insegna a confidare nella Provvidenza", "Perché riguarda esclusivamente la politica romana"],
+        "options": ["Perché la sola forza individuale non elimina la comune fragilità", "Perché rifiuta ogni forma di ragione", "Perché insegna a confidare nella Provvidenza", "Perché riguarda esclusivamente la politica romana"],
         "answer": 0,
         "recovery": "Ripassa il confronto con lo stoicismo: alla resistenza individuale Leopardi aggiunge la solidarietà della social catena."
       },
@@ -660,7 +660,7 @@ const LEOPARDI_STUDY_DATA = {
           "Satira e romanzo"
         ],
         "answer": 0,
-        "recovery": "Ripassa poetica e immagine del mondo: il desiderio umano supera sempre cio che la realtà concede."
+        "recovery": "Ripassa poetica e immagine del mondo: il desiderio umano supera sempre ciò che la realtà concede."
       },
       {
         "question": "Che cosa distingue pessimismo storico e cosmico?",
@@ -704,7 +704,7 @@ const LEOPARDI_STUDY_DATA = {
           "La cancellazione del dolore"
         ],
         "answer": 0,
-        "recovery": "Rivedi la social catena: l'unica nobilta e riconoscere la fragilità comune e unirsi."
+        "recovery": "Rivedi la social catena: l'unica nobiltà è riconoscere la fragilità comune e unirsi."
       }
     ]
   }
