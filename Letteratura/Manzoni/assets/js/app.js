@@ -834,7 +834,7 @@ function setupLessonEnvironment() {
   sidebar.querySelector("[data-download]").addEventListener("click", () => {
     const lines = [meta.title,new Date().toLocaleString("it-IT"),"","APPUNTI DELLO STUDENTE",notebookText.value.trim() || "(nessun appunto)","","CITAZIONI DALLA LEZIONE",...notebook.citations.flatMap(item => [item.text,""])];
     const blob = new Blob(["\ufeff" + lines.join("\n")],{type:"text/plain;charset=utf-8"});
-    const url = URL.createObjectURL(blob); const link = document.createElement("a"); link.href=url; link.download=`appunti-manzoni-${lessonId}.txt`; link.click(); setTimeout(() => URL.revokeObjectURL(url),500);
+    const url = URL.createObjectURL(blob); const link = document.createElement("a"); link.href=url; link.download=`appunti-manzoni-${lessonId}.txt`; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url),500);
   });
 
   const setVisual = index => {
