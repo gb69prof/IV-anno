@@ -624,11 +624,7 @@ function normalizeText(value) {
 }
 
 function textNodes(root) {
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-    acceptNode(node) {
-      return node.parentElement?.closest("mark.student-highlight") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
-    }
-  });
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
   const nodes = [];
   let node;
   while ((node = walker.nextNode())) nodes.push(node);
