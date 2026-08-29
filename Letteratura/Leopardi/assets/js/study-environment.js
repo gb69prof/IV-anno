@@ -218,7 +218,8 @@
         const title = normalize(node.querySelector("h2, figcaption")?.textContent || (index ? `Materiale ${index + 1}` : "Mappa della lezione"));
         const words = title.toLocaleLowerCase("it").split(/[^a-zà-ù0-9]+/).filter((word) => word.length > 3 && !stopwords.has(word));
         return { node, title, words };
-      });
+      })
+      .sort((a, b) => Number(b.node.classList.contains("lesson-map-card")) - Number(a.node.classList.contains("lesson-map-card")));
     if (!visualItems.length) return;
     const choices = document.querySelector("#visualChoices");
     choices.innerHTML = visualItems.map((item, index) => `<button type="button" data-material="${index}">${escapeHtml(item.title)}</button>`).join("");
