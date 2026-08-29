@@ -18,3 +18,17 @@ Interventi funzionali:
 - eliminazione limitata alle vecchie cache appartenenti alla PWA Leopardi.
 
 Correzioni disciplinari o riscritture dei contenuti: **nessuna**.
+
+
+## 2026-08-29 — Revisione dello strumento di studio
+
+- Rimossi dalla visualizzazione i riferimenti tecnici ai file sorgente DOCX/TXT.
+- Completata la lezione «Senso, natura e pensiero».
+- Aggiunta la conclusione generale «Dalla siepe alla ginestra».
+- Inserita la provenienza delle citazioni nel taccuino e nell’esportazione TXT.
+- Corretto il singolare «1 passaggio inserito».
+- Ripristinati gli accenti nei test e nei recuperi.
+- Aggiunta una sintesi visibile «La lezione in breve» alle lezioni.
+- Aggiunto il collegamento diretto dal recupero al punto della lezione da rileggere.
+- Riordinato l’indice del percorso e aggiornati home, elenco lezioni e mappe.
+- Aggiornata la cache offline alla versione 9.

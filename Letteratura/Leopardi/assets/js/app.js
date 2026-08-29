@@ -7,11 +7,11 @@ const LEOPARDI_STUDY_DATA = {
       ],
       [
         "La fiducia automatica nel progresso",
-        "Torna al nodo sul progresso: Leopardi eredita un mondo in cui scienza e felicita non coincidono piu automaticamente."
+        "Torna al nodo sul progresso: Leopardi eredita un mondo in cui scienza e felicità non coincidono più automaticamente."
       ],
       [
-        "Per capire il rapporto tra natura, illusioni e civilta",
-        "Ripassa il confronto antichi/moderni: gli antichi appaiono piu vicini alla natura e alle illusioni vitali."
+        "Per capire il rapporto tra natura, illusioni e civiltà",
+        "Ripassa il confronto antichi/moderni: gli antichi appaiono più vicini alla natura e alle illusioni vitali."
       ]
     ],
     "quiz": [
@@ -35,18 +35,18 @@ const LEOPARDI_STUDY_DATA = {
           "La poesia lirica"
         ],
         "answer": 0,
-        "recovery": "Torna al nodo sul progresso: Leopardi eredita un mondo in cui scienza e felicita non coincidono piu automaticamente."
+        "recovery": "Torna al nodo sul progresso: Leopardi eredita un mondo in cui scienza e felicità non coincidono più automaticamente."
       },
       {
-        "question": "Perche e importante il confronto antichi/moderni?",
+        "question": "Perché e importante il confronto antichi/moderni?",
         "options": [
           "Per distinguere latino e greco",
-          "Per capire il rapporto tra natura, illusioni e civilta",
+          "Per capire il rapporto tra natura, illusioni e civiltà",
           "Per ricostruire la cronologia delle opere",
           "Per separare poesia e filosofia"
         ],
         "answer": 1,
-        "recovery": "Ripassa il confronto antichi/moderni: gli antichi appaiono piu vicini alla natura e alle illusioni vitali."
+        "recovery": "Ripassa il confronto antichi/moderni: gli antichi appaiono più vicini alla natura e alle illusioni vitali."
       }
     ]
   },
@@ -57,11 +57,11 @@ const LEOPARDI_STUDY_DATA = {
         "Rileggi la parte su Recanati: il luogo diventa una forma concreta del limite esistenziale e culturale."
       ],
       [
-        "Perche impone a Leopardi l'esperienza del limite",
-        "Ritorna al passaggio sul corpo: non e un dettaglio, ma un luogo in cui la realta si fa limite."
+        "Perché impone a Leopardi l'esperienza del limite",
+        "Ritorna al passaggio sul corpo: non è un dettaglio, ma un luogo in cui la realtà si fa limite."
       ],
       [
-        "Dal pessimismo storico alla lucidita cosmica",
+        "Dal pessimismo storico alla lucidità cosmica",
         "Ripassa l'ultima frattura: Leopardi allarga il problema dalla storia all'intera condizione naturale."
       ]
     ],
@@ -78,20 +78,20 @@ const LEOPARDI_STUDY_DATA = {
         "recovery": "Rileggi la parte su Recanati: il luogo diventa una forma concreta del limite esistenziale e culturale."
       },
       {
-        "question": "Perche il corpo e una frattura decisiva?",
+        "question": "Perché il corpo è una frattura decisiva?",
         "options": [
-          "Perche separa biografia e pensiero",
-          "Perche impone a Leopardi l'esperienza del limite",
-          "Perche impedisce ogni studio",
-          "Perche spiega da solo tutta la sua poesia"
+          "Perché separa biografia e pensiero",
+          "Perché impone a Leopardi l'esperienza del limite",
+          "Perché impedisce ogni studio",
+          "Perché spiega da solo tutta la sua poesia"
         ],
         "answer": 1,
-        "recovery": "Ritorna al passaggio sul corpo: non e un dettaglio, ma un luogo in cui la realta si fa limite."
+        "recovery": "Ritorna al passaggio sul corpo: non è un dettaglio, ma un luogo in cui la realtà si fa limite."
       },
       {
         "question": "Quale passaggio matura dopo le illusioni giovanili?",
         "options": [
-          "Dal pessimismo storico alla lucidita cosmica",
+          "Dal pessimismo storico alla lucidità cosmica",
           "Dal Romanticismo al teatro",
           "Dalla prosa alla sola poesia",
           "Dalla natura alla provvidenza"
@@ -104,12 +104,12 @@ const LEOPARDI_STUDY_DATA = {
   "immagine-mondo": {
     "vocabulary": [
       [
-        "La storia e la civilta",
+        "La storia e la civiltà",
         "Rivedi la distinzione iniziale: nella fase storica il male sembra nascere dall'allontanamento dalla natura."
       ],
       [
         "Il dolore riguarda ogni vivente",
-        "Ripassa il passaggio al pessimismo cosmico: il dolore non e solo moderno, ma appartiene alla vita stessa."
+        "Ripassa il passaggio al pessimismo cosmico: il dolore non è solo moderno, ma appartiene alla vita stessa."
       ],
       [
         "Un piacere infinito",
@@ -118,9 +118,9 @@ const LEOPARDI_STUDY_DATA = {
     ],
     "quiz": [
       {
-        "question": "Nel pessimismo storico, qual e la causa principale dell'infelicita?",
+        "question": "Nel pessimismo storico, qual è la causa principale dell'infelicità?",
         "options": [
-          "La storia e la civilta",
+          "La storia e la civiltà",
           "La Natura matrigna",
           "Il caso grammaticale",
           "La mancanza di memoria"
@@ -134,10 +134,10 @@ const LEOPARDI_STUDY_DATA = {
           "La Natura diventa rifugio",
           "Il dolore riguarda ogni vivente",
           "La poesia scompare",
-          "La civilta risolve il problema"
+          "La civiltà risolve il problema"
         ],
         "answer": 1,
-        "recovery": "Ripassa il passaggio al pessimismo cosmico: il dolore non e solo moderno, ma appartiene alla vita stessa."
+        "recovery": "Ripassa il passaggio al pessimismo cosmico: il dolore non è solo moderno, ma appartiene alla vita stessa."
       },
       {
         "question": "Che cosa desidera l'uomo secondo Leopardi?",
@@ -145,7 +145,7 @@ const LEOPARDI_STUDY_DATA = {
           "Un piacere infinito",
           "Solo beni materiali",
           "Una gloria politica",
-          "Una felicita sempre misurabile"
+          "Una felicità sempre misurabile"
         ],
         "answer": 0,
         "recovery": "Rileggi il nodo del desiderio: l'uomo vuole un piacere illimitato, ma incontra solo esperienze finite."
@@ -155,7 +155,7 @@ const LEOPARDI_STUDY_DATA = {
   "poetica": {
     "vocabulary": [
       [
-        "Perche aprono spazio all'immaginazione",
+        "Perché aprono spazio all'immaginazione",
         "Ritorna alla poetica del vago: il limite visivo o sonoro attiva l'immaginazione."
       ],
       [
@@ -164,17 +164,17 @@ const LEOPARDI_STUDY_DATA = {
       ],
       [
         "Un ricordo che trasfigura il passato",
-        "Ripassa la rimembranza: il passato diventa piu vago e quindi piu poeticamente intenso."
+        "Ripassa la rimembranza: il passato diventa più vago e quindi più poeticamente intenso."
       ]
     ],
     "quiz": [
       {
-        "question": "Perche il vago e l'indefinito sono poetici?",
+        "question": "Perché il vago e l'indefinito sono poetici?",
         "options": [
-          "Perche eliminano ogni pensiero",
-          "Perche aprono spazio all'immaginazione",
-          "Perche rendono il testo piu breve",
-          "Perche imitano la prosa scientifica"
+          "Perché eliminano ogni pensiero",
+          "Perché aprono spazio all'immaginazione",
+          "Perché rendono il testo più breve",
+          "Perché imitano la prosa scientifica"
         ],
         "answer": 1,
         "recovery": "Ritorna alla poetica del vago: il limite visivo o sonoro attiva l'immaginazione."
@@ -191,7 +191,7 @@ const LEOPARDI_STUDY_DATA = {
         "recovery": "Rileggi gli esempi sensibili: siepe, vento, voce lontana e paesaggio diventano occasioni interiori."
       },
       {
-        "question": "Che cos'e la rimembranza?",
+        "question": "Che cos’è la rimembranza?",
         "options": [
           "Un ricordo che trasfigura il passato",
           "Una rinuncia alla memoria",
@@ -199,7 +199,7 @@ const LEOPARDI_STUDY_DATA = {
           "Una forma di satira"
         ],
         "answer": 0,
-        "recovery": "Ripassa la rimembranza: il passato diventa piu vago e quindi piu poeticamente intenso."
+        "recovery": "Ripassa la rimembranza: il passato diventa più vago e quindi più poeticamente intenso."
       }
     ]
   },
@@ -207,15 +207,15 @@ const LEOPARDI_STUDY_DATA = {
     "vocabulary": [
       [
         "Come tappe di un'evoluzione",
-        "Rileggi l'apertura: ogni opera e una tappa del rapporto tra illusione, verita e solidarieta."
+        "Rileggi l'apertura: ogni opera è una tappa del rapporto tra illusione, verità e solidarietà."
       ],
       [
         "Il potere dell'immaginazione",
         "Torna alla parte sull'Infinito: la siepe limita lo sguardo e accende l'immaginazione."
       ],
       [
-        "La solidarieta lucida tra uomini fragili",
-        "Ripassa la chiusura del percorso: La ginestra sostituisce le illusioni con consapevolezza e solidarieta."
+        "La solidarietà lucida tra uomini fragili",
+        "Ripassa la chiusura del percorso: La ginestra sostituisce le illusioni con consapevolezza e solidarietà."
       ]
     ],
     "quiz": [
@@ -228,7 +228,7 @@ const LEOPARDI_STUDY_DATA = {
           "Come un manuale storico"
         ],
         "answer": 0,
-        "recovery": "Rileggi l'apertura: ogni opera e una tappa del rapporto tra illusione, verita e solidarieta."
+        "recovery": "Rileggi l'apertura: ogni opera è una tappa del rapporto tra illusione, verità e solidarietà."
       },
       {
         "question": "Che cosa mostra L'infinito nel percorso?",
@@ -242,15 +242,15 @@ const LEOPARDI_STUDY_DATA = {
         "recovery": "Torna alla parte sull'Infinito: la siepe limita lo sguardo e accende l'immaginazione."
       },
       {
-        "question": "Qual e l'approdo della Ginestra?",
+        "question": "Qual è l'approdo della Ginestra?",
         "options": [
-          "La solidarieta lucida tra uomini fragili",
+          "La solidarietà lucida tra uomini fragili",
           "La vittoria tecnica sulla natura",
           "La negazione del dolore",
           "Il ritorno all'idillio puro"
         ],
         "answer": 0,
-        "recovery": "Ripassa la chiusura del percorso: La ginestra sostituisce le illusioni con consapevolezza e solidarieta."
+        "recovery": "Ripassa la chiusura del percorso: La ginestra sostituisce le illusioni con consapevolezza e solidarietà."
       }
     ]
   },
@@ -275,7 +275,7 @@ const LEOPARDI_STUDY_DATA = {
         "options": [
           "Chiude e basta",
           "Esclude lo sguardo e apre l'immaginazione",
-          "Rappresenta la societa",
+          "Rappresenta la società",
           "Cancella il paesaggio"
         ],
         "answer": 1,
@@ -316,7 +316,7 @@ const LEOPARDI_STUDY_DATA = {
         "Ripassa Bruto: il personaggio scopre che virtù, gloria e giustizia non hanno garanzia cosmica."
       ],
       [
-        "L'esclusione dalla felicita e dalla bellezza",
+        "L'esclusione dalla felicità e dalla bellezza",
         "Ritorna alla sezione su Saffo: il suo dolore diventa simbolo della sproporzione tra desiderio e natura."
       ]
     ],
@@ -344,9 +344,9 @@ const LEOPARDI_STUDY_DATA = {
         "recovery": "Ripassa Bruto: il personaggio scopre che virtù, gloria e giustizia non hanno garanzia cosmica."
       },
       {
-        "question": "Qual e il centro del dolore di Saffo?",
+        "question": "Qual è il centro del dolore di Saffo?",
         "options": [
-          "L'esclusione dalla felicita e dalla bellezza",
+          "L'esclusione dalla felicità e dalla bellezza",
           "La nostalgia di Recanati",
           "Il rifiuto della filosofia",
           "La noia scolastica"
@@ -364,11 +364,11 @@ const LEOPARDI_STUDY_DATA = {
       ],
       [
         "Non si accorge del male che produce",
-        "Ripassa la risposta della Natura: la sua indifferenza e piu radicale della cattiveria."
+        "Ripassa la risposta della Natura: la sua indifferenza e più radicale della cattiveria."
       ],
       [
         "Distrugge l'idea di una Natura materna",
-        "Rivedi la conclusione: il testo porta il pessimismo cosmico alla sua forma piu chiara."
+        "Rivedi la conclusione: il testo porta il pessimismo cosmico alla sua forma più chiara."
       ]
     ],
     "quiz": [
@@ -384,7 +384,7 @@ const LEOPARDI_STUDY_DATA = {
         "recovery": "Rileggi la parte centrale: l'Islandese accusa la Natura e cerca una risposta sul dolore."
       },
       {
-        "question": "Qual e la risposta piu terribile della Natura?",
+        "question": "Qual è la risposta più terribile della Natura?",
         "options": [
           "Non si accorge del male che produce",
           "Vuole punire solo gli uomini",
@@ -392,10 +392,10 @@ const LEOPARDI_STUDY_DATA = {
           "Promette una salvezza futura"
         ],
         "answer": 0,
-        "recovery": "Ripassa la risposta della Natura: la sua indifferenza e piu radicale della cattiveria."
+        "recovery": "Ripassa la risposta della Natura: la sua indifferenza e più radicale della cattiveria."
       },
       {
-        "question": "Perche l'operetta e decisiva?",
+        "question": "Perché l'operetta e decisiva?",
         "options": [
           "Distrugge l'idea di una Natura materna",
           "Rende Leopardi ottimista",
@@ -403,18 +403,18 @@ const LEOPARDI_STUDY_DATA = {
           "Dimostra il progresso tecnico"
         ],
         "answer": 0,
-        "recovery": "Rivedi la conclusione: il testo porta il pessimismo cosmico alla sua forma piu chiara."
+        "recovery": "Rivedi la conclusione: il testo porta il pessimismo cosmico alla sua forma più chiara."
       }
     ]
   },
   "ginestra": {
     "vocabulary": [
       [
-        "La fragilita consapevole dell'uomo",
+        "La fragilità consapevole dell'uomo",
         "Rileggi il simbolo del fiore: fragile, esposto, ma dignitoso davanti al Vesuvio."
       ],
       [
-        "La solidarieta tra uomini consapevoli della comune fragilita",
+        "La solidarietà tra uomini consapevoli della comune fragilità",
         "Ripassa il tema morale del canto: gli uomini devono unirsi contro il nemico comune, la Natura."
       ],
       [
@@ -426,7 +426,7 @@ const LEOPARDI_STUDY_DATA = {
       {
         "question": "Che cosa rappresenta la ginestra?",
         "options": [
-          "La fragilita consapevole dell'uomo",
+          "La fragilità consapevole dell'uomo",
           "La vittoria sulla Natura",
           "La fuga nell'idillio",
           "L'oblio del dolore"
@@ -435,9 +435,9 @@ const LEOPARDI_STUDY_DATA = {
         "recovery": "Rileggi il simbolo del fiore: fragile, esposto, ma dignitoso davanti al Vesuvio."
       },
       {
-        "question": "Che cos'e la social catena?",
+        "question": "Che cos’è la social catena?",
         "options": [
-          "La solidarieta tra uomini consapevoli della comune fragilita",
+          "La solidarietà tra uomini consapevoli della comune fragilità",
           "Una teoria economica",
           "Una metrica poetica",
           "Un ritorno alla provvidenza"
@@ -446,10 +446,10 @@ const LEOPARDI_STUDY_DATA = {
         "recovery": "Ripassa il tema morale del canto: gli uomini devono unirsi contro il nemico comune, la Natura."
       },
       {
-        "question": "Perche il paesaggio del Vesuvio e importante?",
+        "question": "Perché il paesaggio del Vesuvio e importante?",
         "options": [
           "Mostra la potenza distruttiva della Natura",
-          "Nasconde ogni verita",
+          "Nasconde ogni verità",
           "Rende il testo pastorale",
           "Celebra la citta moderna"
         ],
@@ -469,8 +469,8 @@ const LEOPARDI_STUDY_DATA = {
         "Ripassa l'Atto I: il limite visivo della siepe diventa forza immaginativa."
       ],
       [
-        "La verita materiale e distruttiva della Natura",
-        "Rivedi l'Atto II: la lava porta davanti agli occhi la fragilita dell'uomo."
+        "La verità materiale e distruttiva della Natura",
+        "Rivedi l'Atto II: la lava porta davanti agli occhi la fragilità dell'uomo."
       ]
     ],
     "quiz": [
@@ -499,20 +499,20 @@ const LEOPARDI_STUDY_DATA = {
       {
         "question": "Che cosa rivela la lava?",
         "options": [
-          "La verita materiale e distruttiva della Natura",
+          "La verità materiale e distruttiva della Natura",
           "La protezione della Natura",
           "La scomparsa del dolore",
           "La serenita degli antichi"
         ],
         "answer": 0,
-        "recovery": "Rivedi l'Atto II: la lava porta davanti agli occhi la fragilita dell'uomo."
+        "recovery": "Rivedi l'Atto II: la lava porta davanti agli occhi la fragilità dell'uomo."
       }
     ]
   },
   "macchina-anima": {
     "vocabulary": [
       [
-        "Perche l'uomo ha bisogno di rivolgere l'accusa a qualcuno",
+        "Perché l'uomo ha bisogno di rivolgere l'accusa a qualcuno",
         "Rileggi il nucleo dell'approfondimento: la personificazione nasce dal bisogno umano di interrogare il male."
       ],
       [
@@ -520,24 +520,24 @@ const LEOPARDI_STUDY_DATA = {
         "Ripassa il passaggio meccanicistico: la Natura produce vita e morte senza coscienza o fini morali."
       ],
       [
-        "Tra macchina cieca e bisogno umano di responsabilita",
+        "Tra macchina cieca e bisogno umano di responsabilità",
         "Rivedi la conclusione: il dolore chiede un responsabile anche quando la ragione non lo trova."
       ]
     ],
     "quiz": [
       {
-        "question": "Perche la Natura sembra avere un'anima?",
+        "question": "Perché la Natura sembra avere un'anima?",
         "options": [
-          "Perche l'uomo ha bisogno di rivolgere l'accusa a qualcuno",
-          "Perche Leopardi torna alla provvidenza",
-          "Perche la Natura e sempre buona",
-          "Perche il dolore scompare"
+          "Perché l'uomo ha bisogno di rivolgere l'accusa a qualcuno",
+          "Perché Leopardi torna alla provvidenza",
+          "Perché la Natura e sempre buona",
+          "Perché il dolore scompare"
         ],
         "answer": 0,
         "recovery": "Rileggi il nucleo dell'approfondimento: la personificazione nasce dal bisogno umano di interrogare il male."
       },
       {
-        "question": "Dal punto di vista della ragione, che cos'e la Natura?",
+        "question": "Dal punto di vista della ragione, che cos’è la Natura?",
         "options": [
           "Una macchina senza intenzioni",
           "Una madre provvidenziale",
@@ -550,7 +550,7 @@ const LEOPARDI_STUDY_DATA = {
       {
         "question": "Quale tensione resta aperta?",
         "options": [
-          "Tra macchina cieca e bisogno umano di responsabilita",
+          "Tra macchina cieca e bisogno umano di responsabilità",
           "Tra poesia e assenza di testi",
           "Tra ottimismo e progresso",
           "Tra latino e volgare"
@@ -562,52 +562,73 @@ const LEOPARDI_STUDY_DATA = {
   },
   "senso-natura": {
     "vocabulary": [
-      [
-        "Il rapporto tra sensi, natura e pensiero",
-        "Rileggi il testo di supporto: serve a consolidare sensismo, natura e visione filosofica."
-      ],
-      [
-        "Sensismo",
-        "Torna alla sezione video: il sensismo spiega il ruolo dei sensi nella conoscenza."
-      ],
-      [
-        "A rinforzare le basi filosofiche",
-        "Ripassa l'uso del materiale: chiarisce le categorie filosofiche che tornano nel percorso."
-      ]
+      ["Sensismo", "Dottrina secondo cui la conoscenza nasce dalle sensazioni e dall’esperienza."],
+      ["Materialismo", "Concezione che interpreta l’uomo e la realtà come parte della natura materiale."],
+      ["Meccanicismo", "Visione della natura come sistema di cause ed effetti privo di intenzioni morali."],
+      ["Finalismo", "Idea che la natura agisca in vista di un fine; Leopardi ne mette radicalmente in dubbio la validità."],
+      ["Stoicismo", "Filosofia antica che cerca libertà interiore e dominio razionale delle passioni."],
+      ["Desiderio infinito", "Tendenza dell’uomo a volere una felicità piena che nessun piacere limitato può soddisfare."],
+      ["Social catena", "Solidarietà fra esseri umani consapevoli della comune fragilità."]
     ],
     "quiz": [
       {
-        "question": "Quale tema guida questo materiale?",
-        "options": [
-          "Il rapporto tra sensi, natura e pensiero",
-          "La sola biografia familiare",
-          "La metrica latina",
-          "La storia editoriale"
-        ],
+        "question": "Perché il sensismo è importante per comprendere la poetica leopardiana?",
+        "options": ["Perché sensazioni, immagini e suoni mettono in moto immaginazione e memoria", "Perché elimina il ruolo dell’esperienza", "Perché dimostra l’esistenza di idee innate", "Perché riguarda soltanto la grammatica"],
         "answer": 0,
-        "recovery": "Rileggi il testo di supporto: serve a consolidare sensismo, natura e visione filosofica."
+        "recovery": "Rileggi il primo nodo: la poesia parte da percezioni concrete e le trasforma in esperienza interiore."
       },
       {
-        "question": "Quale video e particolarmente collegato al tema?",
-        "options": [
-          "Sensismo",
-          "La ginestra soltanto",
-          "Saffo soltanto",
-          "Nessun video"
-        ],
+        "question": "Che cosa implica la visione meccanicistica della Natura?",
+        "options": ["La Natura segue processi propri e non garantisce la felicità del singolo", "La Natura premia sempre chi è virtuoso", "La Natura possiede un progetto provvidenziale", "La Natura coincide con la società moderna"],
         "answer": 0,
-        "recovery": "Torna alla sezione video: il sensismo spiega il ruolo dei sensi nella conoscenza."
+        "recovery": "Torna al passaggio sul meccanicismo: produzione e distruzione non dipendono da intenzioni morali."
       },
       {
-        "question": "A che cosa serve questo approfondimento nel percorso?",
-        "options": [
-          "A rinforzare le basi filosofiche",
-          "A sostituire tutti i testi",
-          "A evitare i test",
-          "A parlare solo di stile"
-        ],
+        "question": "Perché lo stoicismo non basta alla risposta matura di Leopardi?",
+        "options": ["Perché la sola forza individuale non èlimina la comune fragilità", "Perché rifiuta ogni forma di ragione", "Perché insegna a confidare nella Provvidenza", "Perché riguarda esclusivamente la politica romana"],
         "answer": 0,
-        "recovery": "Ripassa l'uso del materiale: chiarisce le categorie filosofiche che tornano nel percorso."
+        "recovery": "Ripassa il confronto con lo stoicismo: alla resistenza individuale Leopardi aggiunge la solidarietà della social catena."
+      },
+      {
+        "question": "Quale relazione unisce desiderio e infelicità?",
+        "options": ["Il desiderio tende all’infinito, mentre i piaceri reali sono limitati", "Il desiderio scompare con il progresso", "L’infelicità dipende soltanto dalla povertà", "Ogni piacere reale soddisfa definitivamente l’uomo"],
+        "answer": 0,
+        "recovery": "Rileggi il nodo sul desiderio infinito: la sproporzione fra aspirazione e realtà genera l’insoddisfazione."
+      }
+    ]
+  },
+  "conclusione": {
+    "vocabulary": [
+      ["Autore di soglia", "Autore che raccoglie l’eredità illuministica e classica, ma apre problemi pienamente moderni."],
+      ["Vero", "Conoscenza lucida del limite, del dolore e dell’indifferenza della Natura."],
+      ["Illusione", "Costruzione dell’immaginazione capace di rendere la vita più intensa, senza diventare una certezza assoluta."],
+      ["Anti-idillio", "Paesaggio che non consola, ma rivela la fragilità umana e la potenza della Natura."],
+      ["Social catena", "Patto solidale fra uomini che riconoscono la comune condizione e rinunciano alle false grandezze."]
+    ],
+    "quiz": [
+      {
+        "question": "Qual è il problema che attraversa l’intero percorso leopardiano?",
+        "options": ["La sproporzione fra desiderio infinito e realtà limitata", "La scelta fra latino e greco", "La conquista del successo politico", "Il rifiuto della poesia"],
+        "answer": 0,
+        "recovery": "Rileggi la formula centrale della conclusione: l’uomo desidera una pienezza che la realtà non può garantire."
+      },
+      {
+        "question": "Come cambia la funzione della poesia nel percorso di Leopardi?",
+        "options": ["Dall’apertura immaginativa del limite alla conoscenza lucida del vero", "Dalla filosofia alla pura decorazione", "Dalla memoria alla cancellazione del passato", "Dall’idillio alla rinuncia alla forma"],
+        "answer": 0,
+        "recovery": "Torna al passaggio dalla siepe alla lava: prima l’immaginazione sospende il limite, poi il paesaggio ne rivela la durezza."
+      },
+      {
+        "question": "Che cosa rappresenta la Ginestra?",
+        "options": ["Una dignità fragile e solidale davanti alla potenza naturale", "La vittoria definitiva dell’uomo sulla Natura", "Il ritorno alla fiducia nel progresso", "Una consolazione religiosa"],
+        "answer": 0,
+        "recovery": "Rileggi l’approdo finale: la ginestra non vince il Vesuvio, ma vive senza superbia e diventa simbolo della social catena."
+      },
+      {
+        "question": "Perché Leopardi non può essere ridotto a un poeta della disperazione?",
+        "options": ["Perché dalla lucidità sul dolore ricava una responsabilità verso gli altri", "Perché nega l’esistenza del dolore", "Perché considera la Natura benevola", "Perché abbandona il pessimismo storico"],
+        "answer": 0,
+        "recovery": "Rileggi l’ultima risposta leopardiana: conoscere il vero non conduce all’isolamento, ma alla solidarietà."
       }
     ]
   },
@@ -622,7 +643,7 @@ const LEOPARDI_STUDY_DATA = {
       {
         "question": "Quale passaggio descrive meglio l'evoluzione leopardiana?",
         "options": [
-          "Dall'immaginazione alla verita lucida e solidale",
+          "Dall'immaginazione alla verità lucida e solidale",
           "Dal teatro alla commedia",
           "Dalla scienza alla provvidenza",
           "Dalla prosa alla rinuncia"
@@ -633,19 +654,19 @@ const LEOPARDI_STUDY_DATA = {
       {
         "question": "Quale coppia rende meglio la tensione centrale di Leopardi?",
         "options": [
-          "Desiderio infinito e realta limitata",
+          "Desiderio infinito e realtà limitata",
           "Ricchezza e potere",
           "Viaggio e conquista",
           "Satira e romanzo"
         ],
         "answer": 0,
-        "recovery": "Ripassa poetica e immagine del mondo: il desiderio umano supera sempre cio che la realta concede."
+        "recovery": "Ripassa poetica e immagine del mondo: il desiderio umano supera sempre cio che la realtà concede."
       },
       {
         "question": "Che cosa distingue pessimismo storico e cosmico?",
         "options": [
-          "Nel primo pesa la civilta, nel secondo la Natura stessa",
-          "Nel primo non c'e dolore, nel secondo solo politica",
+          "Nel primo pesa la civiltà, nel secondo la Natura stessa",
+          "Nel primo non c’è dolore, nel secondo solo politica",
           "Sono identici",
           "Riguardano solo la metrica"
         ],
@@ -661,10 +682,10 @@ const LEOPARDI_STUDY_DATA = {
           "Lo riduce a ornamento"
         ],
         "answer": 0,
-        "recovery": "Rivedi la poetica: siepe, suoni, ricordi e paesaggi attivano l'interiorita."
+        "recovery": "Rivedi la poetica: siepe, suoni, ricordi e paesaggi attivano l'interiorità."
       },
       {
-        "question": "Quale testo porta alla critica piu netta della Natura materna?",
+        "question": "Quale testo porta alla critica più netta della Natura materna?",
         "options": [
           "Dialogo della Natura e di un Islandese",
           "L'Infinito",
@@ -672,18 +693,18 @@ const LEOPARDI_STUDY_DATA = {
           "Il solo vocabolario"
         ],
         "answer": 0,
-        "recovery": "Ripassa il Dialogo: la Natura appare indifferente e non finalizzata alla felicita umana."
+        "recovery": "Ripassa il Dialogo: la Natura appare indifferente e non finalizzata alla felicità umana."
       },
       {
         "question": "Quale valore resta alla fine nella Ginestra?",
         "options": [
-          "La solidarieta consapevole",
-          "La fuga dalle responsabilita",
+          "La solidarietà consapevole",
+          "La fuga dalle responsabilità",
           "Il trionfo dell'uomo sulla Natura",
           "La cancellazione del dolore"
         ],
         "answer": 0,
-        "recovery": "Rivedi la social catena: l'unica nobilta e riconoscere la fragilita comune e unirsi."
+        "recovery": "Rivedi la social catena: l'unica nobilta e riconoscere la fragilità comune e unirsi."
       }
     ]
   }
@@ -1094,7 +1115,7 @@ setupOttocentoBridge();
 
 if (document.body.dataset.page === "lesson") {
   const studyScript = document.createElement("script");
-  studyScript.src = `${getRoot()}assets/js/study-environment.js?v=1`;
+  studyScript.src = `${getRoot()}assets/js/study-environment.js?v=2`;
   studyScript.defer = true;
   document.head.append(studyScript);
 }

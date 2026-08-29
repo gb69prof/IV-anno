@@ -25,7 +25,8 @@
     ["ginestra", "La ginestra"],
     ["siepe-lava", "Dalla siepe alla lava"],
     ["macchina-anima", "Un meccanicismo con l’anima"],
-    ["senso-natura", "Senso, natura e pensiero"],
+    ["senso-natura", "Consolidamento: senso, natura e pensiero"],
+    ["conclusione", "Conclusione generale"],
   ];
 
   const fallbackState = { note: "", highlights: [], citations: [], quiz: null };
@@ -35,6 +36,7 @@
   let pendingSelection = null;
   let activeMaterial = 0;
   let visualItems = [];
+  const lessonTitle = normalize(article.querySelector("h1")?.textContent || "Lezione su Leopardi");
 
   function readJson(key, fallback) {
     try {
@@ -114,7 +116,34 @@
     };
   }
 
+  const technicalSource = article.querySelector(".lesson-subtitle");
+  if (technicalSource && /\.(docx|txt)$/i.test(normalize(technicalSource.textContent))) {
+    technicalSource.classList.add("technical-source");
+  }
+  article.querySelectorAll("h2").forEach((heading) => {
+    if (normalize(heading.textContent) === "l’anti-idillio") heading.textContent = "L’anti-idillio";
+  });
+
   const learning = extractLearningSections();
+
+  function addLessonBrief() {
+    if (lessonId === "test-finale" || article.querySelector(".lesson-brief")) return;
+    const paragraphs = [...article.children].filter((node) =>
+      node.tagName === "P" &&
+      !node.hidden &&
+      !node.classList.contains("lesson-kicker") &&
+      !node.classList.contains("lesson-subtitle") &&
+      !node.classList.contains("technical-source")
+    );
+    const source = paragraphs.at(-1);
+    if (!source || normalize(source.textContent).length < 80) return;
+    const brief = document.createElement("section");
+    brief.className = "lesson-brief";
+    brief.setAttribute("aria-label", "La lezione in breve");
+    brief.innerHTML = `<small>Sintesi</small><h2>La lezione in breve</h2><p>${escapeHtml(normalize(source.textContent))}</p>`;
+    source.insertAdjacentElement("afterend", brief);
+  }
+  addLessonBrief();
   const oldSidebar = document.querySelector(".lesson-sidebar");
   const oldMaterials = oldSidebar ? [...oldSidebar.children] : [];
   originalShell.insertAdjacentHTML("beforebegin", `
@@ -372,7 +401,7 @@
 
   function addCitation(text, sourceKey) {
     if (!text || citationExists(sourceKey)) return false;
-    state.citations.push({ id: uid(), text: normalize(text), sourceKey, createdAt: new Date().toISOString() });
+    state.citations.push({ id: uid(), text: normalize(text), sourceKey, lessonTitle, createdAt: new Date().toISOString() });
     return true;
   }
 
@@ -394,7 +423,7 @@
     });
     saveState();
     renderCitations();
-    showStatus(added ? `${added} passaggi inseriti nel taccuino.` : "Tutti gli evidenziati sono già nel taccuino.");
+    showStatus(added ? `${added} ${added === 1 ? "passaggio inserito" : "passaggi inseriti"} nel taccuino.` : "Tutti gli evidenziati sono già nel taccuino.");
     updateHighlightControls();
   }
 
@@ -451,7 +480,7 @@
   function renderCitations() {
     const list = document.querySelector("#citationList");
     list.innerHTML = state.citations.map((citation) => `
-      <blockquote><p>${escapeHtml(citation.text)}</p><button type="button" data-remove-citation="${citation.id}" aria-label="Elimina questa citazione">Elimina</button></blockquote>`).join("");
+      <blockquote><p>${escapeHtml(citation.text)}</p><small class="citation-source">${escapeHtml(citation.lessonTitle || lessonTitle)}</small><button type="button" data-remove-citation="${citation.id}" aria-label="Elimina questa citazione">Elimina</button></blockquote>`).join("");
     document.querySelector("#emptyCitations").hidden = state.citations.length > 0;
   }
 
@@ -459,7 +488,7 @@
     state.note = document.querySelector("#notebookText").value;
     saveState();
     const title = normalize(article.querySelector("h1")?.textContent || "Lezione su Leopardi");
-    const citations = state.citations.map((item) => item.text).join("\n\n");
+    const citations = state.citations.map((item) => `[${item.lessonTitle || lessonTitle}]\n${item.text}`).join("\n\n");
     const content = `${title}\n${new Date().toLocaleString("it-IT")}\n\nAPPUNTI DELLO STUDENTE\n${state.note || "—"}\n\nCITAZIONI DALLA LEZIONE\n${citations || "—"}\n`;
     const blob = new Blob(["\ufeff", content], { type: "text/plain;charset=utf-8" });
     const link = document.createElement("a");
@@ -512,6 +541,22 @@
     return indices.filter((index) => index === question.answer || wrong.includes(index));
   }
 
+  function recoveryTarget(question) {
+    const words = normalize(`${question.question} ${question.recovery}`)
+      .toLocaleLowerCase("it")
+      .split(/[^a-zà-ù0-9]+/)
+      .filter((word) => word.length > 4 && !stopwords.has(word));
+    const blocks = [...article.querySelectorAll("[data-study-block]")].filter((node) => !node.hidden);
+    let best = blocks[0] || article.querySelector("h2, p");
+    let bestScore = -1;
+    blocks.forEach((node) => {
+      const text = normalize(node.textContent).toLocaleLowerCase("it");
+      const score = words.reduce((total, word) => total + (text.includes(word) ? 1 : 0), 0);
+      if (score > bestScore) { bestScore = score; best = node; }
+    });
+    return best;
+  }
+
   function renderQuiz(container, onlyIndices = null) {
     const indices = onlyIndices || data.quiz.map((_, index) => index);
     container.innerHTML = `
@@ -525,6 +570,17 @@
         <div id="quizReport" aria-live="polite"></div>
       </form>`;
     const form = container.querySelector("#studyQuiz");
+    form.addEventListener("click", (event) => {
+      const reread = event.target.closest("[data-reread-question]");
+      if (!reread) return;
+      const question = data.quiz[Number(reread.dataset.rereadQuestion)];
+      const target = recoveryTarget(question);
+      closeDialog(document.querySelector("#learningDialog"));
+      if (!target) return;
+      target.classList.add("recovery-focus");
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+      setTimeout(() => target.classList.remove("recovery-focus"), 2600);
+    });
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       let correct = 0;
@@ -542,7 +598,7 @@
         feedback.hidden = false;
         feedback.innerHTML = ok
           ? `<strong>Corretta.</strong> La risposta individua il nucleo verificato dalla domanda.`
-          : `<strong>Da recuperare.</strong> Risposta corretta: ${escapeHtml(question.options[question.answer])}.<br><span>${escapeHtml(question.recovery)}</span>`;
+          : `<strong>Da recuperare.</strong> Risposta corretta: ${escapeHtml(question.options[question.answer])}.<br><span>${escapeHtml(question.recovery)}</span><br><button type="button" class="recovery-link" data-reread-question="${questionIndex}">Rileggi il punto collegato</button>`;
       });
       const percent = Math.round((correct / indices.length) * 100);
       const grade = ((correct / indices.length) * 10).toFixed(1).replace(".", ",");

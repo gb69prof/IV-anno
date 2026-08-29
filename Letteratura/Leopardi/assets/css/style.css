@@ -1850,3 +1850,53 @@ mark.student-highlight {
     animation: none !important;
   }
 }
+
+
+/* Revisione editoriale e recupero guidato */
+.technical-source { display: none !important; }
+.lesson-brief {
+  margin: 2rem 0 0;
+  padding: 1.25rem 1.4rem;
+  border-left: 4px solid #b98636;
+  border-radius: 0.75rem;
+  background: rgba(185, 134, 54, 0.12);
+}
+.lesson-brief small {
+  display: block;
+  color: #8a5d1f;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.lesson-brief h2 { margin: 0.2rem 0 0.65rem; }
+.lesson-brief p { margin: 0; }
+.citation-source {
+  display: block;
+  margin: 0.45rem 0 0.6rem;
+  color: #6c5638;
+  font-weight: 700;
+}
+.recovery-link {
+  margin-top: 0.7rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #b98636;
+  border-radius: 0.55rem;
+  background: #fff6df;
+  color: #4a2f10;
+  font-weight: 800;
+  cursor: pointer;
+}
+.recovery-focus {
+  outline: 4px solid rgba(185, 134, 54, 0.55);
+  outline-offset: 6px;
+  border-radius: 0.4rem;
+  transition: outline-color 0.5s ease;
+}
+.conclusion-next {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(185, 134, 54, 0.65);
+  border-radius: 0.75rem;
+  background: rgba(6, 29, 47, 0.06);
+}
+.conclusion-next a { font-weight: 800; }
