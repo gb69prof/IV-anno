@@ -1,21 +1,17 @@
 {
-  "name": "Parini e la Dea Moda",
-  "short_name": "Parini Moda",
+  "id": "./",
+  "name": "Giuseppe Parini · Ambiente di studio",
+  "short_name": "Parini",
+  "description": "Ambiente digitale di studio su Giuseppe Parini, la Dea Moda e Il Giorno.",
+  "lang": "it",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f4ecd8",
-  "theme_color": "#1d252d",
-  "description": "PWA didattica su Parini, Alla Dea Moda e Il Giorno",
+  "orientation": "any",
+  "background_color": "#f8f1df",
+  "theme_color": "#20262b",
   "icons": [
-    {
-      "src": "assets/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"}
   ]
 }
