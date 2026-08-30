@@ -1,5 +1,5 @@
 const CACHE_PREFIX='parini-study-';
-const CACHE=`${CACHE_PREFIX}v4`;
+const CACHE=`${CACHE_PREFIX}v5`;
 const CORE=[
   './','./index.html','./style.css','./data.js','./app.js','./manifest.webmanifest',
   './assets/icon-192.png','./assets/icon-512.png','./assets/parini_fotorealistico.png','./assets/parini_dipinto_originale.jpeg',
