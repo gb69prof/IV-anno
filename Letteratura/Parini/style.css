@@ -12,3 +12,4 @@ body[data-theme="night"]{--ink:#eee7d7;--ink-soft:#c7bdab;--paper:#181d20;--pape
 @media(print){.studybar,.reading-toolbar,.study-rail,.sediment-bar,.mobile-tabs{display:none!important}.study-app{position:static}.study-grid{display:block;height:auto}.lesson-scroll{overflow:visible}.lesson-text{max-width:none}}
 .portrait-frame img{height:auto}
 .study-rail{min-height:0;height:100%}
+.study-grid{grid-template-rows:minmax(0,1fr)}

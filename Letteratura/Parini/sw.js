@@ -1,7 +1,7 @@
 const CACHE_PREFIX='parini-study-';
-const CACHE=`${CACHE_PREFIX}v6`;
+const CACHE=`${CACHE_PREFIX}v7`;
 const CORE=[
-  './','./index.html','./style.css?v=6','./data.js','./app.js','./manifest.webmanifest',
+  './','./index.html','./style.css?v=7','./data.js','./app.js','./manifest.webmanifest',
   './assets/icon-192.png','./assets/icon-512.png','./assets/parini_fotorealistico.png','./assets/parini_dipinto_originale.jpeg',
   './assets/mappa_dea_moda_tesi_apparente.png','./assets/mappa_dea_moda_tesi_vera.png',
   './assets/schema_primo_stato_01.png','./assets/schema_primo_stato_02.png','./assets/schema_primo_stato_03.png','./assets/schema_primo_stato_04.png','./assets/schema_primo_stato_05.png',
