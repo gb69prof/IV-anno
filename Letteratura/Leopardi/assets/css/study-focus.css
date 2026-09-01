@@ -1,0 +1,412 @@
+/* Ambiente progressivo comune alle pagine-lezione di Giacomo Leopardi. */
+
+body.study-focus-active .reading-tools,
+body.study-focus-active .study-actions > #studyThemeBtn,
+body.study-focus-active .study-actions > #studyFontBtn,
+body.study-focus-active .study-bottombar > [data-learning],
+body.study-focus-active .notebook-actions {
+  display: none;
+}
+
+body.study-focus-active .study-grid {
+  grid-template-columns: minmax(0, 2.35fr) minmax(20.5rem, .95fr);
+}
+
+.focus-appearance-control {
+  position: relative;
+}
+
+.focus-appearance-trigger {
+  min-width: 44px;
+  font-size: 1rem;
+}
+
+.focus-appearance-popover {
+  position: absolute;
+  top: calc(100% + .45rem);
+  right: 0;
+  z-index: 12;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .35rem;
+  width: 17rem;
+  padding: .55rem;
+  color: #241c15;
+  border: 1px solid #c49550;
+  border-radius: .55rem;
+  background: #fffaf0;
+  box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, .32);
+}
+
+.focus-appearance-popover [data-focus-theme] {
+  grid-column: 1 / -1;
+}
+
+.focus-appearance-popover button {
+  min-height: 44px;
+  padding: .55rem;
+  border: 1px solid #c49550;
+  border-radius: .42rem;
+  color: inherit;
+  background: #f2e4c9;
+  font: inherit;
+  font-size: .8rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+body.study-focus-active .study-sidebar {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  border-left: 1px solid var(--study-border);
+}
+
+.focus-panel-tabs {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .3rem;
+  padding: .42rem;
+  border-bottom: 1px solid var(--study-border);
+  background: #061d2f;
+}
+
+.focus-panel-tabs button {
+  min-height: 44px;
+  padding: .55rem .65rem;
+  color: #e7c98d;
+  border: 1px solid transparent;
+  border-radius: .42rem;
+  background: transparent;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.focus-panel-tabs button[aria-selected="true"] {
+  color: #241c15;
+  border-color: #c49550;
+  background: linear-gradient(#fffaf0, #e7c98d);
+}
+
+body.study-focus-active .visual-panel,
+body.study-focus-active .notebook-panel {
+  height: 100%;
+  border-bottom: 0;
+}
+
+body.study-focus-active .study-sidebar[data-focus-panel="visual"] .notebook-panel,
+body.study-focus-active .study-sidebar[data-focus-panel="notes"] .visual-panel {
+  display: none;
+}
+
+body.study-focus-active .visual-panel header,
+body.study-focus-active .notebook-panel header {
+  padding-bottom: .25rem;
+}
+
+body.study-focus-active .visual-stage [data-open-map] {
+  position: relative;
+  overflow: hidden;
+}
+
+body.study-focus-active .visual-stage [data-open-map]::after {
+  position: absolute;
+  right: .55rem;
+  bottom: .55rem;
+  content: "Apri e ingrandisci";
+  padding: .42rem .55rem;
+  color: #fff8e8;
+  border: 1px solid rgba(255, 248, 232, .76);
+  border-radius: 999px;
+  background: rgba(6, 29, 47, .9);
+  box-shadow: 0 .25rem .8rem rgba(0, 0, 0, .28);
+  font-size: .7rem;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.focus-selection-tools {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--study-bottom-h) + .75rem);
+  z-index: 1015;
+  display: flex;
+  gap: .4rem;
+  padding: .42rem;
+  color: #241c15;
+  border: 1px solid #c49550;
+  border-radius: .6rem;
+  background: #061d2f;
+  box-shadow: 0 1rem 2.2rem rgba(0, 0, 0, .36);
+  transform: translateX(-50%);
+}
+
+.focus-selection-tools button {
+  min-height: 44px;
+  padding: .62rem .78rem;
+  color: #241c15;
+  border: 1px solid #c49550;
+  border-radius: .42rem;
+  background: linear-gradient(#fffaf0, #e7c98d);
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.focus-note-tools {
+  position: sticky;
+  bottom: -.75rem;
+  z-index: 4;
+  margin: .35rem -.75rem -.75rem;
+  padding: .55rem .75rem calc(.55rem + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--study-border);
+  background: color-mix(in srgb, var(--study-panel-2) 96%, transparent);
+}
+
+.focus-note-tools summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: .55rem .7rem;
+  color: var(--study-text);
+  border: 1px solid var(--study-border);
+  border-radius: .42rem;
+  background: var(--study-panel);
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.focus-note-tools summary::-webkit-details-marker {
+  display: none;
+}
+
+.focus-note-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .42rem;
+  margin-top: .5rem;
+}
+
+.focus-note-menu button {
+  min-height: 44px;
+  padding: .55rem;
+  color: #fff8e8;
+  border: 1px solid var(--study-border);
+  border-radius: .42rem;
+  background: #183b55;
+  font: inherit;
+  font-size: .76rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.focus-note-menu button.danger {
+  background: #7b2d1d;
+}
+
+.focus-note-menu button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+body.study-focus-active .study-bottombar {
+  grid-template-columns: minmax(9rem, 1fr) auto;
+  align-items: center;
+}
+
+.focus-reading-progress {
+  display: grid;
+  grid-template-columns: auto minmax(4rem, 1fr);
+  align-items: center;
+  gap: .55rem;
+  min-width: 0;
+  color: #e7c98d;
+}
+
+.focus-reading-progress span {
+  display: grid;
+  line-height: 1;
+}
+
+.focus-reading-progress strong {
+  font-size: .82rem;
+}
+
+.focus-reading-progress small {
+  margin-top: .15rem;
+  color: rgba(255, 248, 232, .72);
+  font-size: .58rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.focus-reading-progress i {
+  display: block;
+  height: .38rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 248, 232, .18);
+}
+
+.focus-reading-progress b {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: #e7c98d;
+  transition: width 160ms ease;
+}
+
+.focus-dock-actions {
+  display: grid;
+  grid-template-columns: auto;
+  gap: .4rem;
+}
+
+.focus-dock-actions button {
+  min-width: 11rem;
+  color: #241c15;
+  background: linear-gradient(#fffaf0, #e7c98d);
+}
+
+.focus-mobile-panel-button {
+  display: none;
+}
+
+.focus-learning-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .42rem;
+  clear: both;
+  margin-top: .85rem;
+}
+
+.focus-learning-tabs button {
+  min-height: 44px;
+  color: var(--study-text);
+  background: var(--study-panel-2);
+}
+
+.focus-learning-tabs button[aria-selected="true"] {
+  color: #fff8e8;
+  background: #183b55;
+}
+
+@media (max-width: 1120px) and (min-width: 901px) {
+  body.study-focus-active .study-grid {
+    grid-template-columns: minmax(0, 2fr) minmax(19.5rem, .9fr);
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --study-topbar-h: 4.65rem;
+  }
+
+  body.study-focus-active .study-topbar {
+    grid-template-rows: 1fr;
+  }
+
+  body.study-focus-active .mobile-study-tabs,
+  body.study-focus-active .focus-panel-tabs {
+    display: none;
+  }
+
+  body.study-focus-active .study-grid {
+    display: block;
+  }
+
+  body.study-focus-active .study-sidebar {
+    grid-template-rows: minmax(0, 1fr);
+    border-left: 0;
+  }
+
+  body.study-focus-active .study-grid[data-visible-panel="read"] .study-sidebar,
+  body.study-focus-active .study-grid[data-visible-panel="visual"] .reading-pane,
+  body.study-focus-active .study-grid[data-visible-panel="notes"] .reading-pane {
+    display: none;
+  }
+
+  body.study-focus-active .study-grid[data-visible-panel="visual"] .study-sidebar,
+  body.study-focus-active .study-grid[data-visible-panel="notes"] .study-sidebar {
+    display: grid;
+  }
+
+  body.study-focus-active .study-grid[data-visible-panel="visual"] .notebook-panel,
+  body.study-focus-active .study-grid[data-visible-panel="notes"] .visual-panel {
+    display: none;
+  }
+
+  body.study-focus-active .study-grid[data-visible-panel="visual"] .visual-panel {
+    display: grid;
+  }
+
+  body.study-focus-active .study-grid[data-visible-panel="notes"] .notebook-panel {
+    display: grid;
+  }
+
+  body.study-focus-active .study-bottombar {
+    grid-template-columns: 1fr;
+    padding: .42rem max(.42rem, env(safe-area-inset-right)) calc(.42rem + env(safe-area-inset-bottom)) max(.42rem, env(safe-area-inset-left));
+  }
+
+  .focus-reading-progress {
+    display: none;
+  }
+
+  .focus-dock-actions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .focus-dock-actions button,
+  .focus-mobile-panel-button {
+    display: block;
+    min-width: 0;
+    padding: .55rem .35rem;
+    font-size: .76rem;
+  }
+
+  .focus-dock-actions button[aria-pressed="true"] {
+    color: #fff8e8;
+    background: #183b55;
+  }
+
+  .focus-selection-tools {
+    right: .45rem;
+    bottom: calc(var(--study-bottom-h) + .5rem);
+    left: .45rem;
+    justify-content: stretch;
+    transform: none;
+  }
+
+  .focus-selection-tools button {
+    flex: 1 1 0;
+    padding-inline: .45rem;
+    font-size: .75rem;
+  }
+}
+
+@media (max-width: 620px) {
+  :root {
+    --study-topbar-h: 4.55rem;
+    --study-bottom-h: 4.15rem;
+  }
+
+  .focus-appearance-popover {
+    right: -3.3rem;
+    width: 15rem;
+  }
+
+  .focus-learning-tabs,
+  .focus-note-menu {
+    grid-template-columns: 1fr;
+  }
+}
+
