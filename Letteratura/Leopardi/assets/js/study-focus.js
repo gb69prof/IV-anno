@@ -32,8 +32,15 @@
     if (document.body.classList.contains("study-focus-active")) return;
 
     document.body.classList.add("study-focus-active");
+    document.documentElement.dataset.studyTheme = "light";
+    try {
+      const preferences = JSON.parse(localStorage.getItem("leopardi.study.preferences.v2")) || {};
+      localStorage.setItem("leopardi.study.preferences.v2", JSON.stringify({ ...preferences, theme: "light" }));
+    } catch {
+      localStorage.setItem("leopardi.study.preferences.v2", JSON.stringify({ theme: "light", font: "medium" }));
+    }
 
-    /* Aspetto: un solo pulsante, con font e tema dentro il menu. */
+    /* Come in Foscolo: un solo pulsante Aa e soltanto due regolazioni tipografiche. */
     const studyActions = $(".study-actions", header);
     const indexButton = $("[data-open-dialog]", studyActions);
     const appearanceControl = document.createElement("div");
@@ -43,12 +50,10 @@
       <div class="focus-appearance-popover" id="focus-appearance-popover" hidden>
         <button type="button" data-focus-font="-1">A− Riduci</button>
         <button type="button" data-focus-font="1">A+ Ingrandisci</button>
-        <button type="button" data-focus-theme>Cambia tema</button>
       </div>`;
     studyActions.insertBefore(appearanceControl, indexButton);
     const appearanceTrigger = $(".focus-appearance-trigger", appearanceControl);
     const appearancePopover = $(".focus-appearance-popover", appearanceControl);
-    const themeButton = $("[data-focus-theme]", appearanceControl);
     const closeAppearance = () => {
       appearancePopover.hidden = true;
       appearanceTrigger.setAttribute("aria-expanded", "false");
@@ -63,15 +68,15 @@
     };
     const persistPreferences = (changes) => {
       const next = {
-        theme: document.documentElement.dataset.studyTheme || "light",
+        theme: "light",
         font: document.documentElement.dataset.studyFont || "medium",
         ...currentPreferences(),
         ...changes,
+        theme: "light",
       };
       document.documentElement.dataset.studyTheme = next.theme;
       document.documentElement.dataset.studyFont = next.font;
       localStorage.setItem("leopardi.study.preferences.v2", JSON.stringify(next));
-      themeButton.textContent = next.theme === "dark" ? "Usa tema chiaro" : "Usa tema scuro";
     };
     appearanceTrigger.addEventListener("click", () => {
       const open = appearancePopover.hidden;
@@ -85,10 +90,6 @@
       persistPreferences({ font: levels[next] });
       closeAppearance();
     }));
-    themeButton.addEventListener("click", () => {
-      persistPreferences({ theme: document.documentElement.dataset.studyTheme === "dark" ? "light" : "dark" });
-      closeAppearance();
-    });
     document.addEventListener("pointerdown", (event) => {
       if (!appearanceControl.contains(event.target)) closeAppearance();
     });
