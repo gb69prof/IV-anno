@@ -34,9 +34,10 @@
   state.highlights = Array.isArray(state.highlights) ? state.highlights : [];
   state.citations = Array.isArray(state.citations) ? state.citations : [];
   let pendingSelection = null;
-  let activeMaterial = 0;
+  let activeMaterial = -1;
   let visualItems = [];
   const lessonTitle = normalize(article.querySelector("h1")?.textContent || "Lezione su Leopardi");
+  const lessonNumber = String(lessonIndex.findIndex(([id]) => id === lessonId) + 1).padStart(2, "0");
 
   function readJson(key, fallback) {
     try {
@@ -150,7 +151,7 @@
     <section id="leopardiStudyApp" class="leopardi-study-app" aria-label="Ambiente digitale di studio">
       <header class="study-topbar">
         <a class="study-home" href="${root}index.html" aria-label="Torna alla copertina">← <span>Home</span></a>
-        <div class="study-heading"><small>Giacomo Leopardi</small><h1>${escapeHtml(article.querySelector("h1")?.textContent || "Lezione")}</h1></div>
+        <div class="study-heading"><small>Giacomo Leopardi · ${lessonNumber}</small><h1>${escapeHtml(article.querySelector("h1")?.textContent || "Lezione")}</h1></div>
         <div class="study-actions">
           <button type="button" id="studyThemeBtn" aria-label="Cambia tema">◐</button>
           <button type="button" id="studyFontBtn" aria-label="Cambia dimensione del testo">A</button>
@@ -226,13 +227,10 @@
 
   function setupPreferences() {
     const prefs = readJson(globalKey, { theme: "light", font: "medium" });
-    document.documentElement.dataset.studyTheme = prefs.theme;
+    prefs.theme = "light";
+    document.documentElement.dataset.studyTheme = "light";
     document.documentElement.dataset.studyFont = prefs.font;
-    document.querySelector("#studyThemeBtn").addEventListener("click", () => {
-      prefs.theme = prefs.theme === "dark" ? "light" : "dark";
-      document.documentElement.dataset.studyTheme = prefs.theme;
-      localStorage.setItem(globalKey, JSON.stringify(prefs));
-    });
+    localStorage.setItem(globalKey, JSON.stringify(prefs));
     document.querySelector("#studyFontBtn").addEventListener("click", () => {
       prefs.font = prefs.font === "medium" ? "large" : prefs.font === "large" ? "extra" : "medium";
       document.documentElement.dataset.studyFont = prefs.font;
@@ -251,24 +249,19 @@
       .sort((a, b) => Number(b.node.classList.contains("lesson-map-card")) - Number(a.node.classList.contains("lesson-map-card")));
     if (!visualItems.length) return;
     const choices = document.querySelector("#visualChoices");
-    choices.innerHTML = visualItems.map((item, index) => `<button type="button" data-material="${index}">${escapeHtml(item.title)}</button>`).join("");
-    choices.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-material]");
-      if (button) showMaterial(Number(button.dataset.material), false);
-    });
+    choices.hidden = true;
+    document.querySelector("#visualStage").replaceChildren(...visualItems.map((item) => item.node));
     showMaterial(0, false);
   }
 
   function showMaterial(index, automatic = true) {
-    if (!visualItems[index] || index === activeMaterial && document.querySelector("#visualStage").childElementCount) return;
+    if (!visualItems[index] || index === activeMaterial) return;
     activeMaterial = index;
     const stage = document.querySelector("#visualStage");
-    stage.replaceChildren(visualItems[index].node);
+    visualItems.forEach((item, itemIndex) => item.node.classList.toggle("is-contextual", itemIndex === index));
     document.querySelector("#visualCaption").textContent = `${visualItems[index].title}${automatic ? " · collegato al punto che stai leggendo" : ""}`;
-    document.querySelectorAll("#visualChoices [data-material]").forEach((button, buttonIndex) => {
-      button.classList.toggle("active", buttonIndex === index);
-      button.setAttribute("aria-pressed", String(buttonIndex === index));
-    });
+    const target = Math.max(0, visualItems[index].node.offsetTop - stage.offsetTop - 8);
+    stage.scrollTo({ top: target, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   }
 
   function setupTextBlocks() {
