@@ -28,6 +28,15 @@
     header.classList.add("study-topbar");
     document.documentElement.dataset.theme = "light";
     localStorage.setItem("manzoni-study-v5-theme", JSON.stringify("light"));
+    const storedFont = (() => {
+      try {
+        return JSON.parse(localStorage.getItem("manzoni-study-v5-font")) || "medium";
+      } catch {
+        return "medium";
+      }
+    })();
+    document.documentElement.dataset.font = "medium";
+    document.documentElement.dataset.focusFont = ["medium", "large", "xlarge"].includes(storedFont) ? storedFont : "medium";
     shell.dataset.mobilePanel = "read";
 
     const lessonId = document.body.dataset.lesson || "";
@@ -60,9 +69,10 @@
     });
     $$("[data-focus-font]", appearanceControl).forEach((button) => button.addEventListener("click", () => {
       const levels = ["medium", "large", "xlarge"];
-      const current = Math.max(0, levels.indexOf(document.documentElement.dataset.font || "medium"));
+      const current = Math.max(0, levels.indexOf(document.documentElement.dataset.focusFont || "medium"));
       const next = Math.max(0, Math.min(levels.length - 1, current + Number(button.dataset.focusFont)));
-      document.documentElement.dataset.font = levels[next];
+      document.documentElement.dataset.font = "medium";
+      document.documentElement.dataset.focusFont = levels[next];
       localStorage.setItem("manzoni-study-v5-font", JSON.stringify(levels[next]));
       closeAppearance();
     }));
