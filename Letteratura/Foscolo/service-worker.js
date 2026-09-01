@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "foscolo-pwa-";
-const CACHE_NAME = `${CACHE_PREFIX}v15`;
+const CACHE_NAME = `${CACHE_PREFIX}v16`;
 
 const LOCAL_ASSETS = [
   "./",
@@ -11,7 +11,7 @@ const LOCAL_ASSETS = [
   "./assets/css/lesson-focus.css?v=2",
   "./assets/js/app.js?v=13",
   "./assets/js/study-workspace.js?v=14",
-  "./assets/js/lesson-focus.js?v=2",
+  "./assets/js/lesson-focus.js?v=3",
   "./assets/immagini/Foscolo-foto.PNG",
   "./assets/immagini/index.png",
   "./assets/mappe/Alla-sera.PNG",
