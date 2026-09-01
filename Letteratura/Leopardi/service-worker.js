@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "leopardi-";
-const CACHE_NAME = "leopardi-study-environment-v11";
+const CACHE_NAME = "leopardi-study-environment-v12";
 
 const LOCAL_ASSETS = [
   "./",
@@ -69,20 +69,36 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+
   const url = new URL(event.request.url);
   if (url.pathname.toLowerCase().includes("/video/")) return;
+
+  const sameOrigin = url.origin === self.location.origin;
+  const needsFreshCopy =
+    event.request.mode === "navigate" ||
+    event.request.destination === "document" ||
+    (sameOrigin && ["script", "style", "worker"].includes(event.request.destination));
+
+  const remember = (response) => {
+    if (response.ok && sameOrigin) {
+      const copy = response.clone();
+      caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+    }
+    return response;
+  };
+
+  if (needsFreshCopy) {
+    event.respondWith(
+      fetch(event.request)
+        .then(remember)
+        .catch(() => caches.match(event.request, { ignoreSearch: sameOrigin }))
+    );
+    return;
+  }
+
   event.respondWith(
     caches
-      .match(event.request, { ignoreSearch: url.origin === self.location.origin })
-      .then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request).then((response) => {
-        const copy = response.clone();
-        if (response.ok && url.origin === self.location.origin) {
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-        }
-        return response;
-      });
-      })
+      .match(event.request, { ignoreSearch: sameOrigin })
+      .then((cached) => cached || fetch(event.request).then(remember))
   );
 });
