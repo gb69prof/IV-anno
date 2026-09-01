@@ -75,10 +75,14 @@
       <button type="button" role="tab" data-focus-panel="notes" aria-selected="false">Appunti</button>`;
     sidebar.prepend(panelTabs);
 
-    $(".workspace-panel-header > p", visualPane).textContent = "Materiali collegati";
-    $(".workspace-panel-header h2", visualPane).textContent = "Osserva";
-    $(".workspace-panel-header > p", notebookPane).textContent = "Scrivi e raccogli";
-    $(".workspace-panel-header h2", notebookPane).textContent = "Appunti";
+    const visualKicker = $(".workspace-panel-header > p", visualPane);
+    const visualTitle = $(".workspace-panel-header h2", visualPane);
+    const notebookKicker = $(".workspace-panel-header p", notebookPane);
+    const notebookTitle = $(".workspace-panel-header h2", notebookPane);
+    if (visualKicker) visualKicker.textContent = "Materiali collegati";
+    if (visualTitle) visualTitle.textContent = "Osserva";
+    if (notebookKicker) notebookKicker.textContent = "Scrivi e raccogli";
+    if (notebookTitle) notebookTitle.textContent = "Appunti";
 
     const setSidePanel = panel => {
       sidebar.dataset.focusPanel = panel;
