@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "manzoni-pwa-";
-const CACHE_NAME = `${CACHE_PREFIX}v12`;
+const CACHE_NAME = `${CACHE_PREFIX}v13`;
 
 const LOCAL_ASSETS = [
   "./",
@@ -10,6 +10,8 @@ const LOCAL_ASSETS = [
   "./manifest.json",
   "./assets/css/style.css?v=12",
   "./assets/js/app.js?v=12",
+  "./assets/css/study-focus.css?v=1",
+  "./assets/js/study-focus.js?v=1",
   "./assets/immagini/index.png",
   "./assets/immagini/manzoni-ritratto.png",
   "./assets/immagini/icon-192.png",
@@ -66,6 +68,15 @@ self.addEventListener("fetch", (event) => {
     }).catch(() => caches.match(event.request).then((cached) => cached || caches.match("./offline.html"))));
     return;
   }
+  const isFreshAsset = event.request.destination === "style" || event.request.destination === "script" || /\\.(?:css|js)$/.test(requestUrl.pathname);
+  if (isFreshAsset) {
+    event.respondWith(fetch(event.request).then((response) => {
+      if (response.ok && requestUrl.origin === self.location.origin) caches.open(CACHE_NAME).then((cache) => cache.put(event.request,response.clone()));
+      return response;
+    }).catch(() => caches.match(event.request)));
+    return;
+  }
+
   event.respondWith(caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
     if (response.ok && requestUrl.origin === self.location.origin) caches.open(CACHE_NAME).then((cache) => cache.put(event.request,response.clone()));
     return response;
