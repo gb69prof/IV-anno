@@ -1120,16 +1120,16 @@ if (document.body.dataset.page === "lesson") {
   if (!document.querySelector('link[href*="study-focus.css"]')) {
     const focusStyle = document.createElement("link");
     focusStyle.rel = "stylesheet";
-    focusStyle.href = `${getRoot()}assets/css/study-focus.css?v=1`;
+    focusStyle.href = `${getRoot()}assets/css/study-focus.css?v=3`;
     document.head.append(focusStyle);
   }
 
   const studyScript = document.createElement("script");
-  studyScript.src = `${getRoot()}assets/js/study-environment.js?v=2`;
+  studyScript.src = `${getRoot()}assets/js/study-environment.js?v=3`;
   studyScript.addEventListener("load", () => {
     if (document.querySelector('script[src*="study-focus.js"]')) return;
     const focusScript = document.createElement("script");
-    focusScript.src = `${getRoot()}assets/js/study-focus.js?v=1`;
+    focusScript.src = `${getRoot()}assets/js/study-focus.js?v=3`;
     document.head.append(focusScript);
   }, { once: true });
   document.head.append(studyScript);
