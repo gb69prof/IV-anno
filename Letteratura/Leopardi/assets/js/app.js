@@ -828,7 +828,10 @@ function setupJourneyBridges() {
 function setupServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register(`${getRoot()}service-worker.js`).catch(() => {});
+    navigator.serviceWorker
+      .register(`${getRoot()}service-worker.js`, { updateViaCache: "none" })
+      .then((registration) => registration.update())
+      .catch(() => {});
   });
 }
 
