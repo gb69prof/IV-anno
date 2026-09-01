@@ -1114,14 +1114,17 @@ setupJourneyBridges();
 setupOttocentoBridge();
 
 if (document.body.dataset.page === "lesson") {
-  const focusStyle = document.createElement("link");
-  focusStyle.rel = "stylesheet";
-  focusStyle.href = `${getRoot()}assets/css/study-focus.css?v=1`;
-  document.head.append(focusStyle);
+  if (!document.querySelector('link[href*="study-focus.css"]')) {
+    const focusStyle = document.createElement("link");
+    focusStyle.rel = "stylesheet";
+    focusStyle.href = `${getRoot()}assets/css/study-focus.css?v=1`;
+    document.head.append(focusStyle);
+  }
 
   const studyScript = document.createElement("script");
   studyScript.src = `${getRoot()}assets/js/study-environment.js?v=2`;
   studyScript.addEventListener("load", () => {
+    if (document.querySelector('script[src*="study-focus.js"]')) return;
     const focusScript = document.createElement("script");
     focusScript.src = `${getRoot()}assets/js/study-focus.js?v=1`;
     document.head.append(focusScript);
