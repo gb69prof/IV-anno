@@ -9,6 +9,11 @@
 
   const initialise = () => {
     const app = $("#leopardiStudyApp");
+    if (!app) {
+      window.setTimeout(initialise, 40);
+      return;
+    }
+
     const header = $(".study-topbar", app);
     const readingPane = $(".reading-pane", app);
     const article = $(".lesson-article", app);
@@ -20,7 +25,7 @@
     const dock = $(".study-bottombar", app);
     const learningDialog = $("#learningDialog");
 
-    if (!app || !header || !readingPane || !article || !readingTools || !grid || !sidebar || !visualPanel || !notebookPanel || !dock || !learningDialog) {
+    if (!header || !readingPane || !article || !readingTools || !grid || !sidebar || !visualPanel || !notebookPanel || !dock || !learningDialog) {
       window.setTimeout(initialise, 40);
       return;
     }
