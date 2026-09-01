@@ -1,4 +1,4 @@
-/* Prototipo progressivo per la sola lezione "Introduzione". */
+/* Interfaccia progressiva comune alle lezioni della PWA di Foscolo. */
 body.focus-prototype .reading-tools,
 body.focus-prototype .study-actions > button[data-font],
 body.focus-prototype .study-bottombar > button[data-learning-panel],
