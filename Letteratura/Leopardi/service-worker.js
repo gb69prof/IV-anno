@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "leopardi-";
-const CACHE_NAME = "leopardi-study-environment-v10";
+const CACHE_NAME = "leopardi-study-environment-v11";
 
 const LOCAL_ASSETS = [
   "./",
@@ -13,8 +13,10 @@ const LOCAL_ASSETS = [
   "./manifest.json",
   "./manifest.webmanifest",
   "./assets/css/style.css",
+  "./assets/css/study-focus.css",
   "./assets/js/app.js",
   "./assets/js/study-environment.js",
+  "./assets/js/study-focus.js",
   "./assets/immagini/index.png",
   "./assets/immagini/icon-192.png",
   "./assets/immagini/icon-512.png",
