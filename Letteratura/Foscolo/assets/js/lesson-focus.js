@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  if (document.body.dataset.page !== "lesson" || document.body.dataset.lesson !== "introduzione") return;
+  if (document.body.dataset.page !== "lesson") return;
 
   const $ = (selector, context = document) => context.querySelector(selector);
   const $$ = (selector, context = document) => [...context.querySelectorAll(selector)];
