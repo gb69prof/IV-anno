@@ -292,6 +292,31 @@ body.focus-prototype .study-bottombar {
     box-shadow: none;
   }
 
+  body.focus-prototype[data-mobile-panel="read"] .lesson-sidebar,
+  body.focus-prototype[data-mobile-panel="visual"] .lesson-article,
+  body.focus-prototype[data-mobile-panel="notes"] .lesson-article {
+    display: none;
+  }
+
+  body.focus-prototype[data-mobile-panel="visual"] .lesson-sidebar,
+  body.focus-prototype[data-mobile-panel="notes"] .lesson-sidebar {
+    display: grid;
+  }
+
+  body.focus-prototype[data-mobile-panel="visual"] .notebook-pane,
+  body.focus-prototype[data-mobile-panel="notes"] .visual-context-pane {
+    display: none;
+  }
+
+  body.focus-prototype[data-mobile-panel="visual"] .visual-context-pane,
+  body.focus-prototype[data-mobile-panel="notes"] .notebook-pane {
+    display: grid;
+  }
+
+  body.focus-prototype[data-mobile-panel="notes"] .notebook-pane {
+    display: block;
+  }
+
   body.focus-prototype .study-bottombar {
     grid-template-columns: 1fr;
     padding: 0.42rem max(0.42rem, env(safe-area-inset-right)) calc(0.42rem + env(safe-area-inset-bottom)) max(0.42rem, env(safe-area-inset-left));
