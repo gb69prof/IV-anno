@@ -636,7 +636,10 @@ body.manzoni-focus-active .focus-dock-actions button {
     display: none !important;
   }
 
-  body.manzoni-focus-active .lesson-shell[data-mobile-panel="read"] .lesson-article,
+  body.manzoni-focus-active .lesson-shell[data-mobile-panel="read"] .lesson-article {
+    display: block;
+  }
+
   body.manzoni-focus-active .lesson-shell[data-mobile-panel="visual"] .lesson-sidebar,
   body.manzoni-focus-active .lesson-shell[data-mobile-panel="notes"] .lesson-sidebar {
     display: grid;
@@ -647,7 +650,10 @@ body.manzoni-focus-active .focus-dock-actions button {
     display: none !important;
   }
 
-  body.manzoni-focus-active .lesson-shell[data-mobile-panel="visual"] .visual-panel,
+  body.manzoni-focus-active .lesson-shell[data-mobile-panel="visual"] .visual-panel {
+    display: grid !important;
+  }
+
   body.manzoni-focus-active .lesson-shell[data-mobile-panel="notes"] .notebook-panel {
     display: block !important;
   }
