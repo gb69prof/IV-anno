@@ -176,11 +176,11 @@ body.manzoni-focus-active .reading-source {
   line-height: normal;
 }
 
-html[data-font="large"] body.manzoni-focus-active .reading-source {
+html[data-focus-font="large"] body.manzoni-focus-active .reading-source {
   font-size: 1.1rem;
 }
 
-html[data-font="xlarge"] body.manzoni-focus-active .reading-source {
+html[data-focus-font="xlarge"] body.manzoni-focus-active .reading-source {
   font-size: 1.2rem;
 }
 
