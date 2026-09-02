@@ -1,6 +1,8 @@
-const CACHE_NAME = 'rivoluzione-francese-v3';
+const CACHE_NAME = 'rivoluzione-francese-v4';
 const ASSETS = [
   "./",
+  "../ui-focus/history-focus.css?v=1",
+  "../ui-focus/history-focus.js?v=1",
   "index.html",
   "app.html",
   "manifest.webmanifest",
@@ -55,4 +57,4 @@ const ASSETS = [
 ];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)).then(()=>self.skipWaiting())); });
 self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())); });
-self.addEventListener('fetch', event => { if(event.request.method !== 'GET') return; event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(resp => { const copy = resp.clone(); caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)); return resp; }).catch(()=> caches.match('index.html')))); });
+self.addEventListener('fetch', event => { if(event.request.method !== 'GET') return; const fresh=event.request.mode==='navigate'||event.request.destination==='style'||event.request.destination==='script'; const network=fetch(event.request).then(resp=>{if(resp.ok)caches.open(CACHE_NAME).then(cache=>cache.put(event.request,resp.clone()));return resp;}); if(fresh){event.respondWith(network.catch(()=>caches.match(event.request).then(cached=>cached||(event.request.mode==='navigate'?caches.match('index.html'):new Response('',{status:504})))));return;} event.respondWith(caches.match(event.request).then(cached=>cached||network.catch(()=>new Response('',{status:504})))); });
