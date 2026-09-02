@@ -1,5 +1,7 @@
-const CACHE = 'restaurazione-v2';
+const CACHE = 'restaurazione-v2-focus1';
 const CORE = [
+  "../ui-focus/history-focus.css?v=1",
+  "../ui-focus/history-focus.js?v=1",
   './',
   'index.html',
   'app.html',
@@ -41,15 +43,16 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
-  const requestUrl = new URL(event.request.url);
-  if (requestUrl.origin !== self.location.origin) return;
-  event.respondWith(
-    caches.match(event.request).then(cached => {
-      const network = fetch(event.request).then(response => {
-        if (response.ok) caches.open(CACHE).then(cache => cache.put(event.request, response.clone()));
-        return response;
-      });
-      return cached || network.catch(() => event.request.mode === 'navigate' ? caches.match('index.html') : new Response('', { status: 504 }));
-    })
-  );
+  const url = new URL(event.request.url);
+  if (url.origin !== self.location.origin) return;
+  const network = fetch(event.request).then(response => {
+    if (response.ok) caches.open(CACHE).then(cache => cache.put(event.request, response.clone()));
+    return response;
+  });
+  const fresh = event.request.mode === 'navigate' || event.request.destination === 'style' || event.request.destination === 'script';
+  if (fresh) {
+    event.respondWith(network.catch(() => caches.match(event.request).then(cached => cached || (event.request.mode === 'navigate' ? caches.match('index.html') : new Response('', {status:504})))));
+    return;
+  }
+  event.respondWith(caches.match(event.request).then(cached => cached || network.catch(() => new Response('', {status:504}))));
 });
