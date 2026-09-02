@@ -1,7 +1,9 @@
 const $ = (q, el=document) => el.querySelector(q);
 const $$ = (q, el=document) => [...el.querySelectorAll(q)];
 const app = $('#app');
-const state = { catalog:null, paper:null, corpus:null, intros:null, works:new Map(), currentWork:null, readerSize: Number(localStorage.getItem('readerSize') || 1.18)};
+const STORAGE_PREFIX = 'leopardi-testi:';
+const storageKey = key => STORAGE_PREFIX + key;
+const state = { catalog:null, paper:null, corpus:null, intros:null, works:new Map(), currentWork:null, readerSize: Number(localStorage.getItem(storageKey('readerSize')) || 1.18)};
 const WORK_INTRO_KEYS = {
   'appressamento-della-morte':'08',
   'canti':'20',
@@ -59,8 +61,8 @@ const SECTION_INTRO_KEYS = {
 document.documentElement.style.setProperty('--readerSize', state.readerSize + 'rem');
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
-if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light');
-$('#themeBtn').addEventListener('click', () => { document.documentElement.classList.toggle('light'); localStorage.setItem('theme', document.documentElement.classList.contains('light')?'light':'dark'); });
+if (localStorage.getItem(storageKey('theme')) === 'light') document.documentElement.classList.add('light');
+$('#themeBtn').addEventListener('click', () => { document.documentElement.classList.toggle('light'); localStorage.setItem(storageKey('theme'), document.documentElement.classList.contains('light')?'light':'dark'); });
 
 async function loadJson(url){ const r = await fetch(url); if(!r.ok) throw new Error(url); return r.json(); }
 async function boot(){ state.catalog = await loadJson('data/catalog.json'); state.paper = await loadJson('data/paper.json'); state.corpus = await loadJson('data/corpus.json'); state.intros = await loadJson('data/work-intros.json'); route(); }
@@ -137,9 +139,9 @@ async function renderReader(slug, sectionId){
   if(!slug){ renderLibrary(); return; }
   app.innerHTML = '<div class="empty">Carico il testo…</div>';
   const work = await loadWork(slug); state.currentWork=work;
-  let idx = sectionId ? work.sections.findIndex(s=>s.id===sectionId) : Number(localStorage.getItem('last:'+slug)||0);
+  let idx = sectionId ? work.sections.findIndex(s=>s.id===sectionId) : Number(localStorage.getItem(storageKey('last:'+slug))||0);
   if(idx < 0) idx = 0;
-  const sec = work.sections[idx]; localStorage.setItem('last:'+slug, idx);
+  const sec = work.sections[idx]; localStorage.setItem(storageKey('last:'+slug), idx);
   app.innerHTML = `<section class="reader-shell">
     <aside class="reader-side">
       <a class="btn secondary" href="#/library">← Opere</a>
@@ -167,10 +169,10 @@ async function renderReader(slug, sectionId){
   $('#nextBtn').onclick=()=>{ if(idx<work.sections.length-1) location.hash=`#/reader/${slug}/${work.sections[idx+1].id}`; };
   $('#smaller').onclick=()=>setSize(-.08); $('#larger').onclick=()=>setSize(.08);
   $('#saveQuote').onclick=()=>{ navigator.clipboard?.writeText(`${work.title}, ${sec.title}`).then(()=>toast('Citazione copiata')); };
-  const noteKey=`note:${slug}:${sec.id}`; $('#notes').value=localStorage.getItem(noteKey)||''; $('#notes').addEventListener('input',e=>localStorage.setItem(noteKey,e.target.value));
+  const noteKey=storageKey(`note:${slug}:${sec.id}`); $('#notes').value=localStorage.getItem(noteKey)||''; $('#notes').addEventListener('input',e=>localStorage.setItem(noteKey,e.target.value));
   $('#inText').addEventListener('input', e=> $('#text').innerHTML = formatText(sec.text, e.target.value));
 }
-function setSize(delta){ state.readerSize=Math.max(.9, Math.min(1.9, state.readerSize+delta)); localStorage.setItem('readerSize',state.readerSize); document.documentElement.style.setProperty('--readerSize', state.readerSize+'rem'); }
+function setSize(delta){ state.readerSize=Math.max(.9, Math.min(1.9, state.readerSize+delta)); localStorage.setItem(storageKey('readerSize'),state.readerSize); document.documentElement.style.setProperty('--readerSize', state.readerSize+'rem'); }
 function wordCount(t){ return (t.match(/\b\w+\b/g)||[]).length; }
 function introFor(work, section){
   const sectionKey = SECTION_INTRO_KEYS[work.slug]?.[section.id];

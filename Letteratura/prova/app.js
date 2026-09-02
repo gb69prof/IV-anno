@@ -2,9 +2,10 @@
 const DATA=window.SITE_DATA;
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const state={chapter:null,lesson:null};
-const completed=new Set(JSON.parse(localStorage.getItem('completedLessons')||'[]'));
-let fontScale=Number(localStorage.getItem('fontScale')||1);
-let theme=localStorage.getItem('theme')||'light';
+const storageKey=key=>`gbprof-prova:${key}`;
+const completed=new Set(JSON.parse(localStorage.getItem(storageKey('completedLessons'))||'[]'));
+let fontScale=Number(localStorage.getItem(storageKey('fontScale'))||1);
+let theme=localStorage.getItem(storageKey('theme'))||'light';
 document.documentElement.dataset.theme=theme==='dark'?'dark':'';
 document.documentElement.style.fontSize=(16*fontScale)+'px';
 
@@ -28,7 +29,7 @@ function renderLesson(ch,l){state.chapter=ch;state.lesson=l; const mainLessons=c
 function bindGlobal(){
  $$('.nav-btn,[data-route]').forEach(el=>el.addEventListener('click',()=>{location.hash=el.dataset.route; $('.sidebar')?.classList.remove('open')}));
  $('.mobile-menu')?.addEventListener('click',()=>$('.sidebar')?.classList.add('open')); $('.mobile-close')?.addEventListener('click',()=>$('.sidebar')?.classList.remove('open'));
- $('#themeBtn')?.addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem('theme',theme);document.documentElement.dataset.theme=theme==='dark'?'dark':'';route()});
+ $('#themeBtn')?.addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem(storageKey('theme'),theme);document.documentElement.dataset.theme=theme==='dark'?'dark':'';route()});
  $('#fontUp')?.addEventListener('click',()=>setFont(.08)); $('#fontDown')?.addEventListener('click',()=>setFont(-.08)); $('#printBtn')?.addEventListener('click',()=>window.print());
  $('#searchBtn')?.addEventListener('click',()=>{const p=$('.search-panel');p.classList.toggle('hidden');if(!p.classList.contains('hidden'))setTimeout(()=>$('#searchInput').focus(),50)});
  $('#searchInput')?.addEventListener('input',e=>search(e.target.value));
@@ -37,9 +38,9 @@ function bindGlobal(){
  document.addEventListener('keydown',escapeHandler,{once:true});
 }
 function escapeHandler(e){if(e.key==='Escape'){$('.search-panel')?.classList.add('hidden');$('.map-modal')?.classList.add('hidden')} document.addEventListener('keydown',escapeHandler,{once:true})}
-function setFont(delta){fontScale=Math.min(1.35,Math.max(.85,fontScale+delta));localStorage.setItem('fontScale',fontScale);document.documentElement.style.fontSize=(16*fontScale)+'px'}
+function setFont(delta){fontScale=Math.min(1.35,Math.max(.85,fontScale+delta));localStorage.setItem(storageKey('fontScale'),fontScale);document.documentElement.style.fontSize=(16*fontScale)+'px'}
 function stripHTML(s){const d=document.createElement('div');d.innerHTML=s;return d.textContent||''}
 function search(q){const box=$('.results');q=q.trim().toLowerCase();if(q.length<2){box.innerHTML='<div class="empty">Scrivi almeno due caratteri.</div>';return} const found=allLessons().filter(l=>(l.title+' '+stripHTML(l.body)+' '+JSON.stringify(l.tools||{})).toLowerCase().includes(q)).slice(0,20); box.innerHTML=found.length?found.map(l=>`<button class="result" data-route="#/chapter/${l.chapter.id}/${l.id}"><b>${l.title}</b><small>${l.chapter.title}</small></button>`).join(''):'<div class="empty">Nessun risultato.</div>'; $$('.result').forEach(el=>el.addEventListener('click',()=>{location.hash=el.dataset.route;$('.search-panel').classList.add('hidden')}))}
-function bindLesson(ch,l){const all=ch.lessons;const i=all.findIndex(x=>x.id===l.id);$('.prev-btn')?.addEventListener('click',()=>{if(i>0)location.hash=`#/chapter/${ch.id}/${all[i-1].id}`});$('.next-btn')?.addEventListener('click',()=>{if(i<all.length-1)location.hash=`#/chapter/${ch.id}/${all[i+1].id}`});$('.complete-btn')?.addEventListener('click',e=>{if(completed.has(l.id))completed.delete(l.id);else completed.add(l.id);localStorage.setItem('completedLessons',JSON.stringify([...completed]));e.currentTarget.classList.toggle('done');e.currentTarget.textContent=completed.has(l.id)?'✓ Studiata':'Segna come studiata'});$$('.map-open').forEach(b=>b.addEventListener('click',()=>{const m=$('.map-modal');m.querySelector('img').src=b.dataset.map;m.classList.remove('hidden')}));}
+function bindLesson(ch,l){const all=ch.lessons;const i=all.findIndex(x=>x.id===l.id);$('.prev-btn')?.addEventListener('click',()=>{if(i>0)location.hash=`#/chapter/${ch.id}/${all[i-1].id}`});$('.next-btn')?.addEventListener('click',()=>{if(i<all.length-1)location.hash=`#/chapter/${ch.id}/${all[i+1].id}`});$('.complete-btn')?.addEventListener('click',e=>{if(completed.has(l.id))completed.delete(l.id);else completed.add(l.id);localStorage.setItem(storageKey('completedLessons'),JSON.stringify([...completed]));e.currentTarget.classList.toggle('done');e.currentTarget.textContent=completed.has(l.id)?'✓ Studiata':'Segna come studiata'});$$('.map-open').forEach(b=>b.addEventListener('click',()=>{const m=$('.map-modal');m.querySelector('img').src=b.dataset.map;m.classList.remove('hidden')}));}
 window.addEventListener('hashchange',route);route();
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));

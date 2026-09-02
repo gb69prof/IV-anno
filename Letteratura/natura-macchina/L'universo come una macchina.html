@@ -2,11 +2,8 @@
 <html lang="it">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>L'universo come una macchina</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
 <style>
   :root{
     --gold:#d9b46a;
@@ -145,6 +142,7 @@
     .path-step{grid-template-columns:34px 1fr;}
   }
 </style>
+  <link rel="stylesheet" href="../../pwa-common/gbprof-accessibility.css?v=1">
 </head>
 <body>
   <canvas id="scene"></canvas>
@@ -186,15 +184,15 @@
     <div class="eyebrow">Lezione · letteratura italiana</div>
     <h1>L'universo come<br>una <em>macchina</em></h1>
     <p>Una matrice cosmica — il meccanicismo — e tre poeti che la attraversano. Foscolo, Leopardi, Verga: ciascuno trasforma la grande legge nella propria immagine del mondo, e da lì nella propria arte. Esplora l'organismo dall'interno.</p>
-    <button id="enter">Entra nel cosmo</button>
+    <button id="enter" type="button">Entra nel cosmo</button>
+    <p><a href="../Foscolo/index.html">Percorso testuale su Foscolo</a> · <a href="../Leopardi/index.html">Percorso testuale su Leopardi</a></p>
     <div class="credit">Trascina per orbitare · scorri per avvicinarti · tocca per esplorare</div>
   </div>
 
   <div id="loading">Costruisco la macchina…</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/webxr/XRControllerModelFactory.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="vendor/OrbitControls.js"></script>
 <script>
 /* =========================================================================
    CONTENT
@@ -1854,5 +1852,6 @@ $('#pclose').addEventListener('click', closePanel);
 // preload engine quietly behind intro after fonts
 window.addEventListener('load', ()=>{ if(!renderer) init(); });
 </script>
+  <script src="../../pwa-common/gbprof-accessibility.js?v=1"></script>
 </body>
 </html>

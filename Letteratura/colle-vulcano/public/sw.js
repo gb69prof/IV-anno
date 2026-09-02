@@ -1,5 +1,10 @@
-const CACHE = "leopardi-v8";
+const CACHE_PREFIX = "leopardi-colle-vulcano-";
+const CACHE = `${CACHE_PREFIX}v9`;
 const CORE = [
+  '../../privacy.html',
+  '../../accessibilita.html',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
   "./",
   "./index.html",
   "images/leopardi-map.png",
@@ -37,7 +42,7 @@ self.addEventListener("activate", (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))),
+        Promise.all(keys.filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE).map((key) => caches.delete(key))),
       ),
   );
   self.clients.claim();

@@ -1,6 +1,10 @@
 const CACHE_PREFIX = "storia-bismarck-reich-";
 const CACHE = `${CACHE_PREFIX}v2`;
 const CORE = [
+  '../../privacy.html',
+  '../../accessibilita.html',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
   "../ui-focus/history-focus.css?v=1",
   "../ui-focus/history-focus.js?v=1",
   "./","index.html","app.html","css/style.css","js/data.js","js/app.js","js/home.js","manifest.webmanifest",

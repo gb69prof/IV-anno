@@ -2,6 +2,10 @@ const CACHE_PREFIX = "romanticismo-pwa-";
 const CACHE_NAME = CACHE_PREFIX + "v3.0.2";
 
 const CORE = [
+  '../../privacy.html',
+  '../../accessibilita.html',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
   "./",
   "./index.html",
   "./offline.html",

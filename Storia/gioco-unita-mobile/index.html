@@ -14,6 +14,7 @@
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../pwa-common/gbprof-accessibility.css?v=1">
 </head>
 <body>
   <div id="game"></div>
@@ -30,10 +31,11 @@
         <div><b>1</b><span>Stato da costruire</span></div>
       </div>
       <div class="start-actions">
-        <button id="new-game" class="primary">Nuova partita</button>
-        <button id="continue-game" class="secondary" hidden>Continua</button>
-        <button id="install-app" class="secondary" hidden>Installa app</button>
+        <button id="new-game" class="primary" type="button">Nuova partita</button>
+        <button id="continue-game" class="secondary" type="button" hidden>Continua</button>
+        <button id="install-app" class="secondary" type="button" hidden>Installa app</button>
       </div>
+      <p><a href="../Unita/index.html">Apri il percorso testuale sull’Unità d’Italia</a></p>
       <p class="credits">Progetto didattico ispirato alle lezioni di gbprof · ideazione e sviluppo: gbprof e Libera</p>
     </div>
   </section>
@@ -94,5 +96,6 @@
 
   <script src="vendor/three.min.js"></script>
   <script src="game.js"></script>
+  <script src="../../pwa-common/gbprof-accessibility.js?v=1"></script>
 </body>
 </html>

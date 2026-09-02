@@ -1178,8 +1178,8 @@ function Fortezza({
               aria-label="Riproduci il video Foscolo fratture"
             >
               <img
-                src="https://i.ytimg.com/vi/rXa62kZ0SC8/hqdefault.jpg"
-                alt="Ritratto di Ugo Foscolo, anteprima del video"
+                src="assets/fortezza-fratture.png"
+                alt="La fortezza delle fratture, copertina locale del video"
               />
               <span className="portrait-shade" aria-hidden="true" />
               <span className="video-copy">
@@ -1207,7 +1207,7 @@ function Fortezza({
                 </div>
               </div>
               <iframe
-                src="https://www.youtube.com/embed/rXa62kZ0SC8?autoplay=1&rel=0"
+                src="https://www.youtube-nocookie.com/embed/rXa62kZ0SC8?autoplay=1&rel=0"
                 title="Foscolo fratture"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -1383,8 +1383,8 @@ function CasaIllusioni({
               aria-label="Riproduci il video sulla religione delle illusioni"
             >
               <img
-                src="https://i.ytimg.com/vi/SADpAw3RFWI/hqdefault.jpg"
-                alt="Ugo Foscolo, anteprima del video sulla religione delle illusioni"
+                src="assets/casa-illusioni.png"
+                alt="La casa delle illusioni, copertina locale del video"
               />
               <span className="portrait-shade" aria-hidden="true" />
               <span className="video-copy">
@@ -1412,7 +1412,7 @@ function CasaIllusioni({
                 </div>
               </div>
               <iframe
-                src="https://www.youtube.com/embed/SADpAw3RFWI?autoplay=1&rel=0"
+                src="https://www.youtube-nocookie.com/embed/SADpAw3RFWI?autoplay=1&rel=0"
                 title="Foscolo: la religione delle illusioni"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

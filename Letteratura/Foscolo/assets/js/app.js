@@ -526,15 +526,17 @@ function setupLessonVideoSwap() {
   const playButton = media.querySelector("[data-play-video]");
   const image = media.querySelector("[data-play-image]");
   const backButton = media.querySelector("[data-back-image]");
+  const caption = media.querySelector(".media-caption");
 
   if (!videoUrl) {
     media.classList.add("is-video-missing");
     if (playButton) playButton.hidden = true;
-    const caption = media.querySelector(".media-caption");
     if (caption) caption.textContent = "Ritratto principale di Ugo Foscolo.";
     image.removeAttribute("tabindex");
     return;
   }
+
+  if (caption) caption.textContent = "Il video è ospitato su YouTube. Aprendolo verrà stabilita una connessione con il servizio esterno.";
 
   const showVideo = () => {
     frame.src = `${videoUrl}?rel=0`;

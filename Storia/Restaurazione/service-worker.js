@@ -1,5 +1,10 @@
-const CACHE = 'restaurazione-v2-focus1';
+const CACHE_PREFIX = 'restaurazione-';
+const CACHE = `${CACHE_PREFIX}v2-focus1`;
 const CORE = [
+  '../../privacy.html',
+  '../../accessibilita.html',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
   "../ui-focus/history-focus.css?v=1",
   "../ui-focus/history-focus.js?v=1",
   './',
@@ -38,7 +43,7 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim()));
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith(CACHE_PREFIX) && key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim()));
 });
 
 self.addEventListener('fetch', event => {

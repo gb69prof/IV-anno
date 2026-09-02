@@ -2,6 +2,10 @@ const CACHE_PREFIX = "foscolo-pwa-";
 const CACHE_NAME = `${CACHE_PREFIX}v16`;
 
 const LOCAL_ASSETS = [
+  '../../privacy.html',
+  '../../accessibilita.html',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
   "./",
   "./index.html",
   "./mappe.html",

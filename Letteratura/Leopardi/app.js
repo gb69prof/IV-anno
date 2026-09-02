@@ -362,7 +362,7 @@ function youtubeEmbed(url) {
   if (!url) return "";
   const match = url.match(/(?:shorts\/|embed\/|youtu\.be\/)([A-Za-z0-9_-]+)/);
   if (!match) return "";
-  return `https://www.youtube.com/embed/${match[1]}`;
+  return `https://www.youtube-nocookie.com/embed/${match[1]}`;
 }
 
 function renderQuiz(quiz, quizId, title, itemId = "") {

@@ -1,6 +1,10 @@
 const CACHE_PREFIX="storia-crispi-fine-secolo-";
 const CACHE=`${CACHE_PREFIX}v2`;
 const CORE=[
+  '../../privacy.html',
+  '../../accessibilita.html',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
   "../ui-focus/history-focus.css?v=1",
   "../ui-focus/history-focus.js?v=1","./","index.html","app.html","js/data.js","js/app.js","js/home.js","manifest.webmanifest","../Sinistra-storica/css/style.css","assets/img/icons/icon.svg","assets/img/covers/crispi-cover.svg","../Sinistra-storica/assets/img/people/crispi.jpg","assets/img/people/zanardelli.svg","assets/img/people/giolitti.svg","assets/img/people/colajanni.svg","assets/img/people/menelik.svg","assets/img/people/baratieri.svg","assets/img/people/bava.svg","assets/img/people/pelloux.svg","assets/img/people/bresci.svg","assets/img/maps/italia-crisi.svg","assets/img/maps/sicilia-fasci.svg","assets/img/maps/africa-orientale.svg"];
 self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));

@@ -1,6 +1,10 @@
 const CACHE_PREFIX = "storia-destra-storica-";
 const CACHE = `${CACHE_PREFIX}v3`;
 const CORE = [
+  '../../privacy.html',
+  '../../accessibilita.html',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
   "../ui-focus/history-focus.css?v=1",
   "../ui-focus/history-focus.js?v=1",
   "./", "index.html", "app.html", "css/style.css", "js/data.js", "js/home.js", "js/app.js", "manifest.webmanifest",

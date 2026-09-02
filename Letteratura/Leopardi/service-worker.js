@@ -2,6 +2,10 @@ const CACHE_PREFIX = "leopardi-";
 const CACHE_NAME = "leopardi-study-environment-v13";
 
 const LOCAL_ASSETS = [
+  '../../privacy.html',
+  '../../accessibilita.html',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
   "./",
   "./index.html",
   "./lezioni.html",

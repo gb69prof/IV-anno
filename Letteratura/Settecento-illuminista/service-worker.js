@@ -1,6 +1,10 @@
 const CACHE_PREFIX = "settecento-illuminista-";
 const CACHE_NAME = CACHE_PREFIX + "v1";
 const CORE = [
+  '../../privacy.html',
+  '../../accessibilita.html',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
   "./","index.html","offline.html","manifest.webmanifest",
   "assets/styles.css","assets/data.js","assets/app.js",
   "content/00-introduzione.txt","content/01-goldoni.txt","content/02-parini.txt","content/03-alfieri.txt","content/04-saperi-vocabolario.txt",

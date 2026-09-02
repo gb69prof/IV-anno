@@ -1,5 +1,10 @@
-const CACHE_NAME = 'rivoluzione-francese-v4';
+const CACHE_PREFIX = 'rivoluzione-francese-';
+const CACHE_NAME = `${CACHE_PREFIX}v4`;
 const ASSETS = [
+  '../../privacy.html',
+  '../../accessibilita.html',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
   "./",
   "../ui-focus/history-focus.css?v=1",
   "../ui-focus/history-focus.js?v=1",
@@ -56,5 +61,5 @@ const ASSETS = [
   "assets/img/protagonisti/foto/tricoteuses.png"
 ];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)).then(()=>self.skipWaiting())); });
-self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())); });
+self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k=>k.startsWith(CACHE_PREFIX) && k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())); });
 self.addEventListener('fetch', event => { if(event.request.method !== 'GET') return; const fresh=event.request.mode==='navigate'||event.request.destination==='style'||event.request.destination==='script'; const network=fetch(event.request).then(resp=>{if(resp.ok)caches.open(CACHE_NAME).then(cache=>cache.put(event.request,resp.clone()));return resp;}); if(fresh){event.respondWith(network.catch(()=>caches.match(event.request).then(cached=>cached||(event.request.mode==='navigate'?caches.match('index.html'):new Response('',{status:504})))));return;} event.respondWith(caches.match(event.request).then(cached=>cached||network.catch(()=>new Response('',{status:504})))); });

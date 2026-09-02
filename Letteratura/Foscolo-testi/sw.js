@@ -1,4 +1,6 @@
-const CACHE_NAME = "biblioteca-foscolo-v2";
+const CACHE_PREFIX = "biblioteca-foscolo-";
+const CACHE_NAME = `${CACHE_PREFIX}v3`;
+const COMPLIANCE_PAGES = ["../../privacy.html", "../../accessibilita.html"];
 
 function localAssetsFrom(html) {
   return [...html.matchAll(/(?:href|src)="([^"]+)"/g)]
@@ -22,6 +24,7 @@ self.addEventListener("install", event => {
     const html = await pageResponse.clone().text();
     await cache.put("./index.html", pageResponse);
     await cache.put("./", await fetch("./", { cache: "reload" }));
+    await cache.addAll(COMPLIANCE_PAGES);
 
     const assetUrls = [...new Set(localAssetsFrom(html))];
     await Promise.all(assetUrls.map(async url => {
@@ -43,7 +46,7 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))
+      .then(keys => Promise.all(keys.filter(key => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME).map(key => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });

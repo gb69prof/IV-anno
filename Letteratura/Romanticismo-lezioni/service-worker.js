@@ -2,6 +2,10 @@ const CACHE_PREFIX = "romanticismo-lezioni-";
 const CACHE_VERSION = `${CACHE_PREFIX}v7`;
 const OFFLINE_URL = "./offline.html";
 const CORE_ASSETS = [
+  '../../privacy.html',
+  '../../accessibilita.html',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
   "./",
   "./index.html",
   "./offline.html",
