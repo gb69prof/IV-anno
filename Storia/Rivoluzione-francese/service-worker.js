@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'rivoluzione-francese-';
-const CACHE_NAME = `${CACHE_PREFIX}v4`;
+const CACHE_NAME = `${CACHE_PREFIX}v5`;
 const ASSETS = [
   '../../privacy.html',
   '../../accessibilita.html',
