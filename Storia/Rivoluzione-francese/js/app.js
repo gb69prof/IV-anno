@@ -42,17 +42,17 @@ const LESSON_GUIDES = {
   premessa: {
     introPrefix: 'La Rivoluzione francese Parte I — Premessa Perché la Francia arriva alla Rivoluzione ',
     sections: [
-      { title: 'Perché non nasce all’improvviso', from: 0, to: 0 },
-      { title: 'Una società divisa in ordini', from: 1, to: 3 },
-      { title: 'Crisi sociale, economica e politica', from: 4, to: 6 },
-      { title: 'Il nodo degli Stati generali', from: 7, to: 8 }
+      { title: 'Perché non nasce all’improvviso', from: 0, to: 1 },
+      { title: 'Una società divisa in ordini', from: 2, to: 4 },
+      { title: 'Crisi sociale, economica e politica', from: 5, to: 7 },
+      { title: 'Il nodo degli Stati generali', from: 8, to: 9 }
     ],
     paragraphLinks: {
       0: [{ label: 'Forme di governo', href: '#approfondimento-forme-governo' }],
-      1: [{ label: 'Tre Stati e Stati Generali', href: '#approfondimento-tre-stati' }],
-      2: [{ label: 'Sieyès', href: '#bio-sieyes' }, { label: 'Che cos’è il Terzo Stato?', href: '#approfondimento-sieyes' }],
-      6: [{ label: 'Luigi XVI', href: '#bio-luigi-xvi' }],
-      7: [{ label: 'Stati generali', href: '#approfondimento-tre-stati' }, { label: 'Forme di governo', href: '#approfondimento-forme-governo' }]
+      2: [{ label: 'Tre Stati e Stati Generali', href: '#approfondimento-tre-stati' }],
+      3: [{ label: 'Sieyès', href: '#bio-sieyes' }, { label: 'Che cos’è il Terzo Stato?', href: '#approfondimento-sieyes' }],
+      7: [{ label: 'Luigi XVI', href: '#bio-luigi-xvi' }],
+      8: [{ label: 'Stati generali', href: '#approfondimento-tre-stati' }, { label: 'Forme di governo', href: '#approfondimento-forme-governo' }]
     },
     resources: [
       { type: 'Approfondimento', label: 'Stati generali', href: '#approfondimento-tre-stati' },
@@ -361,7 +361,11 @@ function renderLessonParagraphs(paragraphs, docKey, guide) {
     for (let i = section.from; i <= section.to; i++) {
       const raw = i === 0 ? stripLessonPrefix(paragraphs[i] || '', guide) : (paragraphs[i] || '');
       if (!raw.trim()) continue;
-      body.push(`<p>${applyHighlights(escapeHtml(raw), highlights)}</p>${renderContextLinks(guide.paragraphLinks?.[i])}`);
+      const safe = applyHighlights(escapeHtml(raw), highlights);
+      const paragraph = raw.startsWith('«In Francia la guarigione')
+        ? `<blockquote class="historical-quote">${safe}</blockquote>`
+        : `<p>${safe}</p>`;
+      body.push(`${paragraph}${renderContextLinks(guide.paragraphLinks?.[i])}`);
     }
     return `<section class="lesson-section"><h2>${escapeHtml(section.title)}</h2>${body.join('')}</section>`;
   }).join('');
