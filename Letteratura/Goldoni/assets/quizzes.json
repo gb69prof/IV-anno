@@ -1,0 +1,698 @@
+{
+  "1": [
+    {
+      "id": "1-1",
+      "question": "Quale descrizione restituisce la Venezia settecentesca presentata nella lezione?",
+      "options": [
+        "Una città politicamente meno potente, ma con una vita culturale e teatrale intensa.",
+        "Una città in cui la prosperità teatrale dimostra il predominio politico internazionale.",
+        "Una città in cui il declino dei commerci ha cancellato le attività dello spettacolo."
+      ],
+      "correct": 0,
+      "explanation": "La perdita di centralità politica e commerciale convive con un forte dinamismo culturale: i due piani vanno distinti.",
+      "anchor": "Una città da guardare prima di incontrare l’autore",
+      "recovery": {
+        "concept": "Declino politico e vitalità culturale",
+        "clarification": "La potenza internazionale e la produzione artistica non crescono o diminuiscono necessariamente insieme. Occorre osservare attività e istituzioni concrete.",
+        "example": "Nella Venezia di Goldoni continuano a operare teatri, compagnie e pubblici anche se la Repubblica non ha più la centralità di altre epoche.",
+        "prompt": "Perché la parola «declino», da sola, descrive male la Venezia di Goldoni?",
+        "answer": "Perché riguarda alcuni aspetti della sua potenza, mentre non spiega la persistente vitalità culturale e teatrale."
+      }
+    },
+    {
+      "id": "1-2",
+      "question": "Un mercante possiede molto denaro: che cosa possiamo dedurne sul suo potere politico nella Venezia di Goldoni?",
+      "options": [
+        "La ricchezza gli attribuisce il medesimo rango di ogni patrizio.",
+        "La ricchezza non prova che appartenga al patriziato che controlla le istituzioni.",
+        "La ricchezza conta solo nella vita privata e non influenza le relazioni."
+      ],
+      "correct": 1,
+      "explanation": "Denaro, rango e controllo delle istituzioni sono risorse differenti. Il patriziato conserva il potere politico.",
+      "anchor": "Una città da guardare prima di incontrare l’autore",
+      "recovery": {
+        "concept": "Ricchezza, rango e potere",
+        "clarification": "Un ceto non si definisce soltanto dalla quantità di denaro posseduta. Nella Repubblica veneziana il controllo politico è legato al patriziato.",
+        "example": "Un mercante può finanziare una grande attività senza diventare per questo membro del gruppo aristocratico che governa.",
+        "prompt": "Quali tre dimensioni devi distinguere per descrivere la posizione sociale di una persona?",
+        "answer": "Ricchezza economica, prestigio o rango sociale e potere politico."
+      }
+    },
+    {
+      "id": "1-3",
+      "question": "Perché la reputazione ha effetti concreti sulla vita delle persone?",
+      "options": [
+        "Perché registra fedelmente le qualità morali di ciascuno.",
+        "Perché riguarda il prestigio dei nobili, mentre chi lavora dipende soltanto dalla competenza.",
+        "Perché il giudizio che circola può favorire o ostacolare affari e relazioni, anche se è falso."
+      ],
+      "correct": 2,
+      "explanation": "La reputazione non coincide con la verità: una voce infondata può danneggiare fiducia, lavoro e possibilità personali.",
+      "anchor": "La reputazione: vivere sotto lo sguardo degli altri",
+      "recovery": {
+        "concept": "Reputazione e conseguenze",
+        "clarification": "La reputazione è un giudizio sociale, non una certificazione oggettiva. Conta perché le persone possono agire sulla base di ciò che credono.",
+        "example": "Esempio didattico: una voce falsa sull’inaffidabilità di una locanda può allontanare clienti.",
+        "prompt": "Come può una notizia falsa produrre un danno reale?",
+        "answer": "Se gli altri la credono, possono negare fiducia, interrompere rapporti o rifiutare un servizio."
+      }
+    },
+    {
+      "id": "1-4",
+      "question": "Che cosa significa che il teatro è anche un’impresa?",
+      "options": [
+        "Che ogni spettacolo deve riprodurre fedelmente le richieste degli spettatori.",
+        "Che compagnie e impresari organizzano risorse, assumono rischi e cercano un pubblico.",
+        "Che l’impresario scrive tutte le battute e dirige da solo gli attori."
+      ],
+      "correct": 1,
+      "explanation": "Lo spettacolo dipende da lavoro organizzato e risorse economiche. Il pubblico condiziona il successo, senza determinare da solo ogni scelta artistica.",
+      "anchor": "Il teatro come mestiere e impresa",
+      "recovery": {
+        "concept": "Le condizioni dello spettacolo",
+        "clarification": "Autore, attori, capocomico e impresario hanno funzioni differenti. Una commedia deve poter essere rappresentata e incontrare spettatori.",
+        "example": "L’impresario sostiene il rischio economico; il capocomico coordina la compagnia che porta il testo sulla scena.",
+        "prompt": "Perché la riforma non può limitarsi a una dichiarazione teorica?",
+        "answer": "Perché deve funzionare con attori, mezzi e pubblico reali, rendendo possibile la prosecuzione degli spettacoli."
+      }
+    },
+    {
+      "id": "1-5",
+      "question": "Come si prepara un attore della commedia dell’arte che recita a soggetto?",
+      "options": [
+        "Studia un copione che prescrive integralmente ogni battuta.",
+        "Impara a recitare senza traccia, memoria o accordi con la compagnia.",
+        "Costruisce tecnica e repertori con cui sviluppare l’azione indicata dal canovaccio."
+      ],
+      "correct": 2,
+      "explanation": "L’improvvisazione è una pratica professionale preparata: utilizza repertori e capacità di adattamento all’interno di una traccia.",
+      "anchor": "La commedia dell’arte: riconoscere prima di conoscere",
+      "recovery": {
+        "concept": "Improvvisazione preparata",
+        "clarification": "Il canovaccio indica lo sviluppo dell’azione. L’attore lo realizza ricorrendo a risorse imparate e a una tecnica condivisa con la compagnia.",
+        "example": "Un interprete può inserire un lazzo conosciuto adattandolo all’incontro previsto dal canovaccio.",
+        "prompt": "Che cosa distingue il canovaccio da un copione integralmente scritto?",
+        "answer": "Il canovaccio traccia l’azione da sviluppare; il copione stabilisce con maggiore precisione anche le battute."
+      }
+    },
+    {
+      "id": "1-6",
+      "question": "Quale cautela serve nel confronto tra maschera teatrale e ruolo sociale?",
+      "options": [
+        "Considerarlo un’analogia utile, mantenendo distinti tecnica scenica e rapporti storici.",
+        "Considerare ogni personaggio con un ruolo sociale come portatore di una maschera materiale.",
+        "Attribuire alla società veneziana le stesse regole della commedia dell’arte."
+      ],
+      "correct": 0,
+      "explanation": "L’analogia aiuta a osservare le aspettative, ma i due fenomeni non coincidono: una maschera appartiene al linguaggio teatrale, un ruolo ai rapporti sociali.",
+      "anchor": "La commedia dell’arte: riconoscere prima di conoscere",
+      "recovery": {
+        "concept": "Analogia e distinzione",
+        "clarification": "Mettere a confronto due fenomeni non significa identificarli. L’analogia illumina un aspetto comune e conserva le differenze.",
+        "example": "Pantalone è una figura scenica riconoscibile; un mercante veneziano reale occupa una posizione storica che non si esaurisce in quella figura.",
+        "prompt": "Quale aspetto rende utile l’analogia fra maschera e ruolo sociale?",
+        "answer": "Entrambi possono suscitare aspettative prima che siano osservati i comportamenti individuali."
+      }
+    }
+  ],
+  "2": [
+    {
+      "id": "2-1",
+      "question": "Perché nella lezione il contrasto tra rango e condotta è chiamato «frattura»?",
+      "options": [
+        "Perché coincide necessariamente con l’abolizione dei privilegi nobiliari.",
+        "Perché dimostra che ogni lavoratore si comporta meglio di ogni nobile.",
+        "Perché rende problematico il prestigio attribuito prima di verificare le capacità."
+      ],
+      "correct": 2,
+      "explanation": "La frattura è una tensione: la superiorità rivendicata può essere smentita dai fatti, senza che l’ordine sociale venga immediatamente abolito.",
+      "anchor": "Il titolo non garantisce la capacità",
+      "recovery": {
+        "concept": "La superiorità alla prova",
+        "clarification": "Il rango promette riconoscimento, ma la condotta può contraddire quella pretesa. La stessa verifica riguarda chi fonda la superiorità sul denaro.",
+        "example": "Il Marchese rivendica il titolo; questo non dimostra che sappia mantenere impegni o procurare vantaggi reali.",
+        "prompt": "Quale criterio permette di mettere alla prova una superiorità proclamata?",
+        "answer": "Osservare azioni, capacità dimostrate e conseguenze dei comportamenti."
+      }
+    },
+    {
+      "id": "2-2",
+      "question": "In quale senso il teatro di Goldoni incontra il clima illuministico descritto nel percorso?",
+      "options": [
+        "Mette alla prova convinzioni e pregiudizi attraverso situazioni ed esperienza.",
+        "Traduce sulla scena un sistema filosofico compiuto scritto da Goldoni.",
+        "Riproduce direttamente il programma del gruppo milanese del Caffè."
+      ],
+      "correct": 0,
+      "explanation": "La lezione collega Goldoni all’Illuminismo soprattutto attraverso osservazione e critica dei pregiudizi, nel suo specifico mestiere teatrale.",
+      "anchor": "Un modo diverso di conoscere: guardare i fatti",
+      "recovery": {
+        "concept": "Esperienza e pregiudizio",
+        "clarification": "Un giudizio rigido deve confrontarsi con i fatti. Goldoni rappresenta questo confronto attraverso un’azione, non attraverso un trattato filosofico.",
+        "example": "Il Cavaliere crede di essere immune ai sentimenti verso le donne; la vicenda smentisce la sua sicurezza.",
+        "prompt": "Che cosa rende conoscitiva una vicenda teatrale come quella del Cavaliere?",
+        "answer": "Fa vedere la distanza fra ciò che il personaggio crede di sé e ciò che accade quando agisce."
+      }
+    },
+    {
+      "id": "2-3",
+      "question": "Perché anche il pubblico costituisce un problema della riforma?",
+      "options": [
+        "Perché gli spettatori condividono un solo gusto, che l’autore deve scoprire.",
+        "Perché gusti diversi e abitudini consolidate possono rendere difficile accogliere le novità.",
+        "Perché il successo commerciale dimostra senza altre verifiche il valore artistico."
+      ],
+      "correct": 1,
+      "explanation": "Il pubblico è plurale: può desiderare novità e amare ancora forme tradizionali. Il consenso condiziona gli spettacoli, ma non esaurisce il giudizio artistico.",
+      "anchor": "Il pubblico come problema della riforma",
+      "recovery": {
+        "concept": "Il pubblico impara nuove forme",
+        "clarification": "Le aspettative non cambiano tutte insieme. Attraverso gli spettacoli gli spettatori possono imparare ad apprezzare altre forme di coerenza e comicità.",
+        "example": "Uno spettatore può essere curioso di una nuova commedia e insieme attendersi il ritmo di una maschera conosciuta.",
+        "prompt": "In che senso la riforma deve educare anche il pubblico?",
+        "answer": "Deve aiutarlo a riconoscere e apprezzare possibilità teatrali diverse da quelle alle quali è abituato."
+      }
+    },
+    {
+      "id": "2-4",
+      "question": "Quale ragione professionale può spiegare la resistenza di un attore al copione scritto?",
+      "options": [
+        "Il timore di perdere autonomia e occasioni per usare il repertorio personale.",
+        "La mancanza di ogni preparazione nel teatro a soggetto.",
+        "La certezza che il testo scritto renda inutile voce e gestualità."
+      ],
+      "correct": 0,
+      "explanation": "L’attore può difendere competenze e autonomia costruite nel tempo. La riforma ne cambia l’uso, senza cancellare il lavoro interpretativo.",
+      "anchor": "Gli attori: una resistenza che ha ragioni",
+      "recovery": {
+        "concept": "Una resistenza motivata",
+        "clarification": "Cambiare forma di lavoro può ridurre spazi di autonomia percepiti. Comprendere questa ragione non significa negare le possibilità del nuovo copione.",
+        "example": "Un interprete abituato a inserire un effetto personale deve ora rispettare battute e tempi legati all’azione comune.",
+        "prompt": "Che cosa rimane affidato all’attore anche con battute scritte?",
+        "answer": "L’interpretazione attraverso voce, corpo, pause, ritmo e relazione con gli altri interpreti."
+      }
+    },
+    {
+      "id": "2-5",
+      "question": "Quale descrizione è più precisa della riforma goldoniana?",
+      "options": [
+        "Un atto unico con cui vengono eliminate tutte le maschere.",
+        "Una sostituzione della comicità con la sola discussione morale.",
+        "Una serie di esperimenti che trasforma anche risorse ereditate dal teatro precedente."
+      ],
+      "correct": 2,
+      "explanation": "La riforma procede gradualmente, usando ritmo, gesti ed equivoci della tradizione in azioni più organizzate e personaggi più precisi.",
+      "anchor": "Una trasformazione per esperimenti",
+      "recovery": {
+        "concept": "Continuità nella trasformazione",
+        "clarification": "Una forma nuova può nascere dentro quella precedente. Il cambiamento riguarda anche la funzione attribuita alle risorse conservate.",
+        "example": "Un equivoco tradizionale può entrare in un intreccio scritto e contribuire alla definizione di un carattere.",
+        "prompt": "Perché «riforma graduale» è più preciso di «abolizione improvvisa»?",
+        "answer": "Perché Goldoni procede con prove, adattamenti e trasformazioni parziali, conservando risorse sceniche della tradizione."
+      }
+    },
+    {
+      "id": "2-6",
+      "question": "Qual è il rapporto fra condizioni storiche e scelte artistiche di Goldoni?",
+      "options": [
+        "Le condizioni storiche impongono automaticamente una sola forma di commedia.",
+        "Offrono tensioni e possibilità che Goldoni seleziona e organizza artisticamente.",
+        "Restano estranee al teatro, che dipende esclusivamente dalla biografia privata."
+      ],
+      "correct": 1,
+      "explanation": "Il contesto rende disponibili problemi e materiali; la forma teatrale nasce da specifiche scelte artistiche, non da una causa meccanica.",
+      "anchor": "Che cosa cambia nel modo di guardare una persona",
+      "recovery": {
+        "concept": "Contesto e costruzione artistica",
+        "clarification": "Conoscere la società aiuta a capire i problemi dell’opera, ma non sostituisce l’analisi di come l’autore li rappresenta.",
+        "example": "Il contrasto fra titolo e denaro diventa teatro quando viene affidato a personaggi, battute e obiettivi in conflitto.",
+        "prompt": "Quale passaggio trasforma una tensione sociale in una scena?",
+        "answer": "Le scelte dell’autore che costruiscono personaggi, relazioni, dialoghi e conseguenze."
+      }
+    }
+  ],
+  "3": [
+    {
+      "id": "3-1",
+      "question": "Che cosa comporta spiegare un personaggio attraverso le sue relazioni sociali?",
+      "options": [
+        "Attribuire ogni sua azione a una necessità che lo rende irresponsabile.",
+        "Considerare possibilità e vincoli senza cancellare il giudizio sulle sue scelte.",
+        "Ricavare le sue decisioni dal solo nome del ceto a cui appartiene."
+      ],
+      "correct": 1,
+      "explanation": "Le condizioni aiutano a comprendere l’azione, ma non la rendono automaticamente giusta o inevitabile: resta la responsabilità personale.",
+      "anchor": "L’individuo non esiste fuori dalle relazioni",
+      "recovery": {
+        "concept": "Condizionamento e responsabilità",
+        "clarification": "Comprendere perché una scelta è possibile o rischiosa non equivale ad approvarla. Il contesto e la condotta sono due piani da collegare.",
+        "example": "Mirandolina incontra vincoli sociali, ma decide come usare l’intelligenza e deve essere giudicata anche per le conseguenze.",
+        "prompt": "Che differenza c’è tra comprendere una scelta e giustificarla?",
+        "answer": "Comprendere ne ricostruisce ragioni e condizioni; giustificare la considera accettabile o corretta."
+      }
+    },
+    {
+      "id": "3-2",
+      "question": "Perché il valore attribuito al lavoro non rende Goldoni un celebratore incondizionato della borghesia?",
+      "options": [
+        "Perché nelle sue commedie il lavoro non ha alcun peso sociale.",
+        "Perché i personaggi borghesi sono tutti privi di competenza economica.",
+        "Perché anche autorità domestica e desiderio di apparire possono produrre abusi."
+      ],
+      "correct": 2,
+      "explanation": "I rusteghi e la Trilogia mostrano contraddizioni interne ai ceti borghesi: competenza e lavoro non garantiscono da soli virtù.",
+      "anchor": "Il valore si misura nell’azione",
+      "recovery": {
+        "concept": "Il lavoro non basta al giudizio morale",
+        "clarification": "Un’attività può sostenere dignità e autonomia. Il modo di esercitare potere e usare risorse deve però essere valutato attraverso i comportamenti.",
+        "example": "Nei Rusteghi la difesa dell’autorità familiare può trasformarsi in chiusura e dominio.",
+        "prompt": "Perché un personaggio laborioso può comunque essere criticabile?",
+        "answer": "Perché può usare autorità e interessi per controllare gli altri o trascurarne le esigenze."
+      }
+    },
+    {
+      "id": "3-3",
+      "question": "Quale domanda aiuta a interpretare un dono nel mondo goldoniano?",
+      "options": [
+        "Quale rapporto, riconoscenza o pretesa tenta di costruire?",
+        "Quale virtù dimostra necessariamente la ricchezza del donatore?",
+        "Quale prezzo permette di stabilire con certezza la sincerità del gesto?"
+      ],
+      "correct": 0,
+      "explanation": "Il denaro può diventare un linguaggio sociale: un regalo può esprimere generosità, ma anche chiedere dipendenza e riconoscimento.",
+      "anchor": "Denaro e reputazione organizzano la vita",
+      "recovery": {
+        "concept": "Il dono come relazione",
+        "clarification": "Il significato di un gesto dipende anche da scopi e conseguenze. Il suo valore economico non ne dimostra da solo la qualità morale.",
+        "example": "Esempio didattico: un regalo offerto con l’attesa di ottenere un favore può creare una pressione sul destinatario.",
+        "prompt": "Qual è la differenza tra il bene regalato e la richiesta implicita?",
+        "answer": "Il primo è l’oggetto trasferito; la seconda è il comportamento o il riconoscimento che il donatore si aspetta."
+      }
+    },
+    {
+      "id": "3-4",
+      "question": "Che cosa significa «libertà situata» nel percorso?",
+      "options": [
+        "Una formula usata da Goldoni per dichiarare che tutti sono indipendenti.",
+        "La possibilità di scegliere entro rapporti e limiti non interamente controllabili.",
+        "L’impossibilità di prendere decisioni autentiche dentro una società."
+      ],
+      "correct": 1,
+      "explanation": "È una formula interpretativa del percorso, non una citazione di Goldoni: riconosce insieme possibilità d’azione e condizionamenti.",
+      "anchor": "Una libertà situata",
+      "recovery": {
+        "concept": "Scegliere entro condizioni",
+        "clarification": "La libertà non richiede il controllo di tutto. Si possono prendere decisioni reali entro vincoli che restringono le alternative.",
+        "example": "Mirandolina valuta il matrimonio per proteggere interessi e reputazione dentro una situazione diventata pericolosa.",
+        "prompt": "Quali due estremi evita la nozione di libertà situata?",
+        "answer": "L’idea che il personaggio possa fare qualsiasi cosa e quella che non possa scegliere nulla."
+      }
+    },
+    {
+      "id": "3-5",
+      "question": "Perché il bisogno continuo di ammirazione può limitare l’autonomia?",
+      "options": [
+        "Perché rende il riconoscimento degli altri una condizione da cui si dipende.",
+        "Perché ogni relazione sociale esclude la possibilità di scegliere.",
+        "Perché l’ammirazione elimina necessariamente ogni competenza pratica."
+      ],
+      "correct": 0,
+      "explanation": "Chi vuole essere sempre ammirato affida una parte della propria soddisfazione al giudizio altrui e può agire per ottenerlo.",
+      "anchor": "Una libertà situata",
+      "recovery": {
+        "concept": "Una dipendenza prodotta dal desiderio",
+        "clarification": "Un limite alla libertà può nascere anche da ciò che desideriamo. Cercare costantemente approvazione dà agli altri un potere sul nostro comportamento.",
+        "example": "Mirandolina dichiara di non aver bisogno di nessuno, ma desidera essere adorata: l’autonomia convive con una dipendenza.",
+        "prompt": "Come può un desiderio personale creare un vincolo?",
+        "answer": "Quando per soddisfarlo si diventa dipendenti dalle reazioni o dal riconoscimento di altre persone."
+      }
+    },
+    {
+      "id": "3-6",
+      "question": "Che cosa indica qui l’attenzione «laica» di Goldoni alla vita sociale?",
+      "options": [
+        "La prova che ogni suo personaggio esprime la sua posizione religiosa.",
+        "La dimostrazione che Goldoni vuole negare ogni fede religiosa.",
+        "L’osservazione di interessi e rapporti umani per comprendere l’azione."
+      ],
+      "correct": 2,
+      "explanation": "In questa lezione «laico» descrive il modo di spiegare le relazioni; non implica automaticamente ateismo e non identifica autore e personaggio.",
+      "anchor": "Un mondo quotidiano, non una tesi sull’assenza di Dio",
+      "recovery": {
+        "concept": "Distinguere spiegazione e convinzione religiosa",
+        "clarification": "Analizzare una lite attraverso passioni e interessi non basta a stabilire una professione di fede. Servono prove pertinenti al livello che si sta discutendo.",
+        "example": "Una battuta di Mirandolina sulla natura appartiene al discorso del personaggio: non diventa automaticamente una dichiarazione filosofica dell’autore.",
+        "prompt": "Perché una singola battuta non prova da sola che Goldoni sia ateo?",
+        "answer": "Perché parla un personaggio in una situazione scenica, e la sua voce non coincide automaticamente con quella dell’autore."
+      }
+    }
+  ],
+  "4": [
+    {
+      "id": "4-1",
+      "question": "Come si completano i due «libri» del Mondo e del Teatro?",
+      "options": [
+        "Il Mondo offre materiali umani; il Teatro insegna a trasformarli in azione efficace.",
+        "Il Mondo fornisce il copione; il Teatro riproduce la realtà senza selezionarla.",
+        "Il Mondo serve alla morale; il Teatro elimina l’osservazione per favorire la comicità."
+      ],
+      "correct": 0,
+      "explanation": "L’osservazione offre persone e costumi, ma la scena richiede selezione, ritmo e organizzazione: il realismo è una costruzione artistica.",
+      "anchor": "Due libri: il Mondo e il Teatro",
+      "recovery": {
+        "concept": "Osservare e dare forma",
+        "clarification": "Una situazione quotidiana non è già una commedia. Per funzionare sulla scena deve essere selezionata e organizzata in rapporti, attese e svolte.",
+        "example": "Una conversazione lunga può diventare un dialogo teatrale concentrando le battute che cambiano il rapporto fra i personaggi.",
+        "prompt": "Che cosa rischia di mancare a una commedia fondata soltanto sull’osservazione del Mondo?",
+        "answer": "La costruzione scenica capace di dare ritmo, ordine ed efficacia ai materiali osservati."
+      }
+    },
+    {
+      "id": "4-2",
+      "question": "Che cosa mostra il trasferimento a Parigi del 1762 rispetto alla riforma?",
+      "options": [
+        "Che il pubblico europeo aveva ormai abbandonato ogni interesse per le maschere.",
+        "Che Goldoni smise di confrontarsi con le condizioni concrete della rappresentazione.",
+        "Che aspettative differenti potevano riportare l’autore a misurarsi con gli scenari."
+      ],
+      "correct": 2,
+      "explanation": "Il pubblico della Comédie-Italienne si aspettava anche il teatro delle maschere: la riforma dipende dal contesto in cui viene realizzata.",
+      "anchor": "Una biografia che spiega il mestiere",
+      "recovery": {
+        "concept": "La riforma cambia contesto",
+        "clarification": "Una soluzione artistica non viene accolta allo stesso modo da compagnie e pubblici differenti. Le tappe biografiche aiutano a vedere questi adattamenti.",
+        "example": "A Parigi Goldoni torna a confrontarsi con gli scenari perché incontra attese diverse da quelle dei teatri veneziani.",
+        "prompt": "Perché la biografia è utile in questo passaggio del percorso?",
+        "answer": "Perché il cambiamento di luogo e pubblico chiarisce i problemi concreti del mestiere e le scelte teatrali."
+      }
+    },
+    {
+      "id": "4-3",
+      "question": "Da che cosa acquista precisione un carattere goldoniano?",
+      "options": [
+        "Dalla cancellazione di ogni difetto riconoscibile nello spettatore.",
+        "Da parole e azioni in rapporto a mestiere, ambiente e altri personaggi.",
+        "Dal possesso di un nome nuovo, anche se le azioni restano indipendenti dall’ambiente."
+      ],
+      "correct": 1,
+      "explanation": "Il carattere si precisa nell’azione e nelle relazioni. Il passaggio non coincide necessariamente con la scomparsa del nome di una maschera.",
+      "anchor": "Dalla maschera al carattere",
+      "recovery": {
+        "concept": "Il personaggio dentro l’azione",
+        "clarification": "Una figura riconoscibile diventa più precisa quando i suoi tratti si collegano a situazioni e rapporti determinati. Cambiare il nome non basta.",
+        "example": "Pantalone può conservare il nome tradizionale e avere ragioni definite come mercante o padre.",
+        "prompt": "Perché Mirandolina è un carattere preciso e non soltanto un tipo astratto?",
+        "answer": "Perché dirige una locanda, tratta con ospiti determinati e compie scelte che modificano relazioni concrete."
+      }
+    },
+    {
+      "id": "4-4",
+      "question": "Quale funzione ha l’a parte?",
+      "options": [
+        "Rendere udibile al pubblico qualcosa che altri personaggi, per convenzione, non sentono.",
+        "Sostituire le indicazioni di movimento con la voce di un narratore esterno.",
+        "Far conoscere simultaneamente a tutti i personaggi l’intenzione nascosta."
+      ],
+      "correct": 0,
+      "explanation": "L’a parte distribuisce il sapere in modo diseguale e può permettere allo spettatore di riconoscere un inganno ignorato dall’interlocutore.",
+      "anchor": "La parola è un’azione",
+      "recovery": {
+        "concept": "La differenza di sapere",
+        "clarification": "In teatro lo spettatore non sa necessariamente quanto ciascun personaggio. Questa distanza può produrre comicità e tensione.",
+        "example": "Il pubblico conosce un’intenzione di Mirandolina mentre il Cavaliere interpreta le sue parole come sincere.",
+        "prompt": "Quali due livelli devi distinguere leggendo un a parte?",
+        "answer": "Ciò che apprende il pubblico e ciò che può sapere il personaggio che, per convenzione, non lo ascolta."
+      }
+    },
+    {
+      "id": "4-5",
+      "question": "Perché leggere le didascalie è necessario per comprendere la scena dello stirare?",
+      "options": [
+        "Perché esse spiegano dall’esterno quale opinione morale ogni lettore deve adottare.",
+        "Perché il gesto del lavoro modifica attenzione, ritmo e rapporti di potere.",
+        "Perché sostituiscono le battute, rendendo il dialogo irrilevante."
+      ],
+      "correct": 1,
+      "explanation": "Continuare a stirare mentre il Cavaliere cerca attenzione è parte dell’azione: parola e gesto vanno letti insieme.",
+      "anchor": "La parola è un’azione",
+      "recovery": {
+        "concept": "Il gesto produce significato",
+        "clarification": "Le indicazioni sceniche costruiscono azioni visibili. Non sono ornamenti della pagina: possono cambiare il significato e l’effetto di una risposta.",
+        "example": "Mirandolina continua il lavoro e non concede al Cavaliere l’attenzione che lui cerca.",
+        "prompt": "Che cosa perdi se leggi soltanto le battute di questa scena?",
+        "answer": "Il modo in cui movimento, sguardi e lavoro materiale rendono visibile il rapporto tra i personaggi."
+      }
+    },
+    {
+      "id": "4-6",
+      "question": "Quale funzione attribuisce la lezione al dialetto nelle commedie di Goldoni?",
+      "options": [
+        "Registrare una lingua inferiore da usare soltanto per deridere chi la parla.",
+        "Riprodurre una lingua nazionale uniforme già condivisa da tutti gli italiani.",
+        "Dare precisione ad ambiente, ritmo e relazioni, con specifiche possibilità espressive."
+      ],
+      "correct": 2,
+      "explanation": "Il dialetto non è inferiore all’italiano: costruisce sfumature e movimento scenico, come il chioggiotto nelle Baruffe chiozzotte.",
+      "anchor": "Italiano e dialetto: la forma delle relazioni",
+      "recovery": {
+        "concept": "La lingua costruisce l’ambiente",
+        "clarification": "Le scelte linguistiche dipendono da opere, ambienti e pubblici. Una traduzione può chiarire il senso, ma non conserva automaticamente ogni effetto.",
+        "example": "Nelle Baruffe chiozzotte il chioggiotto contribuisce al ritmo delle liti e delle relazioni della comunità.",
+        "prompt": "Che cosa può perdersi traducendo un dialogo dialettale in italiano?",
+        "answer": "Parte del ritmo, delle sfumature affettive e conflittuali e della precisione dell’ambiente."
+      }
+    }
+  ],
+  "5": [
+    {
+      "id": "5-1",
+      "question": "Quale coppia descrive correttamente le risorse esibite dal Marchese e dal Conte?",
+      "options": [
+        "Marchese: denaro e regali; Conte: prestigio di un titolo ereditato.",
+        "Marchese: rango e protezione; Conte: denaro reso visibile attraverso regali.",
+        "Marchese: lavoro nella locanda; Conte: autorità sulla compagnia teatrale."
+      ],
+      "correct": 1,
+      "explanation": "Il Marchese ha poche risorse e rivendica il titolo; il Conte, di nobiltà acquistata, ostenta denaro. Nessuna risorsa garantisce il controllo di Mirandolina.",
+      "anchor": "Che cosa vuole ciascuno?",
+      "recovery": {
+        "concept": "Risorse diverse nella locanda",
+        "clarification": "Rango, denaro e competenza professionale danno possibilità differenti. Per capire il conflitto bisogna distinguerli e osservare come vengono usati.",
+        "example": "Il Marchese offre protezione, il Conte regala: entrambi cercano considerazione usando ciò di cui dispongono.",
+        "prompt": "Quale risorsa possiede Mirandolina che non coincide con quelle dei due corteggiatori?",
+        "answer": "Possiede l’attività e sa osservare gli ospiti e dirigere gli scambi quotidiani della locanda."
+      }
+    },
+    {
+      "id": "5-2",
+      "question": "Quale tensione emerge nel monologo di Mirandolina dell’atto I, scena IX?",
+      "options": [
+        "Il desiderio di abbandonare il lavoro e quello di trasferirsi a Venezia.",
+        "La volontà di sposare subito il Cavaliere e il timore del Conte.",
+        "L’autonomia dichiarata e il bisogno di essere servita, corteggiata e adorata."
+      ],
+      "correct": 2,
+      "explanation": "Le due dichiarazioni convivono nel monologo: Mirandolina difende la libertà e riconosce il piacere dell’ammirazione. Il personaggio non si esaurisce in un solo tratto.",
+      "anchor": "Il monologo: ascoltare la protagonista senza crederle ciecamente",
+      "recovery": {
+        "concept": "Autonomia e ammirazione",
+        "clarification": "Le parole del personaggio possono rivelare più motivazioni insieme. Occorre collegarle alle azioni successive, senza cancellare le tensioni.",
+        "example": "Mirandolina afferma di non aver bisogno di nessuno, ma chiama debolezza il piacere di essere adorata.",
+        "prompt": "Perché il solo interesse economico non spiega la sfida al Cavaliere?",
+        "answer": "Perché entrano in gioco anche l’offesa ricevuta, l’orgoglio e il desiderio di provare il proprio potere."
+      }
+    },
+    {
+      "id": "5-3",
+      "question": "Come Mirandolina conquista inizialmente la fiducia del Cavaliere nella scena XV del primo atto?",
+      "options": [
+        "Gli fa credere di incontrare una donna simile a lui, che conferma la sua immagine di sé.",
+        "Confuta apertamente tutti i suoi pregiudizi attraverso una discussione filosofica.",
+        "Gli rivela il piano di conquista per convincerlo della propria sincerità."
+      ],
+      "correct": 0,
+      "explanation": "Mirandolina costruisce un’apparente somiglianza: il Cavaliere la ritiene un’eccezione sincera, mentre il pubblico conosce il progetto.",
+      "anchor": "La strategia della somiglianza",
+      "recovery": {
+        "concept": "Il pregiudizio usato nella seduzione",
+        "clarification": "Un pregiudizio può essere sfruttato invece che corretto. Mirandolina offre al Cavaliere una conferma di ciò che vuole credere.",
+        "example": "Critica i corteggiatori e valorizza la libertà: lui si sente compreso e abbassa la distanza.",
+        "prompt": "Quale differenza di sapere rende ironica questa scena?",
+        "answer": "Il Cavaliere crede alla sincerità dell’incontro; il pubblico sa che Mirandolina vuole conquistarlo."
+      }
+    },
+    {
+      "id": "5-4",
+      "question": "Perché la scena dello stirare mostra un rovesciamento dei rapporti?",
+      "options": [
+        "Perché Mirandolina rinuncia alla locanda e diventa dipendente del Cavaliere.",
+        "Perché il Cavaliere ora cerca un’attenzione che Mirandolina gli nega.",
+        "Perché Fabrizio rivela agli ospiti tutte le intenzioni della protagonista."
+      ],
+      "correct": 1,
+      "explanation": "Il Cavaliere passa dal distacco alla richiesta di considerazione. Il gesto del lavoro consente a Mirandolina di sottrargli il centro della relazione.",
+      "anchor": "Stirare e non guardare",
+      "recovery": {
+        "concept": "Dal successo al rischio",
+        "clarification": "Il cambiamento è visibile nel comportamento: chi respingeva cerca vicinanza, chi seduceva si sottrae. L’umiliazione produce gelosia e ira.",
+        "example": "Mirandolina stira e richiama Fabrizio mentre il Cavaliere vuole essere ascoltato.",
+        "prompt": "Perché il successo della seduzione non equivale al controllo delle conseguenze?",
+        "answer": "Perché il Cavaliere reagisce con desideri, gelosia e ira che Mirandolina non può governare completamente."
+      }
+    },
+    {
+      "id": "5-5",
+      "question": "Che cosa afferma il monologo del pericolo sull’eventuale matrimonio con Fabrizio?",
+      "options": [
+        "Mirandolina spera di proteggere interesse, reputazione e libertà in una situazione rischiosa.",
+        "Il narratore certifica che la futura vita matrimoniale sarà priva di conflitti.",
+        "Mirandolina dichiara che la reputazione non conta più e lascia l’attività."
+      ],
+      "correct": 0,
+      "explanation": "La protagonista formula una speranza di protezione; il testo non rappresenta il futuro matrimonio e non garantisce che tutti i problemi siano risolti.",
+      "anchor": "Il monologo del pericolo",
+      "recovery": {
+        "concept": "Speranza e garanzia",
+        "clarification": "Bisogna distinguere il progetto espresso da un personaggio dai risultati che l’opera mostra effettivamente. Nel finale vediamo una decisione motivata, non la vita futura.",
+        "example": "Mirandolina dice di vedere in pericolo reputazione e vita e valuta il matrimonio come riparo.",
+        "prompt": "Perché non possiamo chiamare il finale una vittoria assoluta dimostrata dal testo?",
+        "answer": "Perché la scelta nasce anche da un pericolo e la libertà futura è sperata, non mostrata o garantita."
+      }
+    },
+    {
+      "id": "5-6",
+      "question": "Quale confronto collega correttamente le altre opere ai problemi del percorso?",
+      "options": [
+        "I rusteghi: spese per apparire; Trilogia: dominio familiare; Baruffe: conflitti di una comunità popolare.",
+        "I rusteghi: dominio familiare; Trilogia: conflitti della comunità di pescatori; Baruffe: spese per apparire.",
+        "I rusteghi: dominio familiare; Trilogia: spese per apparire; Baruffe: conflitti di una comunità popolare."
+      ],
+      "correct": 2,
+      "explanation": "Le tre opere ampliano l’osservazione a limiti borghesi e conflitti popolari: Goldoni non distribuisce virtù e colpe soltanto secondo il ceto.",
+      "anchor": "Altre opere: allargare la prova",
+      "recovery": {
+        "concept": "Ampliare gli ambienti osservati",
+        "clarification": "Confrontare le opere permette di riconoscere problemi diversi e una pluralità di ambienti. Ogni collegamento va sostenuto dal conflitto rappresentato.",
+        "example": "Nei Rusteghi l’autorità controlla giovani e donne; nella Trilogia l’apparenza spinge a spendere; nelle Baruffe le liti coinvolgono una comunità.",
+        "prompt": "Quale idea troppo semplice su Goldoni viene smentita da questi confronti?",
+        "answer": "Che celebri senza riserve la borghesia o assegni automaticamente innocenza e colpa in base all’appartenenza sociale."
+      }
+    }
+  ],
+  "6": [
+    {
+      "id": "6-1",
+      "question": "Quale risposta alla domanda generatrice riassume il percorso?",
+      "options": [
+        "Il ruolo sociale stabilisce il valore della persona prima delle sue azioni.",
+        "La sola condotta conta e la posizione sociale non condiziona mai le possibilità.",
+        "Occorre giudicare la condotta, considerando le condizioni sociali entro cui si agisce."
+      ],
+      "correct": 2,
+      "explanation": "Titolo e ricchezza non bastano al giudizio; nello stesso tempo i rapporti di potere continuano a condizionare possibilità e scelte.",
+      "anchor": "Ritorno alla domanda generatrice",
+      "recovery": {
+        "concept": "Valore e condizioni",
+        "clarification": "Il percorso tiene insieme due domande: come si comporta una persona e dentro quali possibilità agisce. Né il rango né un’astratta libertà totale bastano.",
+        "example": "Mirandolina possiede competenza e capacità di scelta, ma deve difendere una reputazione esposta al giudizio altrui.",
+        "prompt": "Quali due aspetti devi tenere insieme quando giudichi un personaggio?",
+        "answer": "La condotta individuale e i rapporti storici e sociali che ne condizionano le possibilità."
+      }
+    },
+    {
+      "id": "6-2",
+      "question": "Che cosa significa che gli spazi quotidiani hanno una funzione drammaturgica?",
+      "options": [
+        "Creano incontri, differenze e circolazione di informazioni che producono l’azione.",
+        "Offrono uno sfondo neutro, che può essere cambiato senza conseguenze.",
+        "Sostituiscono le decisioni dei personaggi con una descrizione dell’ambiente."
+      ],
+      "correct": 0,
+      "explanation": "Locanda, casa e bottega organizzano le relazioni: le attività che vi si svolgono rendono possibili conflitti e scambi.",
+      "anchor": "Che cosa cambia grazie a Goldoni",
+      "recovery": {
+        "concept": "Lo spazio partecipa all’azione",
+        "clarification": "L’ambiente non è soltanto qualcosa da vedere. Le sue funzioni stabiliscono chi si incontra, per quale motivo e con quali risorse.",
+        "example": "Nella locanda chiedere biancheria o cibo mette in relazione ospiti e lavoratori e crea occasioni decisive.",
+        "prompt": "Perché un conto da pagare può essere importante in una commedia?",
+        "answer": "Perché mette in gioco denaro, fiducia e pretese, modificando i rapporti fra i personaggi."
+      }
+    },
+    {
+      "id": "6-3",
+      "question": "Quale bilancio descrive la riforma come lavoro collettivo?",
+      "options": [
+        "Il testo scritto sostituisce definitivamente il bisogno di interpretazione.",
+        "L’autore organizza la commedia, che prende forma con attori, spazi e pubblico.",
+        "Le compagnie determinano tutto e l’autore rinuncia a costruire l’azione."
+      ],
+      "correct": 1,
+      "explanation": "La riforma accresce la responsabilità dell’autore, ma il teatro resta una pratica rappresentata, condivisa e condizionata da risorse concrete.",
+      "anchor": "La riforma come lavoro collettivo",
+      "recovery": {
+        "concept": "Innovazione e collaborazione",
+        "clarification": "Il cambiamento richiede di trasformare competenze esistenti e affrontare insieme nuove prove. Scrittura e rappresentazione sono strettamente legate.",
+        "example": "Una battuta organizzata dal copione produce effetti differenti secondo pause, voce e gesti dell’interprete.",
+        "prompt": "Che cosa insegna il passaggio a Parigi sulla riforma?",
+        "answer": "Che una soluzione va confrontata con le attese di compagnie e pubblici differenti e può richiedere adattamenti."
+      }
+    },
+    {
+      "id": "6-4",
+      "question": "Come si costruisce un’interpretazione solida del finale della Locandiera?",
+      "options": [
+        "Scegliendo la lettura preferita e usando la trama solo come conferma.",
+        "Trattando la dichiarazione di Mirandolina come una garanzia sul suo futuro.",
+        "Confrontando decisione, pericolo, speranze e morale dichiarata attraverso prove testuali."
+      ],
+      "correct": 2,
+      "explanation": "Una lettura argomentata distingue le voci e considera anche le prove che complicano la propria tesi. Le interpretazioni non sono arbitrarie.",
+      "anchor": "Il giudizio su Mirandolina: tenere insieme le prove",
+      "recovery": {
+        "concept": "Una lettura responsabile",
+        "clarification": "Autore, personaggio e interprete non parlano dallo stesso livello. Occorre confrontare dichiarazioni e scene, indicando su quali dettagli poggia il giudizio.",
+        "example": "La speranza di libertà dichiarata da Mirandolina va letta insieme al pericolo per la reputazione e la vita.",
+        "prompt": "Che cosa rende più solida una tesi rispetto a un semplice «per me»?",
+        "answer": "Ragioni fondate su dettagli verificabili del testo e capacità di considerare prove che rendono la tesi meno semplice."
+      }
+    },
+    {
+      "id": "6-5",
+      "question": "Quale può essere il valore civile del teatro goldoniano?",
+      "options": [
+        "Modificare il giudizio rendendo osservabili pretese e conseguenze, senza abolire da solo i rapporti di potere.",
+        "Cancellare direttamente i privilegi sociali ogni volta che rende ridicolo un nobile.",
+        "Offrire divertimento che, per definizione, non può influire sul modo di giudicare."
+      ],
+      "correct": 0,
+      "explanation": "Il riso può togliere naturalezza a una pretesa di superiorità ed educare l’attenzione; ciò non coincide con una rivoluzione politica realizzata dal teatro.",
+      "anchor": "I limiti della trasformazione",
+      "recovery": {
+        "concept": "Efficacia e limiti del teatro",
+        "clarification": "Un’opera può cambiare la percezione di un comportamento. Questo effetto sul giudizio non equivale alla trasformazione immediata delle istituzioni.",
+        "example": "Mostrare un nobile contraddittorio può mettere in dubbio la sua pretesa di superiorità, mentre i privilegi restano in vigore.",
+        "prompt": "Qual è la differenza tra critica di un privilegio e sua abolizione?",
+        "answer": "La critica ne discute la giustificazione; l’abolizione richiede un cambiamento effettivo delle regole e dei rapporti politici."
+      }
+    },
+    {
+      "id": "6-6",
+      "question": "Come usare Mirandolina in un confronto con l’accoglienza turistica contemporanea?",
+      "options": [
+        "Assumendo la sua seduzione come una tecnica professionale da imitare.",
+        "Ragionando su servizio e reputazione, ma chiarendo la distanza storica e la natura teatrale del personaggio.",
+        "Sostenendo che una locanda settecentesca funzioni come ogni struttura ricettiva attuale."
+      ],
+      "correct": 1,
+      "explanation": "Il confronto formula domande utili, senza annullare le differenze fra epoche o trasformare la commedia in un manuale professionale.",
+      "anchor": "Goldoni e noi: un confronto con distanze",
+      "recovery": {
+        "concept": "Confronto senza anacronismo",
+        "clarification": "Una somiglianza può avviare una riflessione, ma non dimostra che contesti e regole coincidano. Il testo va prima compreso nella sua situazione storica.",
+        "example": "Il peso della reputazione aiuta a discutere il servizio al cliente; la strategia di seduzione resta un problema da analizzare criticamente.",
+        "prompt": "Quale confine professionale può essere discusso a partire dalla locandiera?",
+        "answer": "Il confine tra attenzione e cura del cliente e coinvolgimento personale, mantenendo distinta l’analisi letteraria dall’imitazione del personaggio."
+      }
+    }
+  ]
+}
