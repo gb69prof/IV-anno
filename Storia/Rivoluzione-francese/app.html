@@ -5,6 +5,32 @@
   <title>La Rivoluzione francese — percorso interattivo</title>
   <link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="../ui-focus/history-focus.css?v=1"><meta name="theme-color" content="#071c3a">
   <link rel="stylesheet" href="../../pwa-common/gbprof-accessibility.css?v=1">
+  <style>
+    /* Contrasto robusto nella modalità di lettura: carta chiara e testo scuro. */
+    body.history-focus-active #app,
+    body.history-focus-active .history-focus-shell { background: #061d2f !important; }
+    body.history-focus-active .history-focus-reading {
+      color: #17202a !important;
+      background: linear-gradient(135deg, #fff8e8, #f3e4c7) !important;
+    }
+    body.history-focus-active .history-focus-reading p,
+    body.history-focus-active .history-focus-reading li,
+    body.history-focus-active .history-focus-reading .study-paragraph p {
+      color: #17202a !important;
+    }
+    body.history-focus-active .history-focus-reading h2,
+    body.history-focus-active .history-focus-reading h3 { color: #173750 !important; }
+    .historical-quote {
+      margin: 1.2rem 0 1.6rem;
+      padding: 1.2rem 1.4rem;
+      border-left: 4px solid #c99145;
+      border-radius: .35rem;
+      background: #efe0bf;
+      color: #241b12;
+      font-style: italic;
+      line-height: 1.65;
+    }
+  </style>
 </head>
 <body class="page-bg">
 <header class="topbar">
