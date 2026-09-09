@@ -1,0 +1,5 @@
+const CACHE='foscolo-soglie-3a54c2675545';
+const FILES=["./","./assets/THREE-LICENSE.txt","./assets/coastal-tree.glb","./assets/cover.webp","./assets/grass.glb","./assets/ground-color.jpg","./assets/ground-normal.jpg","./assets/icon-192.png","./assets/icon-512.png","./assets/loaders/GLTFLoader.js","./assets/sky.webp","./assets/stone-color.jpg","./assets/stone-normal.jpg","./assets/three.module.js","./assets/utils/BufferGeometryUtils.js","./index.html","./manifest.webmanifest","./src/content.js","./src/core.js","./src/main.js","./src/scene.js","./styles.css"];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)));});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k.startsWith('foscolo-soglie-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==location.origin)return;e.respondWith(fetch(e.request).catch(()=>caches.match(e.request).then(r=>r||new Response('Contenuto non disponibile offline',{status:503}))));});

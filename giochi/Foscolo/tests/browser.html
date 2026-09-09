@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="it">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>Foscolo — prove locali</title
+  ><style>
+    body {
+      margin: 24px;
+      font: 16px system-ui;
+      background: #142530;
+      color: #f4e9cd;
+    }
+    button {
+      padding: 14px 24px;
+      font: inherit;
+      cursor: pointer;
+    }
+    pre {
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+    iframe {
+      width: min(100%, 1280px);
+      height: 720px;
+      border: 1px solid #8a9e9e;
+    }
+  </style>
+  <h1>Prove funzionali di Foscolo</h1>
+  <p>
+    Percorso completo, input, memoria, collisioni e rendering. Pagina
+    utilizzabile soltanto in locale.
+  </p>
+  <button id="run">Esegui le prove</button>
+  <pre id="log">In attesa.</pre>
+  <iframe id="app" title="Gioco in prova" src="../"></iframe>
+  <script type="module" src="browser.js"></script>
+</html>
