@@ -1,0 +1,194 @@
+[
+  {
+    "label": "Home",
+    "url": "index.html",
+    "x": 68,
+    "y": 30,
+    "w": 91,
+    "h": 44
+  },
+  {
+    "label": "Percorso",
+    "url": "percorso.html",
+    "x": 184,
+    "y": 30,
+    "w": 109,
+    "h": 44
+  },
+  {
+    "label": "Testi",
+    "url": "documenti.html",
+    "x": 309,
+    "y": 30,
+    "w": 91,
+    "h": 44
+  },
+  {
+    "label": "Mappe",
+    "url": "mappe.html",
+    "x": 421,
+    "y": 30,
+    "w": 96,
+    "h": 44
+  },
+  {
+    "label": "Protagonisti",
+    "url": "protagonisti.html",
+    "x": 530,
+    "y": 30,
+    "w": 135,
+    "h": 44
+  },
+  {
+    "label": "Entra nel percorso",
+    "url": "lezioni/01-che-cosa-e-la-schiavitu.html",
+    "x": 701,
+    "y": 26,
+    "w": 188,
+    "h": 49
+  },
+  {
+    "label": "1. Che cos’è la schiavitù",
+    "url": "lezioni/01-che-cosa-e-la-schiavitu.html",
+    "x": 16,
+    "y": 790,
+    "w": 176,
+    "h": 284
+  },
+  {
+    "label": "2. La tratta atlantica",
+    "url": "lezioni/02-tratta-atlantica.html",
+    "x": 202,
+    "y": 790,
+    "w": 176,
+    "h": 284
+  },
+  {
+    "label": "3. L’Illuminismo e la contraddizione",
+    "url": "lezioni/03-illuminismo-contraddizione.html",
+    "x": 385,
+    "y": 790,
+    "w": 176,
+    "h": 284
+  },
+  {
+    "label": "4. 1776 — Gli Stati Uniti",
+    "url": "lezioni/04-stati-uniti.html",
+    "x": 569,
+    "y": 790,
+    "w": 176,
+    "h": 284
+  },
+  {
+    "label": "5. 1789 — La Francia",
+    "url": "lezioni/05-francia.html",
+    "x": 749,
+    "y": 790,
+    "w": 176,
+    "h": 284
+  },
+  {
+    "label": "6. Le voci degli schiavi e degli ex schiavi",
+    "url": "lezioni/06-voci-degli-schiavi.html",
+    "x": 16,
+    "y": 1078,
+    "w": 176,
+    "h": 286
+  },
+  {
+    "label": "7. Haiti 1791–1804",
+    "url": "lezioni/07-haiti.html",
+    "x": 202,
+    "y": 1078,
+    "w": 176,
+    "h": 286
+  },
+  {
+    "label": "8. Due tesi a confronto",
+    "url": "lezioni/08-tesi-a-confronto.html",
+    "x": 385,
+    "y": 1078,
+    "w": 176,
+    "h": 286
+  },
+  {
+    "label": "9. Verso l’abolizione",
+    "url": "lezioni/09-abolizione.html",
+    "x": 569,
+    "y": 1078,
+    "w": 176,
+    "h": 286
+  },
+  {
+    "label": "10. E oggi?",
+    "url": "lezioni/10-oggi.html",
+    "x": 749,
+    "y": 1078,
+    "w": 176,
+    "h": 286
+  },
+  {
+    "label": "Carte interattive",
+    "url": "carte.html",
+    "x": 38,
+    "y": 1399,
+    "w": 94,
+    "h": 116
+  },
+  {
+    "label": "Documenti originali",
+    "url": "documenti.html",
+    "x": 145,
+    "y": 1399,
+    "w": 94,
+    "h": 116
+  },
+  {
+    "label": "Personaggi principali",
+    "url": "protagonisti.html",
+    "x": 248,
+    "y": 1399,
+    "w": 94,
+    "h": 116
+  },
+  {
+    "label": "Timeline",
+    "url": "timeline.html",
+    "x": 352,
+    "y": 1399,
+    "w": 94,
+    "h": 116
+  },
+  {
+    "label": "Mappe concettuali",
+    "url": "mappe.html",
+    "x": 463,
+    "y": 1399,
+    "w": 94,
+    "h": 116
+  },
+  {
+    "label": "Test di verifica",
+    "url": "test.html",
+    "x": 574,
+    "y": 1399,
+    "w": 94,
+    "h": 116
+  },
+  {
+    "label": "Bibliografia e sitografia",
+    "url": "bibliografia.html",
+    "x": 685,
+    "y": 1399,
+    "w": 94,
+    "h": 116
+  },
+  {
+    "label": "Laboratorio di scrittura",
+    "url": "laboratorio.html",
+    "x": 798,
+    "y": 1399,
+    "w": 94,
+    "h": 116
+  }
+]

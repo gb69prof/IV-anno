@@ -1,0 +1,92 @@
+{
+  "hall": {
+    "file": "assets/immagini/ritratto-hall.jpg",
+    "credit": "Ritratto tradizionale, autore e data non identificati; Grand Lodge of British Columbia, tramite Wikimedia Commons; pubblico dominio. Non è attestato come ritratto dal vivo.",
+    "url": "https://commons.wikimedia.org/wiki/File:Prince_hall_portrait.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Prince_hall_portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "equiano": {
+    "file": "assets/immagini/ritratto-equiano.jpg",
+    "credit": "Frontespizio dell’autobiografia (1789), British Library; pubblico dominio / CC0.",
+    "url": "https://commons.wikimedia.org/wiki/File:Olaudah_Equiano_-_The_interesting_Narrative_of_the_Life_of_Olaudah_Equiano_%281789%29%2C_frontispiece_-_BL.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/1/10/Olaudah_Equiano_-_The_interesting_Narrative_of_the_Life_of_Olaudah_Equiano_%281789%29%2C_frontispiece_-_BL.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "truth": {
+    "file": "assets/immagini/ritratto-truth.jpg",
+    "credit": "Randall Studio, circa 1870; National Portrait Gallery, Smithsonian; pubblico dominio.",
+    "url": "https://commons.wikimedia.org/wiki/File:Sojourner_truth_c1870.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Sojourner_truth_c1870.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "toussaint": {
+    "file": "assets/immagini/ritratto-toussaint.jpg",
+    "credit": "Incisione storica: Toussaint Louverture, chef des noirs insurgés de Saint-Domingue; pubblico dominio. Immagine da leggere come rappresentazione politica, non fotografia.",
+    "url": "https://commons.wikimedia.org/wiki/File:Toussaint_L%27Ouverture.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Toussaint_L%27Ouverture.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "dessalines": {
+    "file": "assets/immagini/ritratto-dessalines.jpg",
+    "credit": "Louis Rigaud, 1878, ritratto postumo; pubblico dominio.",
+    "url": "https://commons.wikimedia.org/wiki/File:Jean_Jacques_Dessalines.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Jean_Jacques_Dessalines.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "garrison": {
+    "file": "assets/immagini/ritratto-garrison.jpg",
+    "credit": "Incisione pubblicata nel 1885, autore non identificato; pubblico dominio.",
+    "url": "https://commons.wikimedia.org/wiki/File:William_Lloyd_Garrison_portrait.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/8/85/William_Lloyd_Garrison_portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "calhoun": {
+    "file": "assets/immagini/ritratto-calhoun.jpg",
+    "credit": "Charles Bird King, 1822, National Portrait Gallery; pubblico dominio.",
+    "url": "https://commons.wikimedia.org/wiki/File:JCCalhoun-1822.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/7/77/JCCalhoun-1822.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "douglass": {
+    "file": "assets/immagini/ritratto-douglass.jpg",
+    "credit": "George Kendall Warren, circa 1879; pubblico dominio.",
+    "url": "https://commons.wikimedia.org/wiki/File:Frederick_Douglass_by_Warren%2C_c1879.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/8/84/Frederick_Douglass_by_Warren%2C_c1879.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "clarkson": {
+    "file": "assets/immagini/ritratto-clarkson.jpg",
+    "credit": "Carl Frederik von Breda, 1788, National Portrait Gallery; opera in pubblico dominio (PD-Art su Wikimedia Commons).",
+    "url": "https://commons.wikimedia.org/wiki/File:Thomas_Clarkson_by_Carl_Frederik_von_Breda.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/9/90/Thomas_Clarkson_by_Carl_Frederik_von_Breda.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "fitzhugh": {
+    "file": "assets/immagini/ritratto-fitzhugh.jpg",
+    "credit": "Fotografia del 1855, autore non identificato; Encyclopedia Virginia, tramite Wikimedia Commons; pubblico dominio.",
+    "url": "https://commons.wikimedia.org/wiki/File:George_Fitzhugh.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/4/4d/George_Fitzhugh.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "jefferson": {
+    "file": "assets/immagini/ritratto-jefferson.jpg",
+    "credit": "Rembrandt Peale, 1800; pubblico dominio.",
+    "url": "https://commons.wikimedia.org/wiki/File:Thomas_Jefferson_by_Rembrandt_Peale%2C_1800.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Thomas_Jefferson_by_Rembrandt_Peale%2C_1800.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "napoleone": {
+    "file": "assets/immagini/ritratto-napoleone.jpg",
+    "credit": "Jacques-Louis David, 1812; National Gallery of Art; pubblico dominio.",
+    "url": "https://commons.wikimedia.org/wiki/File:Napoleon_in_His_Study.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/4/40/Napoleon_in_His_Study.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "wilberforce": {
+    "file": "assets/immagini/ritratto-wilberforce.jpg",
+    "credit": "Incisione storica, University of Texas Libraries; autore e data non identificati nella scheda digitale; pubblico dominio (PD-Art su Wikimedia Commons).",
+    "url": "https://commons.wikimedia.org/wiki/File:William_Wilberforce.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/5/54/William_Wilberforce.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "schoelcher": {
+    "file": "assets/immagini/ritratto-schoelcher.jpg",
+    "credit": "Étienne Carjat, ritratto ottocentesco, scheda datata 1885; Ministère de la Culture / Wikimedia Commons; riproduzione restaurata da Raoli; pubblico dominio.",
+    "url": "https://commons.wikimedia.org/wiki/File:Victor_Schoelcher_1885.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/3/33/Victor_Schoelcher_1885.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  },
+  "gregoire": {
+    "file": "assets/immagini/ritratto-gregoire.jpg",
+    "credit": "Le Comte, da S. J. Le Gros e P. J. Célestin François, 1801; BnF / Gallica, btv1b84148663; pubblico dominio.",
+    "url": "https://commons.wikimedia.org/wiki/File:Abb%C3%A9_Gr%C3%A9goire%2C_1801.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Abb%C3%A9_Gr%C3%A9goire%2C_1801.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+  }
+}

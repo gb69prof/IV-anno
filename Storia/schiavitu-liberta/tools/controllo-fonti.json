@@ -1,0 +1,158 @@
+{
+  "newjersey": {
+    "status": 200,
+    "url": "https://www.nps.gov/articles/voting-rights-in-nj-before-the-15th-and-19th.htm"
+  },
+  "dichiarazione": {
+    "status": 200,
+    "url": "https://www.archives.gov/founding-docs/declaration-transcript"
+  },
+  "costituzione": {
+    "status": 200,
+    "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+  },
+  "voto": {
+    "status": 200,
+    "url": "https://www.nps.gov/articles/000/constitutionalconvention-august7.htm"
+  },
+  "tratta": {
+    "status": 200,
+    "url": "https://www.slavevoyages.org/assessment/estimates/"
+  },
+  "ddhc": {
+    "status": 200,
+    "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/declaration-des-droits-de-l-homme-et-du-citoyen-de-1789"
+  },
+  "montesquieu": {
+    "status": 200,
+    "url": "https://press-pubs.uchicago.edu/founders/documents/v1ch15s4.html"
+  },
+  "neh": {
+    "status": "HTTP Error 403: Forbidden",
+    "url": "https://www.neh.gov/project/transatlantic-slave-trade-database"
+  },
+  "1794": {
+    "status": "HTTP Error 502: Bad Gateway",
+    "url": "https://mjp.univ-perp.fr/france/1794esclavage.htm"
+  },
+  "1802": {
+    "status": 200,
+    "url": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/consulat-et-premier-empire/retablissement-progressif-de-l-esclavage"
+  },
+  "equiano": {
+    "status": "HTTP Error 502: Bad Gateway",
+    "url": "https://docsouth.unc.edu/neh/equiano1/equiano1.html"
+  },
+  "equiano2": {
+    "status": "HTTP Error 502: Bad Gateway",
+    "url": "https://docsouth.unc.edu/neh/equiano2/equiano2.html"
+  },
+  "1848": {
+    "status": 200,
+    "url": "https://www2.assemblee-nationale.fr/14/evenements/2016/abolition-de-l-esclavage-1794-et-1848/1848-l-abolition-definitive"
+  },
+  "douglassdata": {
+    "status": "HTTP Error 403: Forbidden",
+    "url": "https://nmaahc.si.edu/explore/stories/nations-story-what-slave-fourth-july"
+  },
+  "truth": {
+    "status": 200,
+    "url": "https://www.thesojournertruthproject.com/compare-the-speeches"
+  },
+  "douglass": {
+    "status": 200,
+    "url": "https://constitutioncenter.org/the-constitution/historic-document-library/detail/frederick-douglass-what-to-the-slave-is-the-fourth-of-july-1852"
+  },
+  "hall": {
+    "status": 200,
+    "url": "https://www.masshist.org/database/557"
+  },
+  "halltesto": {
+    "status": 200,
+    "url": "https://hamilton.gilderlehrman.org/media/946/download"
+  },
+  "haiti1805": {
+    "status": "HTTP Error 502: Bad Gateway",
+    "url": "https://mjp.univ-perp.fr/constit/ht1805.htm"
+  },
+  "haiti1801": {
+    "status": "HTTP Error 502: Bad Gateway",
+    "url": "https://mjp.univ-perp.fr/constit/ht1801.htm"
+  },
+  "haiti": {
+    "status": 200,
+    "url": "https://history.state.gov/milestones/1784-1800/haitian-rev"
+  },
+  "fitzhugh": {
+    "status": "HTTP Error 502: Bad Gateway",
+    "url": "https://docsouth.unc.edu/southlit/fitzhughcan/fitzcan.html"
+  },
+  "stringfellow": {
+    "status": "HTTP Error 502: Bad Gateway",
+    "url": "https://docsouth.unc.edu/church/stringfellow/stringfellow.html"
+  },
+  "calhoun": {
+    "status": 200,
+    "url": "https://teachingamericanhistory.org/document/slavery-a-positive-good/"
+  },
+  "haitidopo": {
+    "status": 200,
+    "url": "https://www.cambridge.org/core/books/abs/cambridge-history-of-the-age-of-atlantic-revolutions/establishing-a-new-nation-haiti-after-independence-18041843/1EA147AD2F47C3183C2D7D682DA11665"
+  },
+  "garrison": {
+    "status": 200,
+    "url": "https://www.nps.gov/articles/000/the-liberator.htm"
+  },
+  "1833": {
+    "status": 200,
+    "url": "https://www.nationalarchives.gov.uk/explore-the-collection/explore-by-time-period/georgians/1833-abolition-of-slavery-act-and-compensation-claims/"
+  },
+  "1807": {
+    "status": "HTTP Error 403: Forbidden",
+    "url": "https://www.parliament.uk/slavetrade/"
+  },
+  "1838": {
+    "status": 200,
+    "url": "https://historyofparliament.com/2024/08/28/1833-slavery-abolition-act/"
+  },
+  "1863": {
+    "status": 200,
+    "url": "https://www.archives.gov/milestone-documents/emancipation-proclamation"
+  },
+  "1865": {
+    "status": 200,
+    "url": "https://www.archives.gov/milestone-documents/13th-amendment"
+  },
+  "1888": {
+    "status": 200,
+    "url": "https://www.planalto.gov.br/ccivil_03/leis/lim/lim3353.htm"
+  },
+  "gregorio": {
+    "status": 200,
+    "url": "https://www.papalencyclicals.net/greg16/g16sup.htm"
+  },
+  "1926": {
+    "status": "HTTP Error 403: Forbidden",
+    "url": "https://www.ohchr.org/en/instruments-mechanisms/instruments/slavery-convention"
+  },
+  "1956": {
+    "status": "HTTP Error 403: Forbidden",
+    "url": "https://www.ohchr.org/en/instruments-mechanisms/instruments/supplementary-convention-abolition-slavery-slave-trade-and"
+  },
+  "ilo": {
+    "status": "<urlopen error timed out>",
+    "url": "https://www.ilo.org/topics-and-sectors/forced-labour-modern-slavery-and-trafficking-persons/what-forced-labour"
+  },
+  "stimeoggi": {
+    "status": "<urlopen error timed out>",
+    "url": "https://www.ilo.org/publications/major-publications/global-estimates-modern-slavery-forced-labour-and-forced-marriage"
+  },
+  "condorcet": {
+    "status": "<urlopen error timed out>",
+    "url": "https://classiques.uqam.ca/classiques/condorcet/reflexions_esclavage_negres/reflexions_esclavage_negres.html"
+  },
+  "leone": {
+    "status": "<urlopen error timed out>",
+    "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_05051888_in-plurimis.html"
+  }
+}
