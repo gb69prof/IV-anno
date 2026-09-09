@@ -4,7 +4,7 @@ Eseguito il 9–10 settembre 2026, prima del deposito del modulo.
 
 ## Verifiche automatiche
 
-`node tests/verify.mjs`: **477 controlli superati**.
+`node tests/verify.mjs`: **478 controlli superati**.
 
 - Cinque lezioni complete, otto sezioni per lezione, nessun paragrafo perso nel montaggio; saperi e mini-quiz presenti.
 - Tutte le rotte nei metadati, nei recuperi, nella timeline e nei collegamenti contestuali risolte.
@@ -51,3 +51,11 @@ Contrasti dei colori principali: inchiostro/avorio 13,59:1; testo secondario/car
 - Il controllo di tutti i contenuti e delle correzioni storiche è documentato in ATTRIBUTIONS.md; nessuna affermazione di revisione scientifica esterna.
 
 Le eventuali verifiche successive del deposito e del sito pubblico sono riportate nella consegna conclusiva.
+
+## Verifica dopo la pubblicazione
+
+Deploy automatico del repository riuscito sia sul server gbprof sia su GitHub Pages. L’indice di Storia riconosce la nuova voce come disponibile. Copertina e prima lezione aperte dal percorso pubblico; messaggio «Percorso pronto offline» e pulsante di installazione presenti in Chrome HTTPS. Nessun errore applicativo rilevato nella console pubblica.
+
+Su GitHub Pages è stata rilevata una precedente copia HTTP del componente comune, caricata durante la visita all’indice prima del deposito. La cache v1.0.1 ricarica esplicitamente le risorse al precache e rivalida i contenuti dinamici per recuperare anche lo scope `ra-`. Il test automatico verifica questa modalità di aggiornamento. Gli eventuali errori di scrittura della cache durante un aggiornamento non impediscono di mostrare una risposta di rete valida.
+
+La preparazione della cache è stata verificata anche nel browser pubblico. Rimangono distinti e non eseguiti il test fisico con rete disattivata e l’installazione sui dispositivi mobili reali.
