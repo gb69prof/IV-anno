@@ -80,6 +80,7 @@
       ["/storia/napoleone/", ["napNotes:"], ["napCompleted"]],
       ["/storia/restaurazione/", ["restNotes:"], ["restCompleted"]],
       ["/storia/rivoluzione-francese/", ["rf-"], []],
+      ["/storia/rivoluzione-americana/", ["ra-"], []],
       ["/storia/gioco-unita-mobile/", [], ["italia1861-cantiere-v1"]],
       ["/storia/gioco-unita/", [], ["italia1861-cantiere-v1"]],
       ["/letteratura/foscolo-gioco-3d/", ["foscolo-tempio-"], []],

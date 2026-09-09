@@ -1,0 +1,1 @@
+{"name":"gbprof-rivoluzione-americana","private":true,"version":"1.0.0","type":"module","scripts":{"dev":"vite --config vite.config.js"},"devDependencies":{"vite":"8.2.2"}}

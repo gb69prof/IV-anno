@@ -1,0 +1,27 @@
+{
+  "id": "./",
+  "name": "La Rivoluzione americana · gbprof",
+  "short_name": "Riv. americana",
+  "description": "Dalle colonie agli Stati Uniti · 1763–1791. Percorso interattivo per la classe quarta.",
+  "lang": "it",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f0e2",
+  "theme_color": "#152f43",
+  "icons": [
+    {
+      "src": "assets/img/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
