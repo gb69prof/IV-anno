@@ -1,0 +1,12 @@
+{
+  "name": "gbprof-iv-anno-preview",
+  "private": true,
+  "scripts": {
+    "dev": "vite --config tools/vite-preview.config.mjs",
+    "test:industriale": "node Storia/Prima-rivoluzione-industriale/tools/verifica.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "vite": "6.1.0"
+  }
+}
