@@ -1,0 +1,27 @@
+{
+  "id": "./",
+  "name": "Antico regime e Illuminismo · gbprof",
+  "short_name": "Antico regime",
+  "description": "Quando il mondo smise di sembrare naturale · Otto lezioni di storia, idee e costume per la classe quarta.",
+  "lang": "it",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f0e2",
+  "theme_color": "#152f43",
+  "icons": [
+    {
+      "src": "assets/img/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
