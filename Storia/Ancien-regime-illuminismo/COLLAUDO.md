@@ -2,7 +2,7 @@
 
 ## Stato
 
-Implementazione completa. Verifiche statiche e della logica superate. **Collaudo nel browser non completato: l’ambiente restituisce `net::ERR_BLOCKED_BY_CLIENT` sull’anteprima**, sia sul percorso previsto sia sulla sua radice. Il servizio di anteprima risultava avviato. Non si dichiara superato il requisito di collaudo visivo precedente alla pubblicazione su main.
+Implementazione completa. Verifiche statiche e della logica superate. **Collaudo nel browser non completato: l’ambiente restituisce `net::ERR_BLOCKED_BY_CLIENT` sull’anteprima**, sia sul percorso previsto sia sulla sua radice. Il servizio di anteprima risultava avviato. Non si dichiara superato il collaudo visivo. Il 10 settembre 2026 il proprietario ha autorizzato esplicitamente la pubblicazione su main con questo limite dichiarato, rimandando verifica visiva e offline reale.
 
 ## Eseguito
 
@@ -22,6 +22,6 @@ Implementazione completa. Verifiche statiche e della logica superate. **Collaudo
 - Resa visuale reale su desktop/LIM, iPad/tablet e smartphone, ingrandimento del testo al 200%, dimensionamento effettivo dei pannelli.
 - Interazioni in un browser reale, scorrimento e gestione del focus da parte del browser, lettori di schermo e contrasto calcolato sulle superfici effettivamente renderizzate.
 - Registrazione e controllo nativo del service worker, riapertura reale senza rete, installazione e comportamento specifico di Safari iPadOS.
-- Risposta del percorso pubblico della nuova PWA: non pubblicato su main in assenza del collaudo obbligatorio.
+- Il controllo del percorso pubblico viene effettuato nella fase di pubblicazione autorizzata; non sostituisce il collaudo nel browser.
 
-JSDOM e la VM controllano logica e integrità, **non equivalgono a un collaudo end-to-end nel browser**. I polyfill usati nel test riproducono solo le API necessarie alla logica, non geometria, rendering o installazione nativa. Le verifiche browser rimangono il passaggio necessario prima della pubblicazione, salvo esplicita autorizzazione a procedere con questo limite.
+JSDOM e la VM controllano logica e integrità, **non equivalgono a un collaudo end-to-end nel browser**. I polyfill usati nel test riproducono solo le API necessarie alla logica, non geometria, rendering o installazione nativa. Le verifiche browser restano da completare; la pubblicazione con questo limite è stata esplicitamente autorizzata dal proprietario il 10 settembre 2026.
