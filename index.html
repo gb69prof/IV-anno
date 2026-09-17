@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#15201d"><meta name="description" content="Porta di accesso ai percorsi di Letteratura e Storia del quarto anno.">
+<meta name="theme-color" content="#15201d"><meta name="description" content="Porta di accesso ai percorsi di Letteratura, Storia e Approfondimenti del quarto anno.">
 <title>Quarto anno — gbprof e Libera</title>
 <style>
 :root{--ink:#faf5e8;--muted:#cbd3cd;--line:rgba(255,255,255,.15);--gold:#dfb65f}
@@ -18,6 +18,7 @@ h1{max-width:850px;margin:0;font-family:Georgia,"Times New Roman",serif;font-siz
 .card::before{content:"";position:absolute;z-index:-2;inset:0;background:var(--wash)}.card::after{content:attr(data-mark);position:absolute;z-index:-1;right:-.03em;top:-.18em;color:rgba(255,255,255,.07);font-family:Georgia,serif;font-size:17rem;line-height:1}
 .card:hover,.card:focus-visible{transform:translateY(-6px);border-color:rgba(255,255,255,.4);box-shadow:0 30px 80px rgba(0,0,0,.34)}
 .literature{--wash:linear-gradient(155deg,#345c4d,#203d34 55%,#15201d)}.history{--wash:linear-gradient(155deg,#71422c,#422c25 55%,#15201d)}
+.deepening{--wash:linear-gradient(155deg,#294b65,#203443 55%,#15201d);grid-column:1/-1;min-height:260px}
 .number{font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.7)}
 h2{margin:.5rem 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:500}.card p{max-width:34rem;margin:0;color:rgba(255,255,255,.76);line-height:1.55}
 .open{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.5rem;font-weight:800}.open::after{content:"→";font-size:1.3em;transition:transform .2s}.card:hover .open::after{transform:translateX(.3rem)}
@@ -28,9 +29,10 @@ footer{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem;color
 </head>
 <body><a class="skip" href="#percorsi">Vai ai percorsi</a><main>
 <header><p class="eyebrow">gbprof · Percorsi didattici</p><h1>Quarto anno</h1><p class="intro">Il laboratorio della modernità: la letteratura dà voce all’individuo, la storia abbatte l’Antico regime e costruisce nazioni, industrie e società nuove.</p></header>
-<section id="percorsi" class="choices" aria-label="Scegli la disciplina">
+<section id="percorsi" class="choices" aria-label="Scegli un percorso">
 <a class="card literature" href="./Letteratura/" data-mark="L"><span class="number">Percorso 01</span><h2>Letteratura</h2><p>Dall’Illuminismo al Romanticismo: Parini, Foscolo, Manzoni e Leopardi dentro la nascita della sensibilità moderna.</p><span class="open">Entra nel percorso</span></a>
 <a class="card history" href="./Storia/" data-mark="S"><span class="number">Percorso 02</span><h2>Storia</h2><p>Dalle rivoluzioni del Settecento all’Italia unita e alla società di massa: il lungo Ottocento che inventa il presente.</p><span class="open">Entra nel percorso</span></a>
+<a class="card deepening" href="./Approfondimenti/" data-mark="A"><span class="number">Percorso 03</span><h2>Approfondimenti</h2><p>Persone, documenti e problemi da esplorare oltre la lezione. Il primo percorso: la Rivoluzione francese, dal 1789 al colpo di Stato di Napoleone.</p><span class="open">Esplora gli approfondimenti</span></a>
 </section><footer><span>Quarto anno · Italiano e Storia</span><span>gbprof e Libera</span></footer>
 </main>  <script src="./pwa-common/gbprof-accessibility.js?v=1"></script>
 </body></html>
