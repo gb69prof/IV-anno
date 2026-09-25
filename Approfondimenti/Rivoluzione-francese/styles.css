@@ -11,3 +11,30 @@ h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.15;font-weigh
 @media(max-width:700px){.wrap{padding:0 1.1rem 2rem}.masthead{padding:1rem}.tools{gap:.3rem}.wordmark{font-size:1rem}.tools button{font-size:.7rem;padding:.35rem .5rem}.hero{grid-template-columns:1fr}.hero h1{font-size:clamp(3.4rem,13vw,5rem)}.hero img{height:300px;box-shadow:6px 6px 0 #dfd8c7}.hero figure{margin-top:.5rem}.grid,.grid.two{grid-template-columns:1fr}.columns{display:block}.side{position:static;margin-bottom:2rem}.side ul{display:flex;gap:.4rem 1rem;flex-wrap:wrap}.side li{margin:.2rem 0}.side h2{margin-bottom:.5rem}.concept-map{grid-template-columns:1fr}.ribbon{gap:.7rem 1.2rem}.ribbon strong{font-size:1.2rem}.section-heading{align-items:start;flex-direction:column;gap:0}.topbar{font-size:.67rem}.filters label{width:100%}.filters input{min-width:0;width:100%}.navbar a{font-size:.77rem;padding:.65rem}.reading{font-size:var(--reading)}.pager a{max-width:100%}.table-scroll th,.table-scroll td{min-width:150px}.page-head h1{font-size:2.8rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 @media print{.topbar,.masthead,.navbar,.breadcrumbs,.side,.tools,.read-control,.pager,.footer,.filters,.hero-actions,.study-actions,.notice,.no-print{display:none!important}body{background:#fff;color:#111}.wrap{max-width:none;padding:0}.columns{display:block}.reading{font-size:11pt;line-height:1.6}.reading h2{font-size:18pt;break-after:avoid}h1{font-size:28pt}.tile,figure,fieldset{break-inside:avoid}a{color:#111}.print-only{display:block}.hero{display:block}.hero img{height:220px;box-shadow:none}.grid{grid-template-columns:1fr 1fr}.page-head{margin:0 0 1rem}.sources a{overflow-wrap:anywhere}details{display:block}details> :not(summary){display:block!important}}
+
+
+.tile .portrait-thumb{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  margin:0 0 1rem;
+  background:#e8e1d3;
+}
+
+.person-portrait{
+  margin:0 0 1.5rem;
+}
+
+.person-portrait img{
+  width:100%;
+  max-width:460px;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+  margin:auto;
+  border:1px solid var(--rule);
+  background:#e8e1d3;
+}
