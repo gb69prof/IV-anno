@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "foscolo-pwa-";
-const CACHE_NAME = `${CACHE_PREFIX}v16`;
+const CACHE_NAME = `${CACHE_PREFIX}v17`;
 
 const LOCAL_ASSETS = [
   '../../privacy.html',
