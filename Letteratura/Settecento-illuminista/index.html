@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
   <link rel="stylesheet" href="assets/styles.css?v=1">
   <script src="assets/data.js?v=1" defer></script>
-  <script src="assets/app.js?v=1" defer></script>
+  <script src="assets/app.js?v=2" defer></script>
   <link rel="stylesheet" href="../../pwa-common/gbprof-accessibility.css?v=1">
 </head>
 <body class="cover-visible">
@@ -37,9 +37,9 @@
     <p>Tre vie alla libertà</p>
     <ol>
       <li><a href="#introduzione">Il problema della libertà</a></li>
-      <li><a href="#goldoni">Goldoni: le maschere</a></li>
-      <li><a href="#parini">Parini: i privilegi</a></li>
-      <li><a href="#alfieri">Alfieri: la tirannide</a></li>
+      <li><a href="../Goldoni/">Goldoni: le maschere</a></li>
+      <li><a href="../Parini/">Parini: i privilegi</a></li>
+      <li><a href="../Alfieri/">Alfieri: la tirannide</a></li>
     </ol>
     <button type="button" id="resumeBtn">Riprendi la lettura</button>
     <a class="home-letteratura" href="../">← Letteratura</a>
@@ -60,14 +60,14 @@
           <a style="--x:66%;--y:1%;--w:12%;--h:6%" href="#mappe" aria-label="Mappe"></a>
 
           <a style="--x:2%;--y:48%;--w:24%;--h:25%" href="#introduzione" aria-label="Il mondo da cui si parte: introduzione"></a>
-          <a style="--x:27%;--y:48%;--w:23%;--h:25%" href="#goldoni" aria-label="Carlo Goldoni: liberarsi dalle maschere"></a>
-          <a style="--x:51%;--y:48%;--w:22%;--h:25%" href="#parini" aria-label="Giuseppe Parini: liberarsi dai privilegi"></a>
-          <a style="--x:74%;--y:48%;--w:24%;--h:25%" href="#alfieri" aria-label="Vittorio Alfieri: liberarsi dalla tirannide"></a>
+          <a style="--x:27%;--y:48%;--w:23%;--h:25%" href="../Goldoni/" aria-label="Carlo Goldoni: liberarsi dalle maschere"></a>
+          <a style="--x:51%;--y:48%;--w:22%;--h:25%" href="../Parini/" aria-label="Giuseppe Parini: liberarsi dai privilegi"></a>
+          <a style="--x:74%;--y:48%;--w:24%;--h:25%" href="../Alfieri/" aria-label="Vittorio Alfieri: liberarsi dalla tirannide"></a>
 
           <a style="--x:7%;--y:75%;--w:11%;--h:12%" href="#introduzione" aria-label="Introduzione"></a>
-          <a style="--x:24%;--y:75%;--w:11%;--h:12%" href="#goldoni" aria-label="Goldoni"></a>
-          <a style="--x:40%;--y:75%;--w:10%;--h:12%" href="#parini" aria-label="Parini"></a>
-          <a style="--x:55%;--y:75%;--w:10%;--h:12%" href="#alfieri" aria-label="Alfieri"></a>
+          <a style="--x:24%;--y:75%;--w:11%;--h:12%" href="../Goldoni/" aria-label="Goldoni"></a>
+          <a style="--x:40%;--y:75%;--w:10%;--h:12%" href="../Parini/" aria-label="Parini"></a>
+          <a style="--x:55%;--y:75%;--w:10%;--h:12%" href="../Alfieri/" aria-label="Alfieri"></a>
           <a style="--x:69%;--y:75%;--w:11%;--h:12%" href="#mappe" aria-label="Mappe"></a>
           <button style="--x:84%;--y:75%;--w:11%;--h:12%" data-global-panel="vocab" aria-label="Vocabolario"></button>
 
@@ -78,9 +78,9 @@
 
       <nav id="percorso" class="mobile-cover-nav" aria-label="Indice alternativo accessibile">
         <a href="#introduzione"><b>00</b><span>Il Settecento illuminista<small>La libertà come problema</small></span></a>
-        <a href="#goldoni"><b>01</b><span>Carlo Goldoni<small>Liberarsi dalle maschere</small></span></a>
-        <a href="#parini"><b>02</b><span>Giuseppe Parini<small>Liberarsi dai privilegi</small></span></a>
-        <a href="#alfieri"><b>03</b><span>Vittorio Alfieri<small>Liberarsi dalla tirannide</small></span></a>
+        <a href="../Goldoni/"><b>01</b><span>Carlo Goldoni<small>Liberarsi dalle maschere</small></span></a>
+        <a href="../Parini/"><b>02</b><span>Giuseppe Parini<small>Liberarsi dai privilegi</small></span></a>
+        <a href="../Alfieri/"><b>03</b><span>Vittorio Alfieri<small>Liberarsi dalla tirannide</small></span></a>
         <a href="#mappe"><b>◎</b><span>Galleria delle mappe</span></a>
         <button type="button" data-global-panel="essentials"><b>✓</b><span>Saperi irrinunciabili</span></button>
         <button type="button" data-global-panel="vocab"><b>A</b><span>Vocabolario essenziale</span></button>
@@ -148,7 +148,7 @@
         <div id="lessonContent" class="lesson-content" aria-live="polite"></div>
         <nav class="sequence-nav" aria-label="Lezione precedente e successiva">
           <a id="previousLesson" href="#home">← Copertina</a>
-          <a id="nextLesson" href="#goldoni">Goldoni →</a>
+          <a id="nextLesson" href="../Goldoni/">Goldoni →</a>
         </nav>
       </article>
 
@@ -206,9 +206,9 @@
     <form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form>
     <h2>Tre strade verso la libertà</h2>
     <div class="author-comparison">
-      <article><h3>Carlo Goldoni</h3><p><b>Ostacolo:</b> maschera sociale e ruolo rigido.</p><p><b>Strumento:</b> commedia realistica e dialogo.</p><a href="#goldoni">Apri la lezione</a></article>
-      <article><h3>Giuseppe Parini</h3><p><b>Ostacolo:</b> privilegio senza merito.</p><p><b>Strumento:</b> satira civile e antifrasi.</p><a href="#parini">Apri la lezione</a></article>
-      <article><h3>Vittorio Alfieri</h3><p><b>Ostacolo:</b> tirannide esterna e interiore.</p><p><b>Strumento:</b> tragedia e parola indipendente.</p><a href="#alfieri">Apri la lezione</a></article>
+      <article><h3>Carlo Goldoni</h3><p><b>Ostacolo:</b> maschera sociale e ruolo rigido.</p><p><b>Strumento:</b> commedia realistica e dialogo.</p><a href="../Goldoni/">Apri la lezione</a></article>
+      <article><h3>Giuseppe Parini</h3><p><b>Ostacolo:</b> privilegio senza merito.</p><p><b>Strumento:</b> satira civile e antifrasi.</p><a href="../Parini/">Apri la lezione</a></article>
+      <article><h3>Vittorio Alfieri</h3><p><b>Ostacolo:</b> tirannide esterna e interiore.</p><p><b>Strumento:</b> tragedia e parola indipendente.</p><a href="../Alfieri/">Apri la lezione</a></article>
     </div>
   </dialog>
 

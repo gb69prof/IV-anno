@@ -3,6 +3,8 @@
 
   const DATA = window.SETTECENTO_DATA;
   const KEY = "settecento:";
+  const AUTHOR_PWAS = {goldoni: "../Goldoni/", parini: "../Parini/", alfieri: "../Alfieri/"};
+  const lessonHref = id => AUTHOR_PWAS[id] || "#" + id;
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
@@ -80,7 +82,7 @@
       </article>`).join("");
 
     $("#fullIndex").innerHTML = DATA.lessons.map(lesson => `
-      <a href="#${lesson.id}"><b>${lesson.number}</b><span>${escapeHTML(lesson.title)}<small>${escapeHTML(lesson.subtitle)}</small></span></a>
+      <a href="${lessonHref(lesson.id)}"><b>${lesson.number}</b><span>${escapeHTML(lesson.title)}<small>${escapeHTML(lesson.subtitle)}</small></span></a>
     `).join("") + '<a href="#mappe"><b>◎</b><span>Mappe concettuali</span></a>';
 
     $$(".image-open", maps).forEach(button => button.addEventListener("click", () => {
@@ -363,9 +365,9 @@
     const index = DATA.lessons.findIndex(item => item.id === currentLesson.id);
     const prev = DATA.lessons[index - 1];
     const next = DATA.lessons[index + 1];
-    els.previous.href = prev ? "#" + prev.id : "#home";
+    els.previous.href = prev ? lessonHref(prev.id) : "#home";
     els.previous.textContent = prev ? "← " + prev.title : "← Copertina";
-    els.next.href = next ? "#" + next.id : "#home";
+    els.next.href = next ? lessonHref(next.id) : "#home";
     els.next.textContent = next ? next.title + " →" : "Torna alla copertina →";
   }
 
