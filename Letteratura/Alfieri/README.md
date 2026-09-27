@@ -21,8 +21,13 @@ Servire la cartella tramite HTTPS o localhost. Manifest e service worker hanno s
 - Esecuzione della logica dei quiz con DOM simulato: punteggio pieno, 8/10 con errore e omissione, recupero limitato alle due domande, conservazione dello storico.
 - Simulazione installazione e fetch del service worker: risorse presenti, lettura di una lezione senza rete, conservazione delle cache di altre app.
 
-La prova visuale e di interazione in un browser reale su viewport iPad e il test offline completo non sono stati eseguibili in questa sessione: il browser disponibile impedisce l'apertura dei file locali. Questi controlli restano da effettuare prima di integrare la proposta.
+- Browser reale sul sito pubblicato: navigazione delle lezioni, apertura della mappa, test con 9/10 e recupero 1/1, salvataggio degli appunti verificato dopo ricaricamento.
+- Collegamento dall'indice di Letteratura e scheda Alfieri nella linea del tempo verificati sul sito.
 
-## Integrazione concorrente
+Il test offline è stato eseguito con simulazione del service worker; installazione e funzionamento offline su iPad fisico restano da verificare sul dispositivo.
 
-Durante il lavoro è comparsa su main una prima PWA Alfieri (commit `0645216722849dce9802cb8c5317e23b748cf9ca`) insieme al collegamento nell'indice di Letteratura. Nel repository UTILITY, la scheda Alfieri e la cache della linea del tempo sono già state aggiornate (commit `6300b0ff731b216e9f926f1a6cc2489e8d9a10d3`). La home attuale viene preservata nella struttura e nello stile, aggiungendo i nuovi collegamenti. Questa proposta viene perciò presentata separatamente per evitare la sostituzione automatica delle modifiche concorrenti. Il titolo della home e la destinazione dei link restano compatibili con quelli registrati nella linea del tempo.
+## Pubblicazione
+
+La PR #14 è stata integrata in main il 27 settembre 2026. La PWA è disponibile su https://gbprof.it/IV-anno/Letteratura/Alfieri/.
+
+L'indice di Letteratura e la linea del tempo del repository UTILITY collegano la stessa destinazione. La home e la lezione sullo scrittore indipendente già presenti su main sono state conservate e integrate con i nuovi materiali.

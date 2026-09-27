@@ -241,6 +241,11 @@
     autosaveState.textContent = safeSet(`notebook-${lessonId}`, notebook) ? "Salvato" : "Salvataggio non disponibile";
   };
 
+  window.addEventListener("pagehide", saveNotebook);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") saveNotebook();
+  });
+
   const scheduleNotebookSave = () => {
     autosaveState.textContent = "Salvataggio…";
     clearTimeout(saveTimer);
