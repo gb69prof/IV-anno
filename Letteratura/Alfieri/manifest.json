@@ -1,19 +1,24 @@
 {
-  "name": "Vittorio Alfieri - PWA didattica",
-  "short_name": "Alfieri",
   "id": "./",
+  "name": "Vittorio Alfieri — Tragedia e libertà",
+  "short_name": "Alfieri",
   "lang": "it",
-  "description": "Percorso didattico interattivo su Vittorio Alfieri.",
+  "description": "Percorso didattico in sei movimenti, mappe e verifiche con recupero.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "orientation": "any",
-  "background_color": "#f4ead8",
-  "theme_color": "#2d1419",
+  "background_color": "#061d2f",
+  "theme_color": "#061d2f",
   "icons": [
     {
-      "src": "assets/alfieri.png",
-      "sizes": "1448x1086",
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
