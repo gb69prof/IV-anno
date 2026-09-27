@@ -1,0 +1,21 @@
+{
+  "name": "Vittorio Alfieri - PWA didattica",
+  "short_name": "Alfieri",
+  "id": "./",
+  "lang": "it",
+  "description": "Percorso didattico interattivo su Vittorio Alfieri.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4ead8",
+  "theme_color": "#2d1419",
+  "icons": [
+    {
+      "src": "assets/alfieri.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
