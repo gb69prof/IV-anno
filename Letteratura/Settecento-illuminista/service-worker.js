@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "settecento-illuminista-";
-const CACHE_NAME = CACHE_PREFIX + "v2-author-pwas";
+const CACHE_NAME = CACHE_PREFIX + "v3-tre-autori-index";
 const CORE = [
   '../../privacy.html',
   '../../accessibilita.html',
@@ -46,4 +46,5 @@ self.addEventListener("fetch",event => {
     return response;
   })));
 });
+
 

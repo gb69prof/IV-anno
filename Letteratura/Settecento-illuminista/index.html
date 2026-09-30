@@ -13,6 +13,7 @@
   <script src="assets/data.js?v=1" defer></script>
   <script src="assets/app.js?v=2" defer></script>
   <link rel="stylesheet" href="../../pwa-common/gbprof-accessibility.css?v=1">
+  <style>.dispensa-entry{display:block;margin:1rem auto 1.5rem;padding:1.3rem 1.5rem;max-width:1180px;border:1px solid #bf9b56;border-radius:.6rem;background:#f6f0e5;color:#183d3b;text-decoration:none}.dispensa-entry strong{display:block;font:600 clamp(1.25rem,2.5vw,1.75rem)/1.35 Georgia,serif}.dispensa-entry span{display:block;margin-top:.55rem;font-size:.9rem;line-height:1.6}.dispensa-entry small{display:block;margin-top:.6rem;font-weight:700}.dispensa-entry:hover{outline:2px solid #bf9b56;outline-offset:3px}.path-index .dispensa-side{display:block;margin-top:1.5rem;color:inherit;font-size:.85rem;line-height:1.5}@media(max-width:700px){.dispensa-entry{margin:1rem;padding:1.1rem}}</style>
 </head>
 <body class="cover-visible">
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -25,6 +26,7 @@
       <a href="#percorso">Percorso</a>
       <button type="button" data-open="authorsDialog">Autori</button>
       <a href="#mappe">Mappe</a>
+      <a href="tre-autori/">Percorso dalla dispensa</a>
     </nav>
     <div class="tools" aria-label="Strumenti di lettura">
       <button type="button" id="themeBtn" aria-label="Cambia tema">◐</button>
@@ -41,6 +43,7 @@
       <li><a href="../Parini/">Parini: i privilegi</a></li>
       <li><a href="../Alfieri/">Alfieri: la tirannide</a></li>
     </ol>
+    <a class="dispensa-side" href="tre-autori/">Dal mondo dei ceti alla nuova società →</a>
     <button type="button" id="resumeBtn">Riprendi la lettura</button>
     <a class="home-letteratura" href="../">← Letteratura</a>
   </aside>
@@ -87,6 +90,8 @@
         <button type="button" data-global-panel="final"><b>?</b><span>Verifica finale</span></button>
       </nav>
     </section>
+
+    <a class="dispensa-entry" href="tre-autori/" aria-label="Apri la PWA aggiuntiva Dal mondo dei ceti alla nuova società"><strong>Dal mondo dei ceti alla nuova società</strong><span>Ancien Régime, Illuminismo e tre diverse “fratture”: la dispensa in un percorso unitario su Parini, Alfieri e Goldoni.</span><small>PWA aggiuntiva · Cinque sezioni · Apri il percorso →</small></a>
 
     <section id="mappe" class="maps-section" aria-labelledby="mapsTitle">
       <header><p class="eyebrow">Osservare e collegare</p><h2 id="mapsTitle">Mappe concettuali</h2><p>Quattro mappe, una sola domanda: dove comincia la libertà?</p></header>
@@ -193,6 +198,7 @@
   <dialog id="indexDialog" class="index-dialog">
     <form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form>
     <header><p class="panel-kicker">Quattro ambienti, tre vie</p><h2>Indice delle lezioni</h2></header>
+    <a class="dispensa-entry" href="tre-autori/"><strong>Dal mondo dei ceti alla nuova società</strong><span>Parini, Alfieri e Goldoni · PWA dalla dispensa →</span></a>
     <nav id="fullIndex" class="full-index" aria-label="Indice completo"></nav>
   </dialog>
 
@@ -233,4 +239,5 @@
   <script src="../../pwa-common/gbprof-accessibility.js?v=1"></script>
 </body>
 </html>
+
 
