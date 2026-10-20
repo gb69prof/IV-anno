@@ -10,8 +10,8 @@ responsive, poetica, collegamenti, quattro domande scritte e modelli dopo conseg
 Orientamento, indice tematico, sintesi e tre tracce trasversali completano l’app.
 
 ## Architettura
-`dist/` è la radice pubblicabile: il suo contenuto va in
-`Letteratura/Officina-Foscolo/` nel repository IV-anno.
+Questa cartella è la radice pubblicabile: `Letteratura/Officina-Foscolo/`.
+Nell’anteprima Sites i medesimi file sono raccolti in `dist/`.
 - content.js: testi, lezioni, mappe, domande e modelli.
 - app.js: navigazione hash, verifica, localStorage, export TXT.
 - atlas.js: geografia narrativa schematica dell’Ortis in SVG.
