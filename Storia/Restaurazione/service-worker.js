@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'restaurazione-';
-const CACHE = `${CACHE_PREFIX}v2-focus1`;
+const CACHE = `${CACHE_PREFIX}v3-contrast`;
 const CORE = [
   '../../privacy.html',
   '../../accessibilita.html',
@@ -11,6 +11,7 @@ const CORE = [
   'index.html',
   'app.html',
   'css/style.css',
+  'css/reading-contrast.css',
   'js/data.js',
   'js/home.js',
   'js/app.js',
