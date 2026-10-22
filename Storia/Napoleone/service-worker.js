@@ -1,11 +1,11 @@
 const CACHE_PREFIX = 'napoleone-';
-const CACHE = `${CACHE_PREFIX}v2`;
+const CACHE = `${CACHE_PREFIX}v3`;
 const CORE = [
   '../../privacy.html',
   '../../accessibilita.html',
   '../../pwa-common/gbprof-accessibility.css?v=1',
   '../../pwa-common/gbprof-accessibility.js?v=1',
-  './','../ui-focus/history-focus.css?v=1','../ui-focus/history-focus.js?v=1','index.html','app.html','css/style.css','js/data.js','js/home.js','js/app.js','manifest.webmanifest',
+  './','../ui-focus/history-focus.css?v=1','../ui-focus/history-focus.js?v=1','index.html','app.html','css/style.css','css/reading-contrast.css','js/data.js','js/home.js','js/app.js','manifest.webmanifest',
   'assets/img/icons/icon.svg','assets/img/icons/icon-192.png','assets/img/icons/icon-512.png',
   'assets/img/covers/hero-napoleone.jpg','assets/img/covers/hero-napoleone-mobile.jpg',
   'assets/img/maps/europa-1811.svg','assets/img/maps/espansione-contrazione.svg','assets/img/maps/russia-1812.svg',
