@@ -1,0 +1,135 @@
+/* Contrasto di lettura della PWA Napoleone.
+   La modalità focus condivisa rende trasparente .lesson-reader,
+   lasciando testo scuro su uno sfondo blu scuro. Questo foglio,
+   caricato dopo history-focus.css, ripristina il supporto chiaro. */
+
+body.app-page.history-focus-active .history-focus-reading {
+  color: #17202a;
+  background: linear-gradient(180deg, #fff8e9 0%, #f3e4c7 100%);
+}
+
+/* L'intestazione della lezione non deve lasciare un grande vuoto prima del testo. */
+body.app-page.history-focus-active .history-focus-reading .page-hero {
+  min-height: 0;
+  align-items: start;
+  gap: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+body.app-page.history-focus-active .history-focus-reading .overline,
+body.app-page.history-focus-active .history-focus-reading .section-number {
+  color: #78541e;
+}
+
+body.app-page.history-focus-active .history-focus-reading .page-hero h1,
+body.app-page.history-focus-active .history-focus-reading .page-hero h1 span,
+body.app-page.history-focus-active .history-focus-reading h2,
+body.app-page.history-focus-active .history-focus-reading h3 {
+  color: #173750;
+}
+
+body.app-page.history-focus-active .history-focus-reading .reader-paper p,
+body.app-page.history-focus-active .history-focus-reading .apparatus p,
+body.app-page.history-focus-active .history-focus-reading .apparatus li {
+  color: #17202a;
+}
+
+body.app-page.history-focus-active .history-focus-reading .in-summary {
+  color: #302719;
+  background: #efe1bf;
+  border-left-color: #9b6a26;
+}
+
+body.app-page.history-focus-active .history-focus-reading .bridge {
+  color: #5a4833;
+}
+
+body.app-page.history-focus-active .history-focus-reading .apparatus {
+  color: #17202a;
+  background: rgba(255, 250, 239, .77);
+  border-color: rgba(125, 85, 31, .45);
+}
+
+body.app-page.history-focus-active .history-focus-reading .info-chip {
+  color: #183c54;
+  background: #f1e3c6;
+  border-color: #b89b66;
+}
+
+body.app-page.history-focus-active .history-focus-reading .vocab-item {
+  color: #17202a;
+  background: #fffaf0;
+  border-color: #ceb785;
+}
+
+body.app-page.history-focus-active .history-focus-reading .lesson-activity > p:not(.overline),
+body.app-page.history-focus-active .history-focus-reading .lesson-activity details p {
+  color: #17202a;
+}
+
+body.app-page.history-focus-active .history-focus-reading .lesson-activity summary {
+  color: #173750;
+}
+
+body.app-page.history-focus-active .history-focus-reading .lesson-activity details {
+  background: #f5ead4;
+  border-color: #ceb785;
+}
+
+body.app-page.history-focus-active .history-focus-reading .completion-box {
+  background: #e5efdf;
+  border-color: #699172;
+}
+
+body.app-page.history-focus-active .history-focus-reading .completion-box.completed {
+  background: #d1e8d2;
+}
+
+body.app-page.history-focus-active .history-focus-reading .completion-box .button-ghost {
+  color: #173750;
+  border-color: #56728b;
+  background: #fffaf0;
+}
+
+body.app-page.history-focus-active .history-focus-reading .pager a {
+  color: #173750;
+  background: rgba(255, 250, 239, .9);
+  border-color: #bfa576;
+}
+
+body.app-page.history-focus-active .history-focus-reading .pager span {
+  color: #6c371e;
+}
+
+@media (max-width: 820px) {
+  body.app-page.history-focus-active .history-focus-reading .page-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media print {
+  body.app-page.history-focus-active {
+    height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+  body.app-page.history-focus-active #app {
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+  body.app-page.history-focus-active .history-focus-shell,
+  body.app-page.history-focus-active .history-focus-reading {
+    display: block;
+    height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #111 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  body.app-page.history-focus-active .history-focus-dock {
+    display: none !important;
+  }
+}
