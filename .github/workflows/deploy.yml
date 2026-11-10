@@ -21,5 +21,7 @@ jobs:
             cd /opt/gbprof/projects/IV-anno
             git fetch origin
             git reset --hard origin/main
+            # Il report operativo resta nel repository e non viene servito sul sito.
+            rm -f Prima-prova/REPORT.md
             echo "Deploy IV-anno completato"
             git log -1 --oneline
